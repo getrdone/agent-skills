@@ -75,7 +75,7 @@ Exclude hypnotic/vague language, covert influence, emotional conditioning, spin,
 
 ## Titles and idea generation
 
-When the user asks for **titles**, **headline options**, **topic ideas**, **verse angles**, or **video ideas**, do not invent an ad-hoc short list.
+When the user asks for **titles**, **headline options**, **topic ideas**, **verse angles**, or **video ideas**, do not invent an ad-hoc short list. For **video/title packaging files**, follow `youtube-planning.md`: Phase 1 report → full title matrix → **What the Episode Is Really About**, then the user marks picks with trailing `~` before descriptions or “more like these” titles.
 
 Load and follow `references/youtube-planning.md` **Title and idea category matrix (mandatory)**:
 - all **17** categories;

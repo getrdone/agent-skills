@@ -53,6 +53,10 @@ For substantial production:
 - Title opens one honest gap and the content closes it.
 - For any title or idea-generation request, the full 17-category matrix was produced with exactly 4 lines per category (YouTube Video Planner v1.1.1 set in `youtube-planning.md`).
 - Weak-fit categories are still filled (4 lines each) with an explicit weak-fit note rather than omitted.
+- Phase 1 packaging file order is: Packaging Report → Title Options → **What the Episode Is Really About** (summary present; grounded in transcript, user idea, or honest from-scratch synopsis).
+- Descriptions run only for **selected** titles (`~` at end of line or explicit list), one description each, grounded in the episode summary + that title.
+- `~` marks are preserved when the agent edits the packaging file.
+- “More titles like my picks” produces a small add-on set (not a silent full re-matrix) unless the user asked to regenerate everything.
 - Thumbnail complements rather than repeats the title.
 - Description follows the chosen package and is 80–110 words, aiming at 95–105.
 - Opening confirms the package immediately.

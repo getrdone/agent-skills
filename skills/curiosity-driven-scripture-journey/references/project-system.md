@@ -110,6 +110,8 @@ If a downstream artifact needs a different promise, update the core brief or tre
 - Do not force topic discovery when a transcript or finished study already defines the topic.
 - Do not force thumbnail design when only titles are requested.
 - Do not reopen an approved title merely because the next step is a description.
+- After title generation, expect the user to mark preferred lines with trailing `~` in the packaging file, then request descriptions and/or a few more titles inspired by those marks—do not require a separate formal “approval” status for that selection step.
+- Keep **What the Episode Is Really About** in the packaging file once written; update it only if the source idea or transcript understanding materially changes.
 - When several options are still live, label them as candidates rather than silently locking one.
 
 ## Recommended project planning files

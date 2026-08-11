@@ -6,6 +6,8 @@ Use this file for YouTube topics, ideas, titles, descriptions, thumbnails, scrip
 
 - Entry lanes
 - Operating sequence
+- Phase 1 packaging file layout (mandatory for title generation)
+- `What the Episode Is Really About` + `~` selection workflow
 - Title and idea category matrix (mandatory) — 17 categories × 4
 - YouTube description rule
 - Thumbnail and graphic package
@@ -25,12 +27,134 @@ Separate **generation** from **filtration** at every stage.
 1. **Direction:** audience psychographics, channel role, desired outcome, content pillar, and tone.
 2. **Ideation:** combine Topic × Format × Angle.
 3. **Filtration:** test reach/TAM, relevant outliers, remarkability, mission/brand fit, evidence, and feasibility. Never invent external proof.
-4. **Packaging:** titles first; select a title/family; then develop thumbnails and description.
+4. **Packaging:** write the Phase 1 packaging file (report + title matrix first, then **What the Episode Is Really About**); user marks preferred titles with `~`; then descriptions for marked titles (and optional more titles from those marks); then thumbnails.
 5. **Structure:** one goal; opening; Promise → Progress → Payoff; visual plan; ending.
 6. **Production:** film/edit only after the idea, package, and structure are viable.
 7. **Publish and learn:** analyze CTR, retention shape, returning viewers, comments quality, and mission outcomes; change one variable deliberately.
 
 The idea sets the ceiling. Packaging earns the click. The video must repay it.
+
+## Phase 1 packaging file layout (mandatory for title generation)
+
+When generating titles (or packaging an existing transcript/idea into titles), write a single packaging document in this **top-to-bottom order**. Do not put the episode summary above the titles.
+
+```markdown
+# Phase 1 Packaging Report
+
+(brief direction block: working topic/promise, audience, lane A/B/C,
+source of idea — transcript / user brief / from-scratch, channel notes if known)
+
+## Title Options
+
+(full 17-category matrix — exactly 4 lines per category;
+then best-fit category + top 3–5 A/B shortlist + browse vs search)
+
+## What the Episode Is Really About
+
+(3–6 short paragraphs — see rules below)
+
+## Selection workflow (for the user)
+
+- Mark every title you want to keep or develop by putting `~` at the **end** of that title line, then save the file.
+- Ask the agent for **descriptions** for the `~`-marked titles, and/or **more titles** inspired by those marks.
+```
+
+### `## What the Episode Is Really About`
+
+**Placement:** immediately after the first full set of title options (the 17×4 matrix and its shortlist block). Never before the title matrix. Never omit on title-generation runs.
+
+**Purpose:** a clear, honest summary of what the episode/content is really about so later description, thumbnail, and script work share one locked story—not a rehash of the titles.
+
+**Source of the summary (priority order):**
+
+1. **Ingested transcript / finished video / study text** (Lane B) — distill the actual arc, people, stakes, and payoff from the source. Do not invent scenes, quotes, or outcomes not in the material.
+2. **User-supplied main idea or brief** — expand into the same plain narrative form without adding unprovided facts.
+3. **From-scratch packaging** (agent invented the angle from a thin topic) — the agent’s own concise summary of the idea they packaged; label nothing as filmed fact that is only proposed.
+
+**Voice and shape:**
+
+- Prose paragraphs (not bullets), roughly **120–220 words** unless the source is extremely short.
+- Lead with setting and situation; move through what happens / what is examined; end on the real practical or spiritual takeaway and any honest viewer invitation that the content actually supports.
+- Prefer concrete details from the source (places, roles, simple numbers, named people only if present in the material).
+- High-trust: no hype trailer, no fear escalation, no promise the video cannot pay off.
+- For ministry/outreach content, plain adult language is fine; this section is **not** constrained to 3rd–5th-grade teaching rules, but it must stay clear and honest.
+
+**Example shape (illustrative only—replace with the real episode):**
+
+```markdown
+## What the Episode Is Really About
+
+The Final Days team takes its outreach to the Tulsa State Fair — a place full of
+rides, food, and crowds who aren't looking for a sermon. For five years, they've
+set up a booth and handed out small cards with a QR code that links to a Bible
+prophecy video. Each card costs seven cents. The strategy is almost too simple:
+ask "Would you like a video?" instead of "Would you like a book?" — and people
+stop, take the card, and watch.
+
+The episode cuts between booth interviews with fairgoers and studio commentary
+from Wesley and Pastor Patrick. Random strangers — a fireman, young couples, a
+pastor, families — all answer the same question: "Do you believe we're living in
+the final days?" Every single one says yes. One man who took a DVD at a previous
+fair later called the ministry, joined an Adventist church, and became a member.
+
+The real message is practical: you don't need a pulpit to share your faith. A
+seven-cent card and a short conversation at a fair booth can open a door a sermon
+never could. The episode ends with a clear invitation — viewers can get the same
+cards and DVDs to use in their own communities.
+```
+
+### Operating sequence for title or idea requests (file + chat)
+
+1. Confirm working topic / verse / promise (or extract it from supplied content).
+2. Open or create the Phase 1 packaging document.
+3. Write **Phase 1 Packaging Report** direction block.
+4. Emit **## Title Options** — full category matrix with **exactly 4** lines under each category, then best-fit, A/B shortlist, browse vs search.
+5. Write **## What the Episode Is Really About** from transcript, user idea, or from-scratch summary (see above).
+6. Add the short **Selection workflow** note (or keep it if already present).
+7. **Stop for user selection** unless they already asked for descriptions in the same turn. Do **not** auto-write full YouTube descriptions for all 68 lines.
+8. For **idea-only** menus (Lane C / topic discovery without packaging a real episode): still use the 17×4 matrix; the summary section becomes “what this idea/episode would be about” if packaging continues, or a one-paragraph idea synopsis if the user only wanted a menu.
+
+### `~` selection workflow (user → agent)
+
+This is the default selection pattern after titles exist in a file.
+
+| User action | Agent response |
+| --- | --- |
+| Puts `~` at the **end** of one or more title lines, saves the file, asks for descriptions (or “describe the marked ones”) | Write a full YouTube description **for each `~`-marked title only**, under or beside that title (see Description section). Use **What the Episode Is Really About** plus the specific title’s promise. |
+| Marks titles with `~` and asks for more titles / variations / “a few more like these” | Generate a **small additional set** (default **4–8** titles unless user names a count), explicitly inspired by the marked lines’ gaps and angles. Place them in a new subsection such as `## More titles from ~ selection`—do **not** regenerate the full 17×4 unless asked. Optionally suggest which new lines echo which marked parent. |
+| Marks with `~` and asks for both | Do more-titles first (if requested), then descriptions for every still-marked title the user wants packaged. |
+| No `~` marks but names titles in chat | Treat named titles as the selection set (same as `~`). |
+| Asks for descriptions with no selection | Ask which titles to use, or point them to the `~` workflow—do not invent a single “winner” silently. |
+
+**Mark syntax:**
+
+- Preferred: `~` at end of line — e.g. `The 7-Cent Card That Opens Doors ~`
+- Also accept: `~` immediately after the title text with optional space; trailing `~~` still counts as selected.
+- When rewriting the file, **preserve** the user’s `~` marks on lines you are not replacing.
+- Do not strip `~` when adding descriptions; keep the mark on the title line so the selection remains visible.
+
+**Description placement when working in the packaging file:**
+
+```markdown
+### The 7-Cent Card That Opens Doors ~
+
+**Description** (≈100 words)
+...prose...
+
+**Sources** (if evidence-based; optional block)
+...
+```
+
+Or a grouped section:
+
+```markdown
+## Descriptions for ~ selection
+
+### Title one ~
+...
+### Title two ~
+...
+```
 
 ## Title and idea category matrix (mandatory)
 
@@ -49,16 +173,6 @@ Ethics still apply inside every cell:
 - Fear / Loss, Urgency / Timely, Warning / Protection, and Risk-style lines may name a **real** consequence only in sober, accurate language;
 - Authority / Proof only with real receipts available in the study/video;
 - Pattern / Fulfillment only with defensible textual or historical linkage.
-
-### Operating sequence for title or idea requests
-
-1. Confirm working topic / verse / promise (or extract it from supplied content).
-2. Emit the **full category matrix** below with **exactly 4** lines under each category.
-3. Mark **best-fit category** (+ one sentence why).
-4. List **top 3–5 to A/B test** as `(title or idea | category | gap)`, including a control near any existing title if one exists.
-5. **Browse vs search:** one line.
-6. For **titles** (not pure topic menus): stop and ask which category or titles to develop into thumbnails **before** thumbnail concepts—unless the user already selected titles.
-7. For **idea-only** menus (Lane C / topic discovery): stop for selection before packaging unless the user asked to continue in the same turn.
 
 ### Idea generation mode (videos or Bible verses)
 
@@ -118,26 +232,30 @@ Develop thumbnails only after the user selects a category and/or specific titles
 
 ## YouTube description rule
 
-Write the description only after a title and real video promise are chosen.
+Write descriptions only after titles are **selected**—normally via `~` marks in the packaging file (see **`~` selection workflow** above), or by explicit title list in chat.
 
+- Default batch: **one description per `~`-marked (or named) title**, not one description for the whole matrix.
+- Ground every description in **What the Episode Is Really About** and the specific title’s curiosity gap; do not invent beats missing from the summary/source.
 - Main prose must be **80–110 words**; aim for **95–105 words**.
 - Count the main descriptive prose only. For evidence-based Scripture content, add a clearly labeled source block after it; the bibliography does not count against the prose target. Include the Bible passages/translations, quoted documents, historical sources, further study, and needed rights notices or attribution.
-- Sentence 1 confirms the title’s promise in plain language.
+- Sentence 1 confirms **that title’s** promise in plain language.
 - The middle names what the viewer will examine, see, compare, or learn without giving a vague trailer.
 - Include the main search phrase naturally when it fits; never stuff keywords.
 - End with one honest next step: watch, compare the evidence, continue the study, or visit the relevant page.
-- Do not introduce a new promise, fact, urgency claim, or conclusion absent from the video.
+- Do not introduce a new promise, fact, urgency claim, or conclusion absent from the video / summary.
 - For Scripture/ministry descriptions, address the viewer directly or use neutral phrasing; do not default to “we will,” “join us,” or “with us.”
 
-Description checklist:
+Description checklist (per selected title):
 
-- [ ] Chosen title and audience are clear
+- [ ] Title is `~`-marked or explicitly chosen
+- [ ] Matches **What the Episode Is Really About** + that title’s gap
 - [ ] Real payoff matches the video
 - [ ] 80–110 words; 95–105 target
-- [ ] Plain, adult, 3rd–5th-grade language
-- [ ] Useful specifics rather than hype
+- [ ] Plain, adult language (3rd–5th-grade readability OK; no hype)
+- [ ] Useful specifics rather than trailer vagueness
 - [ ] Natural keyword phrasing
 - [ ] One honest next step
+- [ ] User’s `~` mark preserved on the title line
 
 ## Thumbnail and graphic package
 
