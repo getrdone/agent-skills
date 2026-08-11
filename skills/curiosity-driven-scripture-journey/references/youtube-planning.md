@@ -99,9 +99,10 @@ When the user asks for ideas, topic menus, verse angles, or “what should we co
 ### Title mechanics (every line)
 - Aim under ~65 characters for YouTube titles; idea lines may run slightly longer if needed for clarity.
 - Front-load the most important words.
-- ~3rd–5th-grade reading level; short synonyms.
+- Prefer clear, skimmable wording (~3rd–5th-grade *readability*)—this is **not** a ban on creative hooks, wordplay, story, or specialized copy patterns. Use full packaging craft; stay honest and high-trust.
 - Exactly one strong curiosity gap per line.
 - Match high-trust / ministry tone; offer a reverent variant when a punchier line risks overclaim.
+- **Plain-language teaching rules apply to study body copy**, not as a ceiling on titles, hooks, or loaded copywriting skills (see `resources-and-authority.md`).
 
 ### Per serious shortlist candidate, verify
 - the exact question it opens;

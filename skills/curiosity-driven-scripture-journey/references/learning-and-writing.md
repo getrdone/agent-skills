@@ -84,3 +84,7 @@ Load and follow `references/youtube-planning.md` **Title and idea category matri
 
 This is the same matrix as YouTube Video Planner v1.1.1, adapted for high-trust Scripture work.
 
+## Teaching clarity vs creative craft
+
+Plain explanations help new Bible readers. They **do not** override title packaging, hooks, story craft, or specialized copywriting skills loaded for the task. High-trust ethics still forbid manipulation.
+

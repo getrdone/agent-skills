@@ -13,7 +13,8 @@ If none match → use your own judgment; do not force a skill.
 
 | Package | Path | Triggers |
 |---------|------|----------|
-| source-vault | `processing/source-vault/` | source vault inventory, register sources, intake records, private library, Bohr transcript quarantine, `registry.yaml` |
+| source-vault | `processing/source-vault/` |
+| tools registry | `tools/TOOLS.md` | source vault inventory, register sources, intake records, private library, Bohr transcript quarantine, `registry.yaml` |
 
 ## How to add a skill
 1. Add `skills/<kebab-name>/SKILL.md` (+ optional `references/`, `examples/`).

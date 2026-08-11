@@ -63,8 +63,7 @@ Adapt length to the requested experience, but preserve this logic:
 
 ## Reading and theological integrity
 
-- Aim for 3rd–5th-grade readability for adults without sounding childish.
-- Keep sentences short and define larger terms immediately.
+- For **teaching body copy**, aim for 3rd–5th-grade readability without sounding childish; keep sentences short and define larger terms immediately. Spell out “verses 8–11.” This does **not** restrict titles, hooks, or specialized creative/copywriting skills used alongside the study.
 - Quote accurately and identify the exact translation and edition.
 - Do not silently choose, prescribe, rewrite, harmonize, or paraphrase a Bible translation. Translation selection is passage-specific unless the user explicitly approves one version for a defined larger scope. The user may choose KJV for one passage, NLT for the next, AMP for another, or one version throughout.
 - Preserve surrounding context and genre; do not splice verses to manufacture a claim.
@@ -72,6 +71,9 @@ Adapt length to the requested experience, but preserve this logic:
 - Use calm, confident language; avoid “proves,” “obviously,” or adversarial “I’m right/you’re wrong” framing unless the evidence truly requires a firm factual correction.
 
 ## Research authority and source order
+
+Load `resources-and-authority.md` for SME order, links, vault paths, tools, and **plain-language scope** (teaching vs creative packaging).
+
 
 Use this order without treating later sources as replacements for earlier evidence:
 
