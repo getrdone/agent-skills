@@ -1,0 +1,130 @@
+# Project System and Gates
+
+Use this file for new projects, cross-channel work, handoffs, or continuation from partial artifacts.
+
+## Contents
+
+- One capability, modular responsibilities
+- Canonical project record
+- Status progression
+- Cross-channel inheritance
+- Piecemeal work
+- Recommended project planning files
+
+## Compact intake for a small prompt
+
+For a small prompt such as `Psalm 23`, use one compact decision round:
+
+1. Recommend or confirm the deliverable.
+2. Offer several sincere curiosity angles.
+3. Present a verse-by-verse translation review plan. Never prescribe a project-wide version unless the user asks for one.
+4. State the proposed files and durable location.
+5. State the truthful status and exact approval boundary.
+6. Include a flexible choice such as “I’m not sure yet—develop some grounded ideas.”
+
+That flexible choice permits creativity, not unsupported claims or unbiblical tangents. Approval to explore or draft does not approve the resulting content. Keep every agent-selected decision labeled `candidate` until the user accepts it.
+
+## One capability, modular responsibilities
+
+Present one user-facing ability while preserving three internal domains:
+
+- **Universal web experience:** semantic HTML, CSS, progressive JavaScript, accessibility, performance, SEO/AEO/GEO, visual implementation, and technical validation.
+- **Scripture journey:** question choice, source integrity, curiosity architecture, evidence, reading level, payoff ladders, low-pressure interaction, and next paths.
+- **YouTube/video:** audience, ideation, filtration, packaging, titles, descriptions, thumbnails, structure, retention, production, and learning from results.
+
+The shared spine travels across all three. Channel mechanics do not leak into unrelated work.
+
+## Canonical project record
+
+Maintain one `project-brief.md` when files are available. Reuse equivalent existing filenames instead of creating duplicates.
+
+```yaml
+project:
+status: idea
+audience:
+channel_role:
+core_question:
+why_care:
+known_anchor:
+new_idea:
+promise:
+primary_payoff:
+evidence_plan: []
+truth_boundaries: []
+tone_keywords: []
+learning_path: []
+visual_direction_status: unstarted
+visual_dna: {}
+interaction_plan: []
+chosen_title:
+youtube_description:
+thumbnail_direction:
+video_structure_status: unstarted
+html_status: unstarted
+next_curiosity:
+featured_next_path:
+alternate_paths: []
+translation_status: per-passage-review-required
+translation_review_minimum: [KJV, NLT, CSB, WEB, NASB]
+passage_translation_selections: {}
+translation_rights: []
+references_status: unstarted
+locked_decisions: []
+open_decisions: []
+```
+
+Add lane-specific details only when that lane begins. Do not prefill invented decisions.
+
+## Status progression
+
+Use the smallest truthful status:
+
+```text
+idea → candidate → content-approved → visual-approved
+→ approved-for-build → building → validation → released
+```
+
+- `content-approved`: the question, audience, payoff, evidence, learning path, and truth boundaries are stable.
+- `visual-approved`: the visual DNA, hierarchy, composition, imagery direction, type direction, palette direction, interaction style, and avoid list are stable.
+- `approved-for-build`: content, visual, and interaction plans are complete enough to implement without guessing.
+- `validation`: the artifact is built and undergoing the relevant technical, integrity, learning, visual, and experience gates.
+
+## Cross-channel inheritance
+
+Every artifact derives from the same core brief:
+
+| Shared decision | Title/description | Thumbnail/graphic | Video | Scripture study | HTML |
+| --- | --- | --- | --- | --- | --- |
+| Core question | One honest gap | One visual question | Single goal | Central question | Opening promise |
+| Payoff | Accurate benefit | Preview, not answer | Nested payoffs | Evidence ladder | Progressive sections |
+| Learning map | Plain phrasing | Minimal load | Scaffolding + pacing | Known→new sequence | Progressive disclosure |
+| Tone | Word choice | Face/type/color | Delivery/music | Voice | Design/motion |
+| Truth boundary | No overclaim | No false image | No fake stakes | Source integrity | Visible evidence/schema |
+
+If a downstream artifact needs a different promise, update the core brief or treat it as a separate project/variant.
+
+## Piecemeal work
+
+- Start at the artifact the user brings.
+- Backfill only dependencies that materially affect the requested slice.
+- Do not force topic discovery when a transcript or finished study already defines the topic.
+- Do not force thumbnail design when only titles are requested.
+- Do not reopen an approved title merely because the next step is a description.
+- When several options are still live, label them as candidates rather than silently locking one.
+
+## Recommended project planning files
+
+For a substantial build, use or adapt:
+
+```text
+planning/<slug>/
+  project-brief.md
+  content-plan.md
+  visual-direction.md
+  interaction-plan.md
+  design-fingerprint.json
+  inspiration/
+  references/
+```
+
+Keep planning assets separate from production files. Do not turn the brief into duplicate long-form instructions already held by this skill.
