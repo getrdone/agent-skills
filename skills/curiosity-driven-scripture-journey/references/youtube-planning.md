@@ -27,7 +27,7 @@ Separate **generation** from **filtration** at every stage.
 1. **Direction:** audience psychographics, channel role, desired outcome, content pillar, and tone.
 2. **Ideation:** combine Topic × Format × Angle.
 3. **Filtration:** test reach/TAM, relevant outliers, remarkability, mission/brand fit, evidence, and feasibility. Never invent external proof.
-4. **Packaging:** write the Phase 1 packaging file (report + title matrix first, then **What the Episode Is Really About**); user marks preferred titles with `~`; then descriptions for marked titles (and optional more titles from those marks); then thumbnails.
+4. **Packaging:** write the Phase 1 packaging file (report → **What the Episode Is Really About** as the content primer → title matrix); user marks preferred titles with `~`; then descriptions for marked titles (and optional more titles from those marks); then thumbnails.
 5. **Structure:** one goal; opening; Promise → Progress → Payoff; visual plan; ending.
 6. **Production:** film/edit only after the idea, package, and structure are viable.
 7. **Publish and learn:** analyze CTR, retention shape, returning viewers, comments quality, and mission outcomes; change one variable deliberately.
@@ -36,7 +36,7 @@ The idea sets the ceiling. Packaging earns the click. The video must repay it.
 
 ## Phase 1 packaging file layout (mandatory for title generation)
 
-When generating titles (or packaging an existing transcript/idea into titles), write a single packaging document in this **top-to-bottom order**. Do not put the episode summary above the titles.
+When generating titles (or packaging an existing transcript/idea into titles), write a single packaging document in this **top-to-bottom order**. Put the episode summary **before** the titles so it works as a content primer for title selection.
 
 ```markdown
 # Phase 1 Packaging Report
@@ -44,26 +44,27 @@ When generating titles (or packaging an existing transcript/idea into titles), w
 (brief direction block: working topic/promise, audience, lane A/B/C,
 source of idea — transcript / user brief / from-scratch, channel notes if known)
 
+## What the Episode Is Really About
+
+(3–6 short paragraphs — content primer; see rules below)
+
 ## Title Options
 
 (full 17-category matrix — exactly 4 lines per category;
 then best-fit category + top 3–5 A/B shortlist + browse vs search)
 
-## What the Episode Is Really About
-
-(3–6 short paragraphs — see rules below)
-
 ## Selection workflow (for the user)
 
+- Read **What the Episode Is Really About** first, then pick titles that fit that story.
 - Mark every title you want to keep or develop by putting `~` at the **end** of that title line, then save the file.
 - Ask the agent for **descriptions** for the `~`-marked titles, and/or **more titles** inspired by those marks.
 ```
 
 ### `## What the Episode Is Really About`
 
-**Placement:** immediately after the first full set of title options (the 17×4 matrix and its shortlist block). Never before the title matrix. Never omit on title-generation runs.
+**Placement:** immediately after the Phase 1 Packaging Report direction block and **before** `## Title Options`. Never after the title matrix. Never omit on title-generation runs.
 
-**Purpose:** a clear, honest summary of what the episode/content is really about so later description, thumbnail, and script work share one locked story—not a rehash of the titles.
+**Purpose:** a clear, honest content primer—what the episode/content is really about—so you (and others) can judge which titles fit before picking. Also locks the shared story for later description, thumbnail, and script work. Not a rehash of the titles (titles come after this section).
 
 **Source of the summary (priority order):**
 
@@ -108,11 +109,11 @@ cards and DVDs to use in their own communities.
 1. Confirm working topic / verse / promise (or extract it from supplied content).
 2. Open or create the Phase 1 packaging document.
 3. Write **Phase 1 Packaging Report** direction block.
-4. Emit **## Title Options** — full category matrix with **exactly 4** lines under each category, then best-fit, A/B shortlist, browse vs search.
-5. Write **## What the Episode Is Really About** from transcript, user idea, or from-scratch summary (see above).
+4. Write **## What the Episode Is Really About** from transcript, user idea, or from-scratch summary (content primer—see above).
+5. Emit **## Title Options** — full category matrix with **exactly 4** lines under each category, then best-fit, A/B shortlist, browse vs search. Titles must fit the primer above.
 6. Add the short **Selection workflow** note (or keep it if already present).
 7. **Stop for user selection** unless they already asked for descriptions in the same turn. Do **not** auto-write full YouTube descriptions for all 68 lines.
-8. For **idea-only** menus (Lane C / topic discovery without packaging a real episode): still use the 17×4 matrix; the summary section becomes “what this idea/episode would be about” if packaging continues, or a one-paragraph idea synopsis if the user only wanted a menu.
+8. For **idea-only** menus (Lane C / topic discovery without packaging a real episode): still use the 17×4 matrix; put a short “what this idea/episode would be about” primer **above** the matrix when packaging continues, or a one-paragraph idea synopsis if the user only wanted a menu.
 
 ### `~` selection workflow (user → agent)
 
