@@ -16,7 +16,9 @@
 
 Consumer projects **reference** this repo; they do not own a divergent copy of a skill. Propose skill changes here.
 
-Optional local install: symlink skills into the tool’s skills path; procedures still come from this clone.
+**Local install must be symlinks** into this clone (see `F:\__ai-projects\SOURCES-OF-TRUTH.md` and `_agent-control/bin/repair-symlinks.sh`). Continuous sync: `sync-canonical-repos.sh`.
+
+Sibling private pack repo: [getrdone/design-resources](https://github.com/getrdone/design-resources) → `F:\__ai-projects\design-resources\`.
 
 ## Layout
 
