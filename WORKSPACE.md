@@ -116,6 +116,7 @@ Multiple agents routinely read and write the **same** series/topic folders. The 
 - **Filename suffix** `name_<agent>.ext` is **required** for bake-off drafts and for any parallel proposal that is not the promoted canonical.
 - Canonical `name.ext` has **no** agent suffix, but **still** carries the in-file stamp (author or last material updater).
 - When updating boards or `*.STATUS.md`, note the agent in the change line.
+- **Git commit messages** (skills/design repo commits): state the agent and what changed, e.g. `Agent: Freebuff. What changed: …`.
 
 ### Agent-private root (only if user assigned one or an existing worktree)
 
