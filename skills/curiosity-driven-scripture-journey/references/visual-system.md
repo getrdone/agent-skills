@@ -7,12 +7,13 @@ Use this file for visual direction, layouts, graphics, thumbnails, typography, c
 - Visual DNA brief
 - Order of operations
 - Gestalt and teaching
-- Composition
+- Composition (dynamic symmetry = soft standard)
 - Typography
 - Color
 - Imagery and thumbnail-specific rules
 - Motion and interaction
 - Design fingerprint and anti-repetition
+- Dynamic symmetry detail → `references/dynamic-symmetry.md`
 
 ## Visual DNA brief
 
@@ -46,12 +47,13 @@ Reason from the content. Do not pull a finished aesthetic from a token file, fon
 
 1. Map the learning sequence: known anchor → scaffolding → new idea → payoff.
 2. Map Gestalt structure: proximity/grouping, figure-ground/focal subject, and continuity/eye path. Use similarity, closure, and common region only where they clarify relationships.
-3. Choose an optional compositional armature when it helps the canvas, crop, subject placement, or rhythm.
-4. Build the hierarchy in grayscale/monochrome with type scale, value, spacing, and placement.
+3. **Choose a dynamic-symmetry rectangle + armature** for the real canvas (soft standard — see Composition). Load a matching PNG from the design-resources pack when available.
+4. Build the hierarchy in grayscale/monochrome with type scale, value, spacing, and placement on that armature.
 5. Run grayscale and squint/phone-size checks.
 6. Select typography and palette together from tone keywords and actual content.
 7. Add imagery, texture, interaction, and motion only when each supports meaning.
 8. Re-run grayscale, squint, accessibility, and integrity checks.
+9. Record which grid/ratio you used in the visual DNA / fingerprint.
 
 ## Gestalt and teaching
 
@@ -67,9 +69,18 @@ Design is instruction. The viewer should see what matters, what belongs together
 ## Composition
 
 - Start with the subject and intended eye path; choose a system that supports them.
-- Dynamic symmetry is optional, never mandatory. Use root-rectangle ratios, diagonals, reciprocals, eyes, and major-area divisions when they improve placement or cropping.
-- Compute the ratio for the actual canvas rather than forcing content into a saved overlay.
-- Use negative space, editorial asymmetry, grids, centered iconic composition, timelines, evidence trails, comparisons, diagrams, photographic journeys, and other archetypes as appropriate.
+- **Dynamic symmetry is the soft standard** for layout, spacing, visual hierarchy, thumbnails, section heroes, and crop decisions. Not a hard law—but there is rarely a good reason to skip it when anything is being *placed* on a canvas. Full method, vocabulary, ratios, pack paths, and safety rules: **`references/dynamic-symmetry.md`**.
+- **What it is:** an armature (diagonals, reciprocals, eyes, optional MAD/themes) inside a chosen root/phi/1.5 rectangle so placement has unity, rhythm, and movement—stronger and more flexible than defaulting to rule of thirds.
+- **How to use (short):**
+  1. Lock the delivery crop (16:9, 9:16, 1:1, page, print…).
+  2. Match a root/phi/1.5 rectangle (e.g. 16:9 ≈ root 3).
+  3. Overlay a black-line PNG from `F:\__ai-projects\design-resources\dynamic-symmetry-grids\` (US or A4, horizontal or vertical) **or** construct the basic armature.
+  4. Put the dominant subject and type on strong lines/eyes; let negative space be intentional.
+  5. Use MAD/themes when the frame has multiple zones; vary themes across pieces so work does not clone itself.
+- **Why:** hierarchy and spacing become *related* instead of arbitrary; thumbnails and web heroes stay calm under bold ideas; anti-repetition stays lawful.
+- Compute for the **actual** canvas. Cropping to a different ratio after compose breaks the armature—match final delivery ratio when choosing the grid.
+- **Never** use nude/sexually explicit study imagery from educational PDFs; only use line grids and pure method knowledge (see dynamic-symmetry.md safety table).
+- Use negative space, editorial asymmetry, centered iconic composition, timelines, evidence trails, comparisons, diagrams, photographic journeys, and other archetypes **on top of** the armature as appropriate.
 - Consider a broad journey bank before defaulting: evidence trail, visual investigation, comparison journey, timeline, progressive discovery, document/exhibit, story-led journey, question-and-answer path, layered diagram, text-to-text investigation, immersive photographic journey, editorial feature, or interactive explorer.
 - Avoid repetitive “hero + card + card + three columns + CTA” layouts unless the content genuinely calls for them.
 - Aim for bold, memorable “wow factor” that remains organized, legible, and calm enough for the subject; impact never excuses clutter or garishness.

@@ -13,16 +13,25 @@ Use this file for new projects, cross-channel work, handoffs, or continuation fr
 
 ## Compact intake for a small prompt
 
-For a small prompt such as `Psalm 23`, use one compact decision round:
+For a small prompt such as `Psalm 23`, keep it creative-friendly—**no bureaucratic source forms**.
+
+### 0) Scaffold first (if this is a new project)
+
+If no topic folder exists yet, create the standard shell from **`WORKSPACE.md` §2b** (AGENTS.md, TOPIC-BOARD.md, project-brief.md, `planning/`, `mood/`, `references/`, `sources/intake/`, `deliverables/`).  
+If the folder already exists, **do not rebuild**—only add missing folders/files and use what is already there. Point `references/dynamic-symmetry/` at `F:\__ai-projects\design-resources\dynamic-symmetry-grids\` (do not copy the whole pack).
+
+### 1) Then one compact decision round
 
 1. Recommend or confirm the deliverable.
 2. Offer several sincere curiosity angles.
 3. Present a verse-by-verse translation review plan. Never prescribe a project-wide version unless the user asks for one.
-4. State the proposed files and durable location.
+4. State the proposed files and durable location (inside the scaffold).
 5. State the truthful status and exact approval boundary.
 6. Include a flexible choice such as “I’m not sure yet—develop some grounded ideas.”
 
 That flexible choice permits creativity, not unsupported claims or unbiblical tangents. Approval to explore or draft does not approve the resulting content. Keep every agent-selected decision labeled `candidate` until the user accepts it.
+
+User drops in mood images or sources anytime via `mood/` and `sources/intake/`—agents notice and use them without requiring registration.
 
 ## One capability, modular responsibilities
 
@@ -116,17 +125,19 @@ If a downstream artifact needs a different promise, update the core brief or tre
 
 ## Recommended project planning files
 
-For a substantial build, use or adapt:
+Prefer the **topic root scaffold** (WORKSPACE §2b). Inside it, for a substantial build, grow:
 
 ```text
-planning/<slug>/
+<topic-slug>/
   project-brief.md
-  content-plan.md
-  visual-direction.md
-  interaction-plan.md
-  design-fingerprint.json
-  inspiration/
+  planning/
+    content-plan.md
+    visual-direction.md      # name dynamic-symmetry ratio + grid file used
+    interaction-plan.md
+    design-fingerprint.json
+  mood/                      # freeform inspiration drops
   references/
+  deliverables/
 ```
 
 Keep planning assets separate from production files. Do not turn the brief into duplicate long-form instructions already held by this skill.

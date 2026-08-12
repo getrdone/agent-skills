@@ -38,6 +38,36 @@ work-root/
 
 ---
 
+## 2b. New topic project — agent creates the shell (stupid-simple)
+
+When the user starts a **new** named topic (e.g. “Psalm 23”, “Mark of the Beast study”) and no project folder exists yet:
+
+1. Create **one** kebab-case folder in the place they asked (or under the current work root).
+2. **If a path already exists, do not wipe or rebuild it** — only create missing pieces; reference what is already there.
+3. Seed this **same** structure every time so projects stay consistent:
+
+```text
+<topic-slug>/
+  AGENTS.md                 # short pointer to agent-skills + WORKSPACE
+  TOPIC-BOARD.md            # human map (update as you go)
+  project-brief.md          # one living brief (YAML or markdown)
+  planning/                 # optional long plans live here
+  mood/                     # drop mood images / screenshots (user or agent)
+  references/               # project-specific refs; link/copy only what you need
+    dynamic-symmetry/       # optional: README pointing at design-resources pack
+  sources/                  # project-local sources only (optional)
+    intake/                 # user can dump files here — no forms required
+  deliverables/             # shippable page, exports, finals
+```
+
+**Creative-friendly intake:** the user may drop files into `mood/` or `sources/intake/` with **zero paperwork**. Agents use what is there. Formal `registry.yaml` is only for shared vault / doctrinal source libraries—not for every mood PNG.
+
+**Shared design pack (do not duplicate 500MB into every project):**  
+`F:\__ai-projects\design-resources\dynamic-symmetry-grids\`  
+Projects only need a short pointer under `references/dynamic-symmetry/README.md`.
+
+---
+
 ## 3. Canonical vs draft filenames (required)
 
 | Kind | Pattern | Meaning |

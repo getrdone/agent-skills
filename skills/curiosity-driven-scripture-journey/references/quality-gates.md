@@ -42,6 +42,8 @@ For substantial production:
 - Hierarchy survives grayscale.
 - Focal point and grouping survive squint/phone-size view.
 - Type, color, imagery, and composition arise from the content/visual DNA.
+- For layout/placement work: a dynamic-symmetry ratio/armature was considered (soft standard); grid choice recorded when used; pack path preferred over inventing thirds-only habits.
+- No nude/sexually explicit reference imagery used in deliverables.
 - Color is not the only signal; contrast is accessible.
 - Thumbnail is legible in a feed and against dark surroundings.
 - Motion has a purpose and reduced-motion behavior is present where applicable.

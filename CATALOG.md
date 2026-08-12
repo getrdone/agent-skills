@@ -1,6 +1,8 @@
 # Skill catalog (read this first — do not load every skill)
 
-**Always also follow** [`WORKSPACE.md`](WORKSPACE.md): one shared work folder, canonical files vs `_<agent>` drafts, and series/topic boards. Workspace rules apply to **every** skill and to work with no matching skill.
+**Always also follow** [`WORKSPACE.md`](WORKSPACE.md): one shared work folder, canonical files vs `_<agent>` drafts, series/topic boards, and **auto-scaffold** new topic folders (`mood/`, `references/`, etc.). Workspace rules apply to **every** skill and to work with no matching skill.
+
+**Shared design pack (private on disk):** `F:\__ai-projects\design-resources\` — dynamic symmetry grids for all agents.
 
 Agents: match the user request against **Triggers** below.  
 If one skill matches → load **only** `skills/<name>/SKILL.md` (and files it points to).  

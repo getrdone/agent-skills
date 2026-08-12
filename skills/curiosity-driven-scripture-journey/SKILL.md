@@ -36,7 +36,7 @@ Read only the indicated references, plus any file the user supplies:
 | Find or approve a topic, map a learning journey, write general teaching copy, or choose a writing framework | `references/learning-and-writing.md` |
 | Plan or write a Bible study, Scripture Journey Page, evidence path, source trail, translation review, interactions, or next-study choices | `references/scripture-study.md` and `references/learning-and-writing.md` |
 | Generate or review YouTube ideas, titles, descriptions, packaging, video structure, scripts, or retention | `references/youtube-planning.md`; also read `references/learning-and-writing.md` for content or scripts |
-| Create or review a thumbnail, graphic, moodboard, visual direction, typography, palette, layout, or motion language | `references/visual-system.md`; add `references/youtube-planning.md` for thumbnails |
+| Create or review a thumbnail, graphic, moodboard, visual direction, typography, palette, layout, or motion language | `references/visual-system.md` + `references/dynamic-symmetry.md` (soft standard armature); add `references/youtube-planning.md` for thumbnails |
 | Build or review HTML/CSS/JS, landing pages, interactions, SEO/AEO/GEO, performance, or accessibility | `references/web-experience.md`; also read `references/visual-system.md` and the content lane |
 | Validate a plan, artifact, experience, or release | `references/quality-gates.md` and the artifact's lane |
 | Change the `modern-html-css-aeo` standard, validators, releases, syncing, or version compatibility | `references/standards-governance.md` |
