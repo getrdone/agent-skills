@@ -100,6 +100,38 @@ ep19.STATUS.md                              ← status for humans + agents
 5. Preserve user marks such as trailing `~` on title lines when editing.
 6. Prefer updating an existing canonical path over creating a sibling with a new stem.
 
+---
+
+## 3b. Agent identification (NON-NEGOTIABLE — all agents, all tasks)
+
+Multiple agents routinely read and write the **same** series/topic folders. The human must always be able to tell **who** produced a file without opening chat history.
+
+### Shared work root (default)
+
+- **In-file stamp required** on every file you create or materially edit:  
+  `**Agent:** Grok` / `**Agent:** Freebuff` / HTML `<!-- Agent: Grok -->` / code header comment / YAML `agent:` field / equivalent.
+- **Filename suffix** `name_<agent>.ext` is **required** for bake-off drafts and for any parallel proposal that is not the promoted canonical.
+- Canonical `name.ext` has **no** agent suffix, but **still** carries the in-file stamp (author or last material updater).
+- When updating boards or `*.STATUS.md`, note the agent in the change line.
+
+### Agent-private root (only if user assigned one or an existing worktree)
+
+Examples: `…/scripture-discovery-journey-worktrees/grok/`, a user-made `…/claude/` sandbox.
+
+1. **Top-level identity:** the root folder name **or** an `AGENT.md` / `AGENT.txt` at that root must state the agent.
+2. **In-file stamp** on every output (same as shared).
+3. Do **not** invent a private tree for a topic that already has a shared root unless the user asks.
+
+### Not sufficient
+
+- Chat-only “— Grok” signatures with no disk stamp  
+- Editing shared files with no agent field and no `_<agent>` draft when the work is a competing proposal  
+
+### Lean chat (NON-NEGOTIABLE — pairs with machine `AGENTS.md`)
+
+- Brief status only in chat (what / path / blocked).  
+- **No** code, diffs, patches, or full dumps in chat — those live in files only.
+
 ### Artifact stem order (video / packaging work)
 
 Use a stable stem and grow extensions:
