@@ -119,6 +119,16 @@ Named font examples are sanity checks, not a menu. Reason first.
 - For thumbnails, prefer concise overlay text of four words or fewer, high dynamic contrast, and dark-mode/feed visibility.
 - Extract principles from references—attention, hierarchy, negative space, tone, type—not a composition to copy.
 
+### Artwork production default (no API credits)
+
+**Do not** call Canva MCP, Leonardo MCP, or other paid image APIs unless the user explicitly asks and confirms credits.
+
+When pixel art is needed, load skill **`artwork-prompts-handoff`** and write:
+
+`prompts/artwork-prompts.md` (or `prompts/artwork-prompts-<slug>.md`)
+
+with every paste-ready prompt, aspect ratio, DS note, target filename, and checkboxes. The human generates assets one-by-one into `mood/` or `deliverables/assets/`. Then continue layout with those files.
+
 ## Motion and interaction
 
 - Use motion for feedback, orientation, progress, state change, discovery, emphasis, transition, explanation, or delight.

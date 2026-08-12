@@ -52,12 +52,14 @@ When the user starts a **new** named topic (e.g. “Psalm 23”, “Mark of the 
   TOPIC-BOARD.md            # human map (update as you go)
   project-brief.md          # one living brief (YAML or markdown)
   planning/                 # optional long plans live here
-  mood/                     # drop mood images / screenshots (user or agent)
+  mood/                     # drop finished inspiration / generated art here
+  prompts/                  # agent writes artwork-prompts.md for human image tools
   references/               # project-specific refs; link/copy only what you need
     dynamic-symmetry/       # optional: README pointing at design-resources pack
   sources/                  # project-local sources only (optional)
     intake/                 # user can dump files here — no forms required
   deliverables/             # shippable page, exports, finals
+    assets/                 # finished art named to match prompts file (p01-….png)
 ```
 
 **Creative-friendly intake:** the user may drop files into `mood/` or `sources/intake/` with **zero paperwork**. Agents use what is there. Formal `registry.yaml` is only for shared vault / doctrinal source libraries—not for every mood PNG.
