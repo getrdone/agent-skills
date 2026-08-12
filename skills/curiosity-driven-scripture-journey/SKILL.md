@@ -67,10 +67,12 @@ Read only the indicated references, plus any file the user supplies:
 
 - Lead with the requested deliverable, not a lecture about the framework.
 - Show reasoning only where it helps the user choose or verify.
-- **Lean by default.** Prefer high information density and short responses. Avoid long explanatory preambles, repeated framework summaries, or filler. When the CLI or any agent produces verbose output, compress to the essential result. Match the lean-output skill principles.
+- **Lean to the user (Steve).** Prefer high information density and short responses. Avoid long explanatory preambles, repeated framework summaries, or filler. When the CLI or any agent produces verbose output, compress to the essential result. Match the lean-output skill principles.
+- **Expanded for the actual reader.** All content written for the end reader (Scripture Journey pages, HTML body copy, study text, public descriptions, etc.) must be expanded, interesting, and conversational — written like a thoughtful person composing for someone else. It must never feel like a dry “fact → quote → fact” sequence. At the same time it must still obey the core voice rule: do not use “we / us / our” as if the writer is sitting beside the reader.
 - Label facts, interpretation, recommendations, and open decisions when blending them could mislead.
 - Preserve source claims and citations. Do not invent evidence, testimonials, outliers, analytics, quotations, or Scripture support.
 - In a repository-backed project with `sources/registry.yaml`, read that registry before source-dependent work. Treat only records with an applicable `approval.status: approved` as authoritative starting or reference material. Files in `sources/intake/` are never authoritative merely because they exist.
 - Gate results are only `PASS`, `FAIL`, or `BLOCKED`, with concise evidence. Completion alone cannot produce a pass.
 - For a narrow task, apply the whole shared spine silently and return the narrow result.
 - Descriptions, emails, and pre-click copy must leave an additional open curiosity gap and support dual-audience design (early CTA for skimmers + continued tension for engaged readers). Vary structure deliberately so pieces do not feel formulaic.
+- Every generated file (HTML, markdown, prompts, etc.) must contain the name of the agent that created it, placed in a comment or equivalent note inside the document itself.

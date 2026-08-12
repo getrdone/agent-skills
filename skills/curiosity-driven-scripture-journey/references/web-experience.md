@@ -2,6 +2,8 @@
 
 Use this file to plan, build, repair, or review semantic HTML/CSS/JavaScript experiences and landing pages.
 
+**Quality target:** The finished page must reach the level of a highly polished Class-A design and coding agency (Apple-website caliber). High-end, purposeful interactions are desired. All existing content-generation philosophy and rules still apply. If a conflict appears between the high-end design goal and any content rule, stop and highlight the conflict for the user instead of deciding unilaterally.
+
 ## Preconditions
 
 - For a new build, require a content-approved brief, visual direction, interaction plan, and `status: approved-for-build`.
