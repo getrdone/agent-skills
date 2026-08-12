@@ -76,6 +76,7 @@ Projects only need a short pointer under `references/dynamic-symmetry/README.md`
 |------|---------|---------|
 | **Canonical** | `name.ext` — **no** agent suffix | Source of truth; user picks, ships, and continues from here |
 | **Draft** | `name_<agent>.ext` | One agent’s proposal; never treated as final unless user promotes it |
+| **Draft re-run** | `name_<agent>_v2.ext` (then `_v3`) | A later run of the same agent’s draft; keep `_v2`/`_v3` history |
 
 ### Agent suffix tokens (use exactly these when known)
 
@@ -87,6 +88,7 @@ Examples:
 FDI--3ABN--s02--ep19.titles.md              ← canonical
 FDI--3ABN--s02--ep19.titles_grok.md         ← Grok draft
 FDI--3ABN--s02--ep19.titles_freebuff.md     ← Freebuff draft
+FDI--3ABN--s02--ep14.descriptions_freebuff_v2.md  ← Freebuff draft, second run
 FDI--3ABN--s02--ep19.descriptions.md        ← canonical descriptions
 ep19.STATUS.md                              ← status for humans + agents
 ```
@@ -96,9 +98,10 @@ ep19.STATUS.md                              ← status for humans + agents
 1. If the user did **not** ask for a multi-agent bake-off, write/update the **canonical** file.
 2. If comparing agents, or the user says “your version,” write `_<agent>` **drafts** and leave canonical alone until told to promote.
 3. **Promote** = merge/copy accepted content into the unsuffixed file; keep or delete drafts as the user prefers.
-4. Never invent a second canonical name (`final`, `v2`, `latest`) when a suffix or STATUS note will do.
+4. Never invent a second **canonical** name (`final`, `v2`, `latest`) when a suffix or STATUS note will do.
 5. Preserve user marks such as trailing `~` on title lines when editing.
 6. Prefer updating an existing canonical path over creating a sibling with a new stem.
+7. Re-running a draft task: append `_v2` (then `_v3`) after the agent token, before the extension — e.g. `FDI--3ABN--s02--ep14.descriptions_freebuff_v2.md`. The `_v2` mark is for agent drafts on re-run, never for canonical files.
 
 ---
 
