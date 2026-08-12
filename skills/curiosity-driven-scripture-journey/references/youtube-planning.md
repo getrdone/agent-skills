@@ -246,6 +246,27 @@ Write descriptions only after titles are **selected**—normally via `~` marks i
 - Do not introduce a new promise, fact, urgency claim, or conclusion absent from the video / summary.
 - For Scripture/ministry descriptions, address the viewer directly or use neutral phrasing; do not default to “we will,” “join us,” or “with us.”
 
+### Critical: Keep an additional open curiosity gap (mandatory)
+
+Descriptions must **never fully close the curiosity gap**. The description may set up the tension, the cost, the decision, or the beginning of change, but it must leave at least one clear unresolved open loop that is only satisfied by watching the video or clicking through.
+
+- Always include an **additional curiosity gap** inside the description (e.g. “What he did next… is what you need to see”) so readers who continue past the first hook still have a fresh reason to click.
+- Do not resolve the full emotional or numerical payoff (the “and then…” outcome) before the CTA.
+- This rule applies equally to YouTube descriptions, email bodies, SMS, and any other pre-click copy.
+
+### Dual-audience design (skimmers + engaged readers)
+
+Design every description and email body for two paths at once:
+
+- **Skimmers** → Place a strong, early CTA after the initial hook so they can click without reading everything.
+- **Engaged readers** → Keep additional tension and open loops *after* that first CTA.
+
+This dual-path structure is the default. The early button/CTA is not optional when the format supports it (emails, landing pages, longer descriptions).
+
+### Vary structure deliberately
+
+Do not reuse the same paragraph order, CTA placement, or layout every time. The psychological principles (open loop + dual audience) stay constant; the surface form must change so content does not feel formulaic or stale. When reviewing screenshots or existing drafts, flag repetitive structure and propose variation.
+
 Description checklist (per selected title):
 
 - [ ] Title is `~`-marked or explicitly chosen
@@ -256,6 +277,9 @@ Description checklist (per selected title):
 - [ ] Useful specifics rather than trailer vagueness
 - [ ] Natural keyword phrasing
 - [ ] One honest next step
+- [ ] **Additional open curiosity gap remains** (does not fully resolve the story)
+- [ ] Dual-audience friendly when format allows (early CTA + continued tension)
+- [ ] Structure is varied from recent pieces (not formulaic)
 - [ ] User’s `~` mark preserved on the title line
 
 ## Thumbnail and graphic package
