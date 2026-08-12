@@ -14,6 +14,7 @@ Use this file for visual direction, layouts, graphics, thumbnails, typography, c
 - Motion and interaction
 - Design fingerprint and anti-repetition
 - Dynamic symmetry detail → `references/dynamic-symmetry.md`
+- Dynamic symmetry **skim glossary** → `references/dynamic-symmetry-glossary.md` (also `design-resources/.../GLOSSARY.md`)
 
 ## Visual DNA brief
 

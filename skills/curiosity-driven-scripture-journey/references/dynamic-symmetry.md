@@ -1,5 +1,8 @@
 # Dynamic Symmetry — agent knowledge base
 
+**Skim first:** [`dynamic-symmetry-glossary.md`](dynamic-symmetry-glossary.md) (definitions in one pass).  
+Same glossary at the pack: `F:\__ai-projects\design-resources\dynamic-symmetry-grids\GLOSSARY.md`
+
 **Status:** Soft standard for all layout, spacing, hierarchy, thumbnail, page, and graphic work.  
 **Not legally mandatory** — but there is rarely a good reason *not* to use it when placing subjects, type, and negative space.
 
@@ -55,6 +58,8 @@ Jay Hambidge: design in rectangles without dynamic symmetry tends to feel “fla
 
 ## Core vocabulary
 
+**Full skim glossary (preferred):** [`dynamic-symmetry-glossary.md`](dynamic-symmetry-glossary.md).
+
 | Term | Meaning |
 |------|---------|
 | **Root rectangle** | Family of rectangles grown from a square by swinging diagonals (√2, √3, √4, √5, …) |
@@ -71,6 +76,8 @@ Jay Hambidge: design in rectangles without dynamic symmetry tends to feel “fla
 | **MAD (major area divisions)** | Shrink the basic armature into the main sub-areas (often ~theme of two) for finer control |
 | **Overlapping roots** | Sliding root rectangles along eye increments to build compound canvases with equal root counts |
 | **Compound roots** | Combining root systems for complex multi-zone layouts |
+| **Crop integrity** | Final crop must match the rectangle you composed in—or the armature breaks |
+| **Better-than-thirds variety** | Vary diagonal, theme, horizon, and negative space so pieces do not all look like ROT |
 
 ---
 
