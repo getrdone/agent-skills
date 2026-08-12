@@ -3,7 +3,7 @@
 **Always apply.** This file is part of the agent-skills contract, not a single skill.  
 Read with `CATALOG.md`. Every skill inherits these rules unless a skill explicitly tightens them.
 
-Agents covered: **Grok, Claude, Codex, Freebuff, Cursor**, and any other local agent.
+Agents covered: **Grok, Claude, Codex, Freebuff, Cursor, Gemini**, and any other local agent.
 
 ---
 
@@ -80,7 +80,7 @@ Projects only need a short pointer under `references/dynamic-symmetry/README.md`
 
 ### Agent suffix tokens (use exactly these when known)
 
-`grok` · `claude` · `codex` · `freebuff` · `cursor` · `other`
+`grok` · `claude` · `codex` · `freebuff` · `cursor` · `gemini` · `other`
 
 Examples:
 
