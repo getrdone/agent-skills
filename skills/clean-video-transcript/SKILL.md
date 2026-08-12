@@ -13,6 +13,8 @@ description: >
 
 Applies to **any** video-derived transcript (sermons, lectures, panels, documentaries, etc.).
 
+**Workspace:** follow repo root [`WORKSPACE.md`](../../WORKSPACE.md) — shared work folder; write canonical `name.md` (no agent suffix) unless the user asks for a multi-agent draft (`name_grok.md`, etc.); update any series board when adding cleaned files.
+
 ## Load first (this skill only — not the whole agent-skills repo)
 1. `references/SPEC.md` — cleaning rules + required Quick Reference end-matter (**authoritative**).
 2. `references/SPELLING.md` — Bible / EGW / historicist name forms when content is biblical/SDA.
