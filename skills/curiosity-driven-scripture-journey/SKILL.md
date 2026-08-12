@@ -3,7 +3,8 @@ name: curiosity-driven-scripture-journey
 description: Plan, package, design, write, build, or review a curiosity-driven Scripture content project from any entry point. Use for topic discovery, Bible-study questions and copy, YouTube ideas/titles/descriptions/thumbnails/scripts, graphic design, visual direction, learning architecture, interactive semantic HTML/CSS/JavaScript, SEO/AEO/GEO, project gates, or cross-channel consistency. Also use when continuing or changing one slice of an existing Scripture, ministry, educational, or high-trust project while preserving prior decisions.
 ---
 
-> **Canonical location:** [getrdone/agent-skills](https://github.com/getrdone/agent-skills) → `skills/curiosity-driven-scripture-journey/`
+> **Canonical location:** [getrdone/agent-skills](https://github.com/getrdone/agent-skills) → `skills/curiosity-driven-scripture-journey/`  
+> **Workspace (all skills):** repo root [`WORKSPACE.md`](../../WORKSPACE.md) — one shared work folder; canonical `name.ext` vs draft `name_<agent>.ext`; maintain `SERIES-BOARD.md` / `TOPIC-BOARD.md`.
 
 # Curiosity-Driven Scripture Journey
 

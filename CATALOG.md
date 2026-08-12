@@ -1,5 +1,7 @@
 # Skill catalog (read this first — do not load every skill)
 
+**Always also follow** [`WORKSPACE.md`](WORKSPACE.md): one shared work folder, canonical files vs `_<agent>` drafts, and series/topic boards. Workspace rules apply to **every** skill and to work with no matching skill.
+
 Agents: match the user request against **Triggers** below.  
 If one skill matches → load **only** `skills/<name>/SKILL.md` (and files it points to).  
 If none match → use your own judgment; do not force a skill.

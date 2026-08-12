@@ -130,3 +130,14 @@ planning/<slug>/
 ```
 
 Keep planning assets separate from production files. Do not turn the brief into duplicate long-form instructions already held by this skill.
+
+## Multi-agent workspace (inherits repo WORKSPACE.md)
+
+Follow the agent-skills root **`WORKSPACE.md`** for every packaging or production folder:
+
+- All agents share **one** work directory (series or topic root). No per-agent folder trees.
+- **Canonical** deliverables: `stem.titles.md`, `stem.descriptions.md`, `stem.thumbnails.md`, `stem.page.md` (no agent suffix).
+- **Drafts** only when comparing agents or asked: `stem.titles_grok.md`, `stem.descriptions_freebuff.md`, etc.
+- Maintain **`SERIES-BOARD.md`** or **`TOPIC-BOARD.md`** at the work root; optional `stem.STATUS.md` per episode/topic.
+- Default: write the canonical file. Promote accepted drafts into canonical; preserve `~` title marks.
+- Local `AGENTS.md` in the work folder should point at agent-skills + WORKSPACE.md.
