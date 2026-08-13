@@ -26,3 +26,9 @@ If none match → use your own judgment; do not force a skill.
 2. Add one row to this table (name, path, short triggers).
 3. Keep trigger text short so catalog scans stay cheap.
 4. Put support scripts under `processing/<package>/` and add a CATALOG processing row.
+
+## Folded external skills (provenance & sync)
+
+When a community/external skill's knowledge is folded into a skill's references (instead of installing it), record a **provenance block** at the top of the affected reference file: source repo + URL, last-synced date, check cadence, and the re-sync command. List each fold here so the whole tree stays re-checkable:
+
+- `curiosity-driven-scripture-journey/references/design-critique-and-anti-slop.md` <- `pbakaus/impeccable` (surface mode, anti-slop detectors, iteration verbs; Apache 2.0) - last synced 2026-08-13 - re-sync: diff against the impeccable repo skill + detector docs (or install as companion via `npx impeccable install`).
