@@ -132,7 +132,7 @@ This is the default selection pattern after titles exist in a file.
 - Preferred: `~` at end of line — e.g. `The 7-Cent Card That Opens Doors ~`
 - Also accept: `~` immediately after the title text with optional space; trailing `~~` still counts as selected.
 - When rewriting the file, **preserve** the user’s `~` marks on lines you are not replacing.
-- Do not strip `~` when adding descriptions; keep the mark on the title line so the selection remains visible.
+- `~` is a selection signal for the **titles/packaging file** only. Keep marks there while selecting, and keep them if descriptions are added inline in that same file. In a **separate descriptions document** — which already lists only the selected titles — remove the `~`; it has served its purpose.
 
 **Description placement when working in the packaging file:**
 
@@ -216,8 +216,13 @@ When the user asks for ideas, topic menus, verse angles, or “what should we co
 - Front-load the most important words.
 - Prefer clear, skimmable wording (~3rd–5th-grade *readability*)—this is **not** a ban on creative hooks, wordplay, story, or specialized copy patterns. Use full packaging craft; stay honest and high-trust.
 - Exactly one strong curiosity gap per line.
+- A trailing-ellipsis open loop is **one option, not a rule** — e.g. `…and then does this…`, `He Works to Disprove the Final Days DVD…`. Use it when it fits; a clean statement works just as well.
+- Prefer a stat-led or reversal-led title over a name-led descriptive clause — `130 Years, Four Generations, One Church — and No One Had Heard this Simple Truth` beats `Pastor X: Fourth-Generation Minister Finds Conviction in…`.
+- Don't name the specific doctrine in the title when that reveal *is* the episode's payoff — `this simple truth` over `the Sabbath`.
 - Match high-trust / ministry tone; offer a reverent variant when a punchier line risks overclaim.
 - **Plain-language teaching rules apply to study body copy**, not as a ceiling on titles, hooks, or loaded copywriting skills (see `resources-and-authority.md`).
+- **100 characters is YouTube's absolute title limit.** The ~65-character target is for readability and front-loading; never exceed 100.
+- **Offer both title-case and sentence-case versions of the final title** when it ships to more than one surface (YouTube + website headers). Title case is the YouTube/CTR default; sentence case is fine for longer web headers. Keep proper nouns capitalized in both (Bible, Muhammad, Final Days).
 
 ### Per serious shortlist candidate, verify
 - the exact question it opens;
@@ -226,6 +231,7 @@ When the user asks for ideas, topic menus, verse angles, or “what should we co
 - audience breadth versus qualification;
 - whether the content already contains (or can contain) the promised evidence;
 - whether it sounds like this channel rather than a generic title generator.
+- whether the title itself names the payoff it promises (leak test).
 
 ### Thumbnail gate
 Develop thumbnails only after the user selects a category and/or specific titles from the matrix (or has already locked a title).
@@ -239,10 +245,16 @@ Write descriptions only after titles are **selected**—normally via `~` marks i
 - Ground every description in **What the Episode Is Really About** and the specific title’s curiosity gap; do not invent beats missing from the summary/source.
 - Main prose must be **80–110 words**; aim for **95–105 words**.
 - Count the main descriptive prose only. For evidence-based Scripture content, add a clearly labeled source block after it; the bibliography does not count against the prose target. Include the Bible passages/translations, quoted documents, historical sources, further study, and needed rights notices or attribution.
-- Sentence 1 confirms **that title’s** promise in plain language.
+- Sentence 1 confirms **that title's** promise in plain language, *without restating the title's own setup* — if the title already says “works to disprove the DVD,” start from the consequence, not the disproving.
 - The middle names what the viewer will examine, see, compare, or learn without giving a vague trailer.
 - Include the main search phrase naturally when it fits; never stuff keywords.
 - End with one honest next step: watch, compare the evidence, continue the study, or visit the relevant page.
+- Prefer a concrete, invitation-style next step that keeps the loop open — e.g. `Hear the testimonies of these pastors and what they're doing next.` — over a meta line like “…is the part still unfolding.”
+- When the body runs long, break it into two short paragraphs — it reads better on mobile and gives a natural spot for an early CTA button. A judgment call, not a fixed rule.
+- Bold the single most important line or quote.
+- Use spaced em dashes (` — `) throughout titles and descriptions — never run them against a word (`word—word`).
+- Write each sentence to stand on its own so candidates can be spliced together without creating a dangling reference. An opener like "That statement…" or a phrase like "that one line" must name or clearly anchor what it refers to.
+- Use present tense in the open-loop close (“you want to watch”, not “you'll want to watch”).
 - Do not introduce a new promise, fact, urgency claim, or conclusion absent from the video / summary.
 - For Scripture/ministry descriptions, address the viewer directly or use neutral phrasing; do not default to “we will,” “join us,” or “with us.”
 
@@ -253,6 +265,9 @@ Descriptions must **never fully close the curiosity gap**. The description may s
 - Always include an **additional curiosity gap** inside the description (e.g. “What he did next… is what you need to see”) so readers who continue past the first hook still have a fresh reason to click.
 - Do not resolve the full emotional or numerical payoff (the “and then…” outcome) before the CTA.
 - This rule applies equally to YouTube descriptions, email bodies, SMS, and any other pre-click copy.
+- **The leak test.** A *leak* is any phrase that names the payoff the title/episode promises to reveal. Cut these before publishing: the specific doctrine the guest discovers (`the Sabbath`, `the mark isn't a tattoo, the seventh day was never repealed`); the outcome of the decision (`he began translating the Final Days video into Manipuri and Bengali — reaching tens of millions more`, `fact-checked his way into a whole new conviction`, `talked himself into baptism`). Keep the specifics that *open* the gap (numbers, stakes, names, setup, the cost); remove the specifics that *close* it (the named doctrine, the outcome, the transformation).
+- When revising already-approved copy to add an open loop, scan the surrounding wording and delete anything that already resolves that loop — the loop you add must be the only path to the answer.
+- A deliberately dangling reference — an unnamed "one line" or a "That statement" opener — can be a valid open loop, not an error. Leave it when it works; flag it only when it genuinely confuses.
 
 ### Dual-audience design (skimmers + engaged readers)
 
@@ -267,6 +282,20 @@ This dual-path structure is the default. The early button/CTA is not optional wh
 
 Do not reuse the same paragraph order, CTA placement, or layout every time. The psychological principles (open loop + dual audience) stay constant; the surface form must change so content does not feel formulaic or stale. When reviewing screenshots or existing drafts, flag repetitive structure and propose variation.
 
+The curiosity gap is built by combining categories and leaving a thought open-ended, not by a fixed sentence formula. Plain, direct language has a place too; don't force a dramatic hook into every description. Use commands and CTAs sparingly — the paragraph itself can carry the call to action; a direct command ("Do this…") is fine occasionally, not a default.
+
+### Recording the final approved copy
+
+End each titles and descriptions document with a clearly marked block holding the user's final decision, distinct from any reference copy at the top:
+
+```
+## approved title
+<final title>
+
+## approved description
+<final description>
+```
+
 Description checklist (per selected title):
 
 - [ ] Title is `~`-marked or explicitly chosen
@@ -280,7 +309,10 @@ Description checklist (per selected title):
 - [ ] **Additional open curiosity gap remains** (does not fully resolve the story)
 - [ ] Dual-audience friendly when format allows (early CTA + continued tension)
 - [ ] Structure is varied from recent pieces (not formulaic)
-- [ ] User’s `~` mark preserved on the title line
+- [ ] `~` removed in a separate descriptions document (kept only when descriptions sit inline in the titles file)
+- [ ] Passes the leak test — no phrase names the payoff the title/episode promises
+- [ ] Long body split into two short paragraphs + one bolded key line
+- [ ] Proofread — spelling, grammar, subject–verb agreement, typos corrected (including the user's own final copy)
 
 ## Thumbnail and graphic package
 

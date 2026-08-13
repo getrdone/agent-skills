@@ -48,6 +48,7 @@ If `prompts/` does not exist, create it. Do not wipe existing prompt packs—add
 **Status:** awaiting human generation  
 **Created:** <date>  
 **Agent:** <exact agent name that produced this file>  
+**Model:** <exact model the agent ran on>  
 **Agent vision summary:** <2–4 sentences: what the set must achieve together + the shared visual language that will tie every image>
 
 ## How to use (human)
@@ -72,7 +73,7 @@ This is the single most important rule. All images in the set must feel like the
 
 ### P01 — <short title>
 - [ ] **Done**
-- **Agent:** <name of agent writing this prompt>
+- **Agent:** <name of agent writing this prompt> · **Model:** <model>
 - **Role:** hero | section background | thumbnail | etc.
 - **Target filename:** `deliverables/assets/p01-short-name.jpg`
 - **Dimensions:** 16:9 — 1920×1080 (or exact required size)
@@ -101,7 +102,7 @@ This is the single most important rule. All images in the set must feel like the
 2. The prompt itself must be fully self-contained and copy-paste ready. All style, color, lighting, composition, and negative instructions live inside the prompt text.
 3. Always expand “DS” to the full words **Dynamic Symmetry**.
 4. Dimensions must appear both in the notes above the prompt and inside the prompt when the tool benefits from it.
-5. Begin the notes section with the agent name.
+5. Begin the notes section with the agent name and model.
 6. Creative concepts are required, but every image must share the same visual language defined at the top of the file so the set feels cohesive rather than like disconnected islands.
 7. After assets exist, do not regenerate the whole prompts file unless asked.
 
