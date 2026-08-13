@@ -80,6 +80,26 @@ Measure with current accessibility and Core Web Vitals tooling when available. T
 - Preserve the learner’s ability to finish or continue without pressure.
 - When offering the next path, use the approved featured-direct-plus-four-alternates architecture: two more direct continuations, one moderately related question, and one wildcard.
 
+### The next path — presentation (apply always)
+
+The next path is a **continuation**, not a catalog. It reads as one obvious next step pulling the reader forward, plus a few quieter alternative threads — never as five interchangeable options. These rules govern structure and reading order; the visual foundation (light or dark, cinematic or editorial) is chosen per project and per section in the visual DNA, not here.
+
+**Do:**
+
+- **Let one primary path dominate.** The featured continuation is the hero — the largest, clearest element. The reader lands on it first and reads it as a door to step through, not as option #1 of 5.
+- **Rank by scale, placement, and whitespace — not by boxes.** Express hierarchy through type scale, size, and position. Avoid five near-identical bordered cards or tiles.
+- **Lead with the question or statement; trail with the verse reference.** The reader's first read must be the curiosity gap ("When Shepherds Fail"), then the Bible reference at the end as a quiet receipt ("— Ezekiel 34") — never the other way around.
+- **Keep the loop open.** State the question; do not explain or pre-answer it. No clause that reveals the answer's shape before the click.
+- **Signal continuation, not termination.** This block says "keep going," so avoid hard section terminators (a heavy rule or dash that reads as "this section ended").
+
+**Don't:**
+
+- **Don't expose the internal taxonomy.** Never label paths FEATURED / DIRECT CONTINUATION / MODERATELY RELATED / WILDCARD for the reader. Those are agent-side categories; the reader should feel the ranking through hierarchy, not read the filing system — and naming the wildcard deflates its surprise.
+- **Don't lay the paths out as an equal grid.** A 3-across grid implies interchangeable tiles and kills forward motion; a journey is vertical and sequential.
+- **Don't lead with the reference.** "Ezekiel 34 — When Shepherds Fail" puts the anchor before the hook; reverse it.
+- **Don't pre-close the gap.** Copy that reveals the answer's shape ("the answer echoes across the entire biblical story") answers the question before the reader can click.
+- **Don't default to a generic card-wall.** Whatever the chosen foundation, the section must still produce a dominant focal point and real hierarchy — a beige/white card grid is not a design decision, it is the absence of one.
+
 ## Release check
 
 The page is not complete merely because it validates. Confirm that the opening matches the promise, each section adds value, design reflects the subject, motion and interaction help, the primary payoff is explicit, and the next curiosity feels natural.
