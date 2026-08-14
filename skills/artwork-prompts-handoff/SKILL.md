@@ -40,6 +40,8 @@ prompts/artwork-prompts_<agent>_v2.md        # re-run
 **Do not** write bare `prompts/artwork-prompts.md` as the working file while the final pack is unchosen.  
 **Promote** → copy the accepted draft to `prompts/artwork-prompts.md` (or `<stem>.artwork-prompts.md`) only when the user chooses that pack as final.
 
+**Version lock with the page:** when prompts ship with an HTML journey draft, match the agent version token — e.g. `index_grok_v5.html` pairs with `artwork-prompts_grok_v5.md`. Bump both together on a co-release re-run; do not leave prompts at an older `_vN` when the page is `_vN+1` if the art direction changed for that page pass.
+
 If `prompts/` does not exist, create it. Do not wipe existing prompt packs—keep prior `_<agent>_vN` files; write the next versioned draft.
 
 ## File structure (required)
