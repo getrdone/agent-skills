@@ -23,7 +23,7 @@ Model the journey as **nodes** (each a question or idea with content and payoff)
 - **Spine** — the core path that carries the main promise; every excursion returns here.
 - **Branch nodes** — explorations the reader can take or skip (evidence, background, a sub-question, a person, a tension).
 - **Convergence** — branches rejoin the spine at a payoff, so the reader never feels lost.
-- **Terminal step** — a node always ends with a next step using the featured-direct-plus-four-alternates pattern (one primary continuation, two more direct, one moderately related, one wildcard).
+- **Terminal step** — whenever the journey continues, a node ends with a next step using the featured-direct-plus-four-alternates pattern (one primary continuation, two more direct, one moderately related, one wildcard); the final node resolves instead of fanning out.
 
 Recommended shapes, simplest first:
 
@@ -39,7 +39,7 @@ Avoid a free graph with no visible spine (readers get lost) and cycles that trap
 - **Lead with the question or statement; trail with the verse reference** — same rule as the next-path section. The reader's first read is the curiosity gap; the citation follows as a receipt.
 - **Make choices genuinely different.** Two choices that lead to the same payoff are not a choice; they are decoration. Each option opens a distinct gap.
 - **Rank by scale and placement, never by internal labels.** The primary path is visually dominant; the alternates are quieter. Do not print taxonomy ("related", "wildcard") for the reader.
-- **Keep the fan-out small.** Two to four choices per node; the featured-plus-four pattern is the ceiling, not a target.
+- **Keep the fan-out small.** Two to four choices on ordinary branch nodes; reserve the full featured-plus-four (five choices) for the terminal step only, and treat it as a ceiling, not a target.
 - **Each choice names a curiosity, not an instruction.** "When shepherds fail" (a gap) beats "Read about bad shepherds" (an order).
 
 ## Mechanics (progressive enhancement)
@@ -87,5 +87,5 @@ Progressive enhancements (optional, layered):
 - [ ] Navigation works with JS disabled (real links, semantic HTML, deep links).
 - [ ] Progress, visited state, and resume available and optional.
 - [ ] Reduced-motion honored; keyboard and touch accessible.
-- [ ] Passes the leak test and the next-path presentation rules.
+- [ ] No choice pre-closes its gap (no leaked payoff); passes the next-path presentation rules.
 - [ ] Quality gates run before release.
