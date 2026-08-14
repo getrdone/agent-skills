@@ -19,7 +19,7 @@ For a small prompt such as `Psalm 23`, keep it creative-friendly—**no bureaucr
 
 If no topic folder exists yet, create the standard shell from **`WORKSPACE.md` §2b** (AGENTS.md, TOPIC-BOARD.md, project-brief.md, `planning/`, `mood/`, `prompts/`, `references/`, `sources/intake/`, `deliverables/assets/`).  
 If the folder already exists, **do not rebuild**—only add missing folders/files and use what is already there. Point `references/dynamic-symmetry/` at `F:\__ai-projects\design-resources\dynamic-symmetry-grids\` (do not copy the whole pack).  
-When artwork is needed, use skill **`artwork-prompts-handoff`** → `prompts/artwork-prompts.md` (human generates; no paid image APIs by default).
+When artwork is needed, use skill **`artwork-prompts-handoff`** → `prompts/artwork-prompts_<agent>.md` (human generates; promote bare name only when final chosen; no paid image APIs by default).
 
 ### 1) Then one compact decision round
 
@@ -148,8 +148,8 @@ Keep planning assets separate from production files. Do not turn the brief into 
 Follow the agent-skills root **`WORKSPACE.md`** for every packaging or production folder:
 
 - All agents share **one** work directory (series or topic root). No per-agent folder trees.
-- **Progress / iteration drafts:** `stem.titles_grok.md`, `index_freebuff_v2.html`, etc. Keep version history when the user wants to see progress.
-- **Canonical** (promoted polished only): `stem.titles.md`, `stem.descriptions.md`, `index.html` — no agent suffix, no bare `index_v2.html`.
-- Maintain **`SERIES-BOARD.md`** or **`TOPIC-BOARD.md`** at the work root; optional `stem.STATUS.md` per episode/topic.
-- Promote accepted polished drafts into canonical; preserve `~` title marks.
+- **Until final chosen:** every agent work product is `name_<agent>(_vN).ext` — HTML, titles, descriptions, **artwork prompts**, pass-level gate notes, etc.
+- **Canonical** (after user chooses that deliverable): bare `name.ext` only — no bare `index_v2.html`.
+- Maintain **`SERIES-BOARD.md`** or **`TOPIC-BOARD.md`** at the work root (shared navigation may stay unsuffixed); optional `stem.STATUS.md`.
+- Promote accepted drafts into canonical **per deliverable**; preserve `~` title marks.
 - Local `AGENTS.md` in the work folder should point at agent-skills + WORKSPACE.md.

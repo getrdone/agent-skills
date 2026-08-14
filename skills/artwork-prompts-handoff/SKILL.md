@@ -26,19 +26,21 @@ If the task is ministry/Scripture/video packaging, also load curiosity skill `re
 - Mood boards, style frames, illustration directions  
 - Any “generate image / make art / design this graphic” without confirmed API credits  
 
-## Output: one prompts file (canonical)
+## Output: agent-named prompts draft (until promote)
 
-Create or update **one** canonical file in the project work root (or topic folder):
+Create or update a **draft** prompts file — **always agent-named** until the user promotes a final pack (see repo `WORKSPACE.md` §3):
 
 ```text
-prompts/artwork-prompts.md          # preferred (folder of prompt packs)
-# or
-<stem>.artwork-prompts.md           # flat series folders
+prompts/artwork-prompts_<agent>.md           # first pass (preferred)
+prompts/artwork-prompts_<agent>_v2.md        # re-run
+# flat series folders:
+<stem>.artwork-prompts_<agent>.md
 ```
 
-Use **no agent suffix** on the handoff file unless the user asked for a multi-agent draft (`artwork-prompts_grok.md`).
+**Do not** write bare `prompts/artwork-prompts.md` as the working file while the final pack is unchosen.  
+**Promote** → copy the accepted draft to `prompts/artwork-prompts.md` (or `<stem>.artwork-prompts.md`) only when the user chooses that pack as final.
 
-If `prompts/` does not exist, create it. Do not wipe existing prompt packs—add a dated section or a new file `prompts/artwork-prompts-<slug>.md`.
+If `prompts/` does not exist, create it. Do not wipe existing prompt packs—keep prior `_<agent>_vN` files; write the next versioned draft.
 
 ## File structure (required)
 
@@ -131,6 +133,7 @@ Only if the user says to use Canva/Leonardo **and** confirms credits:
 
 ## Done when
 
-- [ ] `prompts/…` file exists with shared style lock + numbered prompts  
+- [ ] Agent-named draft exists (`prompts/artwork-prompts_<agent>.md` or `_vN`) with shared style lock + numbered prompts  
 - [ ] Every needed asset has role, filename, aspect, paste-ready prompt  
 - [ ] User knows where to save files and how to call the agent back  
+- [ ] Canonical bare `artwork-prompts.md` was **not** used unless user already promoted that pack

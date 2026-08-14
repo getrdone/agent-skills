@@ -98,5 +98,5 @@ For substantial production:
 - Typography, palette, composition, imagery, interaction, and motion fit the subject and hit Class-A agency quality.
 - The experience avoids repetitive templates (including cream-paper + Inter/Fraunces defaults) and unnecessary friction.
 - The ending resolves the promise and opens a sincere next curiosity.
-- Iterative drafts used `name_<agent>_vN`; canonical name used only for the promoted polished pass (or small fix to an already-promoted file).
+- Iterative drafts for **all** agent work products (HTML, prompts, packaging, pass notes) used `name_<agent>_vN`; bare canonical names only after the user chose that deliverable (or small fix to an already-promoted file).
 - The requested artifact is complete at its current scope; unresolved dependencies (missing art files, etc.) are named rather than hidden.

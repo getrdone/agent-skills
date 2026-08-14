@@ -10,14 +10,14 @@ Use this file to plan, build, repair, or review semantic HTML/CSS/JavaScript exp
 
 When the user asks to **build a Scripture Journey page**, **build a page**, **build the HTML**, **rebuild the page**, or any equivalent production HTML request, apply **all** of the following automatically. The user does **not** need to restate fonts, motion, JS, verification, naming, art order, or promote rules.
 
-1. **Draft naming by default.** Write `deliverables/index_<agent>.html` (re-runs: `index_<agent>_v2.html`, then `_v3`). Never put unfinished work on bare `index.html`. Promote to `index.html` only when the user accepts or says promote/final/ship.
-2. **Art path is automatic.** If the design needs pixel art and assets are missing: write/update `prompts/artwork-prompts.md` via skill **artwork-prompts-handoff**; wire expected filenames under `deliverables/assets/`; **still ship a complete, beautiful page** using CSS/SVG/gradients so missing JPGs do not leave a broken or empty layout. When `mood/` or existing assets exist, use them.
+1. **Draft naming by default (all work products).** Write `deliverables/index_<agent>.html` (re-runs: `_v2`, `_v3`). Prompts: `prompts/artwork-prompts_<agent>.md` (or `_vN`). Gate notes for a pass: `planning/gate-results_<agent>.md` (or `_vN`). **Never** put unchosen work on bare canonical names (`index.html`, `artwork-prompts.md`, etc.). Promote each deliverable type only when the user chooses that final.
+2. **Art path is automatic.** If the design needs pixel art and assets are missing: write/update **agent-named** prompts via skill **artwork-prompts-handoff** (`prompts/artwork-prompts_<agent>.md`); wire expected filenames under `deliverables/assets/`; **still ship a complete, beautiful page** using CSS/SVG/gradients so missing JPGs do not leave a broken or empty layout. When `mood/` or existing assets exist, use them.
 3. **Working bar is a hard FAIL.** Console-breaking errors, dead primary controls, non-functional map/trail/game/scroll interactions, or collapsed phone/desktop layout = FAIL. Loop: build → open in browser → exercise every interaction → fix → re-check until the designed experience works.
 4. **Craft level is automatic.** Treat interactive HTML as premium agency work (network fonts, full motion, first-class JS, anti-slop). Do not ship cream-paper + Inter/system defaults or static shells with half-wired scripts.
 5. **References and mood.** Read `mood/`, visual direction, brief, and any human reference images before inventing a new look. Match craft level of strong references when present.
-6. **Canonical is promote-only.** Do not overwrite the ship file during iteration. Leave prior `_<agent>_vN` drafts for progress review.
+6. **Canonical is promote-only.** Do not overwrite ship files during iteration. Leave prior `_<agent>_vN` drafts for progress review.
 7. **Gates + self-loop.** Run the visual, technical, integrity, learning, and experience gates; iterate (critique → fix) until the page is genuinely strong—not merely “acceptable.” Hand the human taste/direction decisions, not broken mechanics.
-8. **Handoff.** Update `START-HERE.md` / board / gate notes with the draft path, what was verified, and what still needs human art or promote.
+8. **Handoff.** Update shared `START-HERE.md` / board (unsuffixed navigation OK) and agent-named gate notes with draft paths, what was verified, and what still needs human art or promote.
 
 ## Preconditions
 

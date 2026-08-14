@@ -127,7 +127,7 @@ Named font examples are sanity checks, not a menu. Reason first.
 
 When pixel art is needed, load skill **`artwork-prompts-handoff`** and write:
 
-`prompts/artwork-prompts.md` (or `prompts/artwork-prompts-<slug>.md`)
+`prompts/artwork-prompts_<agent>.md` (re-runs: `_v2`, …). Promote bare `artwork-prompts.md` only when the user chooses the final pack.
 
 with every paste-ready prompt, aspect ratio, DS note, target filename, and checkboxes. The human generates assets one-by-one into `mood/` or `deliverables/assets/`. Then continue layout with those files.
 

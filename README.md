@@ -11,7 +11,7 @@
 4. If the task needs support tooling → open the matching processing/ package only.
 5. If no match → proceed with normal judgment; do not invent a skill or load siblings.
 6. Never preload all skills “just in case.”
-7. All agents share one work folder: progress drafts `name_<agent>_vN.ext`; promote polished work to canonical `name.ext`; keep a BOARD.
+7. All agents share one work folder: until final chosen, drafts are `name_<agent>_vN.ext` (including prompts); promote bare `name.ext` only when the user chooses that deliverable; keep a BOARD.
 ```
 
 Consumer projects **reference** this repo; they do not own a divergent copy of a skill. Propose skill changes here.

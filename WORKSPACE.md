@@ -53,7 +53,7 @@ When the user starts a **new** named topic (e.g. “Psalm 23”, “Mark of the 
   project-brief.md          # one living brief (YAML or markdown)
   planning/                 # optional long plans live here
   mood/                     # drop finished inspiration / generated art here
-  prompts/                  # agent writes artwork-prompts.md for human image tools
+  prompts/                  # agent writes artwork-prompts_<agent>.md (promote bare name only when final chosen)
   references/               # project-specific refs; link/copy only what you need
     dynamic-symmetry/       # optional: README pointing at design-resources pack
   sources/                  # project-local sources only (optional)
@@ -72,11 +72,15 @@ Projects only need a short pointer under `references/dynamic-symmetry/README.md`
 
 ## 3. Canonical vs draft filenames (required)
 
+**Until the user chooses the final for that deliverable, every agent-written work file is agent-named and versioned.**  
+That includes HTML pages, packaging (titles/descriptions/thumbnails), **artwork prompts**, visual/content plans written for a pass, and gate-result notes for a build pass.  
+Canonical `name.ext` (no agent token) exists **only after promote** — never as the working file while options are still open.
+
 | Kind | Pattern | Meaning |
 |------|---------|---------|
-| **Canonical** | `name.ext` — **no** agent suffix | **Promoted ship file only** — polished, accepted source of truth |
-| **Draft / progress** | `name_<agent>.ext` | One agent’s working pass; progress the human can inspect |
-| **Draft re-run** | `name_<agent>_v2.ext` (then `_v3`, …) | Later pass by the same agent; keeps history so quality can be compared |
+| **Canonical** | `name.ext` — **no** agent suffix | **Promoted final only** — user chose this as the ship/source of truth |
+| **Draft / progress** | `name_<agent>.ext` | One agent’s working pass; human can inspect progress |
+| **Draft re-run** | `name_<agent>_v2.ext` (then `_v3`, …) | Later pass by the same agent; keep history |
 
 ### Agent suffix tokens (use exactly these when known)
 
@@ -85,26 +89,36 @@ Projects only need a short pointer under `references/dynamic-symmetry/README.md`
 Examples:
 
 ```text
-index_freebuff.html                         ← Freebuff first HTML pass
-index_freebuff_v2.html                      ← Freebuff second pass (progress kept)
-index_grok_v3.html                          ← Grok third pass
-index.html                                  ← CANONICAL only after promote (polished + accepted)
-FDI--3ABN--s02--ep19.titles_freebuff_v2.md  ← Freebuff packaging re-run
-FDI--3ABN--s02--ep19.titles.md              ← canonical titles after promote
-ep19.STATUS.md                              ← status for humans + agents
+index_freebuff.html                              ← Freebuff HTML pass
+index_grok.html                                  ← Grok HTML pass
+index_grok_v2.html                               ← Grok re-run
+index.html                                       ← CANONICAL only after user chooses/promotes
+prompts/artwork-prompts_freebuff.md              ← Freebuff art prompts (not bare artwork-prompts.md)
+prompts/artwork-prompts_grok_v2.md               ← Grok prompts re-run
+prompts/artwork-prompts.md                       ← CANONICAL only after promote
+stem.titles_claude.md                            ← Claude titles draft
+stem.titles.md                                   ← canonical titles after promote
+planning/gate-results_grok.md                    ← gate notes for a grok pass
 ```
 
-**Forbidden:** bare versioned canons such as `index_v2.html`, `index_v3.html`, `final.html`, `latest.html`. Version marks always sit **after the agent token**.
+**Forbidden while final is unchosen:** writing or updating bare `index.html`, `artwork-prompts.md`, `stem.titles.md`, etc. as the working file.  
+**Forbidden always:** bare version piles (`index_v2.html`, `final.html`, `latest.html`). Version only as `_<agent>_vN`.
+
+### What stays unsuffixed (not “final deliverables”)
+
+- Shared navigation: `TOPIC-BOARD.md` / `SERIES-BOARD.md` / `START-HERE.md` / `AGENTS.md` / `project-brief.md` (living project spine — still get in-file agent stamps when edited)
+- User drops: anything the human puts in `mood/` or `sources/intake/` under their own names
+- Generated binary assets once the human saves them to the agreed target filenames under `deliverables/assets/`
 
 ### Agent rules
 
-1. **Progress / iteration / bake-off / “show versions” / visual HTML builds:** write `name_<agent>.ext` or `name_<agent>_vN.ext`. Keep prior passes; do not overwrite earlier `_vN` files. Do **not** put unfinished work on the canonical name.
-2. **Promote** = copy the accepted polished draft into unsuffixed `name.ext` when the user says promote / final / ship / use this as canonical, **or** when they accept a pass as the polished result. Leave drafts in place unless asked to delete them.
-3. **In-place canonical edits** only for small fixes on an already-promoted ship file (typo, one CSS fix), or when the user explicitly wants a single living file with no version history.
+1. **Default for all agent work products:** write `name_<agent>.ext` or `name_<agent>_vN.ext`. Keep prior passes; do not overwrite earlier `_vN` files. **Do not** put unchosen work on the canonical name.
+2. **Promote** = copy the accepted draft into unsuffixed `name.ext` when the user says promote / final / ship / “this is the one,” or otherwise chooses that pass as the final for that deliverable. Leave drafts in place unless asked to delete them. Promote **each deliverable type separately** (e.g. HTML can stay draft while prompts are promoted, or vice versa).
+3. **In-place canonical edits** only after that deliverable was already promoted (typo, small fix), or when the user explicitly wants a single living file with no version history.
 4. Never invent a second **canonical** name (`final`, `v2`, `latest`) — version only via `_<agent>_vN`.
 5. Preserve user marks such as trailing `~` on title lines when editing.
-6. Prefer a stable stem (`index`, `stem.titles`, …) over inventing new stems for the same artifact.
-7. Re-running a draft: append `_v2` then `_v3` **after the agent token**, before the extension — e.g. `index_grok_v2.html`, `stem.descriptions_freebuff_v2.md`. Never `_vN` on the bare canonical stem.
+6. Prefer a stable stem (`index`, `artwork-prompts`, `stem.titles`, …) over inventing new stems for the same artifact.
+7. Re-running a draft: append `_v2` then `_v3` **after the agent token**, before the extension — e.g. `index_grok_v2.html`, `artwork-prompts_freebuff_v2.md`. Never `_vN` on the bare canonical stem.
 
 ---
 
