@@ -4,6 +4,8 @@ Use only the gates relevant to the artifact. A gate may produce PASS, FAIL, or B
 
 **Run the loop yourself first.** The agent owns the check → critique → fix cycle before the human sees anything: run the relevant gates, then critique/audit and iterate (see `design-critique-and-anti-slop.md` iteration verbs — evaluate, refine, harden) until the artifact is genuinely strong. Aim for **loop until amazing**, not until acceptable. Hand the human direction-level and taste decisions, not mechanical errors or gate failures they must catch — the agent does the checking, testing, and rechecking; the human feedback loop steers and signs off.
 
+**Page builds:** the **Automatic page-build contract** in `web-experience.md` is mandatory on every “build a page / Scripture Journey page” request. Treat broken interactions, missing verification, system-font shells, and premature canonical writes as gate failures.
+
 ## 1. Integrity gate
 
 - The promise is true and deliverable.

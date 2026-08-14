@@ -6,6 +6,19 @@ Use this file to plan, build, repair, or review semantic HTML/CSS/JavaScript exp
 
 **Priority order when agents over-constrain themselves:** (1) works in a real browser, (2) looks premium, (3) interactions and motion land, (4) semantic structure + keyboard, (5) optional accommodations. Never optimize for (5) at the cost of (1)–(3).
 
+## Automatic page-build contract (REQUIRED — no special user wording)
+
+When the user asks to **build a Scripture Journey page**, **build a page**, **build the HTML**, **rebuild the page**, or any equivalent production HTML request, apply **all** of the following automatically. The user does **not** need to restate fonts, motion, JS, verification, naming, art order, or promote rules.
+
+1. **Draft naming by default.** Write `deliverables/index_<agent>.html` (re-runs: `index_<agent>_v2.html`, then `_v3`). Never put unfinished work on bare `index.html`. Promote to `index.html` only when the user accepts or says promote/final/ship.
+2. **Art path is automatic.** If the design needs pixel art and assets are missing: write/update `prompts/artwork-prompts.md` via skill **artwork-prompts-handoff**; wire expected filenames under `deliverables/assets/`; **still ship a complete, beautiful page** using CSS/SVG/gradients so missing JPGs do not leave a broken or empty layout. When `mood/` or existing assets exist, use them.
+3. **Working bar is a hard FAIL.** Console-breaking errors, dead primary controls, non-functional map/trail/game/scroll interactions, or collapsed phone/desktop layout = FAIL. Loop: build → open in browser → exercise every interaction → fix → re-check until the designed experience works.
+4. **Craft level is automatic.** Treat interactive HTML as premium agency work (network fonts, full motion, first-class JS, anti-slop). Do not ship cream-paper + Inter/system defaults or static shells with half-wired scripts.
+5. **References and mood.** Read `mood/`, visual direction, brief, and any human reference images before inventing a new look. Match craft level of strong references when present.
+6. **Canonical is promote-only.** Do not overwrite the ship file during iteration. Leave prior `_<agent>_vN` drafts for progress review.
+7. **Gates + self-loop.** Run the visual, technical, integrity, learning, and experience gates; iterate (critique → fix) until the page is genuinely strong—not merely “acceptable.” Hand the human taste/direction decisions, not broken mechanics.
+8. **Handoff.** Update `START-HERE.md` / board / gate notes with the draft path, what was verified, and what still needs human art or promote.
+
 ## Preconditions
 
 - For a new build, require a content-approved brief, visual direction, interaction plan, and `status: approved-for-build`.
