@@ -64,8 +64,8 @@ Progressive enhancements (optional, layered):
 
 [content + honest payoff, with cited verses — KJV first, then others]
 
-**Continue:**
-- The Shepherd who knows your name — John 10
+**Continue** — the first line is the featured primary and must be visually dominant; the rest are quieter alternates:
+- **The Shepherd who knows your name — John 10**  ← featured primary
 - When shepherds fail — Ezekiel 34
 - Confidence when enemies remain — Psalm 27
 - Can any place hide you? — Psalm 139

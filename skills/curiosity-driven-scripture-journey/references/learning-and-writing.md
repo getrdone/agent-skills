@@ -28,6 +28,12 @@ Define these before outlining substantial content:
 - **Retrieval without threat:** optional recall or prediction may strengthen memory, but interactions must not embarrass, grade, or trick beginners.
 - **Minimal repetition:** repeat only when it reorients, compresses, or deepens the idea.
 
+## Deliberate variation and reader depth
+
+Curiosity is constant; how each piece pays it off must not be. The experience sequence (Attention → Emotion → Clarity → Progress → Payoff → Reflection → Next Curiosity) is a **buffet, not a hard order** — vary which beats appear, their order, and their emphasis per section, title, title group, or description, and let one section carry multiple story angles when they fit. Keep variation in-family: a large unexplained jump in tone, topic, or format between sections is a **pattern interrupt**, not freshness — the through-line stays visible while the surface varies.
+
+**Design for every reader depth.** A section should give each layer of reader something to keep going: a clear heading and a one-line hook for the skimmer, a readable middle for the skim-plus-deep reader, and the detailed examples, Greek/Hebrew notes, or Strong's reference for the deep-payoff reader. Balance these without jumbling the section — hierarchy, chunking, and progressive disclosure do the balancing, not more words.
+
 ## Cross-channel application
 
 | Artifact | Learning application |
