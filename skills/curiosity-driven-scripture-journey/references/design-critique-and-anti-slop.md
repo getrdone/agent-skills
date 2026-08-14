@@ -23,11 +23,13 @@ Every surface has a **mode** — what the visitor came to do. Design judgment ch
 
 The tells that make AI interfaces look generic. Avoid these unless a real brand/accessibility reason overrides — then push back *with the reason*.
 
-- Overused fonts: Arial, Inter, system defaults → choose a distinct typeface.
+- Overused fonts: Arial, Inter, system defaults, or “local fonts only” → load distinct **webfonts**.
+- Cream paper + sage + Fraunces/Inter as a mindless Scripture template → derive palette/type from this piece’s DNA.
 - Purple-to-blue gradients, dark glows, glassmorphism on everything.
 - Gray text on colored backgrounds → check contrast; tint, don't gray.
 - Pure black / pure gray → always tint toward a hue.
 - Cards nested in cards; a rounded-square icon tile above every heading.
+- Static page with dead JS hooks or no motion “for accessibility” → full motion default; verify interactions work.
 - Bounce/elastic easing → feels dated; use purposeful easing.
 - Side-tab borders, cramped padding, small touch targets, skipped heading levels, over-long lines.
 

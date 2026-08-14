@@ -95,8 +95,10 @@ Design is instruction. The viewer should see what matters, what belongs together
 5. Check weight contrast, x-height compatibility, and personality contrast without conflict.
 6. Use a mathematical type scale and fluid `rem`/`clamp()` or container-responsive sizing for web work.
 7. Keep body text effectively at least 1rem on mobile; use comfortable body line-height and tighter display line-height.
-8. Give fonts a performance budget: favor WOFF2, variable fonts where useful, limited families/weights, good fallbacks, and selective preloading.
-9. Test thumbnail display type at actual phone-preview size. Legibility outranks ornament.
+8. **Web default = network or self-hosted webfonts** (Google Fonts, Bunny, Fontshare, Adobe, WOFF2). System stacks are fallbacks only. Do **not** constrain pages to “local/stock fonts only.”
+9. Avoid the AI-slop pairing of Inter (or system UI) + generic serif on cream paper as a default Scripture look—choose faces from the content’s tone.
+10. Performance: prefer WOFF2/variable fonts, limited weights, preconnect, and fallbacks after the designed faces.
+11. Test thumbnail display type at actual phone-preview size. Legibility outranks ornament.
 
 Named font examples are sanity checks, not a menu. Reason first.
 
@@ -133,9 +135,9 @@ with every paste-ready prompt, aspect ratio, DS note, target filename, and check
 
 - Use motion for feedback, orientation, progress, state change, discovery, emphasis, transition, explanation, or delight.
 - Do not animate merely because an element can move.
-- Normal motion is the default. Disable or simplify it inside `@media (prefers-reduced-motion: reduce)`.
+- **Full motion is the default design language.** Optional simplify only inside `@media (prefers-reduced-motion: reduce)`—never ship a static page “to be safe.”
 - Match motion pacing to cognitive load: quieter during complex reading, more energetic during transitions or simple reveals.
-- Keep interaction optional for core understanding and keyboard/touch accessible.
+- Journey interactions may require JavaScript; verify they work in a browser. Keyboard/touch access for real controls.
 
 ## Design fingerprint and anti-repetition
 

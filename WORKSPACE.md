@@ -74,9 +74,9 @@ Projects only need a short pointer under `references/dynamic-symmetry/README.md`
 
 | Kind | Pattern | Meaning |
 |------|---------|---------|
-| **Canonical** | `name.ext` — **no** agent suffix | Source of truth; user picks, ships, and continues from here |
-| **Draft** | `name_<agent>.ext` | One agent’s proposal; never treated as final unless user promotes it |
-| **Draft re-run** | `name_<agent>_v2.ext` (then `_v3`) | A later run of the same agent’s draft; keep `_v2`/`_v3` history |
+| **Canonical** | `name.ext` — **no** agent suffix | **Promoted ship file only** — polished, accepted source of truth |
+| **Draft / progress** | `name_<agent>.ext` | One agent’s working pass; progress the human can inspect |
+| **Draft re-run** | `name_<agent>_v2.ext` (then `_v3`, …) | Later pass by the same agent; keeps history so quality can be compared |
 
 ### Agent suffix tokens (use exactly these when known)
 
@@ -85,23 +85,26 @@ Projects only need a short pointer under `references/dynamic-symmetry/README.md`
 Examples:
 
 ```text
-FDI--3ABN--s02--ep19.titles.md              ← canonical
-FDI--3ABN--s02--ep19.titles_grok.md         ← Grok draft
-FDI--3ABN--s02--ep19.titles_freebuff.md     ← Freebuff draft
-FDI--3ABN--s02--ep14.descriptions_freebuff_v2.md  ← Freebuff draft, second run
-FDI--3ABN--s02--ep19.descriptions.md        ← canonical descriptions
+index_freebuff.html                         ← Freebuff first HTML pass
+index_freebuff_v2.html                      ← Freebuff second pass (progress kept)
+index_grok_v3.html                          ← Grok third pass
+index.html                                  ← CANONICAL only after promote (polished + accepted)
+FDI--3ABN--s02--ep19.titles_freebuff_v2.md  ← Freebuff packaging re-run
+FDI--3ABN--s02--ep19.titles.md              ← canonical titles after promote
 ep19.STATUS.md                              ← status for humans + agents
 ```
 
+**Forbidden:** bare versioned canons such as `index_v2.html`, `index_v3.html`, `final.html`, `latest.html`. Version marks always sit **after the agent token**.
+
 ### Agent rules
 
-1. If the user did **not** ask for a multi-agent bake-off, write/update the **canonical** file.
-2. If comparing agents, or the user says “your version,” write `_<agent>` **drafts** and leave canonical alone until told to promote.
-3. **Promote** = merge/copy accepted content into the unsuffixed file; keep or delete drafts as the user prefers.
-4. Never invent a second **canonical** name (`final`, `v2`, `latest`) when a suffix or STATUS note will do.
+1. **Progress / iteration / bake-off / “show versions” / visual HTML builds:** write `name_<agent>.ext` or `name_<agent>_vN.ext`. Keep prior passes; do not overwrite earlier `_vN` files. Do **not** put unfinished work on the canonical name.
+2. **Promote** = copy the accepted polished draft into unsuffixed `name.ext` when the user says promote / final / ship / use this as canonical, **or** when they accept a pass as the polished result. Leave drafts in place unless asked to delete them.
+3. **In-place canonical edits** only for small fixes on an already-promoted ship file (typo, one CSS fix), or when the user explicitly wants a single living file with no version history.
+4. Never invent a second **canonical** name (`final`, `v2`, `latest`) — version only via `_<agent>_vN`.
 5. Preserve user marks such as trailing `~` on title lines when editing.
-6. Prefer updating an existing canonical path over creating a sibling with a new stem.
-7. Re-running a draft task: append `_v2` (then `_v3`) after the agent token, before the extension — e.g. `FDI--3ABN--s02--ep14.descriptions_freebuff_v2.md`. The `_v2` mark is for agent drafts on re-run, never for canonical files.
+6. Prefer a stable stem (`index`, `stem.titles`, …) over inventing new stems for the same artifact.
+7. Re-running a draft: append `_v2` then `_v3` **after the agent token**, before the extension — e.g. `index_grok_v2.html`, `stem.descriptions_freebuff_v2.md`. Never `_vN` on the bare canonical stem.
 
 ---
 
@@ -189,7 +192,8 @@ Consumer folders should keep a short `AGENTS.md` that:
 ## 6. What not to do
 
 - Per-agent folder trees for the same series/topic  
-- Only draft files with no canonical  
+- Bare version piles without agent tokens (`index_v2.html`, `final.html`)  
+- Putting unfinished HTML on the canonical name while still iterating  
 - Copying whole skill trees into the work root  
 - Scattering the same episode across unrelated directories without a board link  
 

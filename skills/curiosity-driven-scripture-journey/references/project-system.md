@@ -148,8 +148,8 @@ Keep planning assets separate from production files. Do not turn the brief into 
 Follow the agent-skills root **`WORKSPACE.md`** for every packaging or production folder:
 
 - All agents share **one** work directory (series or topic root). No per-agent folder trees.
-- **Canonical** deliverables: `stem.titles.md`, `stem.descriptions.md`, `stem.thumbnails.md`, `stem.page.md` (no agent suffix).
-- **Drafts** only when comparing agents or asked: `stem.titles_grok.md`, `stem.descriptions_freebuff.md`, etc.
+- **Progress / iteration drafts:** `stem.titles_grok.md`, `index_freebuff_v2.html`, etc. Keep version history when the user wants to see progress.
+- **Canonical** (promoted polished only): `stem.titles.md`, `stem.descriptions.md`, `index.html` — no agent suffix, no bare `index_v2.html`.
 - Maintain **`SERIES-BOARD.md`** or **`TOPIC-BOARD.md`** at the work root; optional `stem.STATUS.md` per episode/topic.
-- Default: write the canonical file. Promote accepted drafts into canonical; preserve `~` title marks.
+- Promote accepted polished drafts into canonical; preserve `~` title marks.
 - Local `AGENTS.md` in the work folder should point at agent-skills + WORKSPACE.md.

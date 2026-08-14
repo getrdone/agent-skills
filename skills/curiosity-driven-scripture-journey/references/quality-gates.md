@@ -44,11 +44,13 @@ For substantial production:
 - Hierarchy survives grayscale.
 - Focal point and grouping survive squint/phone-size view.
 - Type, color, imagery, and composition arise from the content/visual DNA.
+- **Web fonts are designed faces** (network or self-hosted WOFF2), not system-only stacks; avoid Inter/system-default as the whole personality unless the brief demands it.
+- Page does not read as generic AI slop (see `design-critique-and-anti-slop.md`).
 - For layout/placement work: a dynamic-symmetry ratio/armature was considered (soft standard); grid choice recorded when used; pack path preferred over inventing thirds-only habits.
 - No nude/sexually explicit reference imagery used in deliverables.
 - Color is not the only signal; contrast is accessible.
 - Thumbnail is legible in a feed and against dark surroundings.
-- Motion has a purpose and reduced-motion behavior is present where applicable.
+- Motion is purposeful and present in the **default** experience; optional `prefers-reduced-motion` accommodation does not define the design.
 - Design fingerprint does not repeat recent work without reason.
 
 ## 5. YouTube gate
@@ -69,22 +71,30 @@ For substantial production:
 
 ## 6. Technical web gate
 
-- Core content and navigation exist in semantic HTML and work without JavaScript.
+**Primary (must pass — beauty and function):**
+
+- Page **opens and works** in a real browser: no broken layout, no dead primary controls, no console-breaking errors on the designed path.
+- Designed interactions (scroll journey, map/trail, order game, branching, sticky UI, etc.) function as specified.
 - Heading outline, landmarks, links, buttons, forms, media alternatives, focus, keyboard use, zoom/reflow, and contrast are sound.
-- Metadata and JSON-LD are accurate and match visible content.
+- CSS is responsive and derived from the visual direction; web fonts load (network fonts allowed).
+- Metadata and JSON-LD (if present) match visible content.
 - Every cited passage received a review opportunity beginning with KJV, NLT, CSB, WEB, and NASB at minimum; the approved version is recorded per passage or for an explicitly approved larger scope.
-- Scripture translation labels, inline citations, and end references are present, traceable, accessible, and usable without JavaScript.
-- CSS is responsive, scoped, and derived from the visual direction.
-- Images, fonts, scripts, third parties, layout stability, and interaction cost are within the project’s performance budget.
-- Normal motion is default; `prefers-reduced-motion: reduce` is honored on request.
-- Automated validators pass, followed by manual keyboard, phone, no-JS, and visual checks.
+- Scripture translation labels, inline citations, and end references are present and traceable.
+- Agent opened the page and exercised interactions before claiming complete (or stated that browser verification was impossible).
+
+**Secondary (do not gut the design to chase these):**
+
+- Study text and citations remain in the HTML source where practical.
+- Optional `@media (prefers-reduced-motion: reduce)` simplifies nonessential motion—never the main design language.
+- No-JS / no-CSS smoke checks are optional diagnostics, **not** release blockers and **not** reasons to strip fonts, motion, or interactive journey features.
 
 ## 7. Experience/release gate
 
-- The first screen/seconds confirm the promise.
+- The first screen/seconds confirm the promise and feel **premium**, not template-generic.
 - There is one obvious primary question or goal.
 - Progress feels real rather than decorative.
-- Typography, palette, composition, imagery, interaction, and motion fit the subject.
-- The experience avoids repetitive templates and unnecessary friction.
+- Typography, palette, composition, imagery, interaction, and motion fit the subject and hit Class-A agency quality.
+- The experience avoids repetitive templates (including cream-paper + Inter/Fraunces defaults) and unnecessary friction.
 - The ending resolves the promise and opens a sincere next curiosity.
-- The requested artifact is complete at its current scope; unresolved dependencies are named rather than hidden.
+- Iterative drafts used `name_<agent>_vN`; canonical name used only for the promoted polished pass (or small fix to an already-promoted file).
+- The requested artifact is complete at its current scope; unresolved dependencies (missing art files, etc.) are named rather than hidden.

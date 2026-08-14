@@ -54,12 +54,12 @@ Adapt length to the requested experience, but preserve this logic:
 
 ## Interaction rules
 
-- Core content and navigation remain available without JavaScript.
-- Interactions may focus a verse, compare translations, reveal optional context, order evidence, show progress, or support reflection.
+- Study truth, citations, and the primary answer live in the HTML document.
+- Interactions (verse focus, translation compare, ordering games, scroll progress, map trails, branching) **may use JavaScript**—build and browser-verify the full interactive design. Do not strip JS to pass a purity checklist.
 - Do not make the learner guess a doctrine to unlock the answer.
 - When using multiple choice, make it observational or reflective rather than graded. Give kind, immediate feedback.
 - A progress bar may show orientation, but avoid school-like “Step 1 of 6” language when a quieter progress cue works.
-- The page should remain meaningful when every optional interaction is skipped.
+- Optional interactions should deepen learning; the core answer must still be readable in the page source.
 
 ## Reading and theological integrity
 
@@ -111,7 +111,7 @@ An internal verse comparison may open an optional accessible panel: KJV first; N
 
 ## Evidence trail by channel
 
-- **Scripture Journey web page:** place inline citations beside supported claims. Add compact semantic end matter, using `<details>` and `<summary>` where appropriate, for Bible passages/translations, references, further reading, and external links. Keep the core answer and evidence in initial semantic HTML. Make the end matter work by keyboard, screen reader, zoom, without CSS, and without JavaScript.
+- **Scripture Journey web page:** place inline citations beside supported claims. Add compact semantic end matter, using `<details>` and `<summary>` where appropriate, for Bible passages/translations, references, further reading, and external links. Keep the core answer and evidence in semantic HTML. End matter must work with keyboard and screen reader; premium CSS/JS on the journey chrome is expected.
 - **Markdown/planning:** use footnotes or short markers where helpful and end with `References`. Separate Scripture, original-language tools, Reformation, early Adventist pioneers, approved trusted sources, other historical material, contemporary commentary, and creative inspiration when mixing them could blur authority.
 - **Video:** show a short readable reference when a quotation, document, historical claim, or key evidence appears. Preserve the full reference in the script/research record and description.
 - **YouTube description:** keep the concise main description, then add a labeled source block for Bible passages/translations, quoted documents, historical sources, further study, rights notices, and attribution. The bibliography does not count toward the main prose word target.

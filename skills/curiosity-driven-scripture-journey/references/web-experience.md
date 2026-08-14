@@ -2,66 +2,81 @@
 
 Use this file to plan, build, repair, or review semantic HTML/CSS/JavaScript experiences and landing pages.
 
-**Quality target:** The finished page must reach the level of a highly polished Class-A design and coding agency (Apple-website caliber). High-end, purposeful interactions are desired. All existing content-generation philosophy and rules still apply. If a conflict appears between the high-end design goal and any content rule, stop and highlight the conflict for the user instead of deciding unilaterally.
+**Quality target (wins):** The finished page must reach the level of a highly polished Class-A design and coding agency (Apple-website caliber)—visually stunning, fully working, and interactive. High-end purposeful motion and JS are **desired**, not optional extras. Content integrity rules still apply. If a content rule would force a flat, broken, or system-font page, **do not silently degrade beauty**—note the tension and still ship a premium working experience unless the user ordered a constrained build.
+
+**Priority order when agents over-constrain themselves:** (1) works in a real browser, (2) looks premium, (3) interactions and motion land, (4) semantic structure + keyboard, (5) optional accommodations. Never optimize for (5) at the cost of (1)–(3).
 
 ## Preconditions
 
 - For a new build, require a content-approved brief, visual direction, interaction plan, and `status: approved-for-build`.
 - For an existing page audit or narrow repair, preserve the current approved concept and fix the requested problem without inventing a new one.
 - Reuse the project’s chosen title, promise, learning map, visual DNA, and design fingerprint.
+- **File naming:** iterative HTML passes are drafts — `index_<agent>.html`, `index_<agent>_v2.html`, … Promote to `index.html` only when polished and accepted (see repo `WORKSPACE.md` §3).
 
 ## Build sequence
 
 1. Confirm the page’s one primary question/action and visible payoff.
-2. Write the complete semantic HTML content path.
-3. Add metadata, discoverability, and structured data that accurately describe visible content.
-4. Implement layout and design from the approved visual direction.
-5. Add CSS/JS interactions as progressive enhancement.
-6. Optimize assets, fonts, rendering, and interaction performance from the beginning.
-7. Test without CSS, without JavaScript, by keyboard, at zoom, on phone widths, and with reduced motion requested.
-8. Run the planning, technical, integrity, learning, visual, and experience gates.
+2. Lock visual DNA (type pairing, palette, composition, motion character)—not a beige default.
+3. Write complete semantic HTML for the content path (truth stays in the document).
+4. Add metadata/discoverability that match visible content.
+5. Implement **full** layout, web fonts, imagery slots, CSS, and JavaScript for the designed experience.
+6. Open the page in a real browser; exercise every interaction; fix until it works.
+7. Only then: keyboard pass, phone width, and optional `prefers-reduced-motion` media-query check.
+8. Run integrity, learning, visual, technical, and experience gates—**working beauty first**.
 
 ## HTML foundation
 
 - Put headings, passages, answers, evidence, links, forms, and core navigation in semantic HTML.
 - Use landmarks, one coherent heading outline, lists/tables/figures where structurally correct, and meaningful link/control labels.
-- Keep source order meaningful when styles fail.
-- Do not hide primary content behind JavaScript, accordions that require scripting, canvas, or client-only rendering.
-- For a Scripture Journey Page, place traceable inline citations beside the claims they support and include compact semantic end matter for passages/translations, references, further reading, and external links. Native `<details>`/`<summary>` disclosure may organize supporting detail but never hide the core answer or required evidence.
+- Keep source order coherent.
+- Primary study text and citations should exist in the HTML document (not only injected by JS). Interactive chrome (maps, trails, games, scroll storytelling, ordering exercises) **may require JavaScript**—that is correct for a journey page. Design the full interactive experience; do not gut it to pass a no-JS purity test.
+- For a Scripture Journey Page, place traceable inline citations beside the claims they support and include compact semantic end matter for passages/translations, references, further reading, and external links. Native `<details>`/`<summary>` may organize supporting detail but never hide the core answer or required evidence.
 - During review, every cited verse or passage must expose an accessible comparison beginning with KJV, then NLT, CSB, WEB, and NASB at minimum. Preserve the reviewer’s per-passage choice; do not force one translation across the page unless explicitly approved for that scope.
 - Use buttons for actions and links for navigation.
-- Add form labels, instructions, validation messages, autocomplete, appropriate input types, and consent/compliance language.
-- Prefer a self-contained HTML/CSS/JS deliverable when the project or hosting model calls for it; do not sacrifice maintainability or caching without reason.
+- Single-file or multi-file is fine. **“Self-contained” does not mean local-only fonts or no network CSS/JS.** Web fonts and small CDNs (fonts, GSAP, etc.) are allowed and preferred when they raise quality.
+
+## Typography and fonts (not system-only)
+
+- **Default: network webfonts.** Use Google Fonts, Bunny Fonts, Fontshare, Adobe Fonts, or self-hosted WOFF2. Pair one distinctive display face with one highly legible body face.
+- **Forbidden as the design default:** system UI stacks only, “stock local fonts only,” or Inter/Roboto/Arial as the whole personality. Those are fallbacks in `font-family` stacks, not the face the page is designed in.
+- Load fonts with `preconnect` + stylesheet (or `@font-face` WOFF2); include sensible fallbacks after the designed faces.
+- Extreme scale contrast, fluid `clamp()`, and real hierarchy beat safe generic type.
 
 ## CSS and design implementation
 
-- Use neutral design tokens derived from the approved visual DNA; never import a finished default aesthetic blindly.
-- Keep a predictable class system such as BEM when the project standard requires it.
-- Favor mobile-first fluid layout, logical properties, modern grid/flex, `clamp()`, and container queries when component behavior depends on its container.
+- Tokens come from the approved visual DNA; never paste a finished default aesthetic (especially repeated cream paper + muted sage “ministry template”).
+- Favor mobile-first fluid layout, modern grid/flex, `clamp()`, container queries when useful.
 - Preserve zoom, text reflow, touch size, visible focus, contrast, and readable measure.
 - Reserve space for media and dynamic states to prevent layout shifts.
-- Scope component styles and states clearly; avoid specificity escalation.
+- Scope component styles clearly; avoid specificity wars.
 
-## JavaScript and motion
+## JavaScript and motion (first-class)
 
-Use JavaScript when it improves exploration, explanation, feedback, state, visualization, or delight.
+JavaScript is a **primary tool** for Scripture Journey pages when the brief calls for maps, scroll progress, ordering games, branching state, sticky journey UI, or delight.
 
-- The page’s truth, answer, and primary navigation must still work without it.
-- Start from valid server/static HTML and enhance it.
-- Keep state understandable and controls keyboard-operable.
-- Avoid blocking rendering with unnecessary libraries or large hydration costs.
-- Provide purposeful normal transitions/animations by default.
-- Inside `@media (prefers-reduced-motion: reduce)`, remove or simplify nonessential motion. Do not assume reduced motion for everyone.
+- Build and verify the **with-JS** experience first. Broken or half-wired JS is a FAIL.
+- Prefer small, reliable patterns (vanilla or GSAP/ScrollTrigger per `motion-and-premium-ui.md`) over cargo-cult progressive-enhancement that ships nonfunctional controls.
+- Keep controls keyboard-operable where they are buttons/links/inputs.
+- Avoid huge unused libraries; paid APIs still need explicit user OK.
+- **Motion default = full purposeful motion** (scroll reveals, trail lighting, transitions, micro-interactions). Design for users who allow motion.
+- `prefers-reduced-motion: reduce` is an **optional media-query accommodation only**—shorten or simplify nonessential motion inside that query. **Never** design the main page as if reduced-motion were on. Never remove hero motion globally “to be safe.”
 
 ## Accessibility and performance
 
-Plan both before implementation:
+Floor, not ceiling—do not use these to justify bland pages:
 
-- keyboard order, focus visibility, skip navigation, labels, status announcements, contrast, zoom/reflow, error recovery, alt text, captions/transcripts, and non-color cues;
-- critical content/render path, image dimensions and formats, lazy loading below the fold, font subsets/weights, caching, third-party cost, DOM size, long tasks, layout stability, and responsive media;
-- fast-feeling feedback and no decorative effect that delays the answer or harms input responsiveness.
+- keyboard order, focus visibility, skip link, labels, contrast, zoom/reflow, alt text, non-color cues;
+- image dimensions, lazy-load below the fold, font subset/weight discipline, layout stability;
+- fast feedback; no effect that blocks reading the answer.
 
-Measure with current accessibility and Core Web Vitals tooling when available. Treat automated checks as necessary but incomplete.
+## Mandatory browser verification
+
+Before calling any HTML pass complete:
+
+1. Open the file (or local server) in a browser.
+2. Click/scroll/type every designed interaction.
+3. Confirm no console-breaking errors on the happy path; layout holds at desktop and phone widths.
+4. If verification is impossible in the environment, say so explicitly—do not claim “works.”
 
 ## SEO, AEO, and GEO
 

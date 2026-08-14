@@ -42,20 +42,19 @@ Avoid a free graph with no visible spine (readers get lost) and cycles that trap
 - **Keep the fan-out small.** Two to four choices on ordinary branch nodes; reserve the full featured-plus-four (five choices) for the terminal step only, and treat it as a ceiling, not a target.
 - **Each choice names a curiosity, not an instruction.** "When shepherds fail" (a gap) beats "Read about bad shepherds" (an order).
 
-## Mechanics (progressive enhancement)
+## Mechanics (interactive journey)
 
-Core navigation must work without JavaScript:
+- Prefer real links (`<a href>`) or clear buttons to real nodes so paths are shareable and deep-linkable (`#fragment` or URL).
+- Keep each node's truth, question, and answer in semantic HTML.
+- JavaScript may drive state, transitions, progress, visited marks, resume (`localStorage`), and motion—**build and verify that experience**; do not leave half-wired controls.
+- Full transition motion is default; optional simplify only under `prefers-reduced-motion: reduce`.
 
-- Each choice is a real link (`<a href>`) to a real node, so the journey is crawlable, shareable, and works if JS fails.
-- Keep each node's truth, question, and answer in semantic HTML; CSS/JS only add state, transitions, and delight.
-- Deep-link every node (URL or `#fragment`) so a reader can return to or share a specific step.
+Layered features to include when they serve the design:
 
-Progressive enhancements (optional, layered):
-
-- **Progress + location** — a breadcrumb or "you are here" that shows the path taken.
-- **Visited state** — mark nodes the reader has seen so they can retrace without confusion.
-- **Resume** — persist the current node (`localStorage`) and offer "continue where you left off."
-- **Transition motion** — purposeful reveals between nodes; honor `prefers-reduced-motion`.
+- **Progress + location** — breadcrumb or "you are here."
+- **Visited state** — mark nodes already seen.
+- **Resume** — continue where the reader left off.
+- **Transition motion** — purposeful reveals between nodes.
 
 ## Example node shape (illustrative)
 
@@ -84,8 +83,8 @@ Progressive enhancements (optional, layered):
 - [ ] Spine is visible; every excursion returns or converges.
 - [ ] Every choice leads with a question/statement and trails the verse reference.
 - [ ] No fake choices (distinct gaps per option) and no punitive dead ends.
-- [ ] Navigation works with JS disabled (real links, semantic HTML, deep links).
-- [ ] Progress, visited state, and resume available and optional.
-- [ ] Reduced-motion honored; keyboard and touch accessible.
+- [ ] Navigation works in a browser (links/buttons, deep links); JS interactions verified.
+- [ ] Progress, visited state, and resume available when designed.
+- [ ] Full motion by default; keyboard and touch accessible on real controls.
 - [ ] No choice pre-closes its gap (no leaked payoff); passes the next-path presentation rules.
 - [ ] Quality gates run before release.

@@ -104,7 +104,7 @@ tl.from('.title', { opacity: 0, y: 60 }).from('.img', { scale: 0.85 });
 - **Framer:** `useTransform` output must go into the `style` prop of a `motion.*` element, not a plain `div`.
 - **Framer Next.js:** add `'use client'` at the top of any file using motion hooks.
 - **Both:** animate only `transform` and `opacity` — avoid `width`, `height`, `box-shadow`.
-- **Both:** always honor `prefers-reduced-motion`.
+- **Both:** design full motion first; optionally simplify nonessential motion only inside `@media (prefers-reduced-motion: reduce)`. Do not make reduced-motion the page default.
 - **Premium polish:** animation should enhance, never overwhelm — motion is connective tissue, not decoration.
 
 ## Premium creative foundation (commit before layout code)
@@ -140,7 +140,8 @@ Pick one strong visual identity before writing CSS — never default to generic,
 - Animate only `transform` and `opacity` (composited layers); fiercely avoid `width`, `height`, `top`, `margin`.
 - Apply `will-change: transform` sparingly on complex movers, and remove it post-animation.
 - Wrap custom-cursor logic and heavy hover animations in `@media (hover: hover) and (pointer: fine)`.
-- Wrap heavy continuous animation in `@media (prefers-reduced-motion: no-preference)`; never trade accessibility for flair.
+- Prefer wrapping **only** continuous/heavy loops so they pause under `prefers-reduced-motion: reduce`. Entrance, scroll storytelling, and trail motion stay in the default design.
+- Never gut premium motion to satisfy a hypothetical reduced-motion user; the media query is enough.
 
 ## Implementation ecosystem
 

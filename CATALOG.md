@@ -1,6 +1,6 @@
 # Skill catalog (read this first — do not load every skill)
 
-**Always also follow** [`WORKSPACE.md`](WORKSPACE.md): one shared work folder, canonical files vs `_<agent>` drafts, series/topic boards, and **auto-scaffold** new topic folders (`mood/`, `references/`, etc.). Workspace rules apply to **every** skill and to work with no matching skill.
+**Always also follow** [`WORKSPACE.md`](WORKSPACE.md): one shared work folder; progress drafts `name_<agent>_vN`; promote polished work to canonical `name.ext`; series/topic boards; **auto-scaffold** new topic folders (`mood/`, `references/`, etc.). Workspace rules apply to **every** skill and to work with no matching skill.
 
 **Shared design pack:** private repo [getrdone/design-resources](https://github.com/getrdone/design-resources) → local clone `F:\__ai-projects\design-resources\` (continuously synced). Glossary text lives in this skills repo; pack `GLOSSARY.md` is a symlink. See `F:\__ai-projects\SOURCES-OF-TRUTH.md`.
 

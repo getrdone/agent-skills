@@ -4,7 +4,7 @@ description: Plan, package, design, write, build, or review a curiosity-driven S
 ---
 
 > **Canonical location:** [getrdone/agent-skills](https://github.com/getrdone/agent-skills) → `skills/curiosity-driven-scripture-journey/`  
-> **Workspace (all skills):** repo root [`WORKSPACE.md`](../../WORKSPACE.md) — one shared work folder; canonical `name.ext` vs draft `name_<agent>.ext`; maintain `SERIES-BOARD.md` / `TOPIC-BOARD.md`.
+> **Workspace (all skills):** repo root [`WORKSPACE.md`](../../WORKSPACE.md) — one shared work folder; progress drafts `name_<agent>_vN.ext`; promote polished work to canonical `name.ext`; maintain `SERIES-BOARD.md` / `TOPIC-BOARD.md`.
 
 # Curiosity-Driven Scripture Journey
 
@@ -22,8 +22,8 @@ Apply these invariants even when the user asks for only one title, one graphic, 
    For Scripture/ministry-facing teaching copy, avoid an unnamed teacher collective or institutional voice such as “we,” “us,” and “our” unless the user explicitly requests that voice or the words identify a real named organization.
 6. **Project spine + piece personality:** keep integrity, semantics, accessibility, focus behavior, spacing logic, performance, and major interaction conventions consistent. Let typography, palette, imagery, composition, motion, and visual metaphor vary by subject.
 7. **Structure before decoration:** establish grouping, hierarchy, eye path, and content sequence in grayscale before relying on fonts, color, imagery, effects, or motion.
-8. **Progressive enhancement:** HTML carries truth and core navigation; CSS carries presentation; JavaScript may add state, explanation, exploration, feedback, visualization, and delight. Never make core meaning depend on JavaScript.
-9. **Motion policy:** provide purposeful normal motion by default. Honor `prefers-reduced-motion: reduce` only when the user or device requests it.
+8. **HTML + CSS + JS as one craft:** semantic HTML holds study truth and citations; CSS holds premium presentation (including **network webfonts**—not system-only); JavaScript is first-class for journey interaction, scroll storytelling, state, and delight. Do not strip fonts, motion, or JS to satisfy a no-JS purity test. Broken interactions are a fail.
+9. **Motion policy:** full purposeful motion is the default design. Optional `@media (prefers-reduced-motion: reduce)` may simplify nonessential motion—never design the main experience as reduced-motion.
 10. **Imagery boundary:** never create or select explicit, nude, or sexually suggestive imagery, poses, shapes, or object symbolism. This applies to references and generated or sourced media.
 
 ## Route the request
