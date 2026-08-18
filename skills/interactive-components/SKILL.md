@@ -26,7 +26,7 @@ Build interactive elements that are fast, accessible, stable, **beautiful**, and
 
 4. **Beauty, delight, and purposeful motion**
    - Purposeful motion and micro-interactions are first-class. Use them to give feedback, guide attention, and create pleasure.
-   - Prefer high-quality CSS motion (including scroll-driven animations, transitions, and transforms) and tasteful vanilla JS when it elevates the experience.
+   - Prefer high-quality CSS motion (including scroll-driven animations, transitions, and transforms). Use JavaScript freely when it improves the experience.
    - Do not treat motion as optional decoration that must be minimized by default.
 
 ## Preferred Patterns (in order of preference for quality + performance)
@@ -51,7 +51,7 @@ Build interactive elements that are fast, accessible, stable, **beautiful**, and
 - Will this component cause a layout shift when it activates?
 - Is the interaction cost under 200 ms on mid-tier mobile?
 - Can modern CSS (including motion) solve a large part of the need elegantly?
-- Is any additional JS clean, configurable, and justified by the value it adds?
+- Is any additional JS clean and well-structured?
 
 ## Output Style
 
