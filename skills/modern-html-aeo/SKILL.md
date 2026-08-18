@@ -47,7 +47,7 @@ These principles sit above stylistic preferences.
 ### Beauty, delight, and purposeful motion
 - Purposeful micro-interactions and motion are first-class design tools.
 - Use motion to give feedback, guide attention, reveal hierarchy, and create pleasure.
-- Prefer high-quality CSS motion (scroll-driven animations, transitions, transforms) and clean vanilla JS when it elevates the experience.
+- Prefer high-quality CSS motion (scroll-driven animations, transitions, transforms). Use JavaScript freely when it improves the experience.
 - Visual tone must match content and audience. No lifeless or purely utilitarian defaults.
 
 ## Technical requirements
@@ -68,15 +68,11 @@ These principles sit above stylistic preferences.
 - Layout stability is mandatory (protect CLS).
 
 ### JavaScript
-- Vanilla JS only unless a library is explicitly required and justified.
-- **Object-oriented + DRY**.  
-  Organize related behavior into clear objects or modules.  
-  Do not repeat logic.
-- **Configuration first**.  
-  All easy-to-change values (selectors, timings, text, thresholds, options) must live in a single, well-commented configuration object or section at the top of the script so a lightly technical user can find and edit them quickly.
+- Prefer vanilla JS. Use a library only when it is clearly the better tool for the job.
+- **Object-oriented + DRY**. Organize related behavior into clear objects or modules. Do not repeat logic.
+- **Configuration first**. All easy-to-change values (selectors, timings, text, thresholds, options) must live in a single, well-commented configuration object or section at the top of the script so a lightly technical user can find and edit them quickly.
 - Keep main-thread work light. Defer or chunk non-critical work.
 - Interactions must feel fast and give immediate feedback (support good INP).
-- Richer, well-structured JavaScript is welcome when it clearly improves usability, feedback, or delight.
 
 ### AEO / GEO / SEO + Core Web Vitals
 - Clear primary entity and supporting entities in natural language.
