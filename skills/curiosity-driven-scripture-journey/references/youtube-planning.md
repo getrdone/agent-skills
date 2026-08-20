@@ -9,6 +9,7 @@ Use this file for YouTube topics, ideas, titles, descriptions, thumbnails, scrip
 - Phase 1 packaging file layout (mandatory for title generation)
 - `What the Episode Is Really About` + `~` selection workflow
 - Title and idea category matrix (mandatory) — 17 categories × 4
+- Splice-safe sentences + short punch
 - YouTube description rule
 - Thumbnail and graphic package
 - Structure and retention
@@ -237,9 +238,25 @@ When the user asks for ideas, topic menus, verse angles, or “what should we co
 Develop thumbnails only after the user selects a category and/or specific titles from the matrix (or has already locked a title).
 
 
+## Splice-safe sentences + short punch
+
+The user edits and splices public copy. Write **every candidate sentence** so it can stand on its own.
+
+Applies to YouTube descriptions, landing/website blurbs, emails, form leads, and any other spliceable public copy — not only YouTube.
+
+- Write each sentence to stand on its own so candidates can be spliced together without creating a dangling reference. An opener like "That statement…" or a phrase like "that one line" must name or clearly anchor what it refers to.
+- Do not generate dangling openers in candidate batches. A dangling reference as an open loop is allowed only when the user locks it in a published piece.
+- **Short punch:** one job per sentence; address the reader directly; cut any sentence that can be removed with no loss. Do not invent literary frames the source never uses.
+- **Surface length is not one number:**
+  - YouTube descriptions: **80–110 words** (aim **95–105**). That count is YouTube-only.
+  - Landing / conversion website copy (H2 support, blurbs, form leads): a few tight sentences plus any locked closer. **Do not apply the YouTube 80–110 word rule to website copy.**
+  - Scripture Journey teaching body: expanded and conversational; still splice-safe; still mix writing strategies from `learning-and-writing.md`.
+
 ## YouTube description rule
 
 Write descriptions only after titles are **selected**—normally via `~` marks in the packaging file (see **`~` selection workflow** above), or by explicit title list in chat.
+
+Sentences follow **Splice-safe sentences + short punch** above. YouTube main prose still uses the 80–110 word count in this section.
 
 - Default batch: **one description per `~`-marked (or named) title**, not one description for the whole matrix.
 - Ground every description in **What the Episode Is Really About** and the specific title’s curiosity gap; do not invent beats missing from the summary/source.
@@ -253,7 +270,6 @@ Write descriptions only after titles are **selected**—normally via `~` marks i
 - When the body runs long, break it into two short paragraphs — it reads better on mobile and gives a natural spot for an early CTA button. A judgment call, not a fixed rule.
 - Bold the single most important line or quote.
 - Use spaced em dashes (` — `) throughout titles and descriptions — never run them against a word (`word—word`).
-- Write each sentence to stand on its own so candidates can be spliced together without creating a dangling reference. An opener like "That statement…" or a phrase like "that one line" must name or clearly anchor what it refers to.
 - Use present tense in the open-loop close (“you want to watch”, not “you'll want to watch”).
 - Do not introduce a new promise, fact, urgency claim, or conclusion absent from the video / summary.
 - For Scripture/ministry descriptions, address the viewer directly or use neutral phrasing; do not default to “we will,” “join us,” or “with us.”
@@ -267,7 +283,7 @@ Descriptions must **never fully close the curiosity gap**. The description may s
 - This rule applies equally to YouTube descriptions, email bodies, SMS, and any other pre-click copy.
 - **The leak test.** A *leak* is any phrase that names the payoff the title/episode promises to reveal. Cut these before publishing: the specific doctrine the guest discovers (`the Sabbath`, `the mark isn't a tattoo, the seventh day was never repealed`); the outcome of the decision (`he began translating the Final Days video into Manipuri and Bengali — reaching tens of millions more`, `fact-checked his way into a whole new conviction`, `talked himself into baptism`). Keep the specifics that *open* the gap (numbers, stakes, names, setup, the cost); remove the specifics that *close* it (the named doctrine, the outcome, the transformation).
 - When revising already-approved copy to add an open loop, scan the surrounding wording and delete anything that already resolves that loop — the loop you add must be the only path to the answer.
-- A deliberately dangling reference — an unnamed "one line" or a "That statement" opener — can be a valid open loop, not an error. Leave it when it works; flag it only when it genuinely confuses.
+- A deliberately dangling reference — an unnamed "one line" or a "That statement" opener — can be a valid open loop in a **locked published** piece, not in generated candidate sentences. Candidate copy must still stand on its own (see **Splice-safe sentences + short punch**).
 
 ### Dual-audience design (skimmers + engaged readers)
 
@@ -301,7 +317,8 @@ Description checklist (per selected title):
 - [ ] Title is `~`-marked or explicitly chosen
 - [ ] Matches **What the Episode Is Really About** + that title’s gap
 - [ ] Real payoff matches the video
-- [ ] 80–110 words; 95–105 target
+- [ ] 80–110 words; 95–105 target (YouTube only — not website copy)
+- [ ] Each sentence stands on its own (splice-safe + short punch)
 - [ ] Plain, adult language (3rd–5th-grade readability OK; no hype)
 - [ ] Useful specifics rather than trailer vagueness
 - [ ] Natural keyword phrasing
@@ -363,3 +380,5 @@ For concept reports, name the rule in play and provide 3–4 concepts unless the
 - Suspense may track real uncertainty or obstacles only and must be resolved honestly.
 - Prefer calm, confident, authentic delivery over yelling, exaggerated reactions, stale memes, gross jokes, or distracting gimmicks.
 - Treat analytics as learning signals, not a reason to compromise truth.
+
+<!-- Agent: grok · Model: Grok 4.6 · Date: 2026-08-20 · splice-safe + short punch listing -->

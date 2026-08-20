@@ -57,7 +57,9 @@ Curiosity is constant; rhetorical structure varies. Select a strategy because it
 - **FAB:** feature → advantage → benefit. Useful for tools, formats, courses, or practical offers.
 - **4Cs:** clear → concise → compelling → credible. Use mainly as an editing pass.
 
-Combine at most what the piece needs. Record the chosen strategy in the design/content fingerprint to reduce repetition across projects.
+**Website copy (mandatory).** Every public website surface — landing pages, section body, headlines, meta descriptions, form leads, CTAs — must follow at least one strategy above. Mix patterns inside body copy to raise interest and the desire to continue learning, or to fulfill the page’s job (watch the study, continue a journey, complete a form). Conversion surfaces use short punch. Candidate sentences must stand on their own for splicing. See `youtube-planning.md` → **Splice-safe sentences + short punch**. Do not default website copy to YouTube description length.
+
+Combine at most what the piece needs. Record the chosen strategy (or mix) in the design/content fingerprint to reduce repetition across projects.
 
 ## Language and voice
 
@@ -93,4 +95,6 @@ This is the same matrix as YouTube Video Planner v1.1.1, adapted for high-trust 
 ## Teaching clarity vs creative craft
 
 Plain explanations help new Bible readers. They **do not** override title packaging, hooks, story craft, or specialized copywriting skills loaded for the task. High-trust ethics still forbid manipulation.
+
+<!-- Agent: grok · Model: Grok 4.6 · Date: 2026-08-20 · website copy must mix writing-strategy patterns -->
 

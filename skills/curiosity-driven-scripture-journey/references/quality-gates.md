@@ -39,6 +39,8 @@ For substantial production:
 - Each major segment adds evidence, clarity, or a payoff.
 - The promised primary payoff is explicit.
 - Reading level is simple without talking down to adults.
+- Website copy follows a named writing-strategy mix (`learning-and-writing.md`); conversion copy is short punch, not YouTube 80–110.
+- Candidate public sentences stand on their own for splicing (`youtube-planning.md`).
 
 ## 4. Visual gate
 
@@ -100,3 +102,5 @@ For substantial production:
 - The ending resolves the promise and opens a sincere next curiosity.
 - Iterative drafts for **all** agent work products (HTML, prompts, packaging, pass notes) used `name_<agent>_vN`; bare canonical names only after the user chose that deliverable (or small fix to an already-promoted file).
 - The requested artifact is complete at its current scope; unresolved dependencies (missing art files, etc.) are named rather than hidden.
+
+<!-- Agent: grok · Model: Grok 4.6 · Date: 2026-08-20 · website copy + splice-safe content gate -->

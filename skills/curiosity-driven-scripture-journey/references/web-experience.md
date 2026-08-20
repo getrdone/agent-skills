@@ -106,6 +106,7 @@ Before calling any HTML pass complete:
 - Keep a primary action clear without hiding the study behind a form.
 - Ask for contact information only with a truthful, concrete value exchange and clear consent.
 - Preserve the learner’s ability to finish or continue without pressure.
+- **Copy:** follow `learning-and-writing.md` **Writing strategy router**. Pick one pattern or mix them in body copy so the reader wants to keep learning or complete the page job (form, watch, continue). Conversion blurbs and form leads are **short punch**, not YouTube 80–110. Sentences stand on their own for splicing — `youtube-planning.md` **Splice-safe sentences + short punch**.
 - When offering the next path, use the approved featured-direct-plus-four-alternates architecture: two more direct continuations, one moderately related question, and one wildcard.
 
 ### The next path — presentation (apply always)
@@ -131,3 +132,5 @@ The next path is a **continuation**, not a catalog. It reads as one obvious next
 ## Release check
 
 The page is not complete merely because it validates. Confirm that the opening matches the promise, each section adds value, design reflects the subject, motion and interaction help, the primary payoff is explicit, and the next curiosity feels natural.
+
+<!-- Agent: grok · Model: Grok 4.6 · Date: 2026-08-20 · website copy: writing-strategy mix + short punch -->
