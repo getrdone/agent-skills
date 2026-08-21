@@ -184,13 +184,14 @@ When HTML is requested:
 - Use semantic landmarks (`header`, `nav`, `main`, `section`, `footer`), a skip link, logical headings, visible focus states, and meaningful link text.
 - Use CSS custom properties for design tokens and a root `data-theme` attribute.
 - Maintain one centralized theme registry/token source as the system of record. Generate or derive the CSS theme blocks, selector options, and JavaScript allowlist from that registry whenever the build environment permits.
-- Components consume semantic aliases such as background, surface, text, muted text, accent, rule, and focus; do not scatter literal per-theme colors through component CSS.
+- Components consume semantic aliases such as background, surface, text, muted text, accent, rule, focus, texture, and texture scale; do not scatter literal per-theme colors or texture data through component CSS.
 - Support named themes through a selector and/or a stable query parameter such as `?theme=mark`; unknown values must fall back safely.
 - Use clear public-facing names. A calm neutral-light option may be called `mild`; avoid internal placeholder names such as `bland` in the visible selector.
 - The no-JavaScript state must remain complete and readable.
 - Respect reduced motion and provide clean print styles.
 - Keep metadata and JSON-LD accurate and avoid filler schema.
-- Treat theme names as an extensible allowlist. Adding a future theme should require one registry entry/token block, not a structural rewrite.
+- Treat theme names as an extensible allowlist. Adding a future theme should require one registry entry/token block, including any self-contained texture and its scale, not a structural rewrite.
+- Do not default every light theme to pastel washes or generic gradients. When the approved visual direction calls for texture, keep it subtle, self-contained, performance-light, contrast-safe, and removed in print.
 
 ## Quality checklist
 
