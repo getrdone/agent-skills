@@ -28,6 +28,12 @@ Define these before outlining substantial content:
 - **Retrieval without threat:** optional recall or prediction may strengthen memory, but interactions must not embarrass, grade, or trick beginners.
 - **Minimal repetition:** repeat only when it reorients, compresses, or deepens the idea.
 
+## Learning-pattern selection
+
+Use `learning-patterns.md` to turn the learning map into implementable learner actions. For a substantive Scripture Journey, choose 3–5 patterns from at least two families and record each pattern's job, placement, learner action, feedback, and accessible fallback. Then load only the selected family files.
+
+Patterns are not decorative widgets or a fixed page recipe. Each must help the learner orient, understand, inspect, practice, recover, retrieve, access, reflect, or choose. Vary the mix across journeys. Do not assign people fixed learning-style labels; offer equivalent modalities and accommodations based on the content and current need.
+
 ## Deliberate variation and reader depth
 
 Curiosity is constant; how each piece pays it off must not be. The experience sequence (Attention → Emotion → Clarity → Progress → Payoff → Reflection → Next Curiosity) is a **buffet, not a hard order** — vary which beats appear, their order, and their emphasis per section, title, title group, or description, and let one section carry multiple story angles when they fit. Keep variation in-family: a large unexplained jump in tone, topic, or format between sections is a **pattern interrupt**, not freshness — the through-line stays visible while the surface varies.
