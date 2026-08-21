@@ -30,6 +30,7 @@ Before substantial production, define:
 - payoff ladder;
 - honest surprise or unexpected connection;
 - known anchor → scaffolding → new insight;
+- 3–5 selected learning-pattern IDs from at least two families, with a distinct job, placement, feedback/payoff, and accessible fallback for each;
 - visual evidence opportunities;
 - reflection moment;
 - interaction opportunities;
@@ -54,12 +55,14 @@ Adapt length to the requested experience, but preserve this logic:
 
 ## Interaction rules
 
+- Use `learning-patterns.md` to select the pattern mix; load only the selected family files. A substantive journey normally uses 3–5 patterns from at least two families, not one repeated interaction.
 - Study truth, citations, and the primary answer live in the HTML document.
 - Interactions (verse focus, translation compare, ordering games, scroll progress, map trails, branching) **may use JavaScript**—build and browser-verify the full interactive design. Do not strip JS to pass a purity checklist.
 - Do not make the learner guess a doctrine to unlock the answer.
 - When using multiple choice, make it observational or reflective rather than graded. Give kind, immediate feedback.
 - A progress bar may show orientation, but avoid school-like “Step 1 of 6” language when a quieter progress cue works.
 - Optional interactions should deepen learning; the core answer must still be readable in the page source.
+- Dynamic state must also be available through text, keyboard behavior, and assistive-technology announcements. A visual or auditory effect alone is not feedback.
 
 ## Reading and theological integrity
 

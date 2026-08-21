@@ -63,6 +63,7 @@ evidence_plan: []
 truth_boundaries: []
 tone_keywords: []
 learning_path: []
+learning_pattern_plan: []
 visual_direction_status: unstarted
 visual_dna: {}
 interaction_plan: []
@@ -94,7 +95,7 @@ idea → candidate → content-approved → visual-approved
 → approved-for-build → building → validation → released
 ```
 
-- `content-approved`: the question, audience, payoff, evidence, learning path, and truth boundaries are stable.
+- `content-approved`: the question, audience, payoff, evidence, learning path, selected learning patterns, and truth boundaries are stable.
 - `visual-approved`: the visual DNA, hierarchy, composition, imagery direction, type direction, palette direction, interaction style, and avoid list are stable.
 - `approved-for-build`: content, visual, and interaction plans are complete enough to implement without guessing.
 - `validation`: the artifact is built and undergoing the relevant technical, integrity, learning, visual, and experience gates.

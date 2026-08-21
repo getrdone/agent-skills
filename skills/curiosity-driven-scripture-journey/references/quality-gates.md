@@ -24,6 +24,7 @@ For substantial production:
 - canonical brief exists;
 - audience, core question, why-care, promise, payoff, and truth boundaries exist;
 - evidence and learning plans exist;
+- a substantive journey names 3–5 learning patterns from at least two families, with placement, learner action, feedback/payoff, and accessible fallback;
 - visual direction and interaction plan exist;
 - new HTML build status is `approved-for-build`;
 - downstream artifact inherits locked decisions.
@@ -39,6 +40,10 @@ For substantial production:
 - Each major segment adds evidence, clarity, or a payoff.
 - The promised primary payoff is explicit.
 - Reading level is simple without talking down to adults.
+- Every selected learning pattern performs a real and non-duplicative learning job; the mix fits this question instead of repeating a house template.
+- At least one selected pattern supports access or learner agency, and active participation is present when the evidence can be inspected honestly.
+- Feedback explains from evidence rather than relying on color, correctness labels, points, streaks, or celebration.
+- Equivalent modalities carry the same claims, citations, and interpretive boundaries; learners are not assigned fixed learning-style labels.
 - Website copy follows a named writing-strategy mix (`learning-and-writing.md`); conversion copy is short punch, not YouTube 80–110.
 - Candidate public sentences stand on their own for splicing (`youtube-planning.md`).
 
