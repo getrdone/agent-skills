@@ -26,7 +26,7 @@ If the consumer project has approved clean examples, match their tone and design
 
 - **Compact transcript:** one short or single-topic presentation → one global Quick Reference after the body.
 - **Section-aware follow-along edition:** multiple major topics, a download/lead magnet, or an explicit request for study aids → end each topic with a Scripture Guide and documentary sources, then add a Master Scripture Index and Source Follow-up Needed at the end.
-- **HTML companion:** when requested, produce a semantic, no-JavaScript-readable document with theme tokens and accessible navigation in addition to the text document.
+- **HTML companion:** when requested, produce a semantic, no-JavaScript-readable document with accessible navigation and a centralized theme-token registry in addition to the text document. New themes must be additive token entries, not page rewrites.
 
 ## Workflow
 
@@ -36,8 +36,8 @@ If the consumer project has approved clean examples, match their tone and design
 4. **Preserve sources** — keep every quotation, attribution, date, statistic, title, and source claim exactly as it appears in the transcript. Research is additive only.
 5. **Header** — include title, speaker/channel when known, `Video:` URL, and bare `Video ID:`.
 6. **Spell-check** — use `SPELLING.md` when biblical/EGW; otherwise correct ASR only when the intended word is clear.
-7. **Build reference apparatus** — use the selected compact or section-aware pattern. Added passages must be labeled `Related study passage`.
-8. **Verify sources** — assign a verification tier, link the strongest located edition, document discrepancies outside the transcript, and retain unresolved items in `Source Follow-up Needed`.
+7. **Build reference apparatus** — use the selected compact or section-aware pattern. References from the presentation appear without a public usage label. Put `Additional related source` immediately after the reference or source title only for material added during study development.
+8. **Verify sources** — assign verification tiers as internal editorial metadata, link the strongest located edition, document discrepancies outside the transcript, and retain unresolved items in `Source Follow-up Needed`. Public source lists normally show the source title on one line and its description plus `View Source Material` link on the next, without verification-tier badges.
 9. **Verify fidelity and accessibility** — run the SPEC checklist, report word-count/token coverage, and visually inspect rendered document formats.
 
 ## Non-negotiable source rule
