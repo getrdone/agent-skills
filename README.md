@@ -12,6 +12,7 @@
 5. If no match → proceed with normal judgment; do not invent a skill or load siblings.
 6. Never preload all skills “just in case.”
 7. All agents share one work folder: until final chosen, drafts are `name_<agent>_vN.ext` (including prompts); promote bare `name.ext` only when the user chooses that deliverable; keep a BOARD.
+8. Every agent/sub-agent repo commit must identify execution identity: `Agent: <agent> | Model: <model> | Thinking: <level-or-not-exposed> | What changed: <summary>`; never guess a thinking level. Full rule: WORKSPACE.md §3b.
 ```
 
 Consumer projects **reference** this repo; they do not own a divergent copy of a skill. Propose skill changes here.
