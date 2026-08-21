@@ -2,6 +2,8 @@
 
 Use this file for visual direction, layouts, graphics, thumbnails, typography, color, imagery, composition, motion, or design review.
 
+**Core design constitution:** for any palette, brand, color-system, token, gradient, or source-led visual-system work, also load and follow repository-root **`DESIGN-DIRECTIVES.md`**. It owns the cross-project reasoning chain for source-specific naming, locked official colors, harmonized families, compact palettes, semantic tokens, signature gradients, contextual psychological usage, practical handoff, and independently validated accessibility. This file adds Scripture-journey-specific composition, teaching, typography, imagery, and motion rules.
+
 ## Contents
 
 - Visual DNA brief
@@ -51,7 +53,7 @@ Reason from the content. Do not pull a finished aesthetic from a token file, fon
 3. **Choose a dynamic-symmetry rectangle + armature** for the real canvas (soft standard — see Composition). Load a matching PNG from the design-resources pack when available.
 4. Build the hierarchy in grayscale/monochrome with type scale, value, spacing, and placement on that armature.
 5. Run grayscale and squint/phone-size checks.
-6. Select typography and palette together from tone keywords and actual content.
+6. Select typography and palette together from tone keywords and actual content. For the palette/color-system reasoning itself, follow `DESIGN-DIRECTIVES.md` before committing tokens or named colors.
 7. Add imagery, texture, interaction, and motion only when each supports meaning.
 8. Re-run grayscale, squint, accessibility, and integrity checks.
 9. Record which grid/ratio you used in the visual DNA / fingerprint.
@@ -104,13 +106,23 @@ Named font examples are sanity checks, not a menu. Reason first.
 
 ## Color
 
-- Build meaning and hierarchy in grayscale first.
-- Derive palette direction from the same tone keywords as type.
-- Use a dominant neutral, one primary accent, and one secondary accent; add more only when each earns a role.
+**Apply repository-root `DESIGN-DIRECTIVES.md` for the full color-system method.** In shorthand:
+
+> **source-specific evocative naming → locked official colors → harmonized families → compact core palette → semantic developer tokens → named signature gradients → psychological usage tied to imagery/content → practical designer/developer guidance → validated accessibility**
+
+Journey-specific additions:
+
+- Build meaning and hierarchy in grayscale first; color strengthens hierarchy rather than creating it from nothing.
+- Derive palette direction from the same tone keywords and content used for typography and imagery.
+- Preserve official/user-locked brand colors exactly; never silently replace them with a sampled or aesthetically tidier alternative.
+- Prefer memorable names that belong to the current source/story instead of generic color labels or names copied from another project.
+- Keep the core palette learnable; add colors only when each earns a distinct role.
+- Separate canonical/story tokens from semantic application aliases in web work.
+- Treat psychological notes as contextual design intentions, not universal color laws.
 - Never use color as the only signal.
-- Verify text and controls against accessibility contrast requirements in every state.
+- Independently calculate contrast for actual foreground/background values and every important interaction state; never inherit AA/AAA labels from a previous agent or reference without validation.
 - Check the finished design in grayscale, on a dark surrounding surface, and in squint/phone view.
-- Do not default unrelated work to beige, cream, brown, or muted green because an earlier token set used them.
+- Do not default unrelated work to beige, cream, brown, muted green, or any prior project palette because an earlier token set used them.
 
 ## Imagery and thumbnail-specific rules
 
