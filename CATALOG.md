@@ -2,6 +2,8 @@
 
 **Always also follow** [`WORKSPACE.md`](WORKSPACE.md): one shared work folder; **until final chosen**, all agent work products (HTML, packaging, **prompts**, pass notes) are `name_<agent>_vN`; promote bare `name.ext` only after the user chooses that deliverable; series/topic boards; **auto-scaffold** new topic folders. Workspace rules apply to **every** skill and to work with no matching skill.
 
+**For any design-bearing task, also follow** [`DESIGN-DIRECTIVES.md`](DESIGN-DIRECTIVES.md): brand systems, palettes, visual systems, graphic design, thumbnails, artwork direction, UI theming, CSS color systems, visual review, and developer handoff of design tokens. Its core chain is: **source-specific evocative naming → locked official colors → harmonized families → compact core palette → semantic developer tokens → named signature gradients → psychological usage tied to imagery/content → practical designer/developer guidance → validated accessibility**. Project/source truth always outranks examples.
+
 **Shared design pack:** private repo [getrdone/design-resources](https://github.com/getrdone/design-resources) → local clone `F:\__ai-projects\design-resources\` (continuously synced). Glossary text lives in this skills repo; pack `GLOSSARY.md` is a symlink. See `F:\__ai-projects\SOURCES-OF-TRUTH.md`.
 
 Agents: match the user request against **Triggers** below.  
