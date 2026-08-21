@@ -1,54 +1,91 @@
 # Clean Video Transcript — Spec (single source of truth)
 
-Use for **any video-derived transcript**: sermons, lectures, teaching series, panels, YouTube captures, Stephen Bohr / Anchor / Secrets Unsealed / SUMtv, and similar.
+Use for any video-derived transcript: sermons, lectures, teaching series, panels, documentaries, and similar material.
 
 ## Goals
-1. Readable full transcript matching established clean style.
-2. Faithful spoken content (no abridgment, no invented teaching).
-3. Correct Bible/EGW/historicist spellings (see `SPELLING.md`).
-4. End-of-file **Quick Reference** for verses, EGW, and other sources in **presentation order**.
 
-## Inputs / outputs
-| Input | Output |
-|-------|--------|
-| Raw `*.txt` (timestamps, Title/URL/Video ID header) | Cleaned `*.md` next to source (same basename) |
-| Do **not** modify raw `.txt` unless user asks | Leave already-clean files alone |
+1. A readable full transcript that preserves the spoken message.
+2. Careful spelling, punctuation, paragraphing, and restrained editorial headings.
+3. A useful Scripture and source apparatus appropriate to the length and structure of the presentation.
+4. A traceable record of verified, corroborating, and unresolved sources without altering transcript evidence.
+5. Accessible output suitable for print, screens, screen readers, and machine parsing when those formats are requested.
 
-**Already clean** if `.md` has: `#` title header, no `[MM:SS]` timestamps, proper paragraphs, word count ≥ ~90% of source body, and (when required) Quick Reference end-matter.
+## Inputs and outputs
+
+| Input | Default output |
+|---|---|
+| Raw transcript with timestamps or subtitle line breaks | Cleaned Markdown next to the source |
+| Clean transcript needing study aids | Updated Markdown with the selected reference apparatus |
+| Follow-along download request | Markdown plus requested Word/PDF and semantic HTML editions |
+
+Do not modify the raw transcript source unless the user explicitly asks. A file is already clean when it has a readable header, no timestamps, coherent paragraphs, approximately 90–100% of source-body words after allowed removals, and the required end matter.
 
 ## Header template
+
 ```markdown
 # <Readable Title>
 **<Speaker or channel>**
 <Series / event line when known>
 Video: <https://www.youtube.com/watch?v=...>
 Video ID: <id>
+Duration: <optional>
 
 ---
-
-[Music]
-
-<cleaned body>
 ```
 
-- **Video ID** is required: the bare YouTube id (e.g. `fhMi9OLR-xQ`), taken from the raw `.txt` `Video ID:` line or parsed from the URL (`v=` / `youtu.be/`). Enables deep-links (`&t=`) and tooling without re-parsing the URL.
-- Optional: `Duration: ~NN minutes` under the series line when known.
+`Video ID:` is required when a YouTube URL is known. Use the bare identifier parsed from `v=` or `youtu.be/`.
 
 ## Body cleaning rules
-1. **Full transcript** — preserve essentially all spoken content. No `[...]` summaries, no abridgment.
-2. **Remove** timestamps (`[00:04]`, `[1:02:33]`), raw `Title:`/`URL:`/`Video ID:`/`====` blocks.
-3. **Join** line-broken speech into paragraphs; blank line between paragraphs; occasional double blank for major section shifts.
-4. **Punctuation & case** — proper sentence starts/ends; no random mid-sentence Title Case.
-5. **Filler** — drop excessive `uh`/`um`/stutters/repeated words; keep natural speech (`you know` when natural, rhetorical questions, “Are you with me?”).
-6. **Keep** `[Music]` at start (and end if in source).
-7. **Quotes** — Scripture in `"double quotes"`; book titles in `*italics*` when named.
-8. **No speaker labels** unless the source is genuinely multi-speaker dialogue and labels aid clarity.
-9. **Spelling** — follow `SPELLING.md` (Bible, EGW, standard historicist/SDA usage). Prefer KJV/NKJV forms when Bohr quotes KJV (e.g. keep “brake” **inside** a KJV quote; modern “broke” in prose).
-10. **Word-count target** — cleaned body ≈ 90–100% of source body (minus fillers/timestamps only).
 
-## End-matter: Quick Reference (required on every cleaned file)
+1. **Preserve the full message.** No summaries in place of spoken content, no abridgment, and no invented teaching.
+2. **Remove mechanical artifacts.** Delete timestamps, raw download headers, caption counters, and isolated subtitle artifacts such as `[Music]` when the requested clean style omits them. Retain meaningful stage direction only when useful.
+3. **Join line-broken speech.** Restore sentences and readable paragraphs; use blank lines between paragraphs.
+4. **Punctuation and case.** Repair obvious caption punctuation and capitalization without changing meaning.
+5. **Filler.** Remove excessive `uh`, `um`, stutters, and accidental repeated words. Keep natural speech, rhetorical questions, and audience interaction when they carry voice or meaning.
+6. **Repeated greetings.** In a stitched or multipart presentation, omit redundant restart greetings only when the user asks for a continuous clean edition or has said they are unnecessary. Do not remove substantive recaps that advance the argument.
+7. **Headings.** Add short descriptive headings at genuine topic changes. Headings are editorial navigation, not a substitute for transcript text.
+8. **Quotes.** Preserve quoted wording as supplied. Use quotation marks and italicized titles consistently, but do not silently modernize or harmonize a quotation.
+9. **Speaker labels.** Use them only for genuine multi-speaker dialogue where labels aid comprehension.
+10. **Spelling.** Follow `SPELLING.md` when relevant. Correct ASR only when the intended form is clear; preserve historically meaningful forms inside quotations.
+11. **Fidelity check.** Target approximately 90–100% body retention after permitted removals. For high-trust work, compare normalized source and output tokens and document the result.
 
-Append after the body (and final `[Music]` if present). **Order of appearance in the talk**, not alphabetical. First mention only for repeated refs (note “reused” only if helpful).
+## Source preservation and research
+
+### Absolute rule
+
+A named source or claim in the transcript is evidence about what the speaker said. Never replace, silently correct, delete, or reattribute it—even if:
+
+- the exact quotation cannot be located;
+- a date or page appears wrong;
+- a stronger primary source is available;
+- a modern legal or historical source qualifies the statement; or
+- secondary sources disagree.
+
+Keep the spoken wording in the transcript. Add research after the relevant section.
+
+### Verification tiers
+
+Use the narrowest accurate label:
+
+- **Verified — primary text:** exact wording or claim located in the original document or an authoritative official transcription.
+- **Verified — facsimile/transcription:** exact material located in a scan, facsimile, or reliable transcription of the cited edition.
+- **Verified — reliable edition:** the material is located in a reputable published edition, though not the original artifact.
+- **Located — contemporary report:** a contemporary news report or recording documents the event or quotation.
+- **Located — bibliographic trail:** the citation can be traced to a named secondary work, but the requested original has not been inspected.
+- **Corroborating context:** a strong source supports the surrounding event, date, law, or historical setting without proving the transcript's exact words.
+- **Source follow-up needed:** the named source, page, exact quotation, or original edition was not located.
+
+Do not write `verified` without an exact bibliographic or linked basis. A stronger source may be listed in addition to the transcript source; it may never replace it.
+
+### Discrepancies
+
+Keep date, wording, legal-status, and attribution discrepancies outside the transcript in a short source note. State what the located source says, what the transcript says, and what still needs confirmation. Avoid turning a source note into an argument with the speaker.
+
+## Choose an end-matter pattern
+
+### Pattern A — compact Quick Reference
+
+Use for a short or single-topic transcript. Append one presentation-order `Quick Reference` after the body with Bible, EGW/SOP when applicable, and Other Sources. Omit empty categories.
 
 ```markdown
 ---
@@ -56,49 +93,115 @@ Append after the body (and final `[Music]` if present). **Order of appearance in
 ## Quick Reference
 
 ### Bible verses
-| Ref | Highlight |
-|-----|-----------|
-| Dan 2:20–21 | God changes times/seasons; removes/raises kings; gives wisdom |
-| Rev 13:1–2 | Sea beast; dragon gives power, seat, great authority |
-
-### Ellen White / Spirit of Prophecy
-| Source | Highlight |
-|--------|-----------|
-| GC 49 | Compromise restrained by pagan persecution; then church enters courts of kings |
-| PK 535 | Rise/fall of Babylon, Medo-Persia, Greece, Rome under Watcher and Holy One |
+| Ref | Key point from the passage |
+|---|---|
+| Revelation 13:11 | A second beast rises from the earth with two lamb-like horns and a dragon-like voice |
 
 ### Other sources
-| Source | Highlight |
-|--------|-----------|
-| Gibbon, *Decline and Fall* | Rome’s iron dominion / trampling imagery as cited |
-| Cardinal Manning (as quoted) | Empire’s fall frees papal temporal power |
+| Source | Status and relevance |
+|---|---|
+| <source as named in transcript> | <verification tier>; <what was located or remains unresolved> |
 ```
 
-### What to include
-- **Bible:** every distinct passage the speaker reads, cites, or clearly hinges an argument on (e.g. “Daniel 8:14”, “go to Revelation 13”). Omit vague “the Bible says” with no ref.
-- **EGW/SOP:** every named book+page or clearly identified quotation (GC, DA, PK, 5T, etc.). Use standard abbreviations when the speaker does; expand once if helpful (`GC` = *The Great Controversy*).
-- **Other:** historians, papal docs, scholars, creeds, non-EGW books, newsletters—anything cited as authority or illustration with a nameable source.
+### Pattern B — section-aware follow-along edition
 
-### Highlight line rules
-- **One short clause** (≈8–20 words): the point **in this talk**, not a full verse dump or multi-paragraph quote.
-- Prefer **why the speaker used it** over a generic Bible-dictionary gloss.
-- Use en-dash ranges: `Dan 9:24–27`, `Rev 13:11–17`.
-- If only a book/page was given with no quote body, still list it with the claim made from it.
+Use for several major topics, long-form downloads, or an explicit request for a study companion.
 
-### What not to do
-- Do not invent references not in the transcript.
-- Do not renumber or reorder by canonical Bible order.
-- Do not paste long quotations into the tables (body already has them).
-- If a category has zero entries, omit that subsection (or write `*(none cited)*` only if user prefers explicit empty sections).
+At the end of each major topic, add in this order:
 
-## Quality checklist (before finish)
-- [ ] No timestamps; raw header gone
-- [ ] Header matches template; Video URL + Video ID correct
-- [ ] Full content retained (~90%+ words)
-- [ ] Spellings match `SPELLING.md`
-- [ ] Quick Reference present, presentation order, three tables as applicable
-- [ ] Source `.txt` untouched
+1. `<Topic> Scripture Guide`
+2. Historical, church, constitutional, legal, or other documentary sources appropriate to that topic
 
-## Style anchors
-- End-matter sample: `examples/end-matter-sample.md` in this skill.
-- If the consumer project has already-cleaned transcripts, match their paragraph tone; **do not abridge**.
+After all topics, add:
+
+3. `Master Scripture Index`
+4. `Source Follow-up Needed`
+5. Transcript information or production notes when useful
+
+Keep sources with the section where the audience encounters them. The master index is retained because it provides a single follow-along trail without forcing readers to hunt through three topic lists.
+
+## Scripture Guide rules
+
+- Include every distinct passage the speaker reads, names, or clearly builds an argument upon.
+- Add genuinely useful cross-references generously when the user requests an expanded guide.
+- Label transcript passages **Used in video**.
+- Label additions **Related study passage**. Never imply that an added verse was spoken.
+- Describe the principal point of the passage itself in one clear sentence. Favor the text's subjects, actions, contrasts, promises, warnings, and stated interpretation over a personal application or generic devotional summary.
+- Preserve the passage's immediate context; do not use the description to overstate a disputed conclusion.
+- Use consistent full book names and en-dash verse ranges.
+
+Example:
+
+```markdown
+### USA in Prophecy Scripture Guide
+
+- **Daniel 7:24 — Used in video.** The interpreting angel identifies horns as kings or ruling powers arising from a kingdom.
+- **Revelation 13:11 — Used in video.** The earth beast has two lamb-like horns, yet its voice becomes dragon-like.
+- **Acts 5:29 — Related study passage.** The apostles state that obedience to God takes precedence when human commands conflict with His command.
+```
+
+## Documentary source rules
+
+- Repeat the transcript's named source in the source list even when unverified.
+- Give author/institution, title, edition/date/page when known, verification tier, a stable link, and a concise relevance note.
+- Prefer primary and official sources; add facsimiles and reliable editions when originals are unavailable.
+- Historical, constitutional, and legal sources belong under the section whose claim they illuminate.
+- Avoid raw URL labels in Word/PDF. Use meaningful link text such as `Open source`, `View facsimile`, or the source title.
+- Never claim a current law, official text, institutional position, or modern statistic without current verification.
+
+## Source Follow-up Needed
+
+This section is required whenever any source remains incomplete. Each item should say exactly what to obtain:
+
+- original publication or edition;
+- page number or archival shelf mark;
+- scan, screenshot, book, or pamphlet;
+- exact wording and surrounding context;
+- unresolved date, attribution, or legal-status question.
+
+Retain these notes in future revisions until the evidence is added. New evidence is appended or used to upgrade the verification tier; the transcript wording remains untouched.
+
+## Master Scripture Index
+
+For a section-aware edition, retain a final master list even though each topic has its own guide. Arrange it in approximate Bible order unless the user requests presentation order. For each entry include:
+
+- reference;
+- usage label (`Used in video` or `Related study passage`);
+- text-centered description; and
+- topic name(s) where it appears.
+
+Deduplicate identical references while preserving all topic tags.
+
+## Semantic HTML companion
+
+When HTML is requested:
+
+- Put the full transcript, Scripture Guides, source notes, and follow-up list in the DOM; do not hide essential content behind JavaScript.
+- Use semantic landmarks (`header`, `nav`, `main`, `section`, `footer`), a skip link, logical headings, visible focus states, and meaningful link text.
+- Use CSS custom properties for design tokens and a root `data-theme` attribute.
+- Support named themes through a selector and/or a stable query parameter such as `?theme=mark`; unknown values must fall back safely.
+- The no-JavaScript state must remain complete and readable.
+- Respect reduced motion and provide clean print styles.
+- Keep metadata and JSON-LD accurate and avoid filler schema.
+- Treat theme names as an extensible allowlist. Adding a future theme should require one token block and one allowlist/selector entry, not a structural rewrite.
+
+## Quality checklist
+
+- [ ] Raw source remains untouched
+- [ ] No timestamps or caption counters remain
+- [ ] Full spoken content retained after allowed removals
+- [ ] Editorial headings do not replace transcript text
+- [ ] Video URL and bare Video ID are correct when known
+- [ ] Spelling and quotations are handled conservatively
+- [ ] Every transcript source remains present
+- [ ] Verification labels match the evidence actually located
+- [ ] Additional Scripture is labeled `Related study passage`
+- [ ] Scripture descriptions state key points from the passage itself
+- [ ] Section sources follow each section in a multi-topic edition
+- [ ] Master Scripture Index is included and deduplicated when using Pattern B
+- [ ] Every unresolved source appears under `Source Follow-up Needed`
+- [ ] No temporary landing-page URL or brittle deployment reference was inserted unless requested
+- [ ] Word/PDF files were rendered and visually inspected; accessibility issues were fixed
+- [ ] HTML works without JavaScript and passes ID/link/theme checks when supplied
+
+<!-- Agent: Codex · Model: GPT-5 · Date: 2026-08-21 · Change: authoritative section-aware, source-preserving follow-along transcript specification. -->
