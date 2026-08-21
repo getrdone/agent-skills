@@ -1,12 +1,14 @@
 ---
 name: curiosity-driven-scripture-journey
-description: Plan, package, design, write, build, or review a curiosity-driven Scripture content project from any entry point. Use for topic discovery, Bible-study questions and copy, YouTube ideas/titles/descriptions/thumbnails/scripts, graphic design, visual direction, learning architecture, interactive semantic HTML/CSS/JavaScript, SEO/AEO/GEO, project gates, or cross-channel consistency. Also use when continuing or changing one slice of an existing Scripture, ministry, educational, or high-trust project while preserving prior decisions.
+description: Plan, package, design, write, build, or review a curiosity-driven Scripture content project from any entry point. Use for topic discovery, Bible-study questions and copy, source-library ingestion and alignment, source databases, YouTube ideas/titles/descriptions/thumbnails/scripts, graphic design, visual direction, learning architecture, interactive semantic HTML/CSS/JavaScript, SEO/AEO/GEO, project gates, or cross-channel consistency. Also use when continuing or changing one slice of an existing Scripture, ministry, educational, or high-trust project while preserving prior decisions.
 ---
 
 > **Canonical location:** [getrdone/agent-skills](https://github.com/getrdone/agent-skills) → `skills/curiosity-driven-scripture-journey/`  
 > **Workspace (all skills):** repo root [`WORKSPACE.md`](../../WORKSPACE.md) — one shared work folder; until final chosen, all agent work products (HTML, packaging, **prompts**, pass notes) use `name_<agent>_vN.ext`; promote bare `name.ext` only when the user chooses that deliverable; maintain `SERIES-BOARD.md` / `TOPIC-BOARD.md`.
 
 # Curiosity-Driven Scripture Journey
+
+<!-- Agent: Codex | Model: GPT-5 | Thinking: not exposed | Date: 2026-08-21 -->
 
 Operate as one coherent content studio with a thin router. Apply the shared spine below to every task, then load only the reference files required for the requested lane. Keep universal web rules, Scripture-specific rules, and YouTube-specific mechanics internally distinct so a small task never loads the whole system.
 
@@ -25,6 +27,7 @@ Apply these invariants even when the user asks for only one title, one graphic, 
 8. **HTML + CSS + JS as one craft:** semantic HTML holds study truth and citations; CSS holds premium presentation (including **network webfonts**—not system-only); JavaScript is first-class for journey interaction, scroll storytelling, state, and delight. Do not strip fonts, motion, or JS to satisfy a no-JS purity test. Broken interactions are a fail.
 9. **Motion policy:** full purposeful motion is the default design. Optional `@media (prefers-reduced-motion: reduce)` may simplify nonessential motion—never design the main experience as reduced-motion.
 10. **Imagery boundary:** never create or select explicit, nude, or sexually suggestive imagery, poses, shapes, or object symbolism. This applies to references and generated or sourced media.
+11. **Canonical source alignment:** use the private `getrdone/bible-study-source-materials` repository as the source of truth for approved source records. Pin the library snapshot used by a substantive study, preserve supplied sources, and block unresolved contradictions rather than silently harmonizing them.
 
 ## Route the request
 
@@ -35,7 +38,8 @@ Read only the indicated references, plus any file the user supplies:
 | Start a project, resume from mixed artifacts, set status, or coordinate several deliverables | `references/project-system.md` |
 | Find or approve a topic, map a learning journey, write general teaching copy, or choose a writing framework | `references/learning-and-writing.md` |
 | Choose, combine, implement, or audit learning patterns or teaching strategies | `references/learning-patterns.md`, then only the selected pattern-family file(s); read `references/learning-pattern-sources.md` only for provenance or catalog maintenance |
-| Plan or write a Bible study, Scripture Journey Page, evidence path, source trail, translation review, interactions, or next-study choices | `references/scripture-study.md`, `references/learning-and-writing.md`, `references/learning-patterns.md`, and `references/branching-journey.md`; then load only the selected pattern-family file(s) |
+| Ingest, approve, classify, index, query, or audit Bible-study source material or its SQLite database | `references/source-governance.md` |
+| Plan or write a Bible study, Scripture Journey Page, evidence path, source trail, translation review, interactions, or next-study choices | `references/scripture-study.md`, `references/source-governance.md`, `references/learning-and-writing.md`, `references/learning-patterns.md`, and `references/branching-journey.md`; then load only the selected pattern-family file(s) |
 | Generate or review YouTube ideas, titles, descriptions, packaging, video structure, scripts, or retention | `references/youtube-planning.md`; also read `references/learning-and-writing.md` for content or scripts |
 | Create or review a thumbnail, graphic, moodboard, visual direction, typography, palette, layout, or motion language | `references/visual-system.md` + skim `references/dynamic-symmetry-glossary.md` then `references/dynamic-symmetry.md`; for **actual image generation**, load skill **`artwork-prompts-handoff`** (prompts file for human tools—default; no paid Canva/Leonardo APIs unless user explicitly confirms credits); add `references/youtube-planning.md` for thumbnails |
 | Build or review HTML/CSS/JS, landing pages, interactions, SEO/AEO/GEO, performance, or accessibility | `references/web-experience.md`; also read `references/visual-system.md`, `references/motion-and-premium-ui.md`, `references/design-critique-and-anti-slop.md`, `references/branching-journey.md`, and `references/learning-and-writing.md` for on-page copy |
@@ -73,7 +77,7 @@ Read only the indicated references, plus any file the user supplies:
 - **Expanded for the actual reader.** Scripture Journey pages, study text, and other teaching body copy must be expanded, interesting, and conversational — written like a thoughtful person composing for someone else. It must never feel like a dry “fact → quote → fact” sequence. Mix writing strategies from `references/learning-and-writing.md` so the reader wants to keep going. **Landing / conversion copy is the exception:** use **short punch** (a few tight sentences), not a YouTube-length explainer. All candidate sentences remain splice-safe. Still obey the core voice rule: do not use “we / us / our” as if the writer is sitting beside the reader.
 - Label facts, interpretation, recommendations, and open decisions when blending them could mislead.
 - Preserve source claims and citations. Do not invent evidence, testimonials, outliers, analytics, quotations, or Scripture support.
-- In a repository-backed project with `sources/registry.yaml`, read that registry before source-dependent work. Treat only records with an applicable `approval.status: approved` as authoritative starting or reference material. Files in `sources/intake/` are never authoritative merely because they exist.
+- Before source-dependent work, resolve the consumer project's source-library lock and read the pinned `getrdone/bible-study-source-materials` registry. Treat only records with an applicable `approval.status: approved` as authoritative starting or reference material. Intake files and the generated SQLite database are never independently authoritative.
 - Gate results are only `PASS`, `FAIL`, or `BLOCKED`, with concise evidence. Completion alone cannot produce a pass.
 - For a narrow task, apply the whole shared spine silently and return the narrow result.
 - Descriptions, emails, and pre-click copy must leave an additional open curiosity gap and support dual-audience design (early CTA for skimmers + continued tension for engaged readers). Vary structure deliberately so pieces do not feel formulaic. The gap must never **leak** the payoff the title/episode promises — apply the leak test in `references/youtube-planning.md`. Website copy must follow the writing-strategy router; conversion copy uses short punch.

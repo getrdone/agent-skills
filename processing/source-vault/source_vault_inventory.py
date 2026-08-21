@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
+# Agent: Codex | Model: GPT-5 | Thinking: not exposed | Date: 2026-08-21
 """Inventory a private source vault without copying or reading source content into AI context.
 
-Lives in agent-skills under processing/source-vault/. Consumer projects keep sources/registry.yaml.
+Lives in agent-skills under processing/source-vault/. The canonical private source repository owns registry, intake metadata, generated indexes, and SQLite.
 """
 
 from __future__ import annotations
@@ -198,15 +199,15 @@ def main() -> int:
     args = parse_args()
     source_root = args.source_root.expanduser().resolve()
     repo_root = args.repo_root.expanduser().resolve()
-    output_dir = repo_root / "sources" / "intake"
+    output_dir = repo_root / "intake" / "_inventory"
     json_path = output_dir / "source-vault-inventory.json"
     markdown_path = output_dir / "source-vault-inventory.md"
 
     if not source_root.is_dir():
         print(f"Source folder not found: {source_root}", file=sys.stderr)
         return 2
-    if not (repo_root / "sources" / "registry.yaml").is_file():
-        print(f"Repository source registry not found beneath: {repo_root}", file=sys.stderr)
+    if not (repo_root / "registry.yaml").is_file():
+        print(f"Canonical source registry not found beneath: {repo_root}", file=sys.stderr)
         return 2
 
     previous = load_previous(json_path)

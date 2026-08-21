@@ -1,5 +1,7 @@
 # Quality Gates
 
+<!-- Agent: Codex | Model: GPT-5 | Thinking: not exposed | Date: 2026-08-21 -->
+
 Use only the gates relevant to the artifact. A gate may produce PASS, FAIL, or BLOCKED with a concise reason and next correction.
 
 **Run the loop yourself first.** The agent owns the check → critique → fix cycle before the human sees anything: run the relevant gates, then critique/audit and iterate (see `design-critique-and-anti-slop.md` iteration verbs — evaluate, refine, harden) until the artifact is genuinely strong. Aim for **loop until amazing**, not until acceptable. Hand the human direction-level and taste decisions, not mechanical errors or gate failures they must catch — the agent does the checking, testing, and rechecking; the human feedback loop steers and signs off.
@@ -17,7 +19,18 @@ Use only the gates relevant to the artifact. A gate may produce PASS, FAIL, or B
 - Every material lexical, historical, cultural, translation, doctrinal, quotation, or external factual claim has a traceable source, with inline support and complete end references.
 - Imagery respects the absolute content boundary.
 
-## 2. Planning gate
+## 2. Source alignment gate
+
+- The canonical source repository and exact snapshot are recorded.
+- The pinned registry was read before source-dependent work.
+- Every referenced human source is approved for the applicable scope; intake and under-review material is not treated as authority.
+- Material claims are mapped to Scripture passages and exact source records/locators in an alignment manifest.
+- Supplied sources and transcript claims are preserved; added corroboration does not replace them.
+- Expansions are rooted in Scripture, Spirit of Prophecy, or traceable scripturally aligned reasoning and labeled by claim type.
+- Apparent contradictions among applicable approved sources are recorded and the affected claim is `BLOCKED` until resolved or honestly qualified.
+- SQLite results are treated as a searchable generated view and verified against canonical records when wording or locators matter.
+
+## 3. Planning gate
 
 For substantial production:
 
@@ -30,7 +43,7 @@ For substantial production:
 - downstream artifact inherits locked decisions.
 - approval to draft has not been misreported as approval of the draft; unaccepted agent choices remain candidates.
 
-## 3. Learning/content gate
+## 4. Learning/content gate
 
 - A useful known anchor leads toward one new idea.
 - Scaffolding has no unexplained leap.
@@ -47,7 +60,7 @@ For substantial production:
 - Website copy follows a named writing-strategy mix (`learning-and-writing.md`); conversion copy is short punch, not YouTube 80–110.
 - Candidate public sentences stand on their own for splicing (`youtube-planning.md`).
 
-## 4. Visual gate
+## 5. Visual gate
 
 - Proximity/grouping, figure-ground, and continuity/eye path are intentional.
 - Hierarchy survives grayscale.
@@ -62,7 +75,7 @@ For substantial production:
 - Motion is purposeful and present in the **default** experience; optional `prefers-reduced-motion` accommodation does not define the design.
 - Design fingerprint does not repeat recent work without reason.
 
-## 5. YouTube gate
+## 6. YouTube gate
 
 - Idea and packaging are distinguished.
 - Title opens one honest gap and the content closes it.
@@ -78,7 +91,7 @@ For substantial production:
 - One goal, visible progress, nested payoffs, and a real ending exist.
 - Retention tactics do not delay value or fake stakes.
 
-## 6. Technical web gate
+## 7. Technical web gate
 
 **Primary (must pass — beauty and function):**
 
@@ -97,7 +110,7 @@ For substantial production:
 - Optional `@media (prefers-reduced-motion: reduce)` simplifies nonessential motion—never the main design language.
 - No-JS / no-CSS smoke checks are optional diagnostics, **not** release blockers and **not** reasons to strip fonts, motion, or interactive journey features.
 
-## 7. Experience/release gate
+## 8. Experience/release gate
 
 - The first screen/seconds confirm the promise and feel **premium**, not template-generic.
 - There is one obvious primary question or goal.

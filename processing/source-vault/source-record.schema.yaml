@@ -1,118 +1,63 @@
+# Agent: Codex | Model: GPT-5 | Thinking: not exposed | Date: 2026-08-21
 $schema: https://json-schema.org/draft/2020-12/schema
-title: Scripture Journey Source Record
+title: Bible Study Source Record
 type: object
 additionalProperties: false
-required:
-  - id
-  - title
-  - authority_class
-  - provenance
-  - rights
-  - approval
-  - locator
+required: [id, title, primary_authority_class, authority_classes, provenance, rights, approval, locator, content]
 properties:
   id:
     type: string
     pattern: '^[a-z0-9][a-z0-9-]*$'
-  title:
-    type: string
-  author:
-    type: [string, 'null']
-  editor:
-    type: [string, 'null']
-  date:
-    type: [string, 'null']
-  edition:
-    type: [string, 'null']
-  publisher:
-    type: [string, 'null']
-  authority_class:
-    enum:
-      - scripture
-      - textual-tools
-      - reformation
-      - adventist-pioneers
-      - trusted
-      - historical
-      - contemporary
-      - creative
-  topics:
+  title: {type: string}
+  summary: {type: [string, 'null']}
+  primary_authority_class:
+    enum: [scripture, textual-tools, spirit-of-prophecy, reformation, adventist-pioneers, respected, subject-matter-expert, historical, contemporary, creative]
+  authority_classes:
+    type: array
+    minItems: 1
+    uniqueItems: true
+    items:
+      enum: [scripture, textual-tools, spirit-of-prophecy, reformation, adventist-pioneers, respected, subject-matter-expert, historical, contemporary, creative]
+  people:
     type: array
     items:
-      type: string
+      type: object
+      required: [relationship]
+      properties:
+        person_id: {type: [string, 'null']}
+        name: {type: string}
+        relationship: {type: string}
+  organizations: {type: array, items: {type: string}}
+  date: {type: [string, 'null']}
+  edition: {type: [string, 'null']}
+  publisher: {type: [string, 'null']}
+  topics: {type: array, items: {type: string}}
+  expertise_domains: {type: array, items: {type: string}}
   scripture_routes:
     type: array
     items:
-      type: string
-  provenance:
+      oneOf:
+        - {type: string}
+        - type: object
+          required: [reference]
+          properties:
+            reference: {type: string}
+            relationship: {type: [string, 'null']}
+            locator: {type: [string, 'null']}
+  provenance: {type: object}
+  rights: {type: object}
+  approval: {type: object}
+  locator: {type: object}
+  content:
     type: object
-    additionalProperties: false
-    required: [acquisition_method, accessed]
+    required: [extraction_status]
     properties:
-      acquisition_method:
-        type: string
-      original_url:
-        type: [string, 'null']
-      archive_url:
-        type: [string, 'null']
-      accessed:
-        type: string
-      checksum_sha256:
-        type: [string, 'null']
-  rights:
-    type: object
-    additionalProperties: false
-    required: [status, redistribution_allowed]
-    properties:
-      status:
-        enum: [public-domain, licensed, permission-required, link-only, unknown]
-      copyright_holder:
-        type: [string, 'null']
-      license:
-        type: [string, 'null']
-      redistribution_allowed:
-        type: boolean
-      allowed_uses:
-        type: array
-        items:
-          type: string
-      required_attribution:
-        type: [string, 'null']
-      notes:
-        type: [string, 'null']
-  approval:
-    type: object
-    additionalProperties: false
-    required: [status, scope]
-    properties:
-      status:
-        enum: [intake, under-review, approved, rejected, retired]
-      scope:
-        type: array
-        items:
-          type: string
-      approved_by:
-        type: [string, 'null']
-      approved_on:
-        type: [string, 'null']
-      notes:
-        type: [string, 'null']
-  locator:
-    type: object
-    additionalProperties: false
-    required: [mode]
-    properties:
-      mode:
-        enum: [stored-original, link-only]
-      file:
-        type: [string, 'null']
-      url:
-        type: [string, 'null']
-  supersedes:
-    type: array
-    items:
-      type: string
-  related:
-    type: array
-    items:
-      type: string
+      file: {type: [string, 'null']}
+      format: {type: [string, 'null']}
+      extraction_status: {enum: [not-ingested, metadata-only, partial, complete, needs-correction]}
+      source_fidelity: {type: [string, 'null']}
+      pagination: {type: [string, 'null']}
+      notes: {type: [string, 'null']}
+  supersedes: {type: array, items: {type: string}}
+  related: {type: array, items: {type: string}}
+
