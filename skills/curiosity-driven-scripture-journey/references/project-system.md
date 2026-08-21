@@ -1,5 +1,7 @@
 # Project System and Gates
 
+<!-- Agent: Codex | Model: GPT-5 | Thinking: not exposed | Date: 2026-08-21 -->
+
 Use this file for new projects, cross-channel work, handoffs, or continuation from partial artifacts.
 
 ## Contents
@@ -60,6 +62,15 @@ new_idea:
 promise:
 primary_payoff:
 evidence_plan: []
+source_library:
+  repository: getrdone/bible-study-source-materials
+  snapshot:
+  registry_version:
+source_records: []
+source_alignment_status: unstarted
+source_alignment_manifest:
+source_conflicts: []
+source_expansions: []
 truth_boundaries: []
 tone_keywords: []
 learning_path: []
@@ -95,7 +106,7 @@ idea → candidate → content-approved → visual-approved
 → approved-for-build → building → validation → released
 ```
 
-- `content-approved`: the question, audience, payoff, evidence, learning path, selected learning patterns, and truth boundaries are stable.
+- `content-approved`: the question, audience, payoff, evidence, pinned source-library snapshot, source alignment, learning path, selected learning patterns, and truth boundaries are stable.
 - `visual-approved`: the visual DNA, hierarchy, composition, imagery direction, type direction, palette direction, interaction style, and avoid list are stable.
 - `approved-for-build`: content, visual, and interaction plans are complete enough to implement without guessing.
 - `validation`: the artifact is built and undergoing the relevant technical, integrity, learning, visual, and experience gates.

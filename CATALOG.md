@@ -1,5 +1,7 @@
 # Skill catalog (read this first — do not load every skill)
 
+<!-- Agent: Codex | Model: GPT-5 | Thinking: not exposed | Date: 2026-08-21 -->
+
 **Always also follow** [`WORKSPACE.md`](WORKSPACE.md): one shared work folder; **until final chosen**, all agent work products (HTML, packaging, **prompts**, pass notes) are `name_<agent>_vN`; promote bare `name.ext` only after the user chooses that deliverable; series/topic boards; **auto-scaffold** new topic folders. Workspace rules apply to **every** skill and to work with no matching skill.
 
 **For any design-bearing task, also follow** [`DESIGN-DIRECTIVES.md`](DESIGN-DIRECTIVES.md): brand systems, palettes, visual systems, graphic design, thumbnails, artwork direction, UI theming, CSS color systems, visual review, and developer handoff of design tokens. Its core chain is: **source-specific evocative naming → locked official colors → harmonized families → compact core palette → semantic developer tokens → named signature gradients → psychological usage tied to imagery/content → practical designer/developer guidance → validated accessibility**. Project/source truth always outranks examples.
@@ -13,7 +15,7 @@ If none match → use your own judgment; do not force a skill.
 | Skill | Path | Triggers (keywords / intent) |
 |-------|------|------------------------------|
 | clean-video-transcript | `skills/clean-video-transcript/` | clean transcript, clean video transcript, remove timestamps, ASR cleanup, Quick Reference, verse list, EGW reference list, YouTube transcript polish |
-| curiosity-driven-scripture-journey | `skills/curiosity-driven-scripture-journey/` | Scripture journey, Bible study page, discovery topic, learning patterns, teaching strategies, YouTube titles/ideas packaging, 17-category title matrix, thumbnail, ministry landing page, Scripture SEO/AEO, high-trust faith content, project brief gates |
+| curiosity-driven-scripture-journey | `skills/curiosity-driven-scripture-journey/` | Scripture journey, Bible study page, discovery topic, source library, source ingestion, source SQLite, source alignment, learning patterns, teaching strategies, YouTube titles/ideas packaging, 17-category title matrix, thumbnail, ministry landing page, Scripture SEO/AEO, high-trust faith content, project brief gates |
 | artwork-prompts-handoff | `skills/artwork-prompts-handoff/` | image prompts, artwork prompts, thumbnail prompts, generate art, make graphics, mood board images, I'll create images manually, Leonardo/Canva without credits, art handoff, prompts file |
 | modern-html-aeo | `skills/modern-html-aeo/` | HTML page, landing page, self-contained HTML, AEO, GEO, SEO page, conversion page, Core Web Vitals, modern HTML |
 | interactive-components | `skills/interactive-components/` | accordion, tabs, filter, calculator, modal, carousel, form interaction, progressive disclosure, UI components |

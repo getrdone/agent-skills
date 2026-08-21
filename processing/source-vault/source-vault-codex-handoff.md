@@ -1,48 +1,59 @@
 # Handoff — Private Scripture Source Vault
 
-Use with skill `curiosity-driven-scripture-journey` and this processing package.
+<!-- Agent: Codex | Model: GPT-5 | Thinking: not exposed | Date: 2026-08-21 -->
 
-## Paths (set per machine)
+Use with skill `curiosity-driven-scripture-journey`, this processing package, and private repository `getrdone/bible-study-source-materials`.
+
+## Paths
 
 | Role | Example |
 |------|---------|
-| Agent-skills checkout | clone of `https://github.com/getrdone/agent-skills` |
-| Consumer project | e.g. `scripture-discovery-journey` (content site / brief / `sources/`) |
-| Private source folder | local-only Bible study materials (never commit unapproved originals) |
+| Agent skills | clone of `https://github.com/getrdone/agent-skills` |
+| Canonical source library | clone of `https://github.com/getrdone/bible-study-source-materials` |
+| Consumer project | e.g. `scripture-discovery-journey` with `source-library.lock.yaml` |
+| Private source folder | local Bible-study material; never commit unapproved or restricted originals |
 
 ## Goal
 
-Inventory, verify, classify, and register a private source collection without uploading copyrighted or unapproved originals into the agent-skills repo or the public web.
+Inventory, verify, classify, register, index, and query a private source collection without replacing supplied sources or uploading material whose rights are unknown.
 
-## Required operating rules
+## Required rules
 
-1. Read agent-skills `CATALOG.md`, then `skills/curiosity-driven-scripture-journey/SKILL.md`. Load only required references.
-2. Read this folder’s `sources-library-README.md` and `source-record.schema.yaml`. In the **consumer project**, read `sources/registry.yaml` before source-dependent work.
-3. Authority order: Scripture compared with Scripture; original-language work; named Reformers; named Adventist pioneers; approved trusted sources; other contemporary material only for a defined supporting purpose.
-4. A trusted source is a research starting point, not blanket approval of every claim. Cite the exact work, episode, page, or timestamp.
-5. Never infer rights or approval. Unknown rights means link-only or local-only until verified.
-6. Never commit source-folder credentials, absolute private paths, executables, duplicate binaries, or unapproved copyrighted originals into agent-skills.
-7. Do not modify the master skill during an ordinary intake task. Propose skill changes as a separate PR to agent-skills.
+1. Read `CATALOG.md`, the Scripture Journey skill, and `references/source-governance.md`.
+2. Read the source repository's registry and policy.
+3. Use only approved records within scope. Scripture remains the final authority.
+4. Preserve named sources and transcript wording; add stronger evidence alongside.
+5. Store one item and cross-list through metadata.
+6. Never infer rights, approval, page numbers, quotations, or agreement.
+7. Keep unknown-rights material local-only or link-only.
+8. Do not modify the master skill during ordinary intake work.
 
-## Phase 1 — Cheap deterministic inventory
+## Phase 1 — deterministic inventory
 
 ```bash
 python3 processing/source-vault/source_vault_inventory.py \
   --source-root '/path/to/private-source-materials' \
-  --repo-root '/path/to/consumer-project' \
+  --repo-root '/path/to/bible-study-source-materials' \
   --write
 ```
 
-Review inventory outputs under the consumer project’s `sources/intake/` (or the path the script reports). Stop on unreadable files, executables, unexpected symlinks, empty files, or suspicious archives.
+Review `intake/_inventory/`. Stop on unreadable files, executables, unexpected symlinks, empty files, or suspicious archives.
 
-## Phase 2 — Selective review
+## Phase 2 — selective ingestion
 
-1. Group exact duplicates by SHA-256. Do not delete from the private source folder.
-2. Create candidate source records only for accurately identified files.
-3. Verify title, author, edition, date, publisher, URL, provenance, rights, attribution. Leave unknowns unknown.
-4. Keep candidates in consumer `sources/intake/`. Only approved records with applicable scope enter `sources/library/` and `sources/registry.yaml`.
-5. Review only files needed for the current task. Do not load the whole vault into model context.
+1. Group exact duplicates by SHA-256 without deleting originals.
+2. Verify one needed source at a time.
+3. Create its record under intake.
+4. When permitted, normalize searchable text to `content.md` while preserving headings, page markers, timestamps, locators, and source wording.
+5. Correct transcripts against the official recording; preserve meaning and named sources.
+6. Obtain explicit approval before moving the item into the library and registry.
 
-## Transcript correction
+## Phase 3 — publish searchable state
 
-Physical ASR transcripts may require correction before publication. Work one episode at a time against the official video; preserve meaning; fix transcription, punctuation, names, and references only. Prefer the `clean-video-transcript` skill for final polished markdown + Quick Reference when applicable.
+```bash
+python3 scripts/validate_sources.py
+python3 scripts/build_source_db.py
+python3 scripts/validate_sources.py --database database/sources.sqlite3
+```
+
+Commit canonical inputs, generated indexes, and the validated SQLite database together. Update each consumer project's pinned snapshot. The planned HTML query surface remains a future read-only view of the same database.

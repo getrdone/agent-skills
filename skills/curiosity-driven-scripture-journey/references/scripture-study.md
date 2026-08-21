@@ -1,5 +1,7 @@
 # Scripture Journey Content
 
+<!-- Agent: Codex | Model: GPT-5 | Thinking: not exposed | Date: 2026-08-21 -->
+
 Use this file for Bible-study questions, Scripture Journey Pages, evidence plans, interactions, pathways, and Scripture-specific review.
 
 ## Constitution
@@ -26,6 +28,7 @@ Before substantial production, define:
 - precise promised payoff;
 - primary and supporting passages in context;
 - source/translation requirements;
+- pinned source-library snapshot, applicable approved source records, and claim-level alignment plan;
 - strongest early evidence;
 - payoff ladder;
 - honest surprise or unexpected connection;
@@ -76,6 +79,7 @@ Adapt length to the requested experience, but preserve this logic:
 ## Research authority and source order
 
 Load `resources-and-authority.md` for SME order, links, vault paths, tools, and **plain-language scope** (teaching vs creative packaging).
+Load `source-governance.md` for the cross-repository workflow, SQLite query rules, conflict handling, and alignment manifest.
 
 
 Use this order without treating later sources as replacements for earlier evidence:
@@ -152,4 +156,6 @@ Present these as obvious sequential links rather than boxed tiles unless the app
 - Are small payoffs distributed through the journey?
 - Is the primary answer explicit rather than implied?
 - Are interpretive limits honest?
+- Is every material claim supported, qualified, or blocked against the pinned source-library snapshot?
+- Are expansions traceably rooted in Scripture, Spirit of Prophecy, or labeled scripturally aligned reasoning?
 - Does the next recommended question arise naturally from the answer?
