@@ -12,7 +12,7 @@ If none match → use your own judgment; do not force a skill.
 
 | Skill | Path | Triggers (keywords / intent) |
 |-------|------|------------------------------|
-| clean-video-transcript | `skills/clean-video-transcript/` | clean transcript, clean video transcript, remove timestamps, ASR cleanup, Quick Reference, verse list, EGW reference list, YouTube transcript polish |
+| clean-video-transcript | `skills/clean-video-transcript/` | clean transcript, clean video transcript, follow-along transcript, transcript download, remove timestamps, ASR cleanup, Quick Reference, Scripture Guide, source verification, source follow-up, verse/source list, YouTube transcript polish |
 | curiosity-driven-scripture-journey | `skills/curiosity-driven-scripture-journey/` | Scripture journey, Bible study page, discovery topic, YouTube titles/ideas packaging, 17-category title matrix, thumbnail, ministry landing page, Scripture SEO/AEO, high-trust faith content, project brief gates |
 | artwork-prompts-handoff | `skills/artwork-prompts-handoff/` | image prompts, artwork prompts, thumbnail prompts, generate art, make graphics, mood board images, I'll create images manually, Leonardo/Canva without credits, art handoff, prompts file |
 | modern-html-aeo | `skills/modern-html-aeo/` | HTML page, landing page, self-contained HTML, AEO, GEO, SEO page, conversion page, Core Web Vitals, modern HTML |
@@ -40,3 +40,5 @@ When a community/external skill's knowledge is folded into a skill's references 
 
 - `curiosity-driven-scripture-journey/references/motion-and-premium-ui.md` <- `github/awesome-copilot` (`premium-frontend-ui`, `gsap-framer-scroll-animation`) - last synced 2026-08-13 - re-sync: diff against `skills/*/SKILL.md` in that repo.
 - `curiosity-driven-scripture-journey/references/design-critique-and-anti-slop.md` <- `pbakaus/impeccable` (surface mode, anti-slop detectors, iteration verbs; Apache 2.0) - last synced 2026-08-13 - re-sync: diff against the impeccable repo skill + detector docs (or install as companion via `npx impeccable install`).
+
+<!-- Agent: Codex · Model: GPT-5 · Date: 2026-08-21 · Change: expanded clean-video-transcript routing for follow-along and source-verification work. -->
