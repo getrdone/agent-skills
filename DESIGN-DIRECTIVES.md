@@ -159,10 +159,11 @@ For multi-theme HTML or UI work, maintain one centralized theme registry or toke
 
 - Each theme is one additive entry containing the complete semantic token set required by the experience.
 - Generate or derive CSS theme blocks, selector options, query-parameter allowlists, and JavaScript allowlists from that registry whenever the build environment permits.
-- Components consume semantic aliases such as background, surface, text, muted text, accent, rule, focus, and decorative glow. Do not scatter literal theme colors through component CSS.
+- Components consume semantic aliases such as background, surface, text, muted text, accent, rule, focus, texture, and texture scale. Do not scatter literal theme colors or texture assets through component CSS.
 - Adding or adjusting a theme must not require structural page rewrites or edits across unrelated components.
 - Give themes clear public-facing names tied to their visual character. A calm neutral-light theme may be called `mild`; avoid exposing temporary working names such as `bland`.
-- Light themes may have distinct, evocative color personalities while remaining restrained enough for sustained reading.
+- Light themes may have distinct, evocative color personalities while remaining restrained enough for sustained reading. Do not automatically equate light with pastel or wash every theme in pale gradients; strong accents on quiet neutral surfaces may carry more character.
+- When texture fits the visual DNA, store the self-contained texture asset or inline SVG plus its scale/opacity controls in the same theme entry. Texture should add material character without reducing legibility, delaying rendering, or requiring component rewrites.
 - Validate contrast for every shipped theme and every text-bearing surface; a safe default does not excuse an inaccessible alternate theme.
 - Document legacy aliases only when needed for old links or saved preferences, and keep them out of the visible selector.
 
@@ -170,8 +171,8 @@ A minimal maintainable pattern is:
 
 ```js
 const themes = {
-  mild: { paper: "…", surface: "…", text: "…", muted: "…", accent: "…", focus: "…" },
-  mark: { paper: "…", surface: "…", text: "…", muted: "…", accent: "…", focus: "…" }
+  mild: { paper: "…", surface: "…", text: "…", muted: "…", accent: "…", focus: "…", texture: "…", textureSize: "…" },
+  mark: { paper: "…", surface: "…", text: "…", muted: "…", accent: "…", focus: "…", texture: "…", textureSize: "…" }
 };
 ```
 
