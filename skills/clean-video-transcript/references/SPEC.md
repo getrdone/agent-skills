@@ -65,7 +65,7 @@ Keep the spoken wording in the transcript. Add research after the relevant secti
 
 ### Verification tiers
 
-Use the narrowest accurate label:
+Use the narrowest accurate tier in internal editorial/research records:
 
 - **Verified — primary text:** exact wording or claim located in the original document or an authoritative official transcription.
 - **Verified — facsimile/transcription:** exact material located in a scan, facsimile, or reliable transcription of the cited edition.
@@ -75,7 +75,7 @@ Use the narrowest accurate label:
 - **Corroborating context:** a strong source supports the surrounding event, date, law, or historical setting without proving the transcript's exact words.
 - **Source follow-up needed:** the named source, page, exact quotation, or original edition was not located.
 
-Do not write `verified` without an exact bibliographic or linked basis. A stronger source may be listed in addition to the transcript source; it may never replace it.
+Do not assign `verified` without an exact bibliographic or linked basis. These tiers are internal editorial metadata unless the user specifically requests a research audit; do not turn them into public-facing badges or prefixes in the transcript companion. A stronger source may be listed in addition to the transcript source; it may never replace it.
 
 ### Discrepancies
 
@@ -98,9 +98,10 @@ Use for a short or single-topic transcript. Append one presentation-order `Quick
 | Revelation 13:11 | A second beast rises from the earth with two lamb-like horns and a dragon-like voice |
 
 ### Other sources
-| Source | Status and relevance |
-|---|---|
-| <source as named in transcript> | <verification tier>; <what was located or remains unresolved> |
+
+**<Source as named in transcript>**
+
+<What the source contains and why it is relevant.> [View Source Material](<stable URL>)
 ```
 
 ### Pattern B — section-aware follow-along edition
@@ -124,8 +125,8 @@ Keep sources with the section where the audience encounters them. The master ind
 
 - Include every distinct passage the speaker reads, names, or clearly builds an argument upon.
 - Add genuinely useful cross-references generously when the user requests an expanded guide.
-- Label transcript passages **Used in video**.
-- Label additions **Related study passage**. Never imply that an added verse was spoken.
+- References from the presentation receive no public usage label; their presence in the guide is sufficient.
+- Put the exact label **Additional related source** immediately after the Bible reference only when a passage was added during study development. Never imply that an added verse was spoken.
 - Describe the principal point of the passage itself in one clear sentence. Favor the text's subjects, actions, contrasts, promises, warnings, and stated interpretation over a personal application or generic devotional summary.
 - Preserve the passage's immediate context; do not use the description to overstate a disputed conclusion.
 - Use consistent full book names and en-dash verse ranges.
@@ -135,18 +136,21 @@ Example:
 ```markdown
 ### USA in Prophecy Scripture Guide
 
-- **Daniel 7:24 — Used in video.** The interpreting angel identifies horns as kings or ruling powers arising from a kingdom.
-- **Revelation 13:11 — Used in video.** The earth beast has two lamb-like horns, yet its voice becomes dragon-like.
-- **Acts 5:29 — Related study passage.** The apostles state that obedience to God takes precedence when human commands conflict with His command.
+- **Daniel 7:24** The interpreting angel identifies horns as kings, kingdoms, or governing/ruling powers arising from a kingdom.
+- **Revelation 13:11** The earth beast has two lamb-like horns, yet its voice becomes dragon-like.
+- **Acts 5:29** *Additional related source* The apostles state that obedience to God takes precedence when human commands conflict with His command.
 ```
 
 ## Documentary source rules
 
 - Repeat the transcript's named source in the source list even when unverified.
-- Give author/institution, title, edition/date/page when known, verification tier, a stable link, and a concise relevance note.
+- Give author/institution, title, edition/date/page when known, a stable link, and a concise relevance note. Keep the verification tier in internal editorial metadata rather than displaying it as a public badge or prefix.
+- References from the presentation receive no public usage label.
+- Put **Additional related source** immediately after the source title only for supporting material added during research.
+- In every public format, place the source title on its own line. Put the plain-language description on the next line, with `View Source Material` at the end of that description.
 - Prefer primary and official sources; add facsimiles and reliable editions when originals are unavailable.
 - Historical, constitutional, and legal sources belong under the section whose claim they illuminate.
-- Avoid raw URL labels in Word/PDF. Use meaningful link text such as `Open source`, `View facsimile`, or the source title.
+- Avoid raw URL labels in Word/PDF. Use `View Source Material` by default; use a more specific equivalent such as `View Facsimile` only when it materially helps.
 - Never claim a current law, official text, institutional position, or modern statistic without current verification.
 
 ## Source Follow-up Needed
@@ -166,7 +170,7 @@ Retain these notes in future revisions until the evidence is added. New evidence
 For a section-aware edition, retain a final master list even though each topic has its own guide. Arrange it in approximate Bible order unless the user requests presentation order. For each entry include:
 
 - reference;
-- usage label (`Used in video` or `Related study passage`);
+- `Additional related source` immediately after the reference only when the passage was added; otherwise no usage label;
 - text-centered description; and
 - topic name(s) where it appears.
 
@@ -179,11 +183,14 @@ When HTML is requested:
 - Put the full transcript, Scripture Guides, source notes, and follow-up list in the DOM; do not hide essential content behind JavaScript.
 - Use semantic landmarks (`header`, `nav`, `main`, `section`, `footer`), a skip link, logical headings, visible focus states, and meaningful link text.
 - Use CSS custom properties for design tokens and a root `data-theme` attribute.
+- Maintain one centralized theme registry/token source as the system of record. Generate or derive the CSS theme blocks, selector options, and JavaScript allowlist from that registry whenever the build environment permits.
+- Components consume semantic aliases such as background, surface, text, muted text, accent, rule, and focus; do not scatter literal per-theme colors through component CSS.
 - Support named themes through a selector and/or a stable query parameter such as `?theme=mark`; unknown values must fall back safely.
+- Use clear public-facing names. A calm neutral-light option may be called `mild`; avoid internal placeholder names such as `bland` in the visible selector.
 - The no-JavaScript state must remain complete and readable.
 - Respect reduced motion and provide clean print styles.
 - Keep metadata and JSON-LD accurate and avoid filler schema.
-- Treat theme names as an extensible allowlist. Adding a future theme should require one token block and one allowlist/selector entry, not a structural rewrite.
+- Treat theme names as an extensible allowlist. Adding a future theme should require one registry entry/token block, not a structural rewrite.
 
 ## Quality checklist
 
@@ -194,8 +201,10 @@ When HTML is requested:
 - [ ] Video URL and bare Video ID are correct when known
 - [ ] Spelling and quotations are handled conservatively
 - [ ] Every transcript source remains present
-- [ ] Verification labels match the evidence actually located
-- [ ] Additional Scripture is labeled `Related study passage`
+- [ ] Verification tiers match the evidence located and remain internal unless a research audit is requested
+- [ ] Public references from the presentation have no usage label
+- [ ] Only added Bible passages and supporting sources are labeled `Additional related source`, immediately after the reference/title
+- [ ] Public documentary sources use title line, description line, and `View Source Material` at the description's end
 - [ ] Scripture descriptions state key points from the passage itself
 - [ ] Section sources follow each section in a multi-topic edition
 - [ ] Master Scripture Index is included and deduplicated when using Pattern B
