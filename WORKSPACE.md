@@ -124,28 +124,50 @@ planning/gate-results_grok.md                    ← gate notes for a grok pass
 
 ## 3b. Agent identification (NON-NEGOTIABLE — all agents, all tasks)
 
-Multiple agents routinely read and write the **same** series/topic folders. The human must always be able to tell **who** produced a file without opening chat history.
+Multiple agents routinely read and write the **same** series/topic folders. The human must always be able to tell **who** produced a file, **which model produced it, and at what thinking/reasoning level**, without opening chat history.
+
+### Identity fields
+
+Use these four execution-identity fields wherever this standard requires agent identity:
+
+- **Agent** — product/agent name, e.g. `ChatGPT`, `grok`, `claude`, `codex`, `freebuff`.
+- **Model** — exact model identifier visible to the agent/runtime, e.g. `GPT-5.6 Sol`, `Grok 4.5`, `Claude Opus 4.1`.
+- **Thinking** — exact thinking/reasoning-effort level selected or exposed by the runtime, e.g. `low`, `medium`, `high`, `max`, `extended`, or the vendor's exact label.
+- **Date / What changed** — files use the date written; commits use a concise description of the change.
+
+**Never guess a thinking/reasoning level.** If the runtime does not expose one, write `Thinking: not exposed`. If the runtime exposes a default but no named level, write the exact exposed label (for example `default`). Do not silently omit the field.
 
 ### Shared work root (default)
 
-- **In-file stamp required** on every file you create or materially edit. The stamp must state the **agent**, the **model**, and the **date written** — e.g. `**Agent:** grok · **Model:** Grok 4.5 High · **Date:** 2026-08-12`, or HTML `<!-- Agent: grok · Model: Grok 4.5 High · Date: 2026-08-12 -->`, code header comment, YAML `agent:` / `model:` / `date:` fields, or equivalent. **Never write only the agent name.**
-- **Append, don't overwrite.** When a file is later written or materially edited by a different agent or model, **add a new stamp line** (date, agent, model) instead of replacing the original, so the file keeps a running history of who wrote it and with which model. If the same agent and model touch the file again, just update that line's date.
+- **In-file stamp required** on every file you create or materially edit. The stamp must state the **agent**, **model**, **thinking/reasoning level**, and **date written** — e.g. `**Agent:** grok · **Model:** Grok 4.5 · **Thinking:** high · **Date:** 2026-08-12`, or HTML `<!-- Agent: grok · Model: Grok 4.5 · Thinking: high · Date: 2026-08-12 -->`, code header comment, YAML `agent:` / `model:` / `thinking:` / `date:` fields, or equivalent. **Never write only the agent name.**
+- **Append, don't overwrite.** When a file is later written or materially edited by a different agent, model, or thinking level, **add a new stamp line** (date, agent, model, thinking) instead of replacing the original, so the file keeps a running history of who wrote it, with which model, and at which reasoning setting. If the same agent, model, and thinking level touch the file again, just update that line's date.
 - **Filename suffix** `name_<agent>.ext` is **required** for bake-off drafts and for any parallel proposal that is not the promoted canonical.
 - Canonical `name.ext` has **no** agent suffix, but **still** carries the in-file stamp (author or last material updater).
-- When updating boards or `*.STATUS.md`, note the agent and model in the change line.
-- **Git commit messages** (skills/design repo commits): state the agent and what changed, e.g. `Agent: Freebuff. What changed: …`.
+- When updating boards or `*.STATUS.md`, note the agent, model, and thinking level in the change line.
+- **Git commit messages are required to carry execution identity.** For every commit to a skills repo, design repo, source repo, project repo, or any other repo touched by an agent, use this one-line subject format:
+
+  `Agent: <agent> | Model: <model> | Thinking: <level-or-not-exposed> | What changed: <concise description>`
+
+  Examples:
+
+  `Agent: Grok | Model: Grok 4.5 | Thinking: high | What changed: harmonize Final Days palette around locked Deep Ember and add semantic tokens.`
+
+  `Agent: ChatGPT | Model: GPT-5.6 Sol | Thinking: not exposed | What changed: add cross-skill design directives and route design work through them.`
+
+  This applies to **all agents and sub-agents**, including automated or delegated passes. If one agent commits work substantially authored by another agent, the commit should identify the agent/model/thinking level that performed the committing change and mention material co-author/provenance in `What changed` when relevant.
 
 ### Agent-private root (only if user assigned one or an existing worktree)
 
 Examples: `…/scripture-discovery-journey-worktrees/grok/`, a user-made `…/claude/` sandbox.
 
 1. **Top-level identity:** the root folder name **or** an `AGENT.md` / `AGENT.txt` at that root must state the agent.
-2. **In-file stamp** on every output (same as shared).
+2. **In-file stamp** on every output (same as shared, including model + thinking level + date).
 3. Do **not** invent a private tree for a topic that already has a shared root unless the user asks.
 
 ### Not sufficient
 
 - Chat-only “— Grok” signatures with no disk stamp  
+- A commit that names the agent but omits model or thinking/reasoning level  
 - Editing shared files with no agent field and no `_<agent>` draft when the work is a competing proposal  
 
 ### Lean chat (NON-NEGOTIABLE — pairs with machine `AGENTS.md`)
