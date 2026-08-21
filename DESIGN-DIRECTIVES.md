@@ -153,6 +153,30 @@ Semantic aliases may change when a theme or component role changes. Canonical br
 
 Prefer semantic tokens over raw hex inside components.
 
+### Theme registry rule
+
+For multi-theme HTML or UI work, maintain one centralized theme registry or token source as the system of record.
+
+- Each theme is one additive entry containing the complete semantic token set required by the experience.
+- Generate or derive CSS theme blocks, selector options, query-parameter allowlists, and JavaScript allowlists from that registry whenever the build environment permits.
+- Components consume semantic aliases such as background, surface, text, muted text, accent, rule, focus, and decorative glow. Do not scatter literal theme colors through component CSS.
+- Adding or adjusting a theme must not require structural page rewrites or edits across unrelated components.
+- Give themes clear public-facing names tied to their visual character. A calm neutral-light theme may be called `mild`; avoid exposing temporary working names such as `bland`.
+- Light themes may have distinct, evocative color personalities while remaining restrained enough for sustained reading.
+- Validate contrast for every shipped theme and every text-bearing surface; a safe default does not excuse an inaccessible alternate theme.
+- Document legacy aliases only when needed for old links or saved preferences, and keep them out of the visible selector.
+
+A minimal maintainable pattern is:
+
+```js
+const themes = {
+  mild: { paper: "…", surface: "…", text: "…", muted: "…", accent: "…", focus: "…" },
+  mark: { paper: "…", surface: "…", text: "…", muted: "…", accent: "…", focus: "…" }
+};
+```
+
+The exact implementation language may differ, but the single-source-of-truth rule does not.
+
 ---
 
 ## 5. Signature gradients must have meaning
@@ -315,3 +339,5 @@ If the answer to any of these is no, the color system is not finished.
 - **`artwork-prompts-handoff`** — artwork generation brief/handoff; use these directives to establish the shared palette and color-grade language before writing per-image prompts.
 
 Specific project truth always beats examples in this file. Re-derive the visual language from the current source rather than cloning a previous project's aesthetic.
+
+<!-- Agent: Codex · Model: GPT-5 · Date: 2026-08-21 · Change: centralized, additive, contrast-validated theme-registry directive. -->
