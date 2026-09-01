@@ -30,8 +30,11 @@ README.md
 skills/
   clean-video-transcript/
   curiosity-driven-scripture-journey/
+  ubp-translator-pdf/
 processing/
   source-vault/
+tools/
+  TOOLS.md
 ```
 
 ## Skills
@@ -41,12 +44,14 @@ processing/
 | [clean-video-transcript](skills/clean-video-transcript/) | Raw video/ASR → polished markdown + Quick Reference |
 | [curiosity-driven-scripture-journey](skills/curiosity-driven-scripture-journey/) | Scripture content studio: study, titles (17×4), video, visual, web |
 | [artwork-prompts-handoff](skills/artwork-prompts-handoff/) | Artwork via human tools: numbered paste-ready prompts file (no paid API default) |
+| [ubp-translator-pdf](skills/ubp-translator-pdf/) | Unlocking Bible Prophecies 2 translator-review PDFs (Plain Vision notes + grayscale thumbs) |
 
 ## Processing
 
 | Package | Purpose |
 |---------|---------|
 | [source-vault](processing/source-vault/) | Private source inventory/registration without dumping vault into context |
+| [tools registry](tools/TOOLS.md) | Shared tool list (design, research, UBP PDF builders) |
 
 ## Ownership
 Single source of truth for agent skills. Prefer sharp catalog triggers and small load sets.

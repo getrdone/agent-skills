@@ -1,5 +1,6 @@
 # Skill catalog (read this first — do not load every skill)
 
+<!-- Agent: Grok · Model: Grok 4.5 · Thinking: not exposed · Date: 2026-09-01 -->
 <!-- Agent: Codex | Model: GPT-5 | Thinking: not exposed | Date: 2026-08-21 -->
 
 **Always also follow** [`WORKSPACE.md`](WORKSPACE.md): one shared work folder; **until final chosen**, all agent work products (HTML, packaging, **prompts**, pass notes) are `name_<agent>_vN`; promote bare `name.ext` only after the user chooses that deliverable; series/topic boards; **auto-scaffold** new topic folders. Workspace rules apply to **every** skill and to work with no matching skill.
@@ -22,13 +23,14 @@ If none match → use your own judgment; do not force a skill.
 | modern-css-design | `skills/modern-css-design/` | CSS, container queries, layout, theming, design system, motion, effects, fluid type |
 | optimized-deliverables | `skills/optimized-deliverables/` | web page, article, landing page, deliverable, SEO content, GEO, scannable content |
 | cloudflare-platform | `skills/cloudflare-platform/` | Cloudflare, Pages, Workers, edge deploy, wrangler, KV, D1, R2, Turnstile, deploy site |
+| ubp-translator-pdf | `skills/ubp-translator-pdf/` | translator PDF, UBP PDF, prophecy series PDF, Plain Vision printable notes, Unlocking Bible Prophecies review PDF, Malagasy translator review |
 
 ## Processing (load only when needed)
 
 | Package | Path | Triggers |
 |---------|------|----------|
-| source-vault | `processing/source-vault/` |
-| tools registry | `tools/TOOLS.md` | source vault inventory, register sources, intake records, private library, Bohr transcript quarantine, `registry.yaml` |
+| source-vault | `processing/source-vault/` | source vault inventory, register sources, intake records, private library, Bohr transcript quarantine, `registry.yaml` |
+| tools registry | `tools/TOOLS.md` | tool list, Canva, Leonardo, OpenBible, EGW, UBP translator PDF tools |
 
 ## How to add a skill
 1. Add `skills/<kebab-name>/SKILL.md` (+ optional `references/`, `examples/`).
