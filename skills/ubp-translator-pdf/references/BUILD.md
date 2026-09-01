@@ -1,6 +1,7 @@
 # Build translator-review PDFs
 
 <!-- Agent: Grok · Model: Grok 4.5 · Thinking: not exposed · Date: 2026-09-01 -->
+<!-- Agent: Codex · Model: GPT-5 · Thinking: not exposed · Date: 2026-09-01 -->
 
 Companion to `skills/ubp-translator-pdf/SKILL.md`. Update the **status** table when you ship or rebuild a PDF.
 
@@ -94,7 +95,7 @@ From `Documents/# AWR Sermon Order  wNotes.md`. Modular counts are `<SlideName>`
 | Sat PM | 04 | THE WARNING | 53 | 72 | `UBP-04-THE-WARNING-translator-v2.pdf` |
 | Sun | 05 | THE WAY | 43 | 74 | `UBP-05-THE-WAY-translator-v2.pdf` — built when deck was 74; **rebuild** if sharing current Modular 43 |
 | Mon | 06 | THE AUTHENTIC SEAL | 42 | 79 | `UBP-06-THE-AUTHENTIC-SEAL-translator-v2.pdf` — built as 46 slides / 9 pages; **rebuild** if sharing current Modular 42 |
-| Tue | 11 | THE NEW LIFE | 68 | 71 | travel-review only (`UBP-11-THE-NEW-LIFE-travel-review.pdf`); standard translator PDF **not built** |
+| Tue | 11 | THE NEW LIFE | 41 | 71 | `UBP-11-THE-NEW-LIFE-translator-v2.pdf` (also travel-review) |
 | Wed | 09 | THE RESCUE | 59 | 59 | **not built** |
 | Thu | 08 | THE GRAVE | 67 | 67 | **not built** |
 | Fri | 10 | THE DESOLATION | 59 | 60 | **not built** |
@@ -102,7 +103,7 @@ From `Documents/# AWR Sermon Order  wNotes.md`. Modular counts are `<SlideName>`
 
 Stock sermons not in this campaign (skip unless asked): 02 THE FALL, 07 THE COUNTERFEIT, 12 THE BEAST, 13 THE MARK, 14 THE HARLOT, 16 THE GREAT CONTROVERSY, 17 THE WORTH OF A SOUL.
 
-Next likely builds: 01, 09, 08, 10, 15, then standard #11, then rebuild 05/06 if Modular trim should be what the translator sees.
+Next likely builds: 01, 09, 08, 10, 15, then rebuild 05/06 if Modular trim should be what the translator sees.
 
 ## Library map (do not dump)
 
