@@ -89,7 +89,7 @@ Exclude hypnotic/vague language, covert influence, emotional conditioning, spin,
 
 ## Titles and idea generation
 
-When the user asks for **titles**, **headline options**, **topic ideas**, **verse angles**, or **video ideas**, do not invent an ad-hoc short list. For **video/title packaging files**, follow `youtube-planning.md`: Phase 1 report → full title matrix → **What the Episode Is Really About**, then the user marks picks with trailing `~` before descriptions or “more like these” titles.
+When the user asks for **titles**, **headline options**, **topic ideas**, **verse angles**, or **video ideas**, use the v3 ideation modes instead of an ad-hoc tiny list. For **video/title packaging files**, follow `youtube-planning.md`: Phase 1 report → full title matrix → **What the Episode Is Really About**, then the user marks picks with trailing `~` before descriptions or “more like these” titles.
 
 Load and follow `references/youtube-planning.md` **Title and idea category matrix (mandatory)**:
 - all **17** categories;
@@ -104,3 +104,17 @@ Plain explanations help new Bible readers. They **do not** override title packag
 
 <!-- Agent: grok · Model: Grok 4.6 · Date: 2026-08-20 · website copy must mix writing-strategy patterns -->
 
+
+
+## Version 3 ideation routing
+
+- **Quick:** approximately 24–32 ideas.
+- **Standard (default):** approximately 36–48 ideas with broad coverage plus some unusual/weak-fit territory.
+- **Full Matrix:** all 17 categories × exactly 4 lines (68 ideas).
+- **Deep:** approximately 80–120 ideas when explicitly requested.
+
+After the user selects favorites, analyze why they work and generate hybrids/refinements/adjacent concepts rather than only synonymous rewrites.
+
+## Version 3 learner-job routing
+
+Identify learner jobs before named patterns, then select the smallest effective set (normally 2–5). Do not add interactions merely to satisfy a family/count quota.
