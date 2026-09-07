@@ -79,6 +79,6 @@ Default to the **least intrusive controls that materially work**:
 7. operational logging for blocked or failed writes;
 8. a challenge such as Turnstile only when traffic risk, abuse history, or endpoint value justifies it, preferably as an escalation rather than friction for every visitor.
 
-For phone/SMS workflows, **capture and send-readiness are separate states**. Preserve plausible user-entered international numbers even when they cannot be confidently normalized. Store the raw value and a status such as `e164_ready` / `needs_review` / `missing`. Only numbers classified as send-ready may enter automated SMS. Do not guess a country calling code for an ambiguous national-format international number.
+For phone/SMS workflows, **capture and send-readiness are separate states**. Preserve plausible user-entered international numbers even when they cannot be confidently normalized. Store the raw value plus a phone status such as `e164_valid` / `needs_review` / `missing`, and track SMS-provider capability separately (for example `not_checked` / `approved` / `unsupported`). Automated SMS requires both a valid E.164 number **and** approved provider/destination capability. Do not guess a country calling code for an ambiguous national-format international number.
 
 This is a release requirement for substantial public interactive pages, not an optional polish item.
