@@ -37,7 +37,7 @@ For substantial production:
 - canonical brief exists;
 - audience, core question, why-care, promise, payoff, and truth boundaries exist;
 - evidence and learning plans exist;
-- a substantive journey names 3–5 learning patterns from at least two families, with placement, learner action, feedback/payoff, and accessible fallback;
+- a substantive journey identifies learner jobs first, then selects the smallest effective pattern set (normally 2–5), with placement, learner action, feedback/payoff, and accessible fallback;
 - visual direction and interaction plan exist;
 - new HTML build status is `approved-for-build`;
 - downstream artifact inherits locked decisions.
@@ -79,8 +79,9 @@ For substantial production:
 
 - Idea and packaging are distinguished.
 - Title opens one honest gap and the content closes it.
-- For any title or idea-generation request, the full 17-category matrix was produced with exactly 4 lines per category (YouTube Video Planner v1.1.1 set in `youtube-planning.md`).
-- Weak-fit categories are still filled (4 lines each) with an explicit weak-fit note rather than omitted.
+- The requested v3 ideation mode was honored: Quick (~24–32), Standard (~36–48 default), Full Matrix (17×4 = 68), or Deep (~80–120).
+- Standard mode includes broad strong-fit coverage plus a deliberate minority of unusual/weak-fit categories rather than pruning them automatically.
+- Full Matrix mode still follows the YouTube Video Planner v1.1.1 17-category set exactly.
 - Phase 1 packaging file order is: Packaging Report → **What the Episode Is Really About** (content primer first) → Title Options (summary present and above titles; grounded in transcript, user idea, or honest from-scratch synopsis).
 - Descriptions run only for **selected** titles (`~` at end of line or explicit list), one description each, grounded in the episode summary + that title.
 - `~` marks are preserved when the agent edits the packaging file.
