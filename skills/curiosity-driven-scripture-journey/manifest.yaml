@@ -1,13 +1,16 @@
 name: curiosity-driven-scripture-journey
-current: 3.0.0
-stable: 3.0.0
+current: 3.0.1
+stable: 3.0.1
 versions:
   "2.0.0":
     status: legacy
     note: "Snapshot of the previously unversioned skill before the v3 workflow redesign."
   "3.0.0":
-    status: current
+    status: supported
     note: "Develop-then-build workflow, tiered broad ideation, learner-job routing, stronger experience concepts, deterministic audit, and iterative multi-review design quality."
+  "3.0.1":
+    status: current
+    note: "Patch: adds required low-friction abuse protection and phone capture/send-readiness separation."
 resolution:
   default: CURRENT
   exact_version_path: "versions/{version}/"
