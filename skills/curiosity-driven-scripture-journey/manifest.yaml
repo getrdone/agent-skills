@@ -1,0 +1,16 @@
+name: curiosity-driven-scripture-journey
+current: 3.0.0
+stable: 3.0.0
+versions:
+  "2.0.0":
+    status: legacy
+    note: "Snapshot of the previously unversioned skill before the v3 workflow redesign."
+  "3.0.0":
+    status: current
+    note: "Develop-then-build workflow, tiered broad ideation, learner-job routing, stronger experience concepts, deterministic audit, and iterative multi-review design quality."
+resolution:
+  default: CURRENT
+  exact_version_path: "versions/{version}/"
+compatibility:
+  source_library_registry_schema: ">=2,<3"
+  source_library_sqlite_schema: ">=2,<3"

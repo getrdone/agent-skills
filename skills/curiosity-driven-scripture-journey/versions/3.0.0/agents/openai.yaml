@@ -1,0 +1,15 @@
+interface:
+  display_name: Curiosity-Driven Scripture Journey
+  short_description: Build Scripture studies, videos, visuals, and web experiences.
+  default_prompt: Use $curiosity-driven-scripture-journey to continue this project
+    from any stage while applying its shared ethics, learning, visual, packaging,
+    and web standards.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

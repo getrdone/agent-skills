@@ -9,7 +9,16 @@
 
 **Shared design pack:** private repo [getrdone/design-resources](https://github.com/getrdone/design-resources) → local clone `F:\__ai-projects\design-resources\` (continuously synced). Glossary text lives in this skills repo; pack `GLOSSARY.md` is a symlink. See `F:\__ai-projects\SOURCES-OF-TRUTH.md`.
 
-Agents: match the user request against **Triggers** below.  
+Agents: match the user request against **Triggers** below.
+
+### Versioned skill resolution
+
+When a skill directory contains `CURRENT`, `STABLE`, and `versions/`, resolve the requested release before loading its full specification:
+- no version named → `CURRENT`;
+- "stable" → `STABLE`;
+- exact version → `versions/<version>/`.
+
+Do not silently mix versioned reference files across releases. The selected release manifest controls compatibility.  
 If one skill matches → load **only** `skills/<name>/SKILL.md` (and files it points to).  
 If none match → use your own judgment; do not force a skill.
 
