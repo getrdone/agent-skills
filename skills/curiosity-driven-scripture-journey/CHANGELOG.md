@@ -1,5 +1,12 @@
 # Curiosity-Driven Scripture Journey changelog
 
+## 3.0.1 — 2026-09-07
+- Requires layered abuse protection on public write endpoints.
+- Defaults to low-friction/invisible controls and escalates to Turnstile-like challenges only when justified.
+- Requires same-origin write endpoints to avoid wildcard CORS.
+- Separates phone capture from SMS send-readiness; ambiguous international numbers are preserved for review rather than rejected or guessed.
+- Prohibits automatic SMS to numbers not classified as send-ready.
+
 ## 3.0.0 — 2026-09-07
 - Separates Journey Development from Experience Production.
 - Adds Quick (~24–32), Standard (~36–48 default), Full Matrix (68), and Deep (~80–120) ideation modes.
