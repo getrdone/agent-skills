@@ -11,9 +11,11 @@ description: >
 
 # Clean video transcript
 
+<!-- Agent: Codex | Model: GPT-5 | Thinking: not exposed | Date: 2026-09-08 -->
+
 Applies to **any** video-derived transcript (sermons, lectures, panels, documentaries, etc.).
 
-**Workspace:** follow repo root [`WORKSPACE.md`](../../WORKSPACE.md) — shared work folder; write canonical `name.md` (no agent suffix) unless the user asks for a multi-agent draft (`name_grok.md`, etc.); update any series board when adding cleaned files.
+**Workspace:** follow repo root [`WORKSPACE.md`](../../WORKSPACE.md) — shared work folder; write an agent-named draft (`name_<agent>.md`, then `_v2`, etc.) until the user promotes it. Use an existing canonical `name.md` only for an explicitly requested in-place update. Update any series board when adding cleaned files.
 
 ## Load first (this skill only — not the whole agent-skills repo)
 1. `references/SPEC.md` — cleaning rules + required Quick Reference end-matter (**authoritative**).

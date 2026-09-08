@@ -1,5 +1,7 @@
 # agent-skills
 
+<!-- Agent: Codex | Model: GPT-5 | Thinking: not exposed | Date: 2026-09-08 -->
+
 **Canonical skill library for all agents.** Do **not** load the whole repo into context.
 
 ## Agent contract (required)
@@ -30,7 +32,6 @@ README.md
 skills/
   clean-video-transcript/
   curiosity-driven-scripture-journey/
-  ubp-translator-pdf/
 processing/
   source-vault/
 tools/
@@ -44,7 +45,11 @@ tools/
 | [clean-video-transcript](skills/clean-video-transcript/) | Raw video/ASR → polished markdown + Quick Reference |
 | [curiosity-driven-scripture-journey](skills/curiosity-driven-scripture-journey/) | Scripture content studio: study, titles (17×4), video, visual, web |
 | [artwork-prompts-handoff](skills/artwork-prompts-handoff/) | Artwork via human tools: numbered paste-ready prompts file (no paid API default) |
-| [ubp-translator-pdf](skills/ubp-translator-pdf/) | Unlocking Bible Prophecies 2 translator-review PDFs (Plain Vision notes + grayscale thumbs) |
+
+## External skill sources
+
+- [Cloudflare Skills](https://github.com/cloudflare/skills) is cloned separately at `F:\\__ai-projects\\cloudflare-skills\\`; installed Cloudflare skills are symlinks into that clone and update through the canonical repository sync.
+- [getrdone/ubp-tools](https://github.com/getrdone/ubp-tools) contains the trip-specific UBP translator-PDF and related Plain Vision tooling.
 
 ## Processing
 

@@ -1,19 +1,16 @@
 ---
 name: artwork-prompts-handoff
 description: >
-  When thumbnails, graphics, mood art, hero images, or other artwork are needed, write a complete
-  prompts file for the human to generate assets manually (Canva, Leonardo, Midjourney, Photoshop, etc.).
-  Do not call paid image APIs or Canva/Leonardo MCP unless the user explicitly asks and confirms credits.
-  Use when the user needs image prompts, art brief, thumbnail concepts, visual assets handoff, or
-  "I'll make the images myself".
+  Create a numbered, paste-ready artwork prompt pack for manual generation in the user's chosen tools.
+  Use only when the user explicitly asks for prompts, an art handoff, or says they will generate the
+  images themselves. Do not intercept ordinary requests to generate or edit an image directly.
 ---
 
 # Artwork prompts handoff
 
-**Default for artwork:** produce a **prompts file** the human runs one-by-one in their own tools.  
-**Do not** use Canva MCP, Leonardo MCP, or other paid image APIs unless the user **explicitly** asks and confirms they have credits/budget.
+<!-- Agent: Codex | Model: GPT-5 | Thinking: not exposed | Date: 2026-09-08 -->
 
-Optional paid connectors stay documented under `_agent-control/mcp/` for later; they are **not** part of this skill’s default path.
+Use this skill only for an explicit manual-generation handoff. If the user asks the agent to generate or edit the image directly, use the appropriate available image or design capability instead.
 
 ## Load with visual work
 
@@ -21,10 +18,9 @@ If the task is ministry/Scripture/video packaging, also load curiosity skill `re
 
 ## When this skill fires
 
-- Thumbnails, YouTube art, channel banners  
-- Hero / section images for web pages  
-- Mood boards, style frames, illustration directions  
-- Any “generate image / make art / design this graphic” without confirmed API credits  
+- “Write image prompts” or “make me a prompt pack.”  
+- “I’ll generate the images myself.”  
+- A project explicitly requires a recorded human-generation handoff with filenames and production notes.  
 
 ## Output: agent-named prompts draft (until promote)
 
