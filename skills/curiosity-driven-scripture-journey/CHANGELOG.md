@@ -1,5 +1,13 @@
 # Curiosity-Driven Scripture Journey changelog
 
+## 3.1.0 — 2026-09-08
+
+- Consolidated the useful container-query and interactive-component rules into the routed web experience.
+- Retired the competing `modern-css-design`, `interactive-components`, and `optimized-deliverables` skills.
+- Replaced the locally maintained Cloudflare skill with the official external `cloudflare/skills` source.
+- Moved UBP translator tooling to `getrdone/ubp-tools`.
+- Narrowed artwork prompt handoff routing and corrected transcript draft naming.
+
 ## 3.0.1 — 2026-09-07
 - Requires layered abuse protection on public write endpoints.
 - Defaults to low-friction/invisible controls and escalates to Turnstile-like challenges only when justified.
@@ -22,3 +30,5 @@
 
 ## 2.0.0 — legacy snapshot
 Snapshot of the previously unversioned skill tree for rollback and reproducibility.
+
+<!-- Agent: Codex | Model: GPT-5 | Thinking: not exposed | Date: 2026-09-08 -->
