@@ -27,7 +27,6 @@ If none match → use your own judgment; do not force a skill.
 | clean-video-transcript | `skills/clean-video-transcript/` | clean transcript, clean video transcript, remove timestamps, ASR cleanup, Quick Reference, verse list, EGW reference list, YouTube transcript polish |
 | curiosity-driven-scripture-journey | `skills/curiosity-driven-scripture-journey/` | Scripture journey, Bible study page, discovery topic, source library, source ingestion, source SQLite, source alignment, learning patterns, teaching strategies, YouTube titles/ideas packaging, 17-category title matrix, thumbnail, ministry landing page, Scripture SEO/AEO, high-trust faith content, project brief gates |
 | artwork-prompts-handoff | `skills/artwork-prompts-handoff/` | image prompts, artwork prompts, thumbnail prompts, generate art, make graphics, mood board images, I'll create images manually, Leonardo/Canva without credits, art handoff, prompts file |
-| modern-html-aeo | `skills/modern-html-aeo/` | HTML page, landing page, self-contained HTML, AEO, GEO, SEO page, conversion page, Core Web Vitals, modern HTML |
 | interactive-components | `skills/interactive-components/` | accordion, tabs, filter, calculator, modal, carousel, form interaction, progressive disclosure, UI components |
 | modern-css-design | `skills/modern-css-design/` | CSS, container queries, layout, theming, design system, motion, effects, fluid type |
 | optimized-deliverables | `skills/optimized-deliverables/` | web page, article, landing page, deliverable, SEO content, GEO, scannable content |
