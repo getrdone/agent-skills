@@ -44,7 +44,7 @@ Curiosity is constant; how each piece pays it off must not be. The experience se
 
 | Artifact | Learning application |
 | --- | --- |
-| Title/headline | Name one recognizable concern and one clear promised gain or answer. |
+| Title/headline | Name one recognizable concern and the *kind* of promised gain or answer. The exact reveal may stay open in titles, thumbnails, and pre-click copy. A reaction is not the hook. Follow `youtube-planning.md` → Honest curiosity vs manufactured suspense. |
 | Thumbnail/graphic | Make the known anchor instantly recognizable; introduce only one visual gap; minimize elements. |
 | Video opening | Confirm the package, establish context and one goal, then begin value delivery. |
 | Video body | Use nested Promise → Progress → Payoff cycles, visible segments, and short visual explanations. |
@@ -55,13 +55,15 @@ Curiosity is constant; how each piece pays it off must not be. The experience se
 
 Curiosity is constant; rhetorical structure varies. Select a strategy because it fits the reader and content, not to create a house style.
 
-- **Curiosity core:** sincere question → available evidence → accumulating clarity → answer → next question. Default for discovery content.
-- **AIDA:** attention → interest → desire → action. Use for a clear offer or invitation; keep action voluntary.
-- **PAS:** problem → consequence → solution. Use only when the problem is real and consequence language does not amplify fear.
-- **BAB:** before → after → bridge. Useful for a change in understanding or practical experience.
-- **4Ps:** promise → picture → proof → proposal. Useful when evidence and a concrete next step are central.
-- **FAB:** feature → advantage → benefit. Useful for tools, formats, courses, or practical offers.
+- **Curiosity core:** sincere question → available evidence → accumulating clarity → answer → next question. Default for discovery content. In teaching copy, do not delay the promised answer to keep attention.
+- **AIDA:** attention → interest → desire → action. Use for a clear offer or invitation; the action must stay a clear, voluntary invitation — never coercive.
+- **PAS:** problem → consequence → solution. Use only when the problem is real, the consequence is sober, and the solution is evidence-based. Do not amplify an unreal problem or consequence.
+- **BAB:** before → after → bridge. Use only for a change in understanding or experience the content can actually show. Do not claim a transformation that has not occurred.
+- **4Ps:** promise → picture → proof → proposal. Useful when evidence and a concrete next step are central. Proof must be real.
+- **FAB:** feature → advantage → benefit. Useful for tools, formats, courses, or practical offers. Benefits must be supportable.
 - **4Cs:** clear → concise → compelling → credible. Use mainly as an editing pass.
+
+Titles, thumbnails, and pre-click copy follow `youtube-planning.md` → Honest curiosity vs manufactured suspense. Frameworks may create attention; they may not create empty teasing.
 
 **Website copy (mandatory).** Every public website surface — landing pages, section body, headlines, meta descriptions, form leads, CTAs — must follow at least one strategy above. Mix patterns inside body copy to raise interest and the desire to continue learning, or to fulfill the page’s job (watch the study, continue a journey, complete a form). Conversion surfaces use short punch. Candidate sentences must stand on their own for splicing. See `youtube-planning.md` → **Splice-safe sentences + short punch**. Do not default website copy to YouTube description length.
 
@@ -98,11 +100,14 @@ Load and follow `references/youtube-planning.md` **Title and idea category matri
 
 This is the same matrix as YouTube Video Planner v1.1.1, adapted for high-trust Scripture work.
 
+Every title line must pass **Honest curiosity vs manufactured suspense** in `youtube-planning.md` before it leaves the matrix. Ban generic reaction closers and stock syntax that could be pasted onto an unrelated story.
+
 ## Teaching clarity vs creative craft
 
-Plain explanations help new Bible readers. They **do not** override title packaging, hooks, story craft, or specialized copywriting skills loaded for the task. High-trust ethics still forbid manipulation.
+Plain explanations help new Bible readers. They **do not** override title packaging, hooks, story craft, or specialized copywriting skills loaded for the task. High-trust ethics still forbid manipulation. Packaging may keep an honest curiosity gap; teaching body copy must still name the question, give evidence early, and deliver the promised answer.
 
 <!-- Agent: grok · Model: Grok 4.6 · Date: 2026-08-20 · website copy must mix writing-strategy patterns -->
+<!-- Agent: grok · Model: Grok 4.6 · Date: 2026-09-09 · Titles may keep an honest gap; teaching may not delay the answer; frameworks need real support. -->
 
 
 

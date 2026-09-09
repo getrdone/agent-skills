@@ -9,6 +9,7 @@ Use this file for YouTube topics, ideas, titles, descriptions, thumbnails, scrip
 - Phase 1 packaging file layout (mandatory for title generation)
 - `What the Episode Is Really About` + `~` selection workflow
 - Title and idea category matrix (mandatory) — 17 categories × 4
+- Honest curiosity vs manufactured suspense (titles, thumbnails, pre-click copy)
 - Splice-safe sentences + short punch
 - YouTube description rule
 - Thumbnail and graphic package
@@ -111,7 +112,7 @@ cards and DVDs to use in their own communities.
 2. Open or create the Phase 1 packaging document.
 3. Write **Phase 1 Packaging Report** direction block.
 4. Write **## What the Episode Is Really About** from transcript, user idea, or from-scratch summary (content primer—see above).
-5. Emit **## Title Options** — full category matrix with **exactly 4** lines under each category, then best-fit, A/B shortlist, browse vs search. Titles must fit the primer above.
+5. Emit **## Title Options** — full category matrix with **exactly 4** lines under each category, then best-fit, A/B shortlist, browse vs search. Titles must fit the primer above. Apply **Honest curiosity vs manufactured suspense** (What not to do) **before writing any line**.
 6. Add the short **Selection workflow** note (or keep it if already present).
 7. **Stop for user selection** unless they already asked for descriptions in the same turn. Do **not** auto-write full YouTube descriptions for all 68 lines.
 8. For **idea-only** menus (Lane C / topic discovery without packaging a real episode): still use the 17×4 matrix; put a short “what this idea/episode would be about” primer **above** the matrix when packaging continues, or a one-paragraph idea synopsis if the user only wanted a menu.
@@ -160,6 +161,8 @@ Or a grouped section:
 
 ## Title and idea category matrix (mandatory)
 
+**Before writing any title or idea line:** read **Honest curiosity vs manufactured suspense** (What not to do) in this file. Do not emit a reaction closer, empty trailer, unsupported insinuation, or a line that would paste onto an unrelated story.
+
 **Source of categories:** YouTube Video Planner v1.1.1 Packaging Report (aligned 1:1).  
 **Quota:** **exactly 4 titles (or 4 idea lines) per category, every category, every request.**  
 **Scope:** any request for **titles**, **title packaging**, or **idea generation** for videos, Bible verses, Scripture Journey topics, shorts, or series ideas.
@@ -169,8 +172,9 @@ Do **not** skip categories. Do **not** substitute a short freeform list. The ful
 If a category is a weak fit, still produce **4** candidates and add a one-line note: `weak fit here because…`. Never leave a category blank.
 
 Ethics still apply inside every cell:
-- one honest curiosity gap per line;
+- one honest, concrete curiosity gap per line (see **Honest curiosity vs manufactured suspense**);
 - content must be able to pay off the promise;
+- no generic reaction bait, empty trailer language, or unsupported insinuation;
 - no fear escalation, FOMO, scarcity, sensational prophecy, deceptive certainty, or false urgency;
 - Fear / Loss, Urgency / Timely, Warning / Protection, and Risk-style lines may name a **real** consequence only in sober, accurate language;
 - Authority / Proof only with real receipts available in the study/video;
@@ -194,7 +198,7 @@ When the user asks for ideas, topic menus, verse angles, or “what should we co
 4. **🔎 Search-friendly / SEO** — keyword-forward, phrased how people actually search.
 5. **🪞 Relatability / Identity** — “if you’re a ___, this is for you.”
 6. **🏆 Authority / Proof** — numbers, named results, credibility, receipts (only if real).
-7. **⚡ Contrarian / Novelty** — myth-bust, “nobody tells you,” defensible surprising angle.
+7. **⚡ Contrarian / Novelty** — myth-bust or a defensible surprising angle. Do not invent “nobody told you,” hidden-by-the-church, or suppression claims unless the content documents them.
 
 #### Strong additional (always evaluate — still 4 each)
 8. **⏰ Urgency / Timely** — time element, current event, deadline, or now-vs-later (no false urgency).
@@ -216,27 +220,69 @@ When the user asks for ideas, topic menus, verse angles, or “what should we co
 - Aim under ~65 characters for YouTube titles; idea lines may run slightly longer if needed for clarity.
 - Front-load the most important words.
 - Prefer clear, skimmable wording (~3rd–5th-grade *readability*)—this is **not** a ban on creative hooks, wordplay, story, or specialized copy patterns. Use full packaging craft; stay honest and high-trust.
-- Exactly one strong curiosity gap per line.
-- A trailing-ellipsis open loop is **one option, not a rule** — e.g. `…and then does this…`, `He Works to Disprove the Final Days DVD…`. Use it when it fits; a clean statement works just as well.
-- Prefer a stat-led or reversal-led title over a name-led descriptive clause — `130 Years, Four Generations, One Church — and No One Had Heard this Simple Truth` beats `Pastor X: Fourth-Generation Minister Finds Conviction in…`.
+- Exactly one strong curiosity gap per line. The gap must be concrete and source-specific: a recognizable topic, stake, question, scene, or kind of payoff. A reaction is not the gap.
+- A trailing-ellipsis open loop is **one option, not a rule**. Use it only when the unfinished part is a real named scene or stake (`He Works to Disprove the Final Days DVD…` can work). Do not use `…and then does this…`, `What He Did Next Surprised Him`, or any closer that would paste onto an unrelated story.
+- Prefer a stat-led or reversal-led title over a name-led descriptive clause — `130 Years, Four Generations, One Church — and No One Had Heard this Simple Truth` beats `Pastor X: Fourth-Generation Minister Finds Conviction in…`. “No one had heard” still requires the content to support that claim.
 - Don't name the specific doctrine in the title when that reveal *is* the episode's payoff — `this simple truth` over `the Sabbath`.
 - Match high-trust / ministry tone; offer a reverent variant when a punchier line risks overclaim.
-- **Plain-language teaching rules apply to study body copy**, not as a ceiling on titles, hooks, or loaded copywriting skills (see `resources-and-authority.md`).
+- **Plain-language teaching rules apply to study body copy**, not as a ceiling on titles, hooks, or loaded copywriting skills (see `resources-and-authority.md`). Packaging may keep an honest curiosity gap; it may not use empty teasing.
 - **100 characters is YouTube's absolute title limit.** The ~65-character target is for readability and front-loading; never exceed 100.
 - **Offer both title-case and sentence-case versions of the final title** when it ships to more than one surface (YouTube + website headers). Title case is the YouTube/CTR default; sentence case is fine for longer web headers. Keep proper nouns capitalized in both (Bible, Muhammad, Final Days).
+- Apply **Honest curiosity vs manufactured suspense** to every line before it leaves the matrix.
 
 ### Per serious shortlist candidate, verify
 - the exact question it opens;
 - the real payoff that closes it;
+- whether the topic, stakes, and *kind* of payoff are recognizable even if the exact answer is reserved;
+- whether the gap is a named scene, stake, question, or contrast — not a reaction or trailer closer;
+- whether the line would fail if pasted unchanged onto an unrelated story (interchangeability test);
 - browse versus search intent;
 - audience breadth versus qualification;
 - whether the content already contains (or can contain) the promised evidence;
-- whether it sounds like this channel rather than a generic title generator.
+- whether it sounds like this channel rather than a generic title generator;
 - whether the title itself names the payoff it promises (leak test).
 
 ### Thumbnail gate
 Develop thumbnails only after the user selects a category and/or specific titles from the matrix (or has already locked a title).
 
+## Honest curiosity vs manufactured suspense
+
+Applies to titles, thumbnails, descriptions, emails, SMS, landing/pre-click copy, and any hook that earns a click. Teaching body copy uses the same ethics with a tighter rule: do not delay the promised answer.
+
+This is the canonical packaging standard. Other Scripture Journey files point here rather than restating the list.
+
+> Create attention through honest, concrete curiosity—not empty teasing. Make the recognizable topic, stakes, and kind of payoff clear; the exact answer may remain open in titles, thumbnails, and pre-click copy only when it is real, relevant, and fully delivered by the content. Do not use generic reaction bait, unsupported insinuation, false urgency, fear escalation, vague trailer language, fabricated proof, or stretched suspense. In teaching content, confirm the promise, provide evidence early, and state the answer plainly. Use emotion, story, contrast, desire, and copywriting frameworks when they are accurate, proportionate, evidence-grounded, and voluntary.
+
+An honest curiosity gap is the packaging job. Manufactured suspense is the fail. The shared-spine ban on manufactured suspense does **not** forbid compelling titles; it forbids empty teasing.
+
+### What not to do
+
+1. **Do not use a reaction as the whole hook.** Avoid “left him stunned,” “you won’t believe,” “changed everything,” or “shocking truth” when they replace a real subject, stake, question, or payoff.
+2. **Do not hide both the topic and the answer.** A title may reserve the exact reveal, but it should still make a recognizable concern and the kind of answer clear.
+3. **Do not stack opaque teasers.** One honest gap per title or sentence is usually enough. A description may carry the title’s gap plus one additional, grounded reason to click — not a pile of “this,” “the truth,” “what happened,” and ellipses.
+4. **Do not make unsupported insinuations.** “What his church never told him” implies concealment or wrongdoing; use it only if the content documents that claim. Do not invent secrecy, suppression, betrayal, danger, or institutional bad faith to create tension.
+5. **Do not promise a revelation, transformation, proof, warning, or outcome the content cannot actually deliver.**
+6. **Do not leak the promised payoff in pre-click copy.** Let titles and descriptions preserve the specific answer the content will reveal. Then, once the person clicks, confirm the promise, give meaningful value early, and deliver the answer without stretching it out.
+7. **Do not turn real emotion into exaggerated emotion.** Keep story, surprise, fear, hope, grief, relief, contrast, and desire — but ground them in the actual events and use proportionate language.
+8. **Do not use fear, guilt, shame, FOMO, scarcity, false urgency, coercion, or deceptive certainty as attention tools.**
+9. **Do not use PAS to amplify an unreal problem or consequence.** The problem must be real; the consequence must be sober; the solution must be evidence-based.
+10. **Do not make AIDA’s action step coercive.** Attention, interest, and desire are welcome. The action should remain a clear, voluntary invitation.
+11. **Do not claim a before-and-after transformation that has not occurred.** BAB, 4Ps, FAB, authority, proof, numbers, testimonies, and results all need real support.
+12. **Do not repeat one stock syntax until every title sounds interchangeable.** If a line could be pasted unchanged onto an unrelated story, it is probably generic bait. Use source-specific questions, scenes, tensions, contrasts, evidence, and stakes instead.
+13. **Do not generate unanchored dangling references in draft copy.** Candidate sentences should stand on their own. A deliberately dangling phrase can be used sparingly in a final, context-rich published piece.
+14. **Do not delay the core answer inside teaching content.** Scripture-study pages should name the question, give early evidence, build clarity, and deliver the promised answer. Curiosity should lead to learning, not substitute for it.
+
+### Rewrite standard (class, not a word list)
+
+Reject or rewrite any line whose gap is only a reaction, a trailer, or a stock closer. The class includes — and is not limited to — “what he/she/they did next surprised him,” “then everything shifts,” “left him stunned,” “you won’t believe,” “changed everything,” “shocking truth,” and stacked “this / the truth / what happened / …” with no named scene or stake. Paraphrases of the same empty move fail the same test.
+
+| Fail | Why | Pass |
+| --- | --- | --- |
+| He Tried to Disprove One DVD — What He Did Next Surprised Him | Reaction is the whole second clause | He Tried to Disprove One DVD — Then Called the Number on the Cover |
+| What His Church Never Told Him Left Him Stunned | Unsupported concealment + reaction hook | Name the real omitted subject, and only claim concealment if the content documents it |
+| Watch how a man who thought he had time suddenly treated truth like it could not wait — and what that urgency forced him to face. | Trailer language; the remaining gap is unnamed | What that single call set in motion — the pastor, the months of questions, and the life that followed — is the part you want to see. |
+
+The pass column still reserves the outcome. It names a real next beat. “Is the part you want to see” is not what makes the line work; the pastor, the months of questions, and the life that followed are.
 
 ## Splice-safe sentences + short punch
 
@@ -256,6 +302,8 @@ Applies to YouTube descriptions, landing/website blurbs, emails, form leads, and
 
 Write descriptions only after titles are **selected**—normally via `~` marks in the packaging file (see **`~` selection workflow** above), or by explicit title list in chat.
 
+**Before writing any description sentence:** apply **Honest curiosity vs manufactured suspense** (What not to do). The extra gap must be a named remaining beat, not a reaction or trailer closer.
+
 Sentences follow **Splice-safe sentences + short punch** above. YouTube main prose still uses the 80–110 word count in this section.
 
 - Default batch: **one description per `~`-marked (or named) title**, not one description for the whole matrix.
@@ -266,7 +314,7 @@ Sentences follow **Splice-safe sentences + short punch** above. YouTube main pro
 - The middle names what the viewer will examine, see, compare, or learn without giving a vague trailer.
 - Include the main search phrase naturally when it fits; never stuff keywords.
 - End with one honest next step: watch, compare the evidence, continue the study, or visit the relevant page.
-- Prefer a concrete, invitation-style next step that keeps the loop open — e.g. `Hear the testimonies of these pastors and what they're doing next.` — over a meta line like “…is the part still unfolding.”
+- Prefer a concrete, invitation-style next step that keeps the loop open — e.g. `Hear the testimonies of these pastors and the work they took on after.` — over a meta line like “…is the part still unfolding.” Name the remaining beat (people, decision, stretch of time, kind of cost). Do not close with a reaction (`what they did next`, `what followed surprised him`).
 - When the body runs long, break it into two short paragraphs — it reads better on mobile and gives a natural spot for an early CTA button. A judgment call, not a fixed rule.
 - Bold the single most important line or quote.
 - Use spaced em dashes (` — `) throughout titles and descriptions — never run them against a word (`word—word`).
@@ -278,9 +326,11 @@ Sentences follow **Splice-safe sentences + short punch** above. YouTube main pro
 
 Descriptions must **never fully close the curiosity gap**. The description may set up the tension, the cost, the decision, or the beginning of change, but it must leave at least one clear unresolved open loop that is only satisfied by watching the video or clicking through.
 
-- Always include an **additional curiosity gap** inside the description (e.g. “What he did next… is what you need to see”) so readers who continue past the first hook still have a fresh reason to click.
+- A description may keep the title’s gap plus **one additional, grounded reason to click**. That extra gap must name a real remaining scene, stake, question, person, stretch of time, or kind of payoff (e.g. what followed after he called the number on the cover — the pastor, the months of questions, the life that followed).
+- Do **not** fill the extra gap with reaction bait or trailer language: “what he did next surprised him,” “then everything shifts,” “left him stunned,” “you need to see what happened,” or “what that urgency forced him to face.”
 - Do not resolve the full emotional or numerical payoff (the “and then…” outcome) before the CTA.
 - This rule applies equally to YouTube descriptions, email bodies, SMS, and any other pre-click copy.
+- Apply **Honest curiosity vs manufactured suspense** to every description sentence.
 - **The leak test.** A *leak* is any phrase that names the payoff the title/episode promises to reveal. Cut these before publishing: the specific doctrine the guest discovers (`the Sabbath`, `the mark isn't a tattoo, the seventh day was never repealed`); the outcome of the decision (`he began translating the Final Days video into Manipuri and Bengali — reaching tens of millions more`, `fact-checked his way into a whole new conviction`, `talked himself into baptism`). Keep the specifics that *open* the gap (numbers, stakes, names, setup, the cost); remove the specifics that *close* it (the named doctrine, the outcome, the transformation).
 - When revising already-approved copy to add an open loop, scan the surrounding wording and delete anything that already resolves that loop — the loop you add must be the only path to the answer.
 - A deliberately dangling reference — an unnamed "one line" or a "That statement" opener — can be a valid open loop in a **locked published** piece, not in generated candidate sentences. Candidate copy must still stand on its own (see **Splice-safe sentences + short punch**).
@@ -323,7 +373,8 @@ Description checklist (per selected title):
 - [ ] Useful specifics rather than trailer vagueness
 - [ ] Natural keyword phrasing
 - [ ] One honest next step
-- [ ] **Additional open curiosity gap remains** (does not fully resolve the story)
+- [ ] **Additional open curiosity gap remains** and is grounded (named remaining beat, not a reaction or trailer closer)
+- [ ] Passes Honest curiosity vs manufactured suspense (no reaction-as-hook, no unsupported insinuation, not interchangeable bait)
 - [ ] Dual-audience friendly when format allows (early CTA + continued tension)
 - [ ] Structure is varied from recent pieces (not formulaic)
 - [ ] `~` removed in a separate descriptions document (kept only when descriptions sit inline in the titles file)
@@ -377,8 +428,9 @@ For concept reports, name the rule in play and provide 3–4 concepts unless the
 
 - Make the subject or learner’s question the protagonist; the creator is guide, witness, or explainer.
 - Emotion and music may deepen a true moment; never engineer a state to force belief or action.
-- Suspense may track real uncertainty or obstacles only and must be resolved honestly.
+- Suspense may track real uncertainty or obstacles only and must be resolved honestly. Packaging uses honest curiosity gaps; it does not use manufactured suspense. See **Honest curiosity vs manufactured suspense**.
 - Prefer calm, confident, authentic delivery over yelling, exaggerated reactions, stale memes, gross jokes, or distracting gimmicks.
 - Treat analytics as learning signals, not a reason to compromise truth.
 
 <!-- Agent: grok · Model: Grok 4.6 · Date: 2026-08-20 · splice-safe + short punch listing -->
+<!-- Agent: grok · Model: Grok 4.6 · Date: 2026-09-09 · Honest curiosity vs manufactured suspense; banned empty reaction/trailer gaps. -->

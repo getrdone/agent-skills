@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+- Clarified honest curiosity vs manufactured suspense for titles, thumbnails, and pre-click copy: an honest, concrete gap is required packaging; empty reaction bait, stacked opaque teasers, unsupported insinuation, and trailer language are banned.
+- Title and description generation must apply the What not to do list before writing any line (skill gates + YouTube packaging operating sequence).
+- Replaced the description example “What he did next… is what you need to see” with a grounded remaining-beat rule.
+- Tightened Contrarian/Novelty so “nobody told you” / church-hid-this claims require documentary support.
+- Writing-router frameworks (PAS, AIDA, BAB, 4Ps, FAB) now require real problems, voluntary action, and supportable transformations.
+- Integrity and YouTube gates distinguish honest curiosity gaps from manufactured suspense.
 - Expanded router metadata so titles, descriptions, packaging, thumbnails, Bible-study work, and high-trust faith content reliably invoke the skill.
 - Prevented historical `versions/*/SKILL.md` files from being advertised as separate skills.
 - Replaced mandatory `TOPIC-BOARD.md` session tracking with `NOW.md`; `SERIES-BOARD.md` is now optional for multi-episode inventories.
@@ -47,3 +53,4 @@
 Snapshot of the previously unversioned skill tree for rollback and reproducibility.
 
 <!-- Agent: Codex | Model: GPT-5 | Thinking: not exposed | Date: 2026-09-08 -->
+<!-- Agent: grok · Model: Grok 4.6 · Date: 2026-09-09 · Honest curiosity vs manufactured suspense for titles/pre-click copy. -->

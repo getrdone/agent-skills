@@ -31,7 +31,7 @@
 - **Package and write creatively** where packaging, titles, hooks, or a specialized copy skill apply.  
 - If both appear in one deliverable: simple in the *study answer*; skilled craft in the *package, hook, and call*—without fear, false urgency, or overclaim.
 
-Conflict resolution: high-trust ethics (no manipulation) win over any copy trick. Plain-language teaching never cancels the title matrix or a user-requested creative/copy skill.
+Conflict resolution: high-trust ethics (no manipulation) win over any copy trick. Plain-language teaching never cancels the title matrix or a user-requested creative/copy skill. Honest curiosity gaps in titles, thumbnails, and pre-click copy are not manipulation; empty reaction bait, unsupported insinuation, and delayed teaching answers are. See `youtube-planning.md` → Honest curiosity vs manufactured suspense.
 
 ## Who to trust (order)
 
@@ -65,3 +65,5 @@ J. N. Loughborough · A. T. Jones · E. J. Waggoner · William Miller · Stephen
 
 ## Creative tools
 See repo **`tools/TOOLS.md`** (Canva, Leonardo.ai, NightCafe, etc.).
+
+<!-- Agent: grok · Model: Grok 4.6 · Date: 2026-09-09 · Honest packaging gaps are not manipulation; empty teasing is. -->

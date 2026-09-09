@@ -13,7 +13,7 @@ Use only the gates relevant to the artifact. A gate may produce PASS, FAIL, or B
 - The promise is true and deliverable.
 - Evidence, quotations, translations, analytics, outliers, testimonials, and citations are not invented.
 - Emotion serves meaning rather than manipulation.
-- No fear escalation, guilt, shame, coercion, false urgency, deceptive certainty, sensationalism, or manufactured suspense.
+- No fear escalation, guilt, shame, coercion, false urgency, deceptive certainty, sensationalism, or manufactured suspense (empty reaction bait, stacked opaque teasers, unsupported insinuation, vague trailer language). Honest, concrete curiosity gaps in titles, thumbnails, and pre-click copy are not a fail — see `youtube-planning.md` → Honest curiosity vs manufactured suspense.
 - Facts, interpretation, application, and speculation are distinguished where needed.
 - Scripture-first reasoning is preserved; modern consensus, popularity, or institutional acceptance is not used as proof.
 - Every material lexical, historical, cultural, translation, doctrinal, quotation, or external factual claim has a traceable source, with inline support and complete end references.
@@ -82,7 +82,7 @@ For substantial production:
 ## 6. YouTube gate
 
 - Idea and packaging are distinguished.
-- Title opens one honest gap and the content closes it.
+- Title opens one honest, concrete gap (recognizable topic, stakes, and kind of payoff) and the content closes it. A reaction is not the whole hook. The line would not paste unchanged onto an unrelated story.
 - The requested v3 ideation mode was honored: Quick (~24–32), Standard (~36–48 default), Full Matrix (17×4 = 68), or Deep (~80–120).
 - Standard mode includes broad strong-fit coverage plus a deliberate minority of unusual/weak-fit categories rather than pruning them automatically.
 - Full Matrix mode still follows the YouTube Video Planner v1.1.1 17-category set exactly.
@@ -129,3 +129,4 @@ For substantial production:
 <!-- Agent: grok · Model: Grok 4.6 · Date: 2026-08-20 · website copy + splice-safe content gate -->
 
 <!-- Agent: Codex · Model: GPT-5 · Thinking: not exposed · Date: 2026-09-09 · Added color-psychology and readable-text gates. -->
+<!-- Agent: grok · Model: Grok 4.6 · Date: 2026-09-09 · Integrity/YouTube gates distinguish honest curiosity gaps from manufactured suspense. -->
