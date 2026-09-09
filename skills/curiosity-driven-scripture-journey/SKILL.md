@@ -12,8 +12,10 @@ description: Plan, package, design, write, build, or review a curiosity-driven S
 5. Do not silently mix Scripture Journey reference files from another version.
 6. Shared cross-skill dependencies are governed by the selected release manifest and the repository commit containing that release.
 
-Current: **3.2.0**  
-Stable: **3.0.1**
+Current: **3.2.0** (file `CURRENT`)  
+Stable: **3.0.1** (file `STABLE`)
+
+`versions/` is history. Load it only when the user names that release. Skill scanners (Grok `[skills].ignore`, junctions to this folder) must not advertise `versions/*/SKILL.md` as separate skills.
 
 <!-- Agent: Codex | Model: GPT-5 | Thinking: not exposed | Date: 2026-09-08 -->
 

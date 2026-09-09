@@ -4,7 +4,7 @@ description: Plan, package, design, write, build, or review a curiosity-driven S
 ---
 
 > **Canonical location:** [getrdone/agent-skills](https://github.com/getrdone/agent-skills) → `skills/curiosity-driven-scripture-journey/`  
-> **Workspace (all skills):** repo root [`WORKSPACE.md`](../../WORKSPACE.md) — one shared work folder; until final chosen, all agent work products (HTML, packaging, **prompts**, pass notes) use `name_<agent>_vN.ext`; promote bare `name.ext` only when the user chooses that deliverable; maintain `SERIES-BOARD.md` / `TOPIC-BOARD.md`.
+> **Workspace (all skills):** repo root [`WORKSPACE.md`](../../WORKSPACE.md) — one shared work folder; until final chosen, all agent work products (HTML, packaging, **prompts**, pass notes) use `name_<agent>_vN.ext`; promote bare `name.ext` only when the user chooses that deliverable; session pickup `NOW.md`; optional `SERIES-BOARD.md` for multi-episode folders only — no `TOPIC-BOARD.md`.
 
 # Curiosity-Driven Scripture Journey
 

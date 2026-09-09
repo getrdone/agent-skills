@@ -111,7 +111,7 @@ Do not create a Markdown file for every internal pass.
 Prefer:
 
 - one canonical `project-brief.md` for durable decisions;
-- one shared `TOPIC-BOARD.md` for status/navigation;
+- one shared `NOW.md` for status/navigation;
 - agent-versioned files for actual deliverables and human-useful prompt packs;
 - a review report only when it has durable handoff/audit value.
 

@@ -28,7 +28,7 @@ When a topic outgrows a flat list (~6+ artifact types), use **one topic/episode 
 ```text
 work-root/
   AGENTS.md                 # optional local pointer to this contract
-  SERIES-BOARD.md           # or TOPIC-BOARD.md — human map of everything
+  NOW.md                   # session sticky note (Now/Next/Blocked); optional MEMORY.md for locks
   <stem>.txt                # source
   <stem>.titles.md          # CANONICAL
   <stem>.titles_grok.md     # draft only
@@ -49,7 +49,7 @@ When the user starts a **new** named topic (e.g. “Psalm 23”, “Mark of the 
 ```text
 <topic-slug>/
   AGENTS.md                 # short pointer to agent-skills + WORKSPACE
-  TOPIC-BOARD.md            # human map (update as you go)
+  NOW.md                   # Now/Next/Blocked (update when reality changes)
   project-brief.md          # one living brief (YAML or markdown)
   planning/                 # optional long plans live here
   mood/                     # drop finished inspiration / generated art here
@@ -106,7 +106,7 @@ planning/gate-results_grok.md                    ← gate notes for a grok pass
 
 ### What stays unsuffixed (not “final deliverables”)
 
-- Shared navigation: `TOPIC-BOARD.md` / `SERIES-BOARD.md` / `START-HERE.md` / `AGENTS.md` / `project-brief.md` (living project spine — still get in-file agent stamps when edited)
+- Shared navigation: `NOW.md` / `MEMORY.md` / `START-HERE.md` / `AGENTS.md` / `project-brief.md` (living project spine — still get in-file agent stamps when edited). **Do not** create `NOW.md` or `per-agent board files`. Multi-episode folders may keep an optional `SERIES-BOARD.md` inventory — never mandatory session context.
 - User drops: anything the human puts in `mood/` or `sources/intake/` under their own names
 - Generated binary assets once the human saves them to the agreed target filenames under `deliverables/assets/`
 
@@ -194,12 +194,13 @@ Use a stable stem and grow extensions:
 
 Pickup is the project's **`MEMORY.md`** (Now / Next / Blocked). A board is optional inventory.
 
-### Series / folder board
+### Series / folder inventory (optional)
 
-At the work root, maintain **`SERIES-BOARD.md`** (or `TOPIC-BOARD.md` / `BOARD.md`) when a folder has several episodes/topics:
+Do **not** maintain a `TOPIC-BOARD.md`. Session pickup is `NOW.md`. For a folder with several episodes/topics, an optional **`SERIES-BOARD.md`** inventory is fine — load only when picking an episode, never every tool turn.
 
+- One shared inventory for every agent. Do not create per-agent board files.
 - One row (or section) per episode/topic.
-- Columns or bullets for: source, titles, descriptions, thumbs, page, notes, next action.
+- Columns: slice, status, where, **last** (agent · model · tool), **next**, **owner** (who should work it).
 - Update the board when you create or promote a material artifact, if one exists.
 
 ### Item status (optional but preferred once an item is busy)
@@ -245,4 +246,5 @@ Workspace rules do **not** replace skill routing:
 2. Skill procedure for *how* to write titles/pages/transcripts  
 3. **This file** for *where* and *how files are named* in the work folder
 
-<!-- Agent: grok · Model: Grok 4.6 · Date: 2026-09-09 · MEMORY.md is pickup; TOPIC-BOARD is optional inventory. -->  
+
+<!-- Agent: goBot · Date: 2026-09-09 · TOPIC-BOARD retired; NOW.md is session pickup. -->
