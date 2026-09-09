@@ -4,13 +4,15 @@
 
 This file owns **design reasoning and color-system architecture**. Individual skills may add stricter rules for composition, CSS mechanics, HTML, accessibility, motion, or artwork production, but they should not contradict this foundation.
 
+**Mandatory color-psychology reference:** whenever colors are chosen, recommended, generated, requested, compared, or reviewed, also load [`COLOR-PSYCHOLOGY.md`](COLOR-PSYCHOLOGY.md). It owns the evidence-calibrated color-family meanings, perceptual/physiological boundaries, cultural and Scripture-context checks, color-choice workflow, and the hard text-readability rule.
+
 ---
 
 ## Core design chain
 
 For source-led or brand-led visual work, reason in this order:
 
-> **source-specific evocative naming → locked official colors → harmonized families → compact core palette → semantic developer tokens → named signature gradients → psychological usage tied to imagery/content → practical designer/developer guidance → validated accessibility**
+> **source-specific evocative naming → locked official colors → harmonized families → compact core palette → semantic developer tokens → named signature gradients → evidence-calibrated psychological usage tied to imagery/content → practical designer/developer guidance → validated accessibility and readability**
 
 Do not treat this as a cosmetic naming exercise. Each step solves a different problem:
 
@@ -178,29 +180,23 @@ Do not invent a gradient merely to increase the number of deliverables. It shoul
 
 ## 6. Psychological notes must be contextual, not pseudoscientific
 
-Explain color roles in relation to the **actual source, audience, hierarchy, and subject**.
+Before selecting or recommending any color, load [`COLOR-PSYCHOLOGY.md`](COLOR-PSYCHOLOGY.md) and follow its mandatory workflow.
+
+- Explain color in relation to the actual source, audience, culture, faith context, hierarchy, medium, and subject.
+- Record the intended response and at least one plausible alternate/adverse reading.
+- Treat hue meanings as design hypotheses. Lightness, chroma, area, adjacency, and contrast often matter as much as or more than hue.
+- Grade claims as strong-pattern, contextual, or limited. Never promise an emotion, behavior, conversion, health result, or physiological response from a color.
+- Distinguish a colored interface from controlled light exposure; never turn circadian/lighting research into claims about a hex value.
+- Never use color to manufacture fear, urgency, guilt, certainty, or pressure.
+- When text carries meaning, easy reading outranks mood and palette. Target 7:1 for sustained reading when practical; never go below WCAG 2.2 AA. Artistic exceptions must be explicit and cannot obscure the only copy of essential content.
 
 Good:
 
-> In this composition, the blue-violet wing family counterbalances the dominant fire palette, creating a cooler visual release and a distinct spiritual/secondary zone.
+> In this composition, the blue-violet family counterbalances the dominant fire palette, creating a cooler visual release and a distinct secondary zone. Because violet can also read as royal, mournful, or artificial, the imagery and copy must make the intended spiritual context clear.
 
 Weak:
 
 > Blue universally means trust.
-
-Use psychological/perceptual notes to explain intended effects such as:
-
-- energy vs rest;
-- visual dominance vs counterpoint;
-- gravity vs release;
-- warning vs hope;
-- sacred/premium emphasis;
-- depth, mystery, clarity, or separation;
-- where the eye is expected to move.
-
-Treat these as **design intentions and contextual readings**, not universal human laws.
-
----
 
 ## 7. Turn the palette into practical guidance
 
@@ -231,7 +227,7 @@ Use full motion normally when it serves the experience. Simplify motion only ins
 
 ## 8. Validate accessibility; never inherit contrast labels blindly
 
-Every contrast claim is a calculation, not a style opinion.
+Every contrast claim is a calculation, not a style opinion. **Readable text is a hard gate:** aim for 7:1 for body/sustained reading when practical and treat 4.5:1 as the normal-text floor, not the design target. Test the final size and the worst actual background behind text, including gradients, transparency, imagery, video, and interaction states.
 
 Before labeling a pair AA/AAA, calculate the contrast ratio from the actual foreground/background values being shipped.
 
@@ -315,3 +311,5 @@ If the answer to any of these is no, the color system is not finished.
 - **`artwork-prompts-handoff`** — artwork generation brief/handoff; use these directives to establish the shared palette and color-grade language before writing per-image prompts.
 
 Specific project truth always beats examples in this file. Re-derive the visual language from the current source rather than cloning a previous project's aesthetic.
+
+<!-- Agent: Codex · Model: GPT-5 · Thinking: not exposed · Date: 2026-09-09 · Added routed, evidence-calibrated color psychology and hard text readability. -->

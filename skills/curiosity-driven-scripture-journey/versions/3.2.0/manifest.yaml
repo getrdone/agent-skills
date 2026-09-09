@@ -1,0 +1,52 @@
+name: curiosity-driven-scripture-journey
+release: 3.2.0
+status: current
+released: 2026-09-09
+
+compatibility:
+  source_library_registry_schema: ">=2,<3"
+  source_library_sqlite_schema: ">=2,<3"
+  project_state_storage: file-based
+  sqlite_project_state: deferred
+  cross_skill_dependencies: pinned-by-release-commit
+
+workflow:
+  substantial_new_work: develop-then-build
+  default_ideation_mode: standard
+  full_matrix_available: true
+  default_accessibility_minimum: WCAG-2.2-AA
+  default_experience_target: AA
+  deterministic_html_audit_required: true
+  color_psychology_reference: repository-root/COLOR-PSYCHOLOGY.md
+  color_psychology_load_trigger: any-color-choice-or-review
+  sustained_text_contrast_target: "7:1"
+  normal_text_contrast_floor: "4.5:1"
+
+security:
+  public_write_abuse_protection: required
+  default_challenge_strategy: escalate-only
+  sms_requires_valid_phone_and_approved_capability: true
+
+routing:
+  scripture_journey_owns_web_experience: true
+  retired_competing_skills:
+    - interactive-components
+    - modern-css-design
+    - optimized-deliverables
+  cloudflare_source: external-official
+
+
+release_changes:
+  backward_compatible: true
+  migration_required: false
+  added_requirements:
+    - evidence-calibrated-color-psychology
+    - hard-readable-text-gate
+    - contextual-cultural-and-scripture-color-check
+  affected_areas:
+    - visual-direction
+    - palettes
+    - thumbnails
+    - artwork
+    - web-theming
+    - accessibility

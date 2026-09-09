@@ -12,7 +12,9 @@ description: Version router for the Curiosity-Driven Scripture Journey skill.
 5. Do not silently mix Scripture Journey reference files from another version.
 6. Shared cross-skill dependencies are governed by the selected release manifest and the repository commit containing that release.
 
-Current: **3.1.0**  
+Current: **3.2.0**  
 Stable: **3.0.1**
 
 <!-- Agent: Codex | Model: GPT-5 | Thinking: not exposed | Date: 2026-09-08 -->
+
+<!-- Agent: Codex · Model: GPT-5 · Thinking: not exposed · Date: 2026-09-09 · Released 3.2.0 color psychology and text-readability requirements. -->
