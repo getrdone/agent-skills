@@ -1,5 +1,20 @@
 # Curiosity-Driven Scripture Journey changelog
 
+## Unreleased
+
+- Expanded router metadata so titles, descriptions, packaging, thumbnails, Bible-study work, and high-trust faith content reliably invoke the skill.
+- Prevented historical `versions/*/SKILL.md` files from being advertised as separate skills.
+- Replaced mandatory `TOPIC-BOARD.md` session tracking with `NOW.md`; `SERIES-BOARD.md` is now optional for multi-episode inventories.
+
+## 3.2.0 — 2026-09-09
+
+- Added evidence-calibrated color psychology requirements for all color selection, recommendation, generation, comparison, and review.
+- Requires color decisions to account for intended response, audience and cultural context, Scripture context, plausible alternate readings, evidence strength, semantic role, and non-color cues.
+- Strengthened Scripture-specific safeguards: color symbolism must be verified from the passage and may not be used as doctrinal proof or fear pressure.
+- Made readable text a hard quality gate: target 7:1 contrast for sustained reading where practical; WCAG 2.2 AA remains the floor; test final-size text at worst-case points over gradients, transparency, imagery, video, and interactive states.
+- Requires an accessible, readable equivalent whenever a nonessential artistic low-legibility exception is approved.
+- Added release metadata for compatibility, color-psychology routing, contrast targets, and affected areas: visual direction, palettes, thumbnails, artwork, web theming, and accessibility.
+
 ## 3.1.0 — 2026-09-08
 
 - Consolidated the useful container-query and interactive-component rules into the routed web experience.
