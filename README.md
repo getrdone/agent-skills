@@ -1,19 +1,20 @@
 # agent-skills
 
 <!-- Agent: Codex | Model: GPT-5 | Thinking: not exposed | Date: 2026-09-08 -->
+<!-- Agent: grok · Model: Grok 4.6 · Date: 2026-09-09 · Memory-first pickup; CATALOG on skill match. -->
 
 **Canonical skill library for all agents.** Do **not** load the whole repo into context.
 
 ## Agent contract (required)
 
 ```
-1. Open CATALOG.md (skill index) and WORKSPACE.md (file layout — always).
-2. Match the user request to a skill row by triggers/intent.
-3. If match → load skills/<name>/SKILL.md and only the files that skill says to load.
+1. Resolve the project. Read its MEMORY.md (Now / Next / Blocked).
+2. Open CATALOG.md only on a skill match (titles, descriptions, thumbnails, Bible study, Scripture journey, transcripts, art handoff). Then load that one SKILL.md and only the files it names.
+3. WORKSPACE.md is file-naming, not a session-start pile. Read it when creating or naming files.
 4. If the task needs support tooling → open the matching processing/ package only.
 5. If no match → proceed with normal judgment; do not invent a skill or load siblings.
 6. Never preload all skills “just in case.”
-7. All agents share one work folder: until final chosen, drafts are `name_<agent>_vN.ext` (including prompts); promote bare `name.ext` only when the user chooses that deliverable; keep a BOARD.
+7. All agents share one work folder: until final chosen, drafts are `name_<agent>_vN.ext` (including prompts); promote bare `name.ext` only when the user chooses that deliverable. TOPIC-BOARD is optional inventory.
 8. Every agent/sub-agent repo commit must identify execution identity: `Agent: <agent> | Model: <model> | Thinking: <level-or-not-exposed> | What changed: <summary>`; never guess a thinking level. Full rule: WORKSPACE.md §3b.
 ```
 
