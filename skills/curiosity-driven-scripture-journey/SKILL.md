@@ -1,6 +1,6 @@
 ---
 name: curiosity-driven-scripture-journey
-description: Version router for the Curiosity-Driven Scripture Journey skill.
+description: Plan, package, design, write, build, or review a curiosity-driven Scripture content project. Use for titles, descriptions, thumbnails, YouTube packaging, Bible-study questions and copy, topic discovery, ministry landing pages, and high-trust faith content. Version router — resolve CURRENT unless the user names a version or says stable.
 ---
 
 # Curiosity-Driven Scripture Journey — version router
@@ -18,3 +18,4 @@ Stable: **3.0.1**
 <!-- Agent: Codex | Model: GPT-5 | Thinking: not exposed | Date: 2026-09-08 -->
 
 <!-- Agent: Codex · Model: GPT-5 · Thinking: not exposed · Date: 2026-09-09 · Released 3.2.0 color psychology and text-readability requirements. -->
+<!-- Agent: grok · Model: Grok 4.6 · Date: 2026-09-09 · Router description includes titles/descriptions so auto-invoke matches. -->

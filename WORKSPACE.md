@@ -192,13 +192,15 @@ Use a stable stem and grow extensions:
 
 ## 4. Boards (so no one hunts folders)
 
+Pickup is the project's **`MEMORY.md`** (Now / Next / Blocked). A board is optional inventory.
+
 ### Series / folder board
 
-At the work root, maintain **`SERIES-BOARD.md`** (or `TOPIC-BOARD.md` / `BOARD.md`):
+At the work root, maintain **`SERIES-BOARD.md`** (or `TOPIC-BOARD.md` / `BOARD.md`) when a folder has several episodes/topics:
 
 - One row (or section) per episode/topic.
 - Columns or bullets for: source, titles, descriptions, thumbs, page, notes, next action.
-- Update the board when you create or promote a material artifact.
+- Update the board when you create or promote a material artifact, if one exists.
 
 ### Item status (optional but preferred once an item is busy)
 
@@ -208,7 +210,7 @@ At the work root, maintain **`SERIES-BOARD.md`** (or `TOPIC-BOARD.md` / `BOARD.m
 - User selections (`~` titles, chosen description)  
 - Next step  
 
-Agents: if a board exists, **read it before inventing new file names**; **update it** when finishing a slice.
+Agents: do **not** read the board on every task. Open it when MEMORY does not cover the slice, file names would collide, or the user asks for status. Update it when finishing a slice if a board exists.
 
 ---
 
@@ -241,4 +243,6 @@ Workspace rules do **not** replace skill routing:
 
 1. `CATALOG.md` → matching skill  
 2. Skill procedure for *how* to write titles/pages/transcripts  
-3. **This file** for *where* and *how files are named* in the work folder  
+3. **This file** for *where* and *how files are named* in the work folder
+
+<!-- Agent: grok · Model: Grok 4.6 · Date: 2026-09-09 · MEMORY.md is pickup; TOPIC-BOARD is optional inventory. -->  

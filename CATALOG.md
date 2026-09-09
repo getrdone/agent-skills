@@ -28,7 +28,7 @@ If none match → use your own judgment; do not force a skill.
 | Skill | Path | Triggers (keywords / intent) |
 |-------|------|------------------------------|
 | clean-video-transcript | `skills/clean-video-transcript/` | clean transcript, clean video transcript, remove timestamps, ASR cleanup, Quick Reference, verse list, EGW reference list, YouTube transcript polish |
-| curiosity-driven-scripture-journey | `skills/curiosity-driven-scripture-journey/` | Scripture journey, Bible study page, discovery topic, source library, source ingestion, source SQLite, source alignment, learning patterns, teaching strategies, YouTube titles/ideas packaging, 17-category title matrix, thumbnail, ministry landing page, Scripture SEO/AEO, high-trust faith content, project brief gates |
+| curiosity-driven-scripture-journey | `skills/curiosity-driven-scripture-journey/` | titles, descriptions, packaging, `.titles.md`, `.descriptions.md`, Scripture journey, Bible study page, discovery topic, source library, source ingestion, source SQLite, source alignment, learning patterns, teaching strategies, YouTube titles/ideas packaging, 17-category title matrix, thumbnail, ministry landing page, Scripture SEO/AEO, high-trust faith content, project brief gates |
 | artwork-prompts-handoff | `skills/artwork-prompts-handoff/` | explicit manual prompt pack, art handoff, I'll generate the images myself, paste-ready prompts file |
 
 ## External maintained skills
@@ -64,3 +64,4 @@ When a community/external skill's knowledge is folded into a skill's references 
 - `curiosity-driven-scripture-journey/references/design-critique-and-anti-slop.md` <- `pbakaus/impeccable` (surface mode, anti-slop detectors, iteration verbs; Apache 2.0) - last synced 2026-08-13 - re-sync: diff against the impeccable repo skill + detector docs (or install as companion via `npx impeccable install`).
 
 <!-- Agent: Codex · Model: GPT-5 · Thinking: not exposed · Date: 2026-09-09 · Routed color decisions to COLOR-PSYCHOLOGY.md. -->
+<!-- Agent: grok · Model: Grok 4.6 · Date: 2026-09-09 · CDSJ triggers include titles/descriptions/packaging. -->
