@@ -12,6 +12,33 @@
 - Prevented historical `versions/*/SKILL.md` files from being advertised as separate skills.
 - Replaced mandatory `TOPIC-BOARD.md` session tracking with `NOW.md`; `SERIES-BOARD.md` is now optional for multi-episode inventories.
 
+### Hardening pass — 2026-09-10 (claude / claude-opus-5)
+
+- Deleted the duplicate live reference tree at the skill root. It shadowed `versions/3.2.0/references/`,
+  and its `learning-and-writing.md` was 14 lines behind — still teaching pre-v3 ideation with no
+  knowledge of Quick / Standard / Full Matrix / Deep. Two obedient agents could load
+  "references/learning-and-writing.md" and get different instructions.
+- Deleted the stale root `manifest.yaml`, which claimed `release: 3.1.0` while `CURRENT` said 3.2.0.
+- Stated the one path-resolution rule in the router: every relative path inside a version's files
+  resolves under `versions/<resolved-version>/`.
+- Added `versions/3.2.0/load-map.yaml` — the machine form of the route table, with per-lane file
+  budgets and conditional loads. Every reference is reachable from at least one lane.
+- Route table: added the missing `develop` row (`v3-workflow.md` appeared in no row) and the
+  `release` row (`v3-quality.md`, `scripts/audit_html.py`); split the single HTML row into
+  `web.repair` and `web.build`, which stops a footer fix from pulling the whole design tree.
+- `resources-and-authority.md` was named in the shared spine but in no route-table row; it is now
+  in the `study` lane.
+- Runs must declare `LANES:` / `LOAD:` / `BRIEF:` before opening any file.
+- Honest curiosity: rule 8 now bans *manufactured* fear rather than fear itself, with a
+  four-question accept/reject test and twelve worked examples deciding the line. Real stakes in the
+  subject matter pass; dread invented by the packaging fails.
+- `project-brief.md` gains machine state on its existing `status` field (`stem`, `last_lanes`,
+  `open_gates`, `last_agent`, `last_updated`) plus a required resume rule. No second state file.
+- File naming, file I/O, and continuity now live only in repo `WORKSPACE.md`; nine restatements
+  across eight files became pointers.
+- Removed the source-governance pointer to a `query_sources` helper script that exists nowhere in
+  this repository; the query helper belongs to the source-library repo.
+
 ## 3.2.0 — 2026-09-09
 
 - Added evidence-calibrated color psychology requirements for all color selection, recommendation, generation, comparison, and review.

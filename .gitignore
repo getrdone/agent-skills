@@ -2,3 +2,8 @@
 *.swp
 .idea/
 .vscode/
+
+# eval captures are per-run scratch; the fixtures and runner are tracked
+evals/captures/*
+!evals/captures/.gitkeep
+evals/baseline-*.json
