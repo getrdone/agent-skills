@@ -16,6 +16,8 @@ No skill or reference restates its rules.
 
 **Shared design pack:** private repo [getrdone/design-resources](https://github.com/getrdone/design-resources) → local clone `F:\__ai-projects\design-resources\` (continuously synced). Glossary text lives in this skills repo; pack `GLOSSARY.md` is a symlink. See `F:\__ai-projects\SOURCES-OF-TRUTH.md`.
 
+**Canonical Bible-study source library:** private repo [getrdone/bible-study-source-materials](https://github.com/getrdone/bible-study-source-materials) → local clone `F:\__ai-projects\bible-study-source-materials\` (continuously synced). Path aliases are junctions into that clone — never a second copy. Read `registry.yaml` and approval policy before treating any file as authoritative.
+
 Agents: match the user request against **Triggers** below.
 
 ### Versioned skill resolution

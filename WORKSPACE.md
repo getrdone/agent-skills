@@ -67,6 +67,9 @@ Formal `registry.yaml` is only for the shared source vault — not for every moo
 **Shared design pack (never duplicated into a project):** `F:\__ai-projects\design-resources\dynamic-symmetry-grids\`.
 Projects keep a short pointer under `references/dynamic-symmetry/README.md`.
 
+**Shared Bible-study source library (never duplicated into a project):** `F:\__ai-projects\bible-study-source-materials\`.
+Convenience junctions may point at that clone (for example under `scripture-discovery-journey/`); do not copy the library tree.
+
 ---
 
 ## 3. File naming (required — single source of truth)
