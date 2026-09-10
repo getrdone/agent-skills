@@ -43,9 +43,9 @@ If none match → use your own judgment; do not force a skill.
 
 ## External maintained skills
 
-| Source | Local clone | Routing |
-|--------|-------------|---------|
-| [Cloudflare Skills](https://github.com/cloudflare/skills) | `F:\\__ai-projects\\cloudflare-skills\\` | Official Cloudflare skills are installed by symlink from this separate clone. Pull updates through the workstation's canonical-repository sync, then repair symlinks. Never copy or fork their instructions into this repository. |
+| Source | Install / path | Routing |
+|--------|----------------|---------|
+| [Cloudflare Skills](https://github.com/cloudflare/skills) | Grok plugin `cloudflare` at `~/.grok/installed-plugins/skills-39968d19/` (marketplace). Do **not** maintain a second `F:\__ai-projects\cloudflare-skills\` clone or fold CF instructions into this repo. | On Workers / Pages / D1 / Wrangler / Agents SDK / Durable Objects match, load the matching skill from that plugin (`cloudflare`, `wrangler`, `agents-sdk`, `durable-objects`, `web-perf`, …). Account MCPs (`cloudflare-api`, bindings, builds, observability) need separate auth; `cloudflare-docs` works without it. |
 
 ## Specialized repositories
 
@@ -77,3 +77,4 @@ When a community/external skill's knowledge is folded into a skill's references 
 <!-- Agent: grok · Model: Grok 4.6 · Date: 2026-09-09 · CDSJ triggers include titles/descriptions/packaging. -->
 <!-- Agent: grok · Model: Grok 4.6 · Date: 2026-09-09 · CDSJ versions/ is history; CURRENT pointer is 3.2.0. -->
 <!-- Agent: claude · Model: claude-opus-5 · Thinking: not exposed · Date: 2026-09-10 · Fixed two broken fold paths; stated versioned path resolution; workspace rules reduced to a pointer. -->
+<!-- Agent: grok · Model: Grok 4.5 · Thinking: not exposed · Date: 2026-09-10 · Cloudflare routing = marketplace plugin, not cloudflare-skills clone. -->

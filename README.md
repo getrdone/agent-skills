@@ -50,7 +50,7 @@ tools/
 
 ## External skill sources
 
-- [Cloudflare Skills](https://github.com/cloudflare/skills) is cloned separately at `F:\\__ai-projects\\cloudflare-skills\\`; installed Cloudflare skills are symlinks into that clone and update through the canonical repository sync.
+- [Cloudflare Skills](https://github.com/cloudflare/skills) ships as the Grok marketplace plugin `cloudflare` (`~/.grok/installed-plugins/skills-39968d19/`). Do not keep a parallel `cloudflare-skills` clone under this workspace. Route Workers/Pages/D1/Wrangler work through that plugin; never fold CF skill bodies into this repo.
 - [getrdone/ubp-tools](https://github.com/getrdone/ubp-tools) contains the trip-specific UBP translator-PDF and related Plain Vision tooling.
 
 ## Processing
@@ -64,3 +64,4 @@ tools/
 Single source of truth for agent skills. Prefer sharp catalog triggers and small load sets.
 
 <!-- Agent: claude · Model: claude-opus-5 · Thinking: not exposed · Date: 2026-09-10 · Naming rules single-sourced to WORKSPACE.md; added net-complexity rule. -->
+<!-- Agent: grok · Model: Grok 4.5 · Thinking: not exposed · Date: 2026-09-10 · Cloudflare = Grok plugin, not cloudflare-skills clone. -->
