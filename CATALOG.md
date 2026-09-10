@@ -71,10 +71,11 @@ If none match → use your own judgment; do not force a skill.
 When a community/external skill's knowledge is folded into a skill's references (instead of installing it), record a **provenance block** at the top of the affected reference file: source repo + URL, last-synced date, check cadence, and the re-sync command. List each fold here so the whole tree stays re-checkable:
 
 - `skills/curiosity-driven-scripture-journey/versions/3.2.0/references/motion-and-premium-ui.md` <- `github/awesome-copilot` (`premium-frontend-ui`, `gsap-framer-scroll-animation`) - last synced 2026-08-13 - re-sync: diff against `skills/*/SKILL.md` in that repo.
-- `skills/curiosity-driven-scripture-journey/versions/3.2.0/references/design-critique-and-anti-slop.md` <- `pbakaus/impeccable` (surface mode, anti-slop detectors, iteration verbs; Apache 2.0) - last synced 2026-08-13 - re-sync: diff against the impeccable repo skill + detector docs (or install as companion via `npx impeccable install`).
+- `skills/curiosity-driven-scripture-journey/versions/3.2.0/references/design-critique-and-anti-slop.md` <- `pbakaus/impeccable` (surface mode, detectors, iteration verbs; Apache 2.0) + `anthropics/skills` `frontend-design` (AI-design cluster list) + spot-check `ravidsrk/slop-detect` emerging fingerprints - last synced 2026-09-10 - next check ~2026-12-10 - re-sync: diff impeccable; re-fetch Anthropic `frontend-design/SKILL.md` clusters; skim slop-detect/essays for new durable tells only (optional `npx impeccable install`).
 
 <!-- Agent: Codex · Model: GPT-5 · Thinking: not exposed · Date: 2026-09-09 · Routed color decisions to COLOR-PSYCHOLOGY.md. -->
 <!-- Agent: grok · Model: Grok 4.6 · Date: 2026-09-09 · CDSJ triggers include titles/descriptions/packaging. -->
 <!-- Agent: grok · Model: Grok 4.6 · Date: 2026-09-09 · CDSJ versions/ is history; CURRENT pointer is 3.2.0. -->
 <!-- Agent: claude · Model: claude-opus-5 · Thinking: not exposed · Date: 2026-09-10 · Fixed two broken fold paths; stated versioned path resolution; workspace rules reduced to a pointer. -->
 <!-- Agent: grok · Model: Grok 4.5 · Thinking: not exposed · Date: 2026-09-10 · Cloudflare routing = marketplace plugin, not cloudflare-skills clone. -->
+<!-- Agent: grok · Model: Grok 4.5 · Date: 2026-09-10 · Anti-slop fold: Anthropic clusters + 2026 fingerprints; next check ~2026-12-10. -->
