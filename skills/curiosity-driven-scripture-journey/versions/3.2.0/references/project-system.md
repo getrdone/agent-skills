@@ -19,7 +19,7 @@ For a small prompt such as `Psalm 23`, keep it creative-friendly—**no bureaucr
 
 ### 0) Scaffold first (if this is a new project)
 
-If no topic folder exists yet, create the standard shell from **`WORKSPACE.md` §2b** (AGENTS.md, NOW.md, project-brief.md, `planning/`, `mood/`, `prompts/`, `references/`, `sources/intake/`, `deliverables/assets/`).  
+If no topic folder exists yet, create the standard shell from **`WORKSPACE.md` §2b** (AGENTS.md, 01-NOW.md, 02-TASKS.md, project-brief.md, `planning/`, `mood/`, `prompts/`, `references/`, `sources/intake/`, `deliverables/assets/`).  
 If the folder already exists, **do not rebuild**—only add missing folders/files and use what is already there. Point `references/dynamic-symmetry/` at `F:\__ai-projects\design-resources\dynamic-symmetry-grids\` (do not copy the whole pack).  
 When artwork is needed, use skill **`artwork-prompts-handoff`** → `prompts/artwork-prompts.md` (human generates; no paid image APIs by default). Naming: repo [`WORKSPACE.md`](../../../../WORKSPACE.md) §3.
 
@@ -105,18 +105,33 @@ open_decisions: []
 Add lane-specific details only when that lane begins. Do not prefill invented decisions.
 
 `status` is the single stage field — there is no separate stage file. Do not create `PROJECT-STATUS.md`,
-`STATUS.md`, or any second machine-readable state store in a work folder. `NOW.md` is human prose and is
-never parsed.
+`STATUS.md`, or any second machine-readable state store in a work folder.
+
+### Scope: this brief covers ONE deliverable
+
+`project-brief.md` is the production record for a single Scripture Journey deliverable. A project with
+six episodes has one `03-MEMORY.md` and up to six briefs. Scope test: **would this still be true for the
+next episode?** Yes → the project's `03-MEMORY.md`. Only for this one → this brief.
+
+**Cite, never copy.** Project-wide locks — locked palette, locked copy, approved visual direction —
+live in `03-MEMORY.md`. Write `locked_decisions: [see 03-MEMORY.md § Locked visual]`, not the values
+themselves. A value in two files goes stale in one of them silently.
+
+**A brief is not mandatory.** Create it when a deliverable starts moving through stages. An ops or
+landing-page project runs on `01-NOW.md` + `02-TASKS.md` + `03-MEMORY.md` alone; do not scaffold an empty forty-field YAML.
+
+Full five-file model and the task lifecycle: repo root `WORKSPACE.md` §6.
 
 ### Resume rule (required)
 
 A new agent entering an existing work folder:
 
-1. Read `NOW.md` for human context.
-2. Read `project-brief.md`. If `status` is set, **resume that stage** — do not restart earlier ones.
-3. Load only the lanes for that stage (`load-map.yaml`), plus `spine`. Never reload the whole skill.
-4. Clear or carry forward each entry in `open_gates`; do not silently drop one.
-5. Before exiting, write `status`, `stem`, `last_lanes`, `open_gates`, `last_agent`, `last_updated`.
+1. Read `01-NOW.md` and `02-TASKS.md`.
+2. Read the project's `03-MEMORY.md` before touching anything that looks already decided.
+3. Read `project-brief.md`. If `status` is set, **resume that stage** — do not restart earlier ones.
+4. Load only the lanes for that stage (`load-map.yaml`), plus `spine`. Never reload the whole skill.
+5. Clear or carry forward each entry in `open_gates`; do not silently drop one.
+6. Before exiting, write `status`, `stem`, `last_lanes`, `open_gates`, `last_agent`, `last_updated`.
 
 With no `project-brief.md`, treat the work as intake/discovery. Never assume a prior approval.
 
@@ -193,3 +208,4 @@ The two things this skill adds on top:
   block is generated from those marks and is the only thing a later stage reads.
 
 <!-- Agent: claude · Model: claude-opus-5 · Thinking: not exposed · Date: 2026-09-10 · Added machine state fields + resume rule to the canonical brief; naming rules single-sourced to WORKSPACE.md. -->
+<!-- Agent: claude · Model: claude-opus-5 · Thinking: not exposed · Date: 2026-09-10 · Brief is one deliverable, optional, and cites MEMORY.md rather than copying project-wide locks. -->

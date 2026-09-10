@@ -31,7 +31,8 @@ All agents write into the **same** user-chosen directory. When a topic outgrows 
 ```text
 work-root/
   AGENTS.md                 # optional local pointer to this contract
-  NOW.md                    # session pickup (Now / Next / Blocked)
+  01-NOW.md                 # session pickup (Now / Blocked)
+  02-TASKS.md               # the queue
   project-brief.md          # durable decisions + machine state
   <stem>.txt                # source
   <stem>.titles.md          # progressive stem (see §3)
@@ -49,7 +50,9 @@ When the user starts a **new** named topic and no project folder exists:
 ```text
 <topic-slug>/
   AGENTS.md                 # short pointer to agent-skills + this file
-  NOW.md                    # Now / Next / Blocked
+  01-NOW.md                 # Now / Blocked
+  02-TASKS.md               # open work that outlives a session
+  03-MEMORY.md              # durable locks and settled decisions
   project-brief.md          # one living brief (YAML) — durable + machine state
   planning/                 # optional long plans
   mood/                     # finished inspiration / generated art
@@ -66,9 +69,6 @@ Formal `registry.yaml` is only for the shared source vault — not for every moo
 
 **Shared design pack (never duplicated into a project):** `F:\__ai-projects\design-resources\dynamic-symmetry-grids\`.
 Projects keep a short pointer under `references/dynamic-symmetry/README.md`.
-
-**Shared Bible-study source library (never duplicated into a project):** `F:\__ai-projects\bible-study-source-materials\`.
-Convenience junctions may point at that clone (for example under `scripture-discovery-journey/`); do not copy the library tree.
 
 ---
 
@@ -239,26 +239,141 @@ Brief status only — what / path / blocked. **No** code, diffs, patches, or ful
 
 ---
 
-## 6. Continuity — two files, no others
+## 6. Continuity — five numbered files per project, no others
 
-| File | Audience | Contents |
-|------|----------|----------|
-| `NOW.md` | human | Now / Next / Blocked. Prose. Never parsed by an agent. |
-| `project-brief.md` | both | Durable decisions **and** machine state (`stage`, `stem`, `last_lanes`, `open_gates`, `last_agent`). The only machine-readable state in a work folder. |
+Filenames are numbered in **order of need**. A directory listing tells you the reading order without
+opening anything.
 
-**Session pickup is `NOW.md`.** Read `project-brief.md` when the task needs stage, locked decisions, or
-source pins — which is most substantial work.
+| File | Scope | Read | Written by |
+|------|-------|------|-----------|
+| `01-NOW.md` | this session | **every session** | agent + human |
+| `02-TASKS.md` | open work that outlives a session | **every session** | agent + human |
+| `03-MEMORY.md` | the whole project | before changing settled work | mostly human |
+| `04-ACTIVITY.md` | one dated entry per material change | rarely | agent, append-only |
+| `05-ARCHIVE.md` | pruned locks and closed tasks | only when asked | nobody directly |
 
-- **Legacy `MEMORY.md`:** some existing projects use it as pickup. If a project has `MEMORY.md` and no
-  `NOW.md`, read `MEMORY.md` and leave it alone. Do not create new `MEMORY.md` files.
-- **Retired:** `TOPIC-BOARD.md` (do not create, do not restore). `START-HERE.md` is not a workspace file.
-- **Optional:** `SERIES-BOARD.md` — an inventory for a folder with several episodes. Never mandatory,
-  never session context, never per-agent. Update it when you promote a material artifact, if one exists.
+`AGENTS.md` and `CLAUDE.md` stay **unnumbered** — those exact names are what Codex and Claude Code look
+for. Numbered files are this workspace's contract; unnumbered files are tool entry points.
 
-Resume rule: read `NOW.md`, then `project-brief.md`. If `stage` is set, resume that stage and load only
-its lanes. If there is no brief, treat the work as intake/discovery — do not assume prior approvals.
+`project-brief.md` is a sixth file belonging to **one deliverable**, not the project. See §6d.
 
----
+There are no other state files. Not `NOW.md`, not `MEMORY.md`, not `TOPIC-BOARD.md`, `START-HERE.md`,
+`PROJECT-STATUS.md`, `STATUS.md`, `CURRENT.md`, or a per-agent board. If you find one, it is a leftover:
+fold it into the numbered file that owns its content and delete it.
+
+### 6a. What each one is for
+
+**`01-NOW.md` — what is in flight.** Now and Blocked. Not a queue — the queue is `02-TASKS.md`, and
+duplicating it here is the most likely way this drifts. Read first, every session; update before ending
+substantial work. Keep under ~3 KB.
+
+**`02-TASKS.md` — the queue.** Open work that survives past this session. One task per line, fixed
+shape (§6b). This is the only place tasks are authored, in any project.
+
+**`03-MEMORY.md` — durable locks.** The only file in the system that can hold a **no**. Git records
+what changed, not what is forbidden. The artifacts hold the locked copy but not the fact that it is
+locked — an agent reading a page sees copy it could improve, and improving it is the failure. Agent
+chat memory does not cross agents and never overrides repo files.
+
+So this holds standing constraints and settled decisions: locked copy, locked visual direction,
+closed choices, "do not reopen X", "Y is on hold". Read it before touching anything that looks already
+decided. **A thing being improvable is not permission to change it.**
+
+**`04-ACTIVITY.md` — the journal.** One dated entry when material work finishes, shaped by
+`_agent-control\templates\AGENT-ACTIVITY-ENTRY.md`. Append only; never rewrite an earlier entry. It
+answers "why is this odd thing here" months later, and grows freely because nobody reads it in bulk.
+
+**`05-ARCHIVE.md` — a destination, not a source.** Its only job is letting `03-MEMORY.md` and
+`02-TASKS.md` stay short. Content arrives **only** by being pruned out of one of them. Never write to
+it directly, never read it unless asked.
+
+### 6b. Task format (fixed — a regex has to parse it)
+
+```markdown
+## Open
+- [ ] 2026-09-12 :: @grok :: Wire AF auto-send using the short URL
+- [ ] :: :: Hide the theme switcher before ads
+
+## Done (keep the last 10, prune the rest to 05-ARCHIVE.md)
+- [x] 2026-09-09 :: @claude :: Local D1 smoke test
+```
+
+One task per line. `- [ ]` or `- [x]`, then due date (or empty), then owner (or empty), then the text.
+Never wrap a task across lines. Never nest sub-tasks — split them into separate lines.
+
+### 6c. Task lifecycle (the workflow — follow it exactly)
+
+A task leaves `02-TASKS.md` by exactly one of four routes. It is never in two places at once.
+
+| What happened | Where it goes | What is left behind in `02-TASKS.md` |
+|---|---|---|
+| **Picked up** — you are working it now | name it in `01-NOW.md` under Now | the line stays, unchecked |
+| **Finished** | tick it `- [x]`, leave it under Done | nothing more; prune past 10 to `05-ARCHIVE.md` |
+| **Became a decision** — it settled into a standing constraint, a lock, or a "we are not doing this" | write it in `03-MEMORY.md` | **delete the line.** It is a decision now, not work |
+| **Abandoned** | one line of why in `04-ACTIVITY.md` | **delete the line** |
+
+The third row is the one that keeps `02-TASKS.md` honest. "Decide whether to gate the theme switcher"
+is a task; once decided, "theme switcher stays hidden until ads are wired" is a lock. If the decision
+stays in the task file, agents keep re-opening a settled question — which is the exact failure
+`03-MEMORY.md` exists to prevent.
+
+### 6d. `project-brief.md` — one deliverable, not the project
+
+The structured production record for a **single** Scripture Journey deliverable: status, audience, core
+question, chosen title, source pins, stage, open gates. YAML, agent-maintained, changes as the work
+moves through stages. A project with six episodes has one `03-MEMORY.md` and up to six briefs.
+
+**Scope test:** would this still be true for the next episode? Yes → `03-MEMORY.md`. Only this one →
+the brief.
+
+**The brief cites; it never copies.** Project-wide locks stay in `03-MEMORY.md` and the brief points at
+them — `locked_decisions: [see 03-MEMORY.md § Locked visual]`, not the palette pasted in. A value in two
+files goes stale in one of them silently.
+
+**Not every project needs a brief.** It appears when a Scripture Journey deliverable starts moving
+through stages. An ops or landing-page project runs on `01-NOW` + `02-TASKS` + `03-MEMORY` alone. Do not
+scaffold an empty forty-field YAML nobody will fill in.
+
+### 6e. The test that keeps `03-MEMORY.md` lean
+
+**Could an agent discover this by reading the code?** If yes, it does not belong there — it belongs in
+the project README, or nowhere. `03-MEMORY.md` earns its length only with what cannot be inferred.
+
+Target under ~8 KB. Past that, prune the derivable material to `05-ARCHIVE.md` in one file operation
+(§4 rule 3) — never by re-typing it through the model.
+
+Cross-project preferences — how the user likes to be worked with in general — are **not** project
+memory. They belong in the machine-wide agent rules. A working-style section copied into several project
+files drifts the first time it is refined in one of them.
+
+### 6f. Finding open work across every project
+
+There is **no** aggregated task file. A roll-up would be a second copy of every task and would be wrong
+the moment a project file changed. Aggregate on demand instead — the answer is always live:
+
+```powershell
+F:\__ai-projects\_agent-control\bin\open-tasks.ps1              # every project
+F:\__ai-projects\_agent-control\bin\open-tasks.ps1 -Project final-days
+F:\__ai-projects\_agent-control\bin\open-tasks.ps1 -Owner @grok
+```
+
+It reads `_agent-control\PROJECTS.yaml` for the project list, scans each `02-TASKS.md`, and prints every
+open line with its source path and line number. When the user asks *"what is open"*, *"show me all my
+to-dos"*, or anything of that shape across projects — **run that, do not guess and do not hand-collect.**
+
+Without the script, the same thing by hand:
+
+```powershell
+Get-ChildItem F:\__ai-projects -Recurse -Filter 02-TASKS.md -Depth 3 |
+  Select-String -Pattern '^- \[ \]'
+```
+
+### 6g. Resume rule
+
+Read `01-NOW.md`. Read `02-TASKS.md`. Read `03-MEMORY.md` before changing anything already settled. For a
+staged Scripture Journey deliverable, read its `project-brief.md`: if `status` is set, resume that stage
+and load only its lanes. With no brief, treat the work as intake/discovery — never assume a prior
+approval.
 
 ## 7. Local `AGENTS.md` in a work folder
 
@@ -275,4 +390,5 @@ file, and states that all agents share the folder. It must **not** restate the r
 3. **This file** for *where* files go, *how* they are named, and *how* they are read and written
 
 <!-- Agent: goBot · Date: 2026-09-09 · TOPIC-BOARD retired; NOW.md is session pickup. -->
-<!-- Agent: claude · Model: claude-opus-5 · Thinking: not exposed · Date: 2026-09-10 · Single-sourced the naming contract; progressive stems + run-log journal; added §4 file I/O rules; resolved NOW.md/MEMORY.md pickup conflict. -->
+<!-- Agent: claude · Model: claude-opus-5 · Thinking: not exposed · Date: 2026-09-10 · Single-sourced the naming contract; progressive stems + run-log journal; added §4 file I/O rules. -->
+<!-- Agent: claude · Model: claude-opus-5 · Thinking: not exposed · Date: 2026-09-10 · §6 restored MEMORY.md as a first-class file; numbered five-file model in order of need, task queue + lifecycle, the derivability test, brief-cites-never-copies, and on-demand cross-project task discovery. -->
