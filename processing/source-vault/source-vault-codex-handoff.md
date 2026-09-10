@@ -19,7 +19,7 @@ Inventory, verify, classify, register, index, and query a private source collect
 
 ## Required rules
 
-1. Read `CATALOG.md`, the Scripture Journey skill, and `references/source-governance.md`.
+1. Read `CATALOG.md`, the Scripture Journey skill, and `skills/curiosity-driven-scripture-journey/versions/<CURRENT>/references/source-governance.md`.
 2. Read the source repository's registry and policy.
 3. Use only approved records within scope. Scripture remains the final authority.
 4. Preserve named sources and transcript wording; add stronger evidence alongside.
@@ -57,3 +57,5 @@ python3 scripts/validate_sources.py --database database/sources.sqlite3
 ```
 
 Commit canonical inputs, generated indexes, and the validated SQLite database together. Update each consumer project's pinned snapshot. The planned HTML query surface remains a future read-only view of the same database.
+
+<!-- Agent: claude · Model: claude-opus-5 · Thinking: not exposed · Date: 2026-09-10 · Fixed a relative path that did not resolve. -->

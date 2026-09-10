@@ -29,7 +29,7 @@ Approval is record-specific and scope-specific. Approval of one work does not ap
 
 1. Read the consumer's lock file and canonical `registry.yaml` at the pinned snapshot.
 2. Identify the core passages, topics, people, expertise areas, and source classes.
-3. Query the generated database with `scripts/query_sources.py` for routing and discovery.
+3. Query the generated database for routing and discovery. The query helper lives with the library, not in this repo: use the `scripts/` entry point documented in the source repository's own README. If no helper is present yet, query `database/sources.sqlite3` directly and say so in the alignment manifest — do not fall back to reading every `record.yaml`.
 4. Open the canonical `record.yaml` and relevant `content.md` section for exact wording, page, paragraph, heading, or timestamp verification.
 5. Use only approved records whose scope covers the claim.
 6. Record the exact source IDs, passages, and locators in the study alignment manifest.
@@ -94,3 +94,5 @@ Do not require a public page to expose this internal schema. Public citations re
 Do not silently contradict or harmonize applicable approved sources. Recheck Scripture, exact quotations, editions, locators, and approval scope. Record unresolved disagreement and return `BLOCKED` for the affected claim.
 
 Allow new ideas, analogies, applications, and deductions only when rooted in Scripture, Spirit of Prophecy, or traceable scripturally aligned reasoning. Label the claim type and never present an expansion as a quotation or as the source author's own statement.
+
+<!-- Agent: claude · Model: claude-opus-5 · Thinking: not exposed · Date: 2026-09-10 · Removed the dead scripts/query_sources.py pointer; the helper belongs to the source repo. -->

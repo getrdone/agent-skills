@@ -264,7 +264,7 @@ An honest curiosity gap is the packaging job. Manufactured suspense is the fail.
 5. **Do not promise a revelation, transformation, proof, warning, or outcome the content cannot actually deliver.**
 6. **Do not leak the promised payoff in pre-click copy.** Let titles and descriptions preserve the specific answer the content will reveal. Then, once the person clicks, confirm the promise, give meaningful value early, and deliver the answer without stretching it out.
 7. **Do not turn real emotion into exaggerated emotion.** Keep story, surprise, fear, hope, grief, relief, contrast, and desire — but ground them in the actual events and use proportionate language.
-8. **Do not use fear, guilt, shame, FOMO, scarcity, false urgency, coercion, or deceptive certainty as attention tools.**
+8. **Do not manufacture fear, guilt, shame, FOMO, scarcity, false urgency, coercion, or deceptive certainty as attention tools.** Fear that is genuinely in the subject — judgment, death, deception, persecution, the close of probation — may appear when the content carries it and states it soberly. Manufactured dread about an unnamed subject may not. The line between them is decided by **Real stakes vs fear-for-click** below, not by whether the word "fear" appears.
 9. **Do not use PAS to amplify an unreal problem or consequence.** The problem must be real; the consequence must be sober; the solution must be evidence-based.
 10. **Do not make AIDA’s action step coercive.** Attention, interest, and desire are welcome. The action should remain a clear, voluntary invitation.
 11. **Do not claim a before-and-after transformation that has not occurred.** BAB, 4Ps, FAB, authority, proof, numbers, testimonies, and results all need real support.
@@ -283,6 +283,61 @@ Reject or rewrite any line whose gap is only a reaction, a trailer, or a stock c
 | Watch how a man who thought he had time suddenly treated truth like it could not wait — and what that urgency forced him to face. | Trailer language; the remaining gap is unnamed | What that single call set in motion — the pastor, the months of questions, and the life that followed — is the part you want to see. |
 
 The pass column still reserves the outcome. It names a real next beat. “Is the part you want to see” is not what makes the line work; the pastor, the months of questions, and the life that followed are.
+
+### Real stakes vs fear-for-click (accept/reject test)
+
+The list above is a set of prohibitions. Prohibitions do not settle edge cases; a procedure does.
+This is that procedure, and it is the one that decides whether fear may appear in a line.
+
+**The distinction is not fear vs no fear. It is fear that is *in the subject* vs fear *manufactured by
+the packaging*.** This material carries real stakes — judgment, death, deception, persecution, the close
+of probation. Refusing to let those appear would misrepresent the content. Inventing dread the content
+does not carry is the fail.
+
+Run every title, thumbnail line, description sentence, email subject, and SMS through all four. A line
+passes only if it passes **all four**.
+
+| # | Test | Ask | Reject when |
+| --- | --- | --- | --- |
+| 1 | **Source** | Is the fear in the passage, the documented event, or the real consequence — or did the packaging add it? | Strip the packaging and the fear disappears. It was manufactured. |
+| 2 | **Proportion** | Would someone who already knows the whole content call this language proportionate? | The line implies more danger, more concealment, or more certainty than the content supports. |
+| 3 | **Resolution** | Does the content answer the fear it raises — early, plainly, without stretching it out? | The stake is raised and never resolved, or the answer is withheld past the point of teaching. |
+| 4 | **Transfer** | Could this line be pasted unchanged onto an unrelated story? | Yes. It is generic bait (this is What-not-to-do rule 12, reused here rather than restated). |
+
+**Standing constraint:** fear may never be the only reason to click. Every line names a real subject —
+a passage, a person, an event, a document, a claim. A line whose entire content is dread has already
+failed test 1, whatever else it does.
+
+Sobriety is not a softening. A sober line about a death decree is stronger than an excited one, because
+the reader can tell the difference between a writer reporting a stake and a writer performing one.
+
+#### Twelve worked examples
+
+**Reject**
+
+| Line | Fails |
+| --- | --- |
+| The Terrifying Truth About What's Coming in 2027 | 1, 4 — no subject at all, and the date manufactures a deadline the content cannot support |
+| What Your Pastor Is Afraid to Tell You About Sunday | 1, 2 — invents concealment and fear in a named person; allowed only if the content documents that fear |
+| Time Is Running Out — Watch Before It's Too Late | 1, 3, 4 — pure urgency, no subject, nothing to resolve; pastes onto anything |
+| This Prophecy Will Keep You Up at Night | 1, 3 — promises an emotional state instead of a payoff |
+| The Mark of the Beast Is Already Here and You Won't See It Coming | 2 — asserts a certainty the content cannot deliver, and "you won't see it coming" is manufactured dread |
+| Millions Will Be Deceived — Will You? | 1, 4 — coercive second person substituting for a subject |
+
+**Accept**
+
+| Line | Why it passes |
+| --- | --- |
+| Daniel 8:14 Says "Cleansed." The Hebrew Says Something Else. | Names the passage, reserves the answer, and the tension is in the text itself |
+| Revelation Describes a Death Decree. Read Who It's Aimed At. | Genuinely frightening subject, stated soberly, subject named, content resolves it |
+| Why the Reformers Called the Papacy the Antichrist | Real historical stakes, documented, no invented concealment |
+| The Sunday Law Everyone Quotes — Here's What It Actually Said | Real document, honest gap, answer delivered on click |
+| Three Verses That Complicate the Rapture Timeline | Honest tension; no fear needed and none added |
+| What Happens at Death, According to Ecclesiastes 9 | The topic touches real fear; the framing is sober and names the passage |
+
+Note the pattern in the accept column: each one would still be a fair description of the content if the
+reader saw the whole piece first. That is the shortest form of the whole test.
+
 
 ## Splice-safe sentences + short punch
 
@@ -434,3 +489,5 @@ For concept reports, name the rule in play and provide 3–4 concepts unless the
 
 <!-- Agent: grok · Model: Grok 4.6 · Date: 2026-08-20 · splice-safe + short punch listing -->
 <!-- Agent: grok · Model: Grok 4.6 · Date: 2026-09-09 · Honest curiosity vs manufactured suspense; banned empty reaction/trailer gaps. -->
+
+<!-- Agent: claude · Model: claude-opus-5 · Thinking: not exposed · Date: 2026-09-10 · Rule 8 now bans manufactured fear rather than fear itself; added the four-question real-stakes accept/reject test and twelve worked examples. -->

@@ -100,5 +100,7 @@ Append after the body (and final `[Music]` if present). **Order of appearance in
 - [ ] Source `.txt` untouched
 
 ## Style anchors
-- End-matter sample: `examples/end-matter-sample.md` in this skill.
+- End-matter sample: `../examples/end-matter-sample.md` in this skill.
 - If the consumer project has already-cleaned transcripts, match their paragraph tone; **do not abridge**.
+
+<!-- Agent: claude · Model: claude-opus-5 · Thinking: not exposed · Date: 2026-09-10 · Fixed a relative path that did not resolve. -->

@@ -30,7 +30,7 @@ No secrets. Add rows anytime.
 
 ## Unlocking Bible Prophecies translator PDFs
 
-Procedure: `skills/ubp-translator-pdf/`. Kit on the work laptop: `Documents/UBP-translator-pdf/`.
+Procedure: private repo [getrdone/ubp-tools](https://github.com/getrdone/ubp-tools) — moved out of this repo in 3.1.0 and not part of default routing. Kit on the work laptop: `Documents/UBP-translator-pdf/`.
 
 | Tool | Role | Status |
 |------|------|--------|
@@ -40,3 +40,5 @@ Procedure: `skills/ubp-translator-pdf/`. Kit on the work laptop: `Documents/UBP-
 | Microsoft Edge (headless `--print-to-pdf`) | HTML → letter PDF | active |
 | Plain Vision | Library: Modular `_Sequence` + slides + notes | active |
 | Xodo PDF | Pixel markup of travel-review PDFs | active |
+
+<!-- Agent: claude · Model: claude-opus-5 · Thinking: not exposed · Date: 2026-09-10 · Fixed dead pointer to the retired ubp-translator-pdf skill. -->
