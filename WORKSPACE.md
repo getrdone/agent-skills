@@ -260,7 +260,7 @@ for. Numbered files are this workspace's contract; unnumbered files are tool ent
 `project-brief.md` is a sixth file belonging to **one deliverable**, not the project. See §6d.
 
 There are no other state files. Not `NOW.md`, not `MEMORY.md`, not `TOPIC-BOARD.md`, `START-HERE.md`,
-`PROJECT-STATUS.md`, `STATUS.md`, `CURRENT.md`, or a per-agent board. If you find one, it is a leftover:
+`PROJECT-STATUS.md`, `STATUS.md`, `CURRENT.md`, `ACTIVE-WORK.md`, or a per-agent board. If you find one, it is a leftover:
 fold it into the numbered file that owns its content and delete it.
 
 ### 6a. What each one is for
@@ -405,3 +405,4 @@ file, and states that all agents share the folder. It must **not** restate the r
 <!-- Agent: goBot · Date: 2026-09-09 · TOPIC-BOARD retired; NOW.md is session pickup. -->
 <!-- Agent: claude · Model: claude-opus-5 · Thinking: not exposed · Date: 2026-09-10 · Single-sourced the naming contract; progressive stems + run-log journal; added §4 file I/O rules. -->
 <!-- Agent: claude · Model: claude-opus-5 · Thinking: not exposed · Date: 2026-09-10 · §6 restored MEMORY.md as a first-class file; numbered five-file model in order of need, task queue + lifecycle, the derivability test, brief-cites-never-copies, and on-demand cross-project task discovery. -->
+<!-- Agent: grok · Model: Grok 4.6 · Thinking: not exposed · Date: 2026-09-10 · ACTIVE-WORK.md is a leftover state file; doctor FAILs pickup pointers at NOW.md/MEMORY.md. -->
