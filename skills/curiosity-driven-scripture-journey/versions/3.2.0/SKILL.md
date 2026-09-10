@@ -21,8 +21,9 @@ Version 3.2.0 preserves the v3 workflow and consolidates the former web helper s
 - Do not introduce SQLite project-state storage in 3.0.0. Keep the current file-based project system while minimizing Markdown note sprawl.
 
 
-> **Canonical location:** [getrdone/agent-skills](https://github.com/getrdone/agent-skills) → `skills/curiosity-driven-scripture-journey/`  
-> **Workspace (all skills):** repo root [`WORKSPACE.md`](../../../../WORKSPACE.md) — one shared work folder; until final chosen, all agent work products (HTML, packaging, **prompts**, pass notes) use `name_<agent>_vN.ext`; promote bare `name.ext` only when the user chooses that deliverable; session pickup `NOW.md`; optional `SERIES-BOARD.md` for multi-episode folders only — no `TOPIC-BOARD.md`.
+> **Canonical location:** [getrdone/agent-skills](https://github.com/getrdone/agent-skills) → `skills/curiosity-driven-scripture-journey/`
+> **Path resolution:** every relative path in this file resolves under `versions/3.2.0/`. Paths written `repo:` resolve from the repository root.
+> **Workspace (all skills):** file naming, file I/O, and continuity are defined **only** in repo root [`WORKSPACE.md`](../../../../WORKSPACE.md). This skill does not restate them.
 
 # Curiosity-Driven Scripture Journey
 
@@ -50,20 +51,24 @@ Apply these invariants even when the user asks for only one title, one graphic, 
 
 ## Route the request
 
-Read only the indicated references, plus any file the user supplies:
+`load-map.yaml` beside this file is the machine-readable form of this table, with per-lane file
+budgets and the conditional loads. Match the request, emit `LANES:` and `LOAD:` (see the router
+`SKILL.md`), then read **only** what you declared, plus any file the user supplies.
 
-| Requested work | Read |
-| --- | --- |
-| Start a project, resume from mixed artifacts, set status, or coordinate several deliverables | `references/project-system.md` |
-| Find or approve a topic, map a learning journey, write general teaching copy, or choose a writing framework | `references/learning-and-writing.md` |
-| Choose, combine, implement, or audit learning patterns or teaching strategies | `references/learning-patterns.md`, then only the selected pattern-family file(s); read `references/learning-pattern-sources.md` only for provenance or catalog maintenance |
-| Ingest, approve, classify, index, query, or audit Bible-study source material or its SQLite database | `references/source-governance.md` |
-| Plan or write a Bible study, Scripture Journey Page, evidence path, source trail, translation review, interactions, or next-study choices | `references/scripture-study.md`, `references/source-governance.md`, `references/learning-and-writing.md`, `references/learning-patterns.md`, and `references/branching-journey.md`; then load only the selected pattern-family file(s) |
-| Generate or review YouTube ideas, titles, descriptions, packaging, video structure, scripts, or retention | `references/youtube-planning.md`; also read `references/learning-and-writing.md` for content or scripts |
-| Create or review a thumbnail, graphic, moodboard, visual direction, typography, palette, layout, or motion language | `references/visual-system.md` (which requires repository-root `COLOR-PSYCHOLOGY.md` whenever a color decision is present) + skim `references/dynamic-symmetry-glossary.md` then `references/dynamic-symmetry.md`; for **actual image generation**, load skill **`artwork-prompts-handoff`** (prompts file for human tools—default; no paid Canva/Leonardo APIs unless user explicitly confirms credits); add `references/youtube-planning.md` for thumbnails |
-| Build or review HTML/CSS/JS, landing pages, interactions, SEO/AEO/GEO, performance, or accessibility | `references/web-experience.md`; also read `references/visual-system.md`, `references/motion-and-premium-ui.md`, `references/design-critique-and-anti-slop.md`, `references/branching-journey.md`, and `references/learning-and-writing.md` for on-page copy |
-| Validate a plan, artifact, experience, or release | `references/quality-gates.md` and the artifact's lane |
-| Change the `modern-html-css-aeo` standard, validators, releases, syncing, or version compatibility | `references/standards-governance.md` |
+| Requested work | Lane | Read |
+| --- | --- | --- |
+| Substantial new work — before planning, ideation, learning architecture, visual direction, or HTML | `develop` | `references/v3-workflow.md` |
+| Start a project, resume from mixed artifacts, set status, or coordinate several deliverables | `project`  | `references/project-system.md` |
+| Find or approve a topic, map a learning journey, write general teaching copy, or choose a writing framework | `study`  | `references/learning-and-writing.md` |
+| Choose, combine, implement, or audit learning patterns or teaching strategies | `study`  | `references/learning-patterns.md`, then only the selected pattern-family file(s); read `references/learning-pattern-sources.md` only for provenance or catalog maintenance |
+| Ingest, approve, classify, index, query, or audit Bible-study source material or its SQLite database | `sources`  | `references/source-governance.md` |
+| Plan or write a Bible study, Scripture Journey Page, evidence path, source trail, translation review, interactions, or next-study choices | `study`  | `references/scripture-study.md`, `references/source-governance.md`, `references/learning-and-writing.md`, `references/learning-patterns.md`, and `references/branching-journey.md`; then load only the selected pattern-family file(s) |
+| Generate or review YouTube ideas, titles, descriptions, packaging, video structure, scripts, or retention | `packaging`  | `references/youtube-planning.md`; also read `references/learning-and-writing.md` for content or scripts |
+| Create or review a thumbnail, graphic, moodboard, visual direction, typography, palette, layout, or motion language | `visual` | `references/visual-system.md` (which requires repository-root `COLOR-PSYCHOLOGY.md` whenever a color decision is present) + skim `references/dynamic-symmetry-glossary.md` then `references/dynamic-symmetry.md`; for **actual image generation**, load skill **`artwork-prompts-handoff`** (prompts file for human tools—default; no paid Canva/Leonardo APIs unless user explicitly confirms credits); add `references/youtube-planning.md` for thumbnails |
+| **Narrow repair** to an existing page — one component, a contrast fix, a broken control | `web.repair` | `references/web-experience.md` only. Do not open the design tree. |
+| **Build or rebuild** HTML/CSS/JS, landing pages, interactions, SEO/AEO/GEO, performance, or accessibility | `web.build` | `references/web-experience.md`; also `references/visual-system.md`, `references/motion-and-premium-ui.md`, `references/design-critique-and-anti-slop.md`, `references/branching-journey.md`, and `references/learning-and-writing.md` for on-page copy |
+| Validate a plan, artifact, experience, or release | `release` | `references/quality-gates.md`, `references/v3-quality.md`, and the artifact's lane. Run `scripts/audit_html.py` on every substantial HTML candidate. |
+| Change the `modern-html-css-aeo` standard, validators, releases, syncing, or version compatibility | `governance`  | `references/standards-governance.md` |
 
 ## Continue from any stage
 
@@ -85,7 +90,7 @@ Read only the indicated references, plus any file the user supplies:
 - **More titles from selection:** when the user wants variations on `~`-marked titles, add a small set (default 4–8) under `## More titles from ~ selection`; do not rebuild the full 17×4 unless asked.
 - **Thumbnails:** require a selected title, title family, or clearly locked promise. The title and thumbnail must complement rather than repeat each other.
 - **Video script/structure:** require a greenlit idea and viable package unless restructuring content that already exists.
-- **New production HTML / “build me a page” / Scripture Journey page:** require `status: approved-for-build` (or an explicit user build order that locks the same scope) plus content, visual, and interaction direction. Then apply the **Automatic page-build contract** in `references/web-experience.md` in full—draft `index_<agent>(_vN).html`, network fonts, full motion, working JS, art prompts + complete CSS without waiting for pixels, browser verification with FAIL on dead interactions, promote-only canonical, mood/references, gate loop until strong. The user does not need to restate those rules. Audits and narrow repairs may proceed against an existing page without inventing a new concept.
+- **New production HTML / “build me a page” / Scripture Journey page:** require `status: approved-for-build` (or an explicit user build order that locks the same scope) plus content, visual, and interaction direction. Then apply the **Automatic page-build contract** in `references/web-experience.md` in full—write `deliverables/index.html`, network fonts, full motion, working JS, art prompts + complete CSS without waiting for pixels, browser verification with FAIL on dead interactions, mood/references, gate loop until strong. The user does not need to restate those rules. Audits and narrow repairs may proceed against an existing page without inventing a new concept.
 - **Approval:** never infer an approval status from silence. Approval to draft is not approval of the draft. Agent-selected decisions remain candidates until the user accepts them. A user choice or explicit instruction to proceed counts as approval only for that named gate. Scripture translation approval is passage-specific unless the user explicitly approves one version for a defined larger scope.
 
 ## Output discipline
@@ -101,7 +106,7 @@ Read only the indicated references, plus any file the user supplies:
 - For a narrow task, apply the whole shared spine silently and return the narrow result.
 - Descriptions, emails, and pre-click copy may keep the title’s gap plus **one additional, grounded reason to click** (a named remaining scene, stake, question, or kind of payoff — not “what he did next surprised him,” “then everything shifts,” or other reaction/trailer language). Support dual-audience design (early CTA for skimmers + continued tension for engaged readers). Vary structure deliberately so pieces do not feel formulaic. The gap must never **leak** the payoff the title/episode promises — apply the leak test and **Honest curiosity vs manufactured suspense** in `references/youtube-planning.md`. Website copy must follow the writing-strategy router; conversion copy uses short punch.
 - **Proofread every pass.** After every change to public-facing copy — titles, descriptions, emails, page text — re-read and fix spelling, grammar, subject–verb agreement, punctuation, and typos. This includes the user's own final “approved” text: correct obvious mechanical errors rather than copying them through, and never finalize copy that still contains them.
-- Every generated file (HTML, markdown, prompts, etc.) must begin with an attribution stamp naming the **agent**, the **model**, and the **date written** — e.g. `**Agent:** grok · **Model:** Grok 4.5 High · **Date:** 2026-08-12` — placed in a comment or equivalent note. Never write only the agent name. When a different agent or model later edits the file, **append** a new stamp line (date, agent, model) instead of overwriting the original, so the file keeps a running history.
+- Every generated file carries an execution-identity stamp and, on later edits by a different agent/model/thinking level, an appended stamp line. Exact fields and format: repo root `WORKSPACE.md` §5.
 
 <!-- Agent: grok · Model: Grok 4.6 · Date: 2026-08-20 · splice-safe + short punch + website writing-strategy mix -->
 
@@ -109,3 +114,4 @@ Read only the indicated references, plus any file the user supplies:
 
 <!-- Agent: Codex · Model: GPT-5 · Thinking: not exposed · Date: 2026-09-09 · Released 3.2.0 color psychology and text-readability requirements. -->
 <!-- Agent: grok · Model: Grok 4.6 · Date: 2026-09-09 · Honest curiosity vs manufactured suspense: packaging may keep a real gap; teaching may not delay the answer. -->
+<!-- Agent: claude · Model: claude-opus-5 · Thinking: not exposed · Date: 2026-09-10 · Route table gains lane names, the develop and release rows, and a narrow web.repair door; naming and stamping rules point at WORKSPACE.md. -->

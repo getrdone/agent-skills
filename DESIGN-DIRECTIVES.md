@@ -305,7 +305,7 @@ If the answer to any of these is no, the color system is not finished.
 
 ## Relationship to skill-specific rules
 
-- **`curiosity-driven-scripture-journey/references/visual-system.md`** — composition, Gestalt, typography, imagery, motion, design fingerprint; this file supplies the deeper cross-project color-system reasoning.
+- **`skills/curiosity-driven-scripture-journey/versions/3.2.0/references/visual-system.md`** — composition, Gestalt, typography, imagery, motion, design fingerprint; this file supplies the deeper cross-project color-system reasoning.
 - **`modern-css-design`** — CSS architecture and implementation mechanics; this file decides how source/brand color systems are structured conceptually.
 - **`modern-html-aeo`** — page structure, conversion, performance, semantics, AEO/GEO/SEO; use these directives before encoding the visual system into the page.
 - **`artwork-prompts-handoff`** — artwork generation brief/handoff; use these directives to establish the shared palette and color-grade language before writing per-image prompts.
@@ -313,3 +313,4 @@ If the answer to any of these is no, the color system is not finished.
 Specific project truth always beats examples in this file. Re-derive the visual language from the current source rather than cloning a previous project's aesthetic.
 
 <!-- Agent: Codex · Model: GPT-5 · Thinking: not exposed · Date: 2026-09-09 · Added routed, evidence-calibrated color psychology and hard text readability. -->
+<!-- Agent: claude · Model: claude-opus-5 · Thinking: not exposed · Date: 2026-09-10 · Fixed broken path to visual-system.md. -->

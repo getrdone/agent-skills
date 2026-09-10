@@ -1,0 +1,164 @@
+# Curiosity-Driven Scripture Journey — load map for release 3.2.0
+#
+# Agent: claude | Model: claude-opus-5 | Thinking: not exposed | Date: 2026-09-10
+#
+# This file is the machine-readable form of the "Route the request" table in SKILL.md.
+# It is not a second routing vocabulary: every lane below is one row of that table.
+# If the table and this file ever disagree, the table is wrong — fix both in one commit.
+#
+# PATH RESOLUTION: every path here is relative to this file's directory,
+#   skills/curiosity-driven-scripture-journey/versions/3.2.0/
+# except paths marked `repo:` which are relative to the repository root.
+#
+# EVERY run must emit, before loading anything:
+#   LANES: <lane>[, <lane>...]
+#   LOAD:  <one path per line, exactly the files opened>
+#   BRIEF: <path to project-brief.md>  (stage: <status>)   — when a work folder exists
+#
+# max_files is the number of files a normal run in that lane may open, spine excluded.
+# Exceeding it is allowed only with a one-line reason recorded in the run output.
+
+release: 3.2.0
+resolves_under: skills/curiosity-driven-scripture-journey/versions/3.2.0/
+
+spine:
+  # Always applied. Held in SKILL.md itself — no reference file is loaded for it.
+  files: []
+  note: >
+    The shared spine, dependency gates, and output discipline live in SKILL.md.
+    Reading SKILL.md is not counted against any lane's max_files.
+
+lanes:
+
+  develop:
+    when: Substantial new work — a new journey, page, or study before production begins.
+    files:
+      - references/v3-workflow.md
+    max_files: 1
+    note: >
+      Required before project planning, ideation, learning architecture, visual direction,
+      or HTML production. It was absent from the 3.2.0 route table; that was the single
+      most common under-load in this skill.
+
+  project:
+    when: Start a project, resume from mixed artifacts, set status, coordinate deliverables.
+    files:
+      - references/project-system.md
+    max_files: 1
+
+  study:
+    when: Plan or write a Bible study, Scripture Journey page, evidence path, source trail,
+          translation review, interactions, or next-study choices.
+    files:
+      - references/scripture-study.md
+      - references/learning-and-writing.md
+      - references/learning-patterns.md
+      - references/branching-journey.md
+      - references/resources-and-authority.md
+    conditional:
+      - files: [references/source-governance.md]
+        when: the study depends on registered source records
+      - files:
+          - references/pattern-guided-understanding.md
+          - references/pattern-active-discovery.md
+          - references/pattern-feedback-and-mastery.md
+          - references/pattern-access-agency-momentum.md
+        when: after learner jobs are chosen — load ONLY the selected family file(s), never all four
+    max_files: 6
+
+  sources:
+    when: Ingest, approve, classify, index, query, or audit source material or its database.
+    files:
+      - references/source-governance.md
+    max_files: 1
+
+  packaging:
+    when: YouTube ideas, titles, descriptions, packaging, video structure, scripts, retention.
+    files:
+      - references/youtube-planning.md
+    conditional:
+      - files: [references/learning-and-writing.md]
+        when: writing script or teaching content, not only title/description lines
+    max_files: 2
+
+  visual:
+    when: Thumbnail, graphic, moodboard, visual direction, typography, palette, layout, motion language.
+    files:
+      - references/visual-system.md
+    conditional:
+      - files: [repo:COLOR-PSYCHOLOGY.md]
+        when: any colour is chosen, recommended, generated, compared, or reviewed
+      - files: [references/dynamic-symmetry-glossary.md, references/dynamic-symmetry.md]
+        when: composition matters — skim the glossary first, open the full method only if needed
+      - files: [references/youtube-planning.md]
+        when: the artifact is a video thumbnail
+    max_files: 4
+    hands_off_to: artwork-prompts-handoff        # actual image generation is that skill's job
+
+  web:
+    when: Build or review HTML/CSS/JS, landing pages, interactions, SEO/AEO/GEO, performance, accessibility.
+    profiles:
+      repair:
+        when: A narrow fix to an existing page — one component, a contrast problem, a broken control.
+              Do NOT open the design tree for this.
+        files:
+          - references/web-experience.md
+        conditional:
+          - files: [repo:COLOR-PSYCHOLOGY.md]
+            when: the fix changes a colour
+        max_files: 2
+      build:
+        when: A new page, or a rebuild that changes the concept.
+        files:
+          - references/web-experience.md
+          - references/visual-system.md
+          - references/motion-and-premium-ui.md
+          - references/design-critique-and-anti-slop.md
+          - references/branching-journey.md
+          - references/learning-and-writing.md
+        max_files: 6
+        also_load_lanes: [develop, release]
+    note: >
+      Splitting repair from build is the point of this lane. The 3.2.0 table had one door for
+      "touch any HTML", which pulled ~100 KB for a footer fix.
+
+  release:
+    when: Validate a plan, artifact, experience, or release.
+    files:
+      - references/quality-gates.md
+      - references/v3-quality.md
+    scripts:
+      - scripts/audit_html.py                    # mandatory on every substantial HTML candidate
+    max_files: 2
+
+  governance:
+    when: Change the standard, validators, releases, syncing, version compatibility,
+          or maintain the learning-pattern catalogue.
+    files:
+      - references/standards-governance.md
+      - references/learning-pattern-sources.md
+    max_files: 2
+
+# ---------------------------------------------------------------------------
+# Cross-skill entry points. These are not CDSJ lanes; they are where a run arrives from.
+bridges:
+  clean-video-transcript:
+    hands_off: A cleaned transcript plus its Quick Reference end-matter.
+    opens_lanes: [packaging]
+    carries:
+      - the topic promise, in the speaker's own framing
+      - every Bible / EGW / other source ID from the Quick Reference
+      - the quote-fidelity rule — KJV spelling preserved inside quotes
+    creates: <stem>.titles.md      # progressive stem, WORKSPACE.md §3a
+    note: >
+      The next step after a clean transcript is not improvisation. Open the packaging lane
+      against the cleaned .md, not the raw .txt.
+
+  artwork-prompts-handoff:
+    entered_from: [visual, web]
+    note: Manual prompt pack only. Never loaded for ordinary image generation.
+
+# ---------------------------------------------------------------------------
+# Orphan check: every file under references/ must appear in at least one lane above.
+# tools/check_links.py --load-map enforces this.
+reference_count: 23
