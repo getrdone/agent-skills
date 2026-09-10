@@ -21,7 +21,7 @@ For a small prompt such as `Psalm 23`, keep it creative-friendly—**no bureaucr
 
 If no topic folder exists yet, create the standard shell from **`WORKSPACE.md` §2b** (AGENTS.md, NOW.md, project-brief.md, `planning/`, `mood/`, `prompts/`, `references/`, `sources/intake/`, `deliverables/assets/`).  
 If the folder already exists, **do not rebuild**—only add missing folders/files and use what is already there. Point `references/dynamic-symmetry/` at `F:\__ai-projects\design-resources\dynamic-symmetry-grids\` (do not copy the whole pack).  
-When artwork is needed, use skill **`artwork-prompts-handoff`** → `prompts/artwork-prompts_<agent>.md` (human generates; promote bare name only when final chosen; no paid image APIs by default).
+When artwork is needed, use skill **`artwork-prompts-handoff`** → `prompts/artwork-prompts.md` (human generates; no paid image APIs by default). Naming: repo [`WORKSPACE.md`](../../../../WORKSPACE.md) §3.
 
 ### 1) Then one compact decision round
 
@@ -53,6 +53,13 @@ Maintain one `project-brief.md` when files are available. Reuse equivalent exist
 ```yaml
 project:
 status: idea
+# --- machine state (read first on resume; write before exiting) ---
+stem:                     # artifact stem in this folder, e.g. dan8-cleansing
+last_lanes: []            # lanes loaded on the last run, from load-map.yaml
+open_gates: []            # gates currently FAIL or BLOCKED
+last_agent:               # agent/model/thinking of the last material change
+last_updated:             # ISO date
+# ------------------------------------------------------------------
 audience:
 channel_role:
 core_question:
@@ -96,6 +103,22 @@ open_decisions: []
 ```
 
 Add lane-specific details only when that lane begins. Do not prefill invented decisions.
+
+`status` is the single stage field — there is no separate stage file. Do not create `PROJECT-STATUS.md`,
+`STATUS.md`, or any second machine-readable state store in a work folder. `NOW.md` is human prose and is
+never parsed.
+
+### Resume rule (required)
+
+A new agent entering an existing work folder:
+
+1. Read `NOW.md` for human context.
+2. Read `project-brief.md`. If `status` is set, **resume that stage** — do not restart earlier ones.
+3. Load only the lanes for that stage (`load-map.yaml`), plus `spine`. Never reload the whole skill.
+4. Clear or carry forward each entry in `open_gates`; do not silently drop one.
+5. Before exiting, write `status`, `stem`, `last_lanes`, `open_gates`, `last_agent`, `last_updated`.
+
+With no `project-brief.md`, treat the work as intake/discovery. Never assume a prior approval.
 
 ## Status progression
 
@@ -155,13 +178,18 @@ Prefer the **topic root scaffold** (WORKSPACE §2b). Inside it, for a substantia
 
 Keep planning assets separate from production files. Do not turn the brief into duplicate long-form instructions already held by this skill.
 
-## Multi-agent workspace (inherits repo WORKSPACE.md)
+## Multi-agent workspace
 
-Follow the agent-skills root **`WORKSPACE.md`** for every packaging or production folder:
+File naming, file I/O, and continuity are defined **only** in the agent-skills root
+[`WORKSPACE.md`](../../../../WORKSPACE.md) §3–§6. Read it when creating or naming files. Do not restate its rules here or in a
+project folder.
 
-- All agents share **one** work directory (series or topic root). No per-agent folder trees.
-- **Until final chosen:** every agent work product is `name_<agent>(_vN).ext` — HTML, titles, descriptions, **artwork prompts**, pass-level gate notes, etc.
-- **Canonical** (after user chooses that deliverable): bare `name.ext` only — no bare `index_v2.html`.
-- Session pickup is **`NOW.md`**. Optional **`SERIES-BOARD.md`** inventory for multi-episode folders only (never mandatory every turn). Do not create `TOPIC-BOARD.md`. Optional `stem.STATUS.md`.
-- Promote accepted drafts into canonical **per deliverable**; preserve `~` title marks.
-- Local `AGENTS.md` in the work folder should point at agent-skills + WORKSPACE.md.
+The two things this skill adds on top:
+
+- Packaging artifacts are **deliberation artifacts** (progressive stems, append-only run log).
+  A built page, a cleaned transcript, and a prompts pack are **deterministic deliverables** (canonical
+  on first write).
+- Preserve the user's `~` marks on title lines exactly. `~` is the marking gesture; the `SELECTED`
+  block is generated from those marks and is the only thing a later stage reads.
+
+<!-- Agent: claude · Model: claude-opus-5 · Thinking: not exposed · Date: 2026-09-10 · Added machine state fields + resume rule to the canonical brief; naming rules single-sourced to WORKSPACE.md. -->

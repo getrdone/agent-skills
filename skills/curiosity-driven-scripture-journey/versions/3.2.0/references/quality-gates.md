@@ -6,7 +6,7 @@ Use only the gates relevant to the artifact. A gate may produce PASS, FAIL, or B
 
 **Run the loop yourself first.** The agent owns the check → critique → fix cycle before the human sees anything: run the relevant gates, then critique/audit and iterate (see `design-critique-and-anti-slop.md` iteration verbs — evaluate, refine, harden) until the artifact is genuinely strong. Aim for **loop until amazing**, not until acceptable. Hand the human direction-level and taste decisions, not mechanical errors or gate failures they must catch — the agent does the checking, testing, and rechecking; the human feedback loop steers and signs off.
 
-**Page builds:** the **Automatic page-build contract** in `web-experience.md` is mandatory on every “build a page / Scripture Journey page” request. Treat broken interactions, missing verification, system-font shells, and premature canonical writes as gate failures.
+**Page builds:** the **Automatic page-build contract** in `web-experience.md` is mandatory on every “build a page / Scripture Journey page” request. Treat broken interactions, missing verification, and system-font shells as gate failures.
 
 ## 1. Integrity gate
 
@@ -123,7 +123,7 @@ For substantial production:
 - Typography, palette, composition, imagery, interaction, and motion fit the subject and hit Class-A agency quality.
 - The experience avoids repetitive templates (including cream-paper + Inter/Fraunces defaults) and unnecessary friction.
 - The ending resolves the promise and opens a sincere next curiosity.
-- Iterative drafts for **all** agent work products (HTML, prompts, packaging, pass notes) used `name_<agent>_vN`; bare canonical names only after the user chose that deliverable (or small fix to an already-promoted file).
+- File naming followed repo root [`WORKSPACE.md`](../../../../WORKSPACE.md) §3 for the artifact's kind — progressive stem for deliberation artifacts, canonical-on-first-write for deterministic deliverables.
 - The requested artifact is complete at its current scope; unresolved dependencies (missing art files, etc.) are named rather than hidden.
 
 <!-- Agent: grok · Model: Grok 4.6 · Date: 2026-08-20 · website copy + splice-safe content gate -->

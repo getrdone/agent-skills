@@ -15,7 +15,12 @@ description: >
 
 Applies to **any** video-derived transcript (sermons, lectures, panels, documentaries, etc.).
 
-**Workspace:** follow repo root [`WORKSPACE.md`](../../WORKSPACE.md) — shared work folder; write an agent-named draft (`name_<agent>.md`, then `_v2`, etc.) until the user promotes it. Use an existing canonical `name.md` only for an explicitly requested in-place update. Update any series board when adding cleaned files.
+**Workspace:** follow repo root [`WORKSPACE.md`](../../WORKSPACE.md) — shared work folder, one naming contract.
+A cleaned transcript is a **deterministic deliverable** (WORKSPACE §3b): the same spec run twice produces
+the same file, so there is nothing to choose between. Write the canonical name on the first pass —
+`<stem>.md` beside `<stem>.txt`, same basename — and overwrite it on a re-clean. Use `_vN` only when the
+user wants a prior clean kept for comparison. Never modify the raw `.txt`. If the folder already keeps a
+`SERIES-BOARD.md`, add the new file to it; do not create one.
 
 ## Load first (this skill only — not the whole agent-skills repo)
 1. `references/SPEC.md` — cleaning rules + required Quick Reference end-matter (**authoritative**).

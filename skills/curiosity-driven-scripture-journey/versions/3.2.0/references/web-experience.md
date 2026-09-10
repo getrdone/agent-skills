@@ -10,21 +10,21 @@ Use this file to plan, build, repair, or review semantic HTML/CSS/JavaScript exp
 
 When the user asks to **build a Scripture Journey page**, **build a page**, **build the HTML**, **rebuild the page**, or any equivalent production HTML request, apply **all** of the following automatically. The user does **not** need to restate fonts, motion, JS, verification, naming, art order, or promote rules.
 
-1. **Draft naming by default (all work products).** Write `deliverables/index_<agent>.html` (re-runs: `_v2`, `_v3`). Prompts: `prompts/artwork-prompts_<agent>.md` (or `_vN`). Gate notes for a pass: `planning/gate-results_<agent>.md` (or `_vN`). **Never** put unchosen work on bare canonical names (`index.html`, `artwork-prompts.md`, etc.). Promote each deliverable type only when the user chooses that final.
-2. **Art path is automatic.** If the design needs pixel art and assets are missing: write/update **agent-named** prompts via skill **artwork-prompts-handoff** (`prompts/artwork-prompts_<agent>.md` or `_vN` matching the HTML draft version, e.g. `index_grok_v5.html` ↔ `artwork-prompts_grok_v5.md`); wire expected filenames under `deliverables/assets/`; **still ship a complete, beautiful page** using CSS/SVG/gradients so missing JPGs do not leave a broken or empty layout. When `mood/` or existing assets exist, use them. Stage/hero backgrounds must use `background-size: cover` + `background-repeat: no-repeat` (never the `background:` shorthand for fallbacks — it reintroduces tiling).
+1. **Naming.** A built page is a deterministic deliverable: write the canonical name on the first pass — `deliverables/index.html`, `prompts/artwork-prompts.md`, `planning/gate-results.md`. Iterate in place. Full rules, including the bake-off exception when the user asks two agents for rival designs: repo [`WORKSPACE.md`](../../../../WORKSPACE.md) §3.
+2. **Art path is automatic.** If the design needs pixel art and assets are missing: write or update the prompts pack via skill **artwork-prompts-handoff**; wire expected filenames under `deliverables/assets/`; **still ship a complete, beautiful page** using CSS/SVG/gradients so missing JPGs do not leave a broken or empty layout. When `mood/` or existing assets exist, use them. Stage/hero backgrounds must use `background-size: cover` + `background-repeat: no-repeat` (never the `background:` shorthand for fallbacks — it reintroduces tiling).
 3. **Working bar is a hard FAIL.** Console-breaking errors, dead primary controls, non-functional map/trail/game/scroll interactions, or collapsed phone/desktop layout = FAIL. Loop: build → open in browser → exercise every interaction → fix → re-check until the designed experience works.
 4. **Craft level is automatic.** Treat interactive HTML as premium agency work (network fonts, full motion, first-class JS, anti-slop). Do not ship cream-paper + Inter/system defaults or static shells with half-wired scripts.
 5. **References and mood.** Read `mood/`, visual direction, brief, and any human reference images before inventing a new look. Match craft level of strong references when present.
-6. **Canonical is promote-only.** Do not overwrite ship files during iteration. Leave prior `_<agent>_vN` drafts for progress review.
+6. **Protect an accepted page before a destructive rewrite.** Iterating on the working file is normal and expected. But if the page has already been accepted or deployed and the next pass would replace its structure, snapshot it first as `index_v2.html` (WORKSPACE §3b `_vN` snapshot), then rewrite the canonical file.
 7. **Gates + self-loop.** Run the visual, technical, integrity, learning, and experience gates; iterate (critique → fix) until the page is genuinely strong—not merely “acceptable.” Hand the human taste/direction decisions, not broken mechanics.
-8. **Handoff.** Update shared `START-HERE.md` / board (unsuffixed navigation OK) and agent-named gate notes with draft paths, what was verified, and what still needs human art or promote.
+8. **Handoff.** Update `NOW.md` (Now / Next / Blocked) and `planning/gate-results.md` with the page path, what was verified, and what still needs human art. If a `SERIES-BOARD.md` already exists in the folder, add a row; do not create one.
 
 ## Preconditions
 
 - For a new build, require a content-approved brief, visual direction, interaction plan, and `status: approved-for-build`.
 - For an existing page audit or narrow repair, preserve the current approved concept and fix the requested problem without inventing a new one.
 - Reuse the project’s chosen title, promise, learning map, visual DNA, and design fingerprint.
-- **File naming:** iterative HTML passes are drafts — `index_<agent>.html`, `index_<agent>_v2.html`, … Promote to `index.html` only when polished and accepted (see repo `WORKSPACE.md` §3).
+- **File naming:** repo [`WORKSPACE.md`](../../../../WORKSPACE.md) §3. Do not restate naming rules in a project folder.
 
 ## Build sequence
 
@@ -153,3 +153,5 @@ The page is not complete merely because it validates. Confirm that the opening m
 <!-- Agent: grok · Model: Grok 4.6 · Date: 2026-08-20 · website copy: writing-strategy mix + short punch -->
 
 <!-- Agent: Codex | Model: GPT-5 | Thinking: not exposed | Date: 2026-09-08 | Consolidated useful CSS/component rules and removed competing skill routes. -->
+
+<!-- Agent: claude · Model: claude-opus-5 · Thinking: not exposed · Date: 2026-09-10 · Page build writes canonical on first pass; naming rules single-sourced to WORKSPACE.md §3. -->

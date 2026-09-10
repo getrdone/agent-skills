@@ -141,7 +141,7 @@ Journey-specific additions:
 
 Use the image-generation or design capability explicitly requested by the user when it is available. Load **`artwork-prompts-handoff`** only when the user asks for a manual prompt pack, says they will generate the images themselves, or the project explicitly requires a recorded human-generation handoff.
 
-For a manual handoff, write `prompts/artwork-prompts_<agent>.md` (re-runs: `_v2`, …), including each paste-ready prompt, aspect ratio, Dynamic Symmetry note, target filename, and checkbox. Promote the bare `artwork-prompts.md` only after the user chooses the final pack.
+For a manual handoff, write the prompts pack with each paste-ready prompt, aspect ratio, Dynamic Symmetry note, target filename, and checkbox. Naming: repo root [`WORKSPACE.md`](../../../../WORKSPACE.md) §3.
 
 ## Motion and interaction
 

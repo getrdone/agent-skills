@@ -14,8 +14,9 @@
 4. If the task needs support tooling → open the matching processing/ package only.
 5. If no match → proceed with normal judgment; do not invent a skill or load siblings.
 6. Never preload all skills “just in case.”
-7. All agents share one work folder: until final chosen, drafts are `name_<agent>_vN.ext` (including prompts); promote bare `name.ext` only when the user chooses that deliverable. No TOPIC-BOARD — use NOW.md for session state.
-8. Every agent/sub-agent repo commit must identify execution identity: `Agent: <agent> | Model: <model> | Thinking: <level-or-not-exposed> | What changed: <summary>`; never guess a thinking level. Full rule: WORKSPACE.md §3b.
+7. All agents share one work folder. File naming, file I/O, and continuity are defined ONLY in WORKSPACE.md §§3–6. Do not restate them anywhere else.
+8. Every agent/sub-agent repo commit must identify execution identity: `Agent: <agent> | Model: <model> | Thinking: <level-or-not-exposed> | What changed: <summary>`; never guess a thinking level. Full rule: WORKSPACE.md §5.
+9. **Net complexity ≤ 0.** Any change that adds a skill row, a new reference, or a long section must name what it deleted, folded, or shortened. State it in the commit body.
 ```
 
 Consumer projects **reference** this repo; they do not own a divergent copy of a skill. Propose skill changes here.
@@ -61,3 +62,5 @@ tools/
 
 ## Ownership
 Single source of truth for agent skills. Prefer sharp catalog triggers and small load sets.
+
+<!-- Agent: claude · Model: claude-opus-5 · Thinking: not exposed · Date: 2026-09-10 · Naming rules single-sourced to WORKSPACE.md; added net-complexity rule. -->

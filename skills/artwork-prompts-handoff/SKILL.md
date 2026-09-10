@@ -14,7 +14,10 @@ Use this skill only for an explicit manual-generation handoff. If the user asks 
 
 ## Load with visual work
 
-If the task is ministry/Scripture/video packaging, also load curiosity skill `references/visual-system.md` and skim `dynamic-symmetry-glossary.md` when composition matters.
+If the task is ministry/Scripture/video packaging, also load the Scripture Journey visual lane
+(`skills/curiosity-driven-scripture-journey/versions/<CURRENT>/references/visual-system.md`) and skim
+its `dynamic-symmetry-glossary.md` when composition matters. Resolve `<CURRENT>` from that skill's
+`CURRENT` file — never from a copy at its root.
 
 ## When this skill fires
 
@@ -22,23 +25,27 @@ If the task is ministry/Scripture/video packaging, also load curiosity skill `re
 - “I’ll generate the images myself.”  
 - A project explicitly requires a recorded human-generation handoff with filenames and production notes.  
 
-## Output: agent-named prompts draft (until promote)
+## Output: the prompts pack
 
-Create or update a **draft** prompts file — **always agent-named** until the user promotes a final pack (see repo `WORKSPACE.md` §3):
+A prompts pack is a **deterministic deliverable** (repo root [`WORKSPACE.md`](../../WORKSPACE.md) §3): it is written from the project's visual
+direction, not chosen between competing versions. Write the canonical name on the first pass.
 
 ```text
-prompts/artwork-prompts_<agent>.md           # first pass (preferred)
-prompts/artwork-prompts_<agent>_v2.md        # re-run
-# flat series folders:
-<stem>.artwork-prompts_<agent>.md
+prompts/artwork-prompts.md              # standard project scaffold
+<stem>.artwork-prompts.md               # flat series folders
 ```
 
-**Do not** write bare `prompts/artwork-prompts.md` as the working file while the final pack is unchosen.  
-**Promote** → copy the accepted draft to `prompts/artwork-prompts.md` (or `<stem>.artwork-prompts.md`) only when the user chooses that pack as final.
+- A re-run for the same art direction **overwrites** the pack. Assets already generated keep their
+  ticked checkboxes — carry them forward rather than resetting the file.
+- Use `_vN` only when the user wants the previous pack kept for comparison, or when a page pass changed
+  the art direction and both packs must exist side by side.
+- If the user explicitly asked two agents for **rival** packs, that is a bake-off and the agent suffix
+  applies for its duration (WORKSPACE §3b, the one surviving use).
+- If `prompts/` does not exist, create it. Never delete an existing pack.
 
-**Version lock with the page:** when prompts ship with an HTML journey draft, match the agent version token — e.g. `index_grok_v5.html` pairs with `artwork-prompts_grok_v5.md`. Bump both together on a co-release re-run; do not leave prompts at an older `_vN` when the page is `_vN+1` if the art direction changed for that page pass.
-
-If `prompts/` does not exist, create it. Do not wipe existing prompt packs—keep prior `_<agent>_vN` files; write the next versioned draft.
+**Pairing with a page draft:** when prompts ship with an HTML journey pass, keep the two in step. If the
+page is a bake-off draft (`index_<agent>.html`), the pack that belongs to it carries the same token.
+Otherwise both are canonical and both are simply current.
 
 ## File structure (required)
 
@@ -124,14 +131,16 @@ Only if the user says to use Canva/Leonardo **and** confirms credits:
 
 | Skill / doc | Role |
 |-------------|------|
-| `curiosity-driven-scripture-journey` + `visual-system.md` | Vision, DS, type, palette |
-| `dynamic-symmetry-glossary.md` | Armature vocabulary for each prompt’s DS line |
-| `youtube-planning.md` | Title selected before final thumb art when packaging video |
+| `curiosity-driven-scripture-journey` -> `visual` lane | Vision, Dynamic Symmetry, type, palette |
+| its `dynamic-symmetry-glossary.md` | Armature vocabulary for each prompt’s Dynamic Symmetry line |
+| its `packaging` lane | Title selected before final thumbnail art when packaging video |
 | This skill | **Human generation handoff** |
 
 ## Done when
 
-- [ ] Agent-named draft exists (`prompts/artwork-prompts_<agent>.md` or `_vN`) with shared style lock + numbered prompts  
+- [ ] `prompts/artwork-prompts.md` exists with shared style lock + numbered prompts  
 - [ ] Every needed asset has role, filename, aspect, paste-ready prompt  
 - [ ] User knows where to save files and how to call the agent back  
-- [ ] Canonical bare `artwork-prompts.md` was **not** used unless user already promoted that pack
+- [ ] Previously ticked checkboxes were carried forward, not reset
+
+<!-- Agent: claude · Model: claude-opus-5 · Thinking: not exposed · Date: 2026-09-10 · Prompts pack is canonical on first write; naming rules now live only in WORKSPACE.md §3. -->
