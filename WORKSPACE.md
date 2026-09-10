@@ -239,10 +239,12 @@ Brief status only — what / path / blocked. **No** code, diffs, patches, or ful
 
 ---
 
-## 6. Continuity — five numbered files per project, no others
+## 6. Continuity — five numbered files, created when that layer has content
 
 Filenames are numbered in **order of need**. A directory listing tells you the reading order without
-opening anything.
+opening anything. Create a numbered file when that layer has something to say. Do **not** scaffold
+empty `03-MEMORY.md` / `04-ACTIVITY.md` / `05-ARCHIVE.md` just to have all five. Never use the old
+names (`NOW.md`, `MEMORY.md`, `AGENT-ACTIVITY.md`, `MEMORY-ARCHIVE.md`).
 
 | File | Scope | Read | Written by |
 |------|-------|------|-----------|
@@ -264,8 +266,9 @@ fold it into the numbered file that owns its content and delete it.
 ### 6a. What each one is for
 
 **`01-NOW.md` — what is in flight.** Now and Blocked. Not a queue — the queue is `02-TASKS.md`, and
-duplicating it here is the most likely way this drifts. Read first, every session; update before ending
-substantial work. Keep under ~3 KB.
+duplicating it here is the most likely way this drifts. Never a `## Next` heading. Never task
+checkboxes. `workspace-doctor.ps1` fails if either returns. Read first, every session; update before
+ending substantial work. Keep under ~3 KB.
 
 **`02-TASKS.md` — the queue.** Open work that survives past this session. One task per line, fixed
 shape (§6b). This is the only place tasks are authored, in any project.
@@ -374,6 +377,16 @@ Read `01-NOW.md`. Read `02-TASKS.md`. Read `03-MEMORY.md` before changing anythi
 staged Scripture Journey deliverable, read its `project-brief.md`: if `status` is set, resume that stage
 and load only its lanes. With no brief, treat the work as intake/discovery — never assume a prior
 approval.
+
+### 6h. Drift detection
+
+```powershell
+F:\__ai-projects\_agent-control\bin\workspace-doctor.ps1
+```
+
+Run after changing any numbered file. Exit 1 means the contract is broken — fix it before you stop.
+It fails if `## Next` or task checkboxes appear in `01-NOW.md`, if both old and new names exist, if a
+retired name returns, or if the machine-wide template regresses. Conventions hold because this notices.
 
 ## 7. Local `AGENTS.md` in a work folder
 

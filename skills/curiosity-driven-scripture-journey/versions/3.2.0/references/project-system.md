@@ -208,4 +208,4 @@ The two things this skill adds on top:
   block is generated from those marks and is the only thing a later stage reads.
 
 <!-- Agent: claude · Model: claude-opus-5 · Thinking: not exposed · Date: 2026-09-10 · Added machine state fields + resume rule to the canonical brief; naming rules single-sourced to WORKSPACE.md. -->
-<!-- Agent: claude · Model: claude-opus-5 · Thinking: not exposed · Date: 2026-09-10 · Brief is one deliverable, optional, and cites MEMORY.md rather than copying project-wide locks. -->
+<!-- Agent: claude · Model: claude-opus-5 · Thinking: not exposed · Date: 2026-09-10 · Brief is one deliverable, optional, and cites 03-MEMORY.md rather than copying project-wide locks. -->
