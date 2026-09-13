@@ -160,13 +160,17 @@ SUPERSEDES: 2026-09-09 16:40 PT        <!-- only when this run retracts an earli
 - **Retention:** keep the newest 5 runs. Older runs move to `<stem>.archive.md` in one file operation
   (§4 rule 3) — one archive per stem, never one file per run. Soft cap 120 KB per stem file.
 
-### 3d. What stays unsuffixed and unversioned
+### 3d. Human-readable instruction folders
+
+Prefer **`_docs/`** (leading underscore, kebab-case inside) for instruction PDFs, usage notes, and organization-only material. Do not use `docs/`. The underscore sorts the folder first and keeps it out of asset-pack names.
+
+### 3e. What stays unsuffixed and unversioned
 
 - Navigation and state: `NOW.md`, `project-brief.md`, `AGENTS.md`
 - User drops: anything the human puts in `mood/` or `sources/intake/` under their own names
 - Generated binary assets once saved to the agreed filenames under `deliverables/assets/`
 
-### 3e. Forbidden
+### 3f. Forbidden
 
 - Per-agent folder trees for the same topic
 - Bare version piles: `final.html`, `latest.html`, `index_v2.html` as a working file
@@ -406,3 +410,4 @@ file, and states that all agents share the folder. It must **not** restate the r
 <!-- Agent: claude · Model: claude-opus-5 · Thinking: not exposed · Date: 2026-09-10 · Single-sourced the naming contract; progressive stems + run-log journal; added §4 file I/O rules. -->
 <!-- Agent: claude · Model: claude-opus-5 · Thinking: not exposed · Date: 2026-09-10 · §6 restored MEMORY.md as a first-class file; numbered five-file model in order of need, task queue + lifecycle, the derivability test, brief-cites-never-copies, and on-demand cross-project task discovery. -->
 <!-- Agent: grok · Model: Grok 4.6 · Thinking: not exposed · Date: 2026-09-10 · ACTIVE-WORK.md is a leftover state file; doctor FAILs pickup pointers at NOW.md/MEMORY.md. -->
+<!-- Agent: grok · Model: Grok 4.5 · Date: 2026-09-13 · §3d: human-readable instruction folders are _docs/, not docs/. -->
