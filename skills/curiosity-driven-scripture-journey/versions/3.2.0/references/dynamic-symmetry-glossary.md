@@ -1,7 +1,7 @@
 # Dynamic symmetry — skim-first glossary
 
-**This file is the source of truth** (git history: **getrdone/agent-skills**).  
-`design-resources/dynamic-symmetry-grids/GLOSSARY.md` is a **symlink** to this same file.
+**This file is the source of truth for release 3.2.0** (git history: **getrdone/agent-skills**).
+`design-resources/dynamic-symmetry-grids/GLOSSARY.md` is a **current-release pointer**, not a symlink: resolve the Scripture Journey router's `CURRENT` file, then open `versions/<resolved>/references/dynamic-symmetry-glossary.md`.
 
 **Agents: read this first** when doing layout, spacing, hierarchy, thumbnails, or page composition.  
 **Soft standard:** not mandatory, but use it unless there is a reason not to.

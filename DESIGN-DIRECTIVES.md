@@ -1,10 +1,12 @@
 # Core Design Directives
 
-**Cross-skill design constitution.** Load this file for any design-bearing task: brand systems, palette work, visual systems, graphic design, thumbnails, artwork direction, UI theming, CSS color systems, visual review, or developer handoff of design tokens.
+**Cross-skill design constitution.** Load this file for source-led/brand-led visual systems, design-token or gradient architecture, CSS implementation, developer handoff, or a full visual system. For a stand-alone new or revised theme, start with `skills/color-palette-composition/SKILL.md`; add this file only when the chosen palette needs source locks, canonical names, semantic roles, gradients, or implementation guidance.
 
 This file owns **design reasoning and color-system architecture**. Individual skills may add stricter rules for composition, CSS mechanics, HTML, accessibility, motion, or artwork production, but they should not contradict this foundation.
 
-**Mandatory color-psychology reference:** whenever colors are chosen, recommended, generated, requested, compared, or reviewed, also load [`COLOR-PSYCHOLOGY.md`](COLOR-PSYCHOLOGY.md). It owns the evidence-calibrated color-family meanings, perceptual/physiological boundaries, cultural and Scripture-context checks, color-choice workflow, and the hard text-readability rule.
+**Palette-generation route:** whenever a color theme, palette, scheme, allocation, accent plan, mixing, or placement is created or materially revised, load `skills/color-palette-composition/SKILL.md` first. It owns visual-weight composition, Itten/Munsell application, ratios, mixing, placement, and the palette handoff. This file owns the source-specific naming contract, locked values, story-to-role token architecture, named gradients, and implementation guidance.
+
+**Contextual color-psychology route:** load [`COLOR-PSYCHOLOGY.md`](COLOR-PSYCHOLOGY.md) after composition when an intended/alternate audience reading, cultural or Scripture context, or a psychology claim materially affects the decision. It owns evidence-calibrated interpretation and its readability safeguards; it is not a replacement for palette composition.
 
 ---
 
@@ -22,7 +24,7 @@ Do not treat this as a cosmetic naming exercise. Each step solves a different pr
 4. **Compact core palette** keeps the system learnable and prevents near-duplicate color sprawl.
 5. **Semantic developer tokens** separate brand/story names from application roles.
 6. **Named signature gradients** preserve meaningful source transitions and make them reusable.
-7. **Psychological usage tied to imagery/content** explains why a color works *here*, without pretending color psychology is universal law.
+7. **Contextual psychological usage tied to imagery/content**, when it materially affects the decision, explains why a color works *here* without pretending color psychology is universal law.
 8. **Practical designer/developer guidance** turns a palette into a working system.
 9. **Validated accessibility** verifies technical claims instead of trusting labels, examples, or visual intuition.
 
@@ -180,7 +182,7 @@ Do not invent a gradient merely to increase the number of deliverables. It shoul
 
 ## 6. Psychological notes must be contextual, not pseudoscientific
 
-Before selecting or recommending any color, load [`COLOR-PSYCHOLOGY.md`](COLOR-PSYCHOLOGY.md) and follow its mandatory workflow.
+Create or revise the palette through `skills/color-palette-composition/SKILL.md` first. Load [`COLOR-PSYCHOLOGY.md`](COLOR-PSYCHOLOGY.md) when an intended/alternate reading, culture, Scripture context, or psychology claim changes the selection, then follow its mandatory workflow for that interpretation.
 
 - Explain color in relation to the actual source, audience, culture, faith context, hierarchy, medium, and subject.
 - Record the intended response and at least one plausible alternate/adverse reading.
@@ -309,8 +311,10 @@ If the answer to any of these is no, the color system is not finished.
 - **`modern-css-design`** — CSS architecture and implementation mechanics; this file decides how source/brand color systems are structured conceptually.
 - **`modern-html-aeo`** — page structure, conversion, performance, semantics, AEO/GEO/SEO; use these directives before encoding the visual system into the page.
 - **`artwork-prompts-handoff`** — artwork generation brief/handoff; use these directives to establish the shared palette and color-grade language before writing per-image prompts.
+- **`skills/color-palette-composition`** — the canonical palette-generation workflow: field/partner/spark allocation, visual weight, Itten/Munsell theory, harmony, mixing, placement, and verification. This file owns architecture, source-specific naming, semantic tokens, gradients, and implementation guidance.
 
 Specific project truth always beats examples in this file. Re-derive the visual language from the current source rather than cloning a previous project's aesthetic.
 
 <!-- Agent: Codex · Model: GPT-5 · Thinking: not exposed · Date: 2026-09-09 · Added routed, evidence-calibrated color psychology and hard text readability. -->
 <!-- Agent: claude · Model: claude-opus-5 · Thinking: not exposed · Date: 2026-09-10 · Fixed broken path to visual-system.md. -->
+<!-- Agent: Codex | Model: GPT-5 | Thinking: not exposed | Date: 2026-09-13 | Separated the canonical palette-generation route from the naming/token architecture and contextual psychology follow-up. -->

@@ -1,12 +1,13 @@
 # evals — router harness
 
 <!-- Agent: claude · Model: claude-opus-5 · Thinking: not exposed · Date: 2026-09-10 -->
+<!-- Agent: Codex | Model: GPT-5 | Thinking: not exposed | Date: 2026-09-13 | Updated fixture inventory after adding palette-routing coverage. -->
 
 Does the right skill answer, and does it open only the files it should?
 
 | File | Role |
 |------|------|
-| `router-fixtures.yaml` | 24 fixture prompts with expected skill, lanes, loads, forbidden loads, and a file budget |
+| `router-fixtures.yaml` | 27 fixture prompts with expected skill, lanes, loads, forbidden loads, and a file budget |
 | `check_load.py` | Scores a captured run against a fixture. No dependencies; uses PyYAML if present, falls back to a small parser if not |
 | `captures/` | Where you save what an agent printed. Gitignored except this note |
 

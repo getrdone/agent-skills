@@ -17,8 +17,10 @@ workflow:
   default_accessibility_minimum: WCAG-2.2-AA
   default_experience_target: AA
   deterministic_html_audit_required: true
+  color_palette_composition_skill: repository-root/skills/color-palette-composition/SKILL.md
+  color_palette_load_trigger: new-or-materially-revised-theme
   color_psychology_reference: repository-root/COLOR-PSYCHOLOGY.md
-  color_psychology_load_trigger: any-color-choice-or-review
+  color_psychology_load_trigger: consequential-meaning-cultural-or-scripture-context
   sustained_text_contrast_target: "7:1"
   normal_text_contrast_floor: "4.5:1"
 
@@ -40,6 +42,8 @@ release_changes:
   backward_compatible: true
   migration_required: false
   added_requirements:
+    - canonical-palette-composition-route
+    - required-itten-munsell-theme-rationale
     - evidence-calibrated-color-psychology
     - hard-readable-text-gate
     - contextual-cultural-and-scripture-color-check
@@ -50,3 +54,5 @@ release_changes:
     - artwork
     - web-theming
     - accessibility
+
+# Agent: Codex | Model: GPT-5 | Thinking: not exposed | Date: 2026-09-13 | Routed material theme work to color-palette-composition and restricted Psychology to consequential contextual interpretation.

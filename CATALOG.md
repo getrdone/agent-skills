@@ -10,11 +10,13 @@ deterministic deliverables, O(1) appends, `NOW.md` pickup, `project-brief.md` ma
 auto-scaffolding new topic folders. It applies to **every** skill and to work with no matching skill.
 No skill or reference restates its rules.
 
-**For any design-bearing task, also follow** [`DESIGN-DIRECTIVES.md`](DESIGN-DIRECTIVES.md): brand systems, palettes, visual systems, graphic design, thumbnails, artwork direction, UI theming, CSS color systems, visual review, and developer handoff of design tokens. Its core chain is: **source-specific evocative naming → locked official colors → harmonized families → compact core palette → semantic developer tokens → named signature gradients → evidence-calibrated psychological usage tied to imagery/content → practical designer/developer guidance → validated accessibility and readability**. Project/source truth always outranks examples.
+**For source-led/brand-led visual systems, design-token or gradient architecture, CSS implementation, or developer handoff, also follow** [`DESIGN-DIRECTIVES.md`](DESIGN-DIRECTIVES.md). A stand-alone new or revised palette starts with `color-palette-composition`; add Design Directives only when it needs source locks, canonical names, semantic roles, gradients, or implementation guidance. Its core chain is: **source-specific evocative naming → locked official colors → harmonized families → compact core palette → semantic developer tokens → named signature gradients → evidence-calibrated psychological usage tied to imagery/content → practical designer/developer guidance → validated accessibility and readability**. Project/source truth always outranks examples.
 
-**Whenever colors are chosen, recommended, generated, requested, compared, or reviewed, also load** [`COLOR-PSYCHOLOGY.md`](COLOR-PSYCHOLOGY.md). Keep ordinary tasks lean by loading the full reference only when a color decision is actually present.
+**Whenever a color theme, palette, scheme, allocation, accent plan, mixing, placement, or material palette is created or materially revised, load** [`skills/color-palette-composition/SKILL.md`](skills/color-palette-composition/SKILL.md). It is the sole canonical palette-generation workflow: visual weight, Itten and Munsell application, ratios, mixing, placement, naming handoff, and verification.
 
-**Shared design pack:** private repo [getrdone/design-resources](https://github.com/getrdone/design-resources) → local clone `F:\__ai-projects\design-resources\` (continuously synced). Glossary text lives in this skills repo; pack `GLOSSARY.md` is a symlink. See `F:\__ai-projects\SOURCES-OF-TRUTH.md`.
+**Load** [`COLOR-PSYCHOLOGY.md`](COLOR-PSYCHOLOGY.md) **after composition only when an intended/alternate audience reading, cultural or Scripture context, or a color-psychology claim materially affects the decision.** It supplies contextual evidence and interpretation; it does not replace palette composition. [`DESIGN-DIRECTIVES.md`](DESIGN-DIRECTIVES.md) supplies source locks, canonical names, semantic tokens, gradients, and implementation guidance.
+
+**Shared design pack:** private repo [getrdone/design-resources](https://github.com/getrdone/design-resources) → local clone `F:\__ai-projects\design-resources\` (continuously synced). Glossary text lives in this skills repo; pack `GLOSSARY.md` is a current-release pointer, not a symlink. See `F:\__ai-projects\SOURCES-OF-TRUTH.md`.
 
 **Canonical Bible-study source library:** private repo [getrdone/bible-study-source-materials](https://github.com/getrdone/bible-study-source-materials) → local clone `F:\__ai-projects\bible-study-source-materials\` (continuously synced). Path aliases are junctions into that clone — never a second copy. Read `registry.yaml` and approval policy before treating any file as authoritative.
 
@@ -40,6 +42,7 @@ If none match → use your own judgment; do not force a skill.
 | clean-video-transcript | `skills/clean-video-transcript/` | clean transcript, clean video transcript, remove timestamps, ASR cleanup, Quick Reference, verse list, EGW reference list, YouTube transcript polish |
 | curiosity-driven-scripture-journey | `skills/curiosity-driven-scripture-journey/` | titles, descriptions, packaging, `.titles.md`, `.descriptions.md`, Scripture journey, Bible study page, discovery topic, source library, source ingestion, source SQLite, source alignment, learning patterns, teaching strategies, YouTube titles/ideas packaging, 17-category title matrix, thumbnail, ministry landing page, Scripture SEO/AEO, high-trust faith content, project brief gates |
 | artwork-prompts-handoff | `skills/artwork-prompts-handoff/` | explicit manual prompt pack, art handoff, I'll generate the images myself, paste-ready prompts file |
+| color-palette-composition | `skills/color-palette-composition/` | color theme, palette, color combination, color scheme, 60-30-10, primary/secondary/accent, interior palette, graphic color pairing, web-page theme, undertones, tint/tone/shade, how much color, where to put color, palette critique or revision |
 
 ## External maintained skills
 
@@ -79,3 +82,4 @@ When a community/external skill's knowledge is folded into a skill's references 
 <!-- Agent: claude · Model: claude-opus-5 · Thinking: not exposed · Date: 2026-09-10 · Fixed two broken fold paths; stated versioned path resolution; workspace rules reduced to a pointer. -->
 <!-- Agent: grok · Model: Grok 4.5 · Thinking: not exposed · Date: 2026-09-10 · Cloudflare routing = marketplace plugin, not cloudflare-skills clone. -->
 <!-- Agent: grok · Model: Grok 4.5 · Date: 2026-09-10 · Anti-slop fold: Anthropic clusters + 2026 fingerprints; next check ~2026-12-10. -->
+<!-- Agent: Codex | Model: GPT-5 | Thinking: not exposed | Date: 2026-09-13 | Made color-palette-composition the sole canonical palette route; Psychology and Directives now serve their distinct follow-up roles. -->

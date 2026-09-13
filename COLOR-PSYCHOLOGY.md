@@ -2,7 +2,7 @@
 
 # Color Psychology and Perceptual Effects
 
-Load this reference whenever an agent chooses, recommends, names, generates, requests, compares, or reviews colors. It supplements `DESIGN-DIRECTIVES.md`; it does not replace source-of-truth brand values or project-specific visual decisions.
+Load this reference after `skills/color-palette-composition/SKILL.md` when an intended or alternate audience reading, cultural or Scripture context, or a color-psychology claim materially changes a created or revised theme. Load it directly for an explicit meaning, perception, symbolism, or psychology review. It supplements `DESIGN-DIRECTIVES.md`; it does not replace source-of-truth brand values, palette composition, or project-specific visual decisions.
 
 ## Governing principle
 
@@ -154,3 +154,5 @@ Do not require the block in user-facing output unless it helps a decision. It is
 - W3C, Web Content Accessibility Guidelines 2.2: <https://www.w3.org/TR/WCAG22/>. Normative contrast, use-of-color, text-resize, images-of-text, reflow, and non-text contrast requirements.
 
 Revisit the research foundation when making strong new physiological claims. Prefer controlled primary research and standards over popular color-meaning charts.
+
+<!-- Agent: Codex | Model: GPT-5 | Thinking: not exposed | Date: 2026-09-13 | Repositioned Psychology as contextual interpretation after canonical palette composition. -->

@@ -71,7 +71,8 @@ For substantial production:
 - For layout/placement work: a dynamic-symmetry ratio/armature was considered (soft standard); grid choice recorded when used; pack path preferred over inventing thirds-only habits.
 - No nude/sexually explicit reference imagery used in deliverables.
 - Color is not the only signal; persistent words, shape, icon, pattern, or position carry the same meaning.
-- Every chosen color has a content role, intended viewer response, plausible alternate reading, and evidence strength grounded through repository-root `COLOR-PSYCHOLOGY.md`.
+- Every color in a new or materially revised theme has an earned composition role, allocation, placement, provenance, and field/partner/spark visual-weight rationale through repository-root `skills/color-palette-composition/SKILL.md`; it records Itten/Munsell application and a short theory summary.
+- When a color's intended/alternate response, culture, Scripture context, or psychology claim materially affects the decision, that claim is grounded through repository-root `COLOR-PSYCHOLOGY.md` with evidence strength recorded.
 - Scripture color symbolism is verified from the actual passage/context and is never used as doctrinal proof or fear pressure.
 - Text remains easily readable at final size and viewing conditions: 7:1 body/sustained-reading target when practical; WCAG 2.2 AA is the floor; gradients, transparency, imagery, video, and states are tested at their worst point.
 - Any approved artistic low-legibility exception is nonessential and has an accessible, easily readable equivalent.
@@ -130,3 +131,4 @@ For substantial production:
 
 <!-- Agent: Codex · Model: GPT-5 · Thinking: not exposed · Date: 2026-09-09 · Added color-psychology and readable-text gates. -->
 <!-- Agent: grok · Model: Grok 4.6 · Date: 2026-09-09 · Integrity/YouTube gates distinguish honest curiosity gaps from manufactured suspense. -->
+<!-- Agent: Codex | Model: GPT-5 | Thinking: not exposed | Date: 2026-09-13 | Added canonical palette-composition verification and scoped contextual psychology. -->

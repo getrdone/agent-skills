@@ -12,6 +12,8 @@
 #
 # Paths are relative to the CDSJ release directory unless prefixed `repo:`.
 # `forbid` is the important half: a wrong-skill load is loud, an over-load is silent.
+#
+# Agent: Codex | Model: GPT-5 | Thinking: not exposed | Date: 2026-09-13 | Added canonical palette, contextual-psychology, and lean-revision routing fixtures.
 
 meta:
   release: 3.2.0
@@ -145,6 +147,46 @@ fixtures:
   max_files: 2
   assert_behaviour: "Uses the available image capability. Does NOT hijack into a prompt pack."
 
+# ---------------------------------------------------------------- palette composition
+- id: palette-new-journey-theme
+  prompt: "Create a striking but controlled color theme for the Daniel 8 study landing page."
+  expect_skill: curiosity-driven-scripture-journey
+  expect_lanes: [palette]
+  expect_load:
+    - references/palette-integration.md
+    - repo:skills/color-palette-composition/SKILL.md
+  max_files: 4
+  forbid: [repo:COLOR-PSYCHOLOGY.md, references/motion-and-premium-ui.md]
+  assert_behaviour: >
+    Reads the palette skill's core composition reference and returns field/partner/spark,
+    allocation, provenance, Itten + Munsell decisions, and a concise theory_summary. Does not
+    add Psychology merely because a theme is being created.
+
+- id: palette-contextual-scripture-reading
+  prompt: "Create a Daniel 8 palette that uses scarlet and purple, and explain how an international Scripture audience might read those colors."
+  expect_skill: curiosity-driven-scripture-journey
+  expect_lanes: [palette]
+  expect_load:
+    - references/palette-integration.md
+    - repo:skills/color-palette-composition/SKILL.md
+    - repo:COLOR-PSYCHOLOGY.md
+  max_files: 5
+  assert_behaviour: >
+    Composes the theme first, then uses contextual Psychology for the claimed audience and
+    Scripture reading. It names plausible alternate readings and does not assert that hue is doctrine.
+
+- id: palette-web-theme-not-web-build
+  prompt: "Revise the color theme for the existing study web page so the focus shifts from the background to the next-step action."
+  expect_skill: curiosity-driven-scripture-journey
+  expect_lanes: [palette]
+  expect_load:
+    - references/palette-integration.md
+    - repo:skills/color-palette-composition/SKILL.md
+  max_files: 4
+  forbid: [references/web-experience.md, references/motion-and-premium-ui.md]
+  assert_behaviour: >
+    Treats changed hierarchy as a material palette revision, not as a full page-build or a narrow component repair.
+
 # ---------------------------------------------------------------- page build
 - id: page-build-substantial
   prompt: "Build the Scripture Journey page for Daniel 8."
@@ -194,10 +236,11 @@ fixtures:
     - references/branching-journey.md
     - references/learning-and-writing.md
     - repo:DESIGN-DIRECTIVES.md
+    - repo:COLOR-PSYCHOLOGY.md
   assert_behaviour: >
     Catches the structural over-load. The pre-chunk-02 route table had one door for "touch
-    any HTML" that pulled ~100 KB for this. COLOR-PSYCHOLOGY.md is allowed here — the fix
-    changes a colour — but the design tree is not.
+    any HTML" that pulled ~100 KB for this. A contrast-only repair stays with the web reference;
+    it does not reopen palette composition, psychology, or the design tree.
 
 - id: single-component-repair
   prompt: "The accordion on the study page doesn't open on mobile."

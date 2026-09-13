@@ -11,6 +11,7 @@ description: Plan, package, design, write, build, or review a curiosity-driven S
 4. Read that version's `load-map.yaml`, match the request to its lanes, and load **only** the files those lanes name.
 5. Do not silently mix Scripture Journey reference files from another version.
 6. Shared cross-skill dependencies are governed by the selected release manifest and the repository commit containing that release.
+7. For a new or materially revised color theme, use the selected release's `palette` lane. It opens the canonical `color-palette-composition` skill; load Color Psychology only when contextual interpretation materially changes the palette decision.
 
 Current: **3.2.0** (file `CURRENT`)
 Stable: **3.0.1** (file `STABLE`)
@@ -53,3 +54,4 @@ restates its rules.
 <!-- Agent: Codex · Model: GPT-5 · Thinking: not exposed · Date: 2026-09-09 · Released 3.2.0 color psychology and text-readability requirements. -->
 <!-- Agent: grok · Model: Grok 4.6 · Date: 2026-09-09 · Router description includes titles/descriptions so auto-invoke matches. -->
 <!-- Agent: claude · Model: claude-opus-5 · Thinking: not exposed · Date: 2026-09-10 · Deleted the duplicate root references/ tree and root manifest.yaml; stated the one path-resolution rule; added load-map routing and the LOAD declaration. -->
+<!-- Agent: Codex | Model: GPT-5 | Thinking: not exposed | Date: 2026-09-13 | Added the release-resolved canonical palette route. -->

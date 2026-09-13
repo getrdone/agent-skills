@@ -1,0 +1,5 @@
+# Agent: Codex | Model: GPT-5 | Thinking: not exposed | Date: 2026-09-13 | Updated the canonical palette-theme launcher metadata.
+interface:
+  display_name: "Color Palette Composition"
+  short_description: "Compose vivid, controlled color themes"
+  default_prompt: "Use $color-palette-composition to create a named color theme with visual weight, placement, and a concise Itten/Munsell rationale."

@@ -2,7 +2,7 @@
 
 Use this file for visual direction, layouts, graphics, thumbnails, typography, color, imagery, composition, motion, or design review.
 
-**Core design constitution:** for any palette, brand, color-system, token, gradient, or source-led visual-system work, also load and follow repository-root **`DESIGN-DIRECTIVES.md`**. Whenever a color is chosen, recommended, generated, requested, compared, or reviewed, also load repository-root **`COLOR-PSYCHOLOGY.md`**. Together they own source-specific naming, locked colors, harmonized families, compact palettes, semantic tokens, evidence-calibrated psychological and perceptual effects, cultural/Scripture context, practical handoff, and independently validated accessibility/readability. This file adds Scripture-journey-specific composition, teaching, typography, imagery, and motion rules.
+**Core design constitution:** for a new or materially revised palette/theme, first load repository-root **`skills/color-palette-composition/SKILL.md`**. It owns visual weight, field/partner/spark allocation, Itten/Munsell theory, mixing, placement, naming handoff, and verification. Load repository-root **`DESIGN-DIRECTIVES.md`** when that theme becomes source locks, story names, semantic tokens, gradients, or an implementation handoff. Load **`COLOR-PSYCHOLOGY.md`** only when an intended/alternate reading, culture, Scripture context, or psychology claim materially changes the decision. This file adds Scripture-journey-specific composition, teaching, typography, imagery, and motion rules.
 
 ## Contents
 
@@ -12,12 +12,13 @@ Use this file for visual direction, layouts, graphics, thumbnails, typography, c
 - Composition (dynamic symmetry = soft standard)
 - Typography
 - Color
-- Color psychology and perceptual effects → repository-root `COLOR-PSYCHOLOGY.md`
+- Palette composition → repository-root `skills/color-palette-composition/SKILL.md`
+- Contextual color interpretation → repository-root `COLOR-PSYCHOLOGY.md` when consequential
 - Imagery and thumbnail-specific rules
 - Motion and interaction
 - Design fingerprint and anti-repetition
 - Dynamic symmetry detail → `references/dynamic-symmetry.md`
-- Dynamic symmetry **skim glossary** → `references/dynamic-symmetry-glossary.md` (also `design-resources/.../GLOSSARY.md`)
+- Dynamic symmetry **skim glossary** → `references/dynamic-symmetry-glossary.md` (the design-resources pointer resolves the current release)
 
 ## Visual DNA brief
 
@@ -54,7 +55,7 @@ Reason from the content. Do not pull a finished aesthetic from a token file, fon
 3. **Choose a dynamic-symmetry rectangle + armature** for the real canvas (soft standard — see Composition). Load a matching PNG from the design-resources pack when available.
 4. Build the hierarchy in grayscale/monochrome with type scale, value, spacing, and placement on that armature.
 5. Run grayscale and squint/phone-size checks.
-6. Select typography and palette together from tone keywords and actual content. Before committing tokens or named colors, follow `DESIGN-DIRECTIVES.md`; when any color decision is present, also follow repository-root `COLOR-PSYCHOLOGY.md`.
+6. Select typography and palette together from tone keywords and actual content. For a new/materially revised theme, follow `color-palette-composition` first; use `DESIGN-DIRECTIVES.md` for source names/tokens/gradients, and add `COLOR-PSYCHOLOGY.md` only for consequential contextual interpretation.
 7. Add imagery, texture, interaction, and motion only when each supports meaning.
 8. Re-run grayscale, squint, accessibility, and integrity checks.
 9. Record which grid/ratio you used in the visual DNA / fingerprint.
@@ -107,19 +108,20 @@ Named font examples are sanity checks, not a menu. Reason first.
 
 ## Color
 
-**Apply repository-root `DESIGN-DIRECTIVES.md` for the full color-system method and repository-root `COLOR-PSYCHOLOGY.md` for every color choice or review.** Keep the detailed color catalog out of this lane file so ordinary visual work stays lean. In shorthand:
+**Apply repository-root `skills/color-palette-composition/SKILL.md` to create or materially revise the palette.** Apply `DESIGN-DIRECTIVES.md` to turn the approved palette into its source-specific naming, token, gradient, and implementation architecture. Add `COLOR-PSYCHOLOGY.md` only when contextual interpretation changes the choice. Keep detailed color references out of this lane file so ordinary visual work stays lean. In shorthand:
 
-> **source-specific evocative naming → locked official colors → harmonized families → compact core palette → semantic developer tokens → named signature gradients → evidence-calibrated psychological usage tied to imagery/content → practical designer/developer guidance → validated accessibility and readability**
+> **visual-weight composition (Itten + Munsell) → source-specific evocative naming → locked official colors → compact harmonized palette → semantic developer tokens → named signature gradients → contextual psychology when consequential → practical guidance → validated accessibility and readability**
 
 Journey-specific additions:
 
 - Build meaning and hierarchy in grayscale first; color strengthens hierarchy rather than creating it from nothing.
 - Derive palette direction from the same tone keywords and content used for typography and imagery.
+- For every created/revised theme, name field/partner/spark, allocation, Itten contrast/extension decision, Munsell HVC/value-chroma correction, and one- or two-sentence theory summary.
 - Preserve official/user-locked brand colors exactly; never silently replace them with a sampled or aesthetically tidier alternative.
 - Prefer memorable names that belong to the current source/story instead of generic color labels or names copied from another project.
 - Keep the core palette learnable; add colors only when each earns a distinct role.
 - Separate canonical/story tokens from semantic application aliases in web work.
-- Use the mandatory color-choice workflow in `COLOR-PSYCHOLOGY.md`: define the intended response; check audience, culture, faith context, medium, and viewing duration; record a plausible alternate reading; tune lightness/chroma/area; grade evidence; assign roles; validate text pairings; and add non-color cues.
+- When `COLOR-PSYCHOLOGY.md` is consequential, use its workflow: define intended response; check audience, culture, faith context, medium, and viewing duration; record a plausible alternate reading; grade evidence; validate pairings; and add non-color cues.
 - Treat psychological notes as contextual design intentions, not universal color laws. Never imply that a hue guarantees trust, calm, urgency, conversion, learning, health, or a physiological result.
 - In Scripture/ministry work, verify symbolism from the actual passage and object. Color may support teaching but can never serve as doctrinal proof or fear pressure.
 - **Readable text is a hard gate:** target 7:1 for body/sustained reading when practical and never fall below WCAG 2.2 AA. Test the exact final foreground/background at the final size, including the worst point over gradients, transparency, imagery, or video. An explicit artistic exception cannot hide the only copy of essential content.
@@ -159,4 +161,4 @@ Warn when several dimensions repeat without a content reason. Preserve the proje
 
 <!-- Agent: Codex | Model: GPT-5 | Thinking: not exposed | Date: 2026-09-08 | Narrowed manual artwork handoff routing. -->
 
-<!-- Agent: Codex · Model: GPT-5 · Thinking: not exposed · Date: 2026-09-09 · Routed all color choices through the shared psychology reference and strengthened readability. -->
+<!-- Agent: Codex | Model: GPT-5 | Thinking: not exposed | Date: 2026-09-13 | Routed created/revised themes to canonical palette composition, retaining Psychology for consequential context. -->

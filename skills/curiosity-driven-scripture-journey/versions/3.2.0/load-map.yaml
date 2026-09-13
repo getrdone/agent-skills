@@ -81,18 +81,34 @@ lanes:
         when: writing script or teaching content, not only title/description lines
     max_files: 2
 
+  palette:
+    when: Create, revise, or critique a color theme, palette, color scheme, or web-page theme for a Scripture Journey.
+    files:
+      - references/palette-integration.md
+      - repo:skills/color-palette-composition/SKILL.md
+    conditional:
+      - files: [repo:COLOR-PSYCHOLOGY.md]
+        when: Scripture symbolism, audience/cultural meaning, intended or alternate interpretation, or a color-psychology claim materially affects the decision
+      - files: [repo:DESIGN-DIRECTIVES.md]
+        when: turning the chosen palette into locked story names, semantic tokens, named gradients, implementation states, or developer/print handoff
+      - files: [references/visual-system.md]
+        when: this palette decision is part of a new or revised full visual system
+    max_files: 6
+
   visual:
-    when: Thumbnail, graphic, moodboard, visual direction, typography, palette, layout, motion language.
+    when: Thumbnail, graphic, moodboard, visual direction, typography, layout, motion language.
     files:
       - references/visual-system.md
     conditional:
+      - files: [repo:skills/color-palette-composition/SKILL.md]
+        when: a color theme or palette is created or materially revised
       - files: [repo:COLOR-PSYCHOLOGY.md]
-        when: any colour is chosen, recommended, generated, compared, or reviewed
+        when: Scripture symbolism, audience/cultural meaning, intended or alternate interpretation, or a color-psychology claim materially affects the decision
       - files: [references/dynamic-symmetry-glossary.md, references/dynamic-symmetry.md]
         when: composition matters — skim the glossary first, open the full method only if needed
       - files: [references/youtube-planning.md]
         when: the artifact is a video thumbnail
-    max_files: 4
+    max_files: 7
     hands_off_to: artwork-prompts-handoff        # actual image generation is that skill's job
 
   web:
@@ -103,10 +119,7 @@ lanes:
               Do NOT open the design tree for this.
         files:
           - references/web-experience.md
-        conditional:
-          - files: [repo:COLOR-PSYCHOLOGY.md]
-            when: the fix changes a colour
-        max_files: 2
+        max_files: 1
       build:
         when: A new page, or a rebuild that changes the concept.
         files:
@@ -116,7 +129,14 @@ lanes:
           - references/design-critique-and-anti-slop.md
           - references/branching-journey.md
           - references/learning-and-writing.md
-        max_files: 6
+        conditional:
+          - files: [repo:skills/color-palette-composition/SKILL.md]
+            when: the page includes a new or materially revised color theme
+          - files: [repo:COLOR-PSYCHOLOGY.md]
+            when: Scripture symbolism, audience/cultural meaning, intended or alternate interpretation, or a color-psychology claim materially affects the page theme
+          - files: [repo:DESIGN-DIRECTIVES.md]
+            when: the chosen theme needs token, gradient, implementation-state, or developer handoff
+        max_files: 10
         also_load_lanes: [develop, release]
     note: >
       Splitting repair from build is the point of this lane. The 3.2.0 table had one door for
@@ -161,4 +181,6 @@ bridges:
 # ---------------------------------------------------------------------------
 # Orphan check: every file under references/ must appear in at least one lane above.
 # tools/check_links.py --load-map enforces this.
-reference_count: 23
+reference_count: 24
+
+# Agent: Codex | Model: GPT-5 | Thinking: not exposed | Date: 2026-09-13 | Added lean canonical palette routing and scoped contextual-psychology conditions.
