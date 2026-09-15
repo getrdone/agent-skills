@@ -1,0 +1,13 @@
+@layer theme {
+  :root,
+  :root[data-theme="default"] {
+    --color-surface: #f6f1e8;
+    --color-surface-2: #efe6d6;
+    --color-ink: #1c1914;
+    --color-ink-muted: #5c564c;
+    --color-accent: #8a3b12;
+    --color-accent-ink: #fffaf3;
+    --color-line: #d9cbb4;
+    --color-overlay: rgb(28 25 20 / 0.45);
+  }
+}
