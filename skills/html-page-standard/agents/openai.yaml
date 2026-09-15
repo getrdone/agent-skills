@@ -1,0 +1,4 @@
+interface:
+  display_name: HTML Page Standard
+  short_description: Screenshot to themable static HTML in three passes.
+  default_prompt: Use html-page-standard. Name the pass (A-clone, B-tokenize, or C-repair).
