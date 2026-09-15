@@ -3,6 +3,7 @@
 <!-- Agent: Grok · Model: Grok 4.5 · Thinking: not exposed · Date: 2026-09-01 -->
 <!-- Agent: Codex | Model: GPT-5 | Thinking: not exposed | Date: 2026-08-21 -->
 <!-- Agent: Codex | Model: GPT-5 | Thinking: not exposed | Date: 2026-09-08 -->
+<!-- Agent: grok · Model: Grok 4.6 · Date: 2026-09-15 · Added html-page-standard for screenshot-to-HTML pipeline. -->
 
 **Always also follow** [`WORKSPACE.md`](WORKSPACE.md). It is the single source of truth for file naming,
 file I/O, and continuity — progressive stems for deliberation artifacts, canonical-on-first-write for
@@ -16,9 +17,9 @@ No skill or reference restates its rules.
 
 **Load** [`COLOR-PSYCHOLOGY.md`](COLOR-PSYCHOLOGY.md) **after composition only when an intended/alternate audience reading, cultural or Scripture context, or a color-psychology claim materially affects the decision.** It supplies contextual evidence and interpretation; it does not replace palette composition. [`DESIGN-DIRECTIVES.md`](DESIGN-DIRECTIVES.md) supplies source locks, canonical names, semantic tokens, gradients, and implementation guidance.
 
-**Shared design pack:** private repo [getrdone/design-resources](https://github.com/getrdone/design-resources) → local clone `F:\__ai-projects\design-resources\` (continuously synced). Glossary text lives in this skills repo; pack `GLOSSARY.md` is a current-release pointer, not a symlink. See `F:\__ai-projects\SOURCES-OF-TRUTH.md`.
+**Shared design pack:** private repo [getrdone/design-resources](https://github.com/getrdone/design-resources) → local clone `F:\\__ai-projects\\design-resources\\` (continuously synced). Glossary text lives in this skills repo; pack `GLOSSARY.md` is a current-release pointer, not a symlink. See `F:\\__ai-projects\\SOURCES-OF-TRUTH.md`.
 
-**Canonical Bible-study source library:** private repo [getrdone/bible-study-source-materials](https://github.com/getrdone/bible-study-source-materials) → local clone `F:\__ai-projects\bible-study-source-materials\` (continuously synced). Path aliases are junctions into that clone — never a second copy. Read `registry.yaml` and approval policy before treating any file as authoritative.
+**Canonical Bible-study source library:** private repo [getrdone/bible-study-source-materials](https://github.com/getrdone/bible-study-source-materials) → local clone `F:\\__ai-projects\\bible-study-source-materials\\` (continuously synced). Path aliases are junctions into that clone — never a second copy. Read `registry.yaml` and approval policy before treating any file as authoritative.
 
 Agents: match the user request against **Triggers** below.
 
@@ -43,12 +44,13 @@ If none match → use your own judgment; do not force a skill.
 | curiosity-driven-scripture-journey | `skills/curiosity-driven-scripture-journey/` | titles, descriptions, packaging, `.titles.md`, `.descriptions.md`, Scripture journey, Bible study page, discovery topic, source library, source ingestion, source SQLite, source alignment, learning patterns, teaching strategies, YouTube titles/ideas packaging, 17-category title matrix, thumbnail, ministry landing page, Scripture SEO/AEO, high-trust faith content, project brief gates |
 | artwork-prompts-handoff | `skills/artwork-prompts-handoff/` | explicit manual prompt pack, art handoff, I'll generate the images myself, paste-ready prompts file |
 | color-palette-composition | `skills/color-palette-composition/` | color theme, palette, color combination, color scheme, 60-30-10, primary/secondary/accent, interior palette, graphic color pairing, web-page theme, undertones, tint/tone/shade, how much color, where to put color, palette critique or revision |
+| html-page-standard | `skills/html-page-standard/` | screenshot to HTML, mockup to HTML, clone screenshot, tokenize CSS, TUNE block, theme tokens, layout pack, static HTML page from raster, Pass A clone, Pass B tokenize, Pass C repair |
 
 ## External maintained skills
 
 | Source | Install / path | Routing |
 |--------|----------------|---------|
-| [Cloudflare Skills](https://github.com/cloudflare/skills) | Grok plugin `cloudflare` at `~/.grok/installed-plugins/skills-39968d19/` (marketplace). Do **not** maintain a second `F:\__ai-projects\cloudflare-skills\` clone or fold CF instructions into this repo. | On Workers / Pages / D1 / Wrangler / Agents SDK / Durable Objects match, load the matching skill from that plugin (`cloudflare`, `wrangler`, `agents-sdk`, `durable-objects`, `web-perf`, …). Account MCPs (`cloudflare-api`, bindings, builds, observability) need separate auth; `cloudflare-docs` works without it. |
+| [Cloudflare Skills](https://github.com/cloudflare/skills) | Grok plugin `cloudflare` at `~/.grok/installed-plugins/skills-39968d19/` (marketplace). Do **not** maintain a second `F:\\__ai-projects\\cloudflare-skills\\` clone or fold CF instructions into this repo. | On Workers / Pages / D1 / Wrangler / Agents SDK / Durable Objects match, load the matching skill from that plugin (`cloudflare`, `wrangler`, `agents-sdk`, `durable-objects`, `web-perf`, …). Account MCPs (`cloudflare-api`, bindings, builds, observability) need separate auth; `cloudflare-docs` works without it. |
 
 ## Specialized repositories
 
@@ -75,11 +77,3 @@ When a community/external skill's knowledge is folded into a skill's references 
 
 - `skills/curiosity-driven-scripture-journey/versions/3.2.0/references/motion-and-premium-ui.md` <- `github/awesome-copilot` (`premium-frontend-ui`, `gsap-framer-scroll-animation`) - last synced 2026-08-13 - re-sync: diff against `skills/*/SKILL.md` in that repo.
 - `skills/curiosity-driven-scripture-journey/versions/3.2.0/references/design-critique-and-anti-slop.md` <- `pbakaus/impeccable` (surface mode, detectors, iteration verbs; Apache 2.0) + `anthropics/skills` `frontend-design` (AI-design cluster list) + spot-check `ravidsrk/slop-detect` emerging fingerprints - last synced 2026-09-10 - next check ~2026-12-10 - re-sync: diff impeccable; re-fetch Anthropic `frontend-design/SKILL.md` clusters; skim slop-detect/essays for new durable tells only (optional `npx impeccable install`).
-
-<!-- Agent: Codex · Model: GPT-5 · Thinking: not exposed · Date: 2026-09-09 · Routed color decisions to COLOR-PSYCHOLOGY.md. -->
-<!-- Agent: grok · Model: Grok 4.6 · Date: 2026-09-09 · CDSJ triggers include titles/descriptions/packaging. -->
-<!-- Agent: grok · Model: Grok 4.6 · Date: 2026-09-09 · CDSJ versions/ is history; CURRENT pointer is 3.2.0. -->
-<!-- Agent: claude · Model: claude-opus-5 · Thinking: not exposed · Date: 2026-09-10 · Fixed two broken fold paths; stated versioned path resolution; workspace rules reduced to a pointer. -->
-<!-- Agent: grok · Model: Grok 4.5 · Thinking: not exposed · Date: 2026-09-10 · Cloudflare routing = marketplace plugin, not cloudflare-skills clone. -->
-<!-- Agent: grok · Model: Grok 4.5 · Date: 2026-09-10 · Anti-slop fold: Anthropic clusters + 2026 fingerprints; next check ~2026-12-10. -->
-<!-- Agent: Codex | Model: GPT-5 | Thinking: not exposed | Date: 2026-09-13 | Made color-palette-composition the sole canonical palette route; Psychology and Directives now serve their distinct follow-up roles. -->
