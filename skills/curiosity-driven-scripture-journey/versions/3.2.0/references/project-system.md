@@ -20,7 +20,7 @@ For a small prompt such as `Psalm 23`, keep it creative-friendly—**no bureaucr
 ### 0) Scaffold first (if this is a new project)
 
 If no topic folder exists yet, create the standard shell from **`WORKSPACE.md` §2b** (AGENTS.md, 01-NOW.md, 02-TASKS.md, project-brief.md, `planning/`, `mood/`, `prompts/`, `references/`, `sources/intake/`, `deliverables/assets/`).  
-If the folder already exists, **do not rebuild**—only add missing folders/files and use what is already there. Point `references/dynamic-symmetry/` at `F:\__ai-projects\design-resources\dynamic-symmetry-grids\` (do not copy the whole pack).  
+If the folder already exists, **do not rebuild**—only add missing folders/files and use what is already there. Point `references/dynamic-symmetry/` at `G:\__ai-projects\_resources\design-resources\dynamic-symmetry-grids\` (do not copy the whole pack). Composition method lives in skill `skills/dynamic-symmetry/`.  
 When artwork is needed, use skill **`artwork-prompts-handoff`** → `prompts/artwork-prompts.md` (human generates; no paid image APIs by default). Naming: repo [`WORKSPACE.md`](../../../../WORKSPACE.md) §3.
 
 ### 1) Then one compact decision round

@@ -68,7 +68,7 @@ For substantial production:
 - Type, color, imagery, and composition arise from the content/visual DNA.
 - **Web fonts are designed faces** (network or self-hosted WOFF2), not system-only stacks; avoid Inter/system-default as the whole personality unless the brief demands it.
 - Page does not read as generic AI slop (see `design-critique-and-anti-slop.md`).
-- For layout/placement work: a dynamic-symmetry ratio/armature was considered (soft standard); grid choice recorded when used; pack path preferred over inventing thirds-only habits.
+- For layout/placement work: skill `dynamic-symmetry` was loaded; rectangle/armature considered (soft standard); grid choice recorded when used; pack path preferred over inventing thirds-only habits.
 - No nude/sexually explicit reference imagery used in deliverables.
 - Color is not the only signal; persistent words, shape, icon, pattern, or position carry the same meaning.
 - Every color in a new or materially revised theme has an earned composition role, allocation, placement, provenance, and field/partner/spark visual-weight rationale through repository-root `skills/color-palette-composition/SKILL.md`; it records Itten/Munsell application and a short theory summary.

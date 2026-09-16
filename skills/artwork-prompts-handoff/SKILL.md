@@ -14,10 +14,11 @@ Use this skill only for an explicit manual-generation handoff. If the user asks 
 
 ## Load with visual work
 
+**Always** load [`skills/dynamic-symmetry/SKILL.md`](../dynamic-symmetry/SKILL.md) before writing prompts (skim glossary; open method if needed). Stamp each prompt with rectangle + armature.
+
 If the task is ministry/Scripture/video packaging, also load the Scripture Journey visual lane
-(`skills/curiosity-driven-scripture-journey/versions/<CURRENT>/references/visual-system.md`) and skim
-its `dynamic-symmetry-glossary.md` when composition matters. Resolve `<CURRENT>` from that skill's
-`CURRENT` file — never from a copy at its root.
+(`skills/curiosity-driven-scripture-journey/versions/<CURRENT>/references/visual-system.md`).
+Resolve `<CURRENT>` from that skill's `CURRENT` file — never from a copy at its root.
 
 ## When this skill fires
 
@@ -131,8 +132,8 @@ Only if the user says to use Canva/Leonardo **and** confirms credits:
 
 | Skill / doc | Role |
 |-------------|------|
-| `curiosity-driven-scripture-journey` -> `visual` lane | Vision, Dynamic Symmetry, type, palette |
-| its `dynamic-symmetry-glossary.md` | Armature vocabulary for each prompt’s Dynamic Symmetry line |
+| `dynamic-symmetry` | Canonical armature / crop / placement (required) |
+| `curiosity-driven-scripture-journey` → `visual` lane | Vision, type, palette, motion language |
 | its `packaging` lane | Title selected before final thumbnail art when packaging video |
 | This skill | **Human generation handoff** |
 

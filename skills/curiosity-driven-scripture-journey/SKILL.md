@@ -1,6 +1,6 @@
 ---
 name: curiosity-driven-scripture-journey
-description: Plan, package, design, write, build, or review a curiosity-driven Scripture content project. Use for titles, descriptions, thumbnails, YouTube packaging, Bible-study questions and copy, topic discovery, ministry landing pages, and high-trust faith content. Version router — resolve CURRENT unless the user names a version or says stable. Living HTML pages use web-studio clone, theme, or polish — this skill does not own page structure or tokens.
+description: Plan, package, design, write, build, or review a curiosity-driven Scripture content project. Use for titles, descriptions, thumbnails, YouTube packaging, Bible-study questions and copy, topic discovery, ministry landing pages, and high-trust faith content. Version router — resolve CURRENT unless the user names a version or says stable. Living HTML pages use web-studio clone → images → theme → polish — this skill does not own page structure or tokens.
 ---
 
 # Curiosity-Driven Scripture Journey — version router
@@ -14,7 +14,7 @@ description: Plan, package, design, write, build, or review a curiosity-driven S
 7. For a new or materially revised color theme, use the selected release's `palette` lane. It opens the canonical `color-palette-composition` skill; load Color Psychology only when contextual interpretation materially changes the palette decision.
 
 Current: **3.2.0** (file `CURRENT`)
-Stable: **3.0.1** (file `STABLE`)
+Stable: **3.2.0** (file `STABLE`) — older releases archived under `packages/archive/cdsj-versions/`
 
 ## Path resolution (read this before opening any file)
 
@@ -47,7 +47,7 @@ restates its rules.
 
 ## Web pages
 
-Living HTML uses repo skill [`web-studio`](../web-studio/SKILL.md) — `deliverable-clone`, `deliverable-theme`, or `deliverable-polish`. This skill owns journey copy, titles, learning paths, and source authority. It does not own page structure, tokens, or surgical HTML edits.
+Living HTML uses repo skill [`web-studio`](../web-studio/SKILL.md) — `deliverable-clone` → `deliverable-images` → `deliverable-theme` → `deliverable-polish`. This skill owns journey copy, titles, learning paths, and source authority. It does not own page structure, tokens, or surgical HTML edits.
 
 ## Version history
 

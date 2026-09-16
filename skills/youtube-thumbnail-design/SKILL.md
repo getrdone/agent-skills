@@ -11,6 +11,8 @@ Create glanceable thumbnails that stop the scroll and reinforce the title's curi
 
 ## Instructions
 
+**Always** load [`skills/dynamic-symmetry/SKILL.md`](../dynamic-symmetry/SKILL.md) before composing. Default crop for YouTube landscape ≈ **root 3** (near 16:9). Stamp rectangle + armature + focal; write Dynamic Symmetry in full in any generation prompt (never “DS”).
+
 Design for mobile feed size first (roughly 200–320 px wide). The thumbnail must communicate in under 2 seconds (glance test).
 
 ### Three C's Process
@@ -21,10 +23,10 @@ Design for mobile feed size first (roughly 200–320 px wide). The thumbnail mus
    - Novelty or pattern-interrupt object.
    - Minimal supporting text (3–5 words max, bold, high-contrast stroke).
 2. **Composition** — Establish hierarchy so the eye lands on the most important element first.
-   - Position: main subject left or center-left (Western left-to-right scan); secondary elements right or lower.
+   - Use Dynamic Symmetry (root 3 / phi / etc. + basic armature or MAD) — not rule-of-thirds as the default.
+   - Position: primary subject on a strong diagonal/eye; secondary on related echoes.
    - Size: primary element fills 40–60% of frame.
    - Depth/blur: soft background or selective focus to isolate subject.
-   - Rule of thirds or intentional off-center for dynamism.
 3. **Contrast** — Make the subject pop against the feed and against competitors.
    - Luminosity: bright subject on dark (or reverse).
    - Color: complementary pairs (orange/teal, yellow/violet, red/cyan).

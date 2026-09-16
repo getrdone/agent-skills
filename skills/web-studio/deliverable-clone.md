@@ -1,11 +1,11 @@
 # Deliverable — clone
 
 ```text
-WEB-STUDIO: 1.0
+WEB-STUDIO: 1.1
 HTML-DELIVERABLE: clone
 ```
 
-One source file. Structure first. Images second. Stop.
+One source file. Structure first. Image slots second (placeholders OK). Stop.
 
 ## Input
 
@@ -15,14 +15,16 @@ One source file. Structure first. Images second. Stop.
 
 ## Method
 
-1. Inventory regions (header, hero/video, evidence, essay+form, share, footer).
-2. Write the living surface:
+1. Load `skills/dynamic-symmetry/SKILL.md` (skim glossary). Choose delivery crop + rectangle + armature for the page/hero **before** inventing regions. Record the stamp in `DELIVERABLE.md`.
+2. Inventory regions (header, hero/video, evidence, essay+form, share, footer) on that armature — primary beats on strong lines/eyes; related margins from reciprocals, not random padding.
+3. Write the living surface:
    - `STACK: static-html` → one `index.html` (or versioned working copy) + CSS
    - `STACK: react-tailwind-shadcn` → `app/page.tsx` + `components/*` only if the user named React
-3. Structure first. Video is a real control. Side copy is HTML. Logo is HTML.
-4. Then fill named image slots (`references/image-slots.md`). Generate if empty. Do not crop the mockup as policy.
-5. Write `DELIVERABLE.md` from `assets/DELIVERABLE.template.md`.
-6. Stop. Do not theme. Do not polish.
+4. Structure first. Video is a real control. Side copy is HTML. Logo is HTML.
+5. Declare named image slots (`references/image-slots.md`). Use labeled placeholders unless the user asked to generate art in this same turn.
+6. If the user asked for generated art now, stop after structure and continue in a chained `HTML-DELIVERABLE: images` phase (do not theme).
+7. Write `DELIVERABLE.md` from `assets/DELIVERABLE.template.md` (include Dynamic Symmetry stamp).
+8. Stop. Do not theme. Do not polish.
 
 ## Stop test
 
@@ -34,4 +36,4 @@ One source file. Structure first. Images second. Stop.
 
 - Theme tokens
 - Rewrite ministry copy beyond what the source shows
-- Open theme.md or polish.md in the same turn
+- Open `deliverable-theme.md` or `deliverable-polish.md` in the same turn

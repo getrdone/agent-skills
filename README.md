@@ -21,32 +21,39 @@
 
 Consumer projects **reference** this repo; they do not own a divergent copy of a skill. Propose skill changes here.
 
-**Local install must be symlinks** into this clone (see `F:\__ai-projects\SOURCES-OF-TRUTH.md` and `_agent-control/bin/repair-symlinks.sh`). Continuous sync: `sync-canonical-repos.sh`.
+**Agent homes** are filled by `_agent-tools\sync-agent-skills\` (robocopy of `skills\` → `~/.grok/skills`, etc.). Pull this git repo when GitHub changes; the 15-minute task does not `git pull`.
 
-Sibling private pack repo: [getrdone/design-resources](https://github.com/getrdone/design-resources) → `F:\__ai-projects\design-resources\`.
+Sibling private pack repo: [getrdone/design-resources](https://github.com/getrdone/design-resources) → `G:\__ai-projects\design-resources\`.
 
 ## Layout
 
 ```
-CATALOG.md
-WORKSPACE.md             # multi-agent file/folder standard (all skills)
+CATALOG.md               # allowlist — read first
+WORKSPACE.md             # multi-agent file/folder standard
 README.md
-skills/
-  clean-video-transcript/
-  curiosity-driven-scripture-journey/
+skills/                  # LIVE skills only — flat: skills/<name>/SKILL.md
+  web-studio/
+  curiosity-driven-scripture-journey/   # versioned exception (CURRENT → versions/3.2.0)
+  …
+packages/                # archives / retired — never auto-loaded
 processing/
   source-vault/
 tools/
   TOOLS.md
 ```
 
+**Do not** nest packs under `skills/` (`agent-skills/`, `claude-skills/`). See `CATALOG.md` layout standard.
+
 ## Skills
+
+See **[CATALOG.md](CATALOG.md)** for the full allowlist and triggers. Highlights:
 
 | Skill | Purpose |
 |-------|---------|
-| [clean-video-transcript](skills/clean-video-transcript/) | Raw video/ASR → polished markdown + Quick Reference |
-| [curiosity-driven-scripture-journey](skills/curiosity-driven-scripture-journey/) | Scripture content studio: study, titles (17×4), video, visual, web |
-| [artwork-prompts-handoff](skills/artwork-prompts-handoff/) | Artwork via human tools: numbered paste-ready prompts file (no paid API default) |
+| [web-studio](skills/web-studio/) | HTML pipeline: clone → images → theme → polish |
+| [curiosity-driven-scripture-journey](skills/curiosity-driven-scripture-journey/) | Scripture content studio (CURRENT 3.2.0) |
+| [clean-video-transcript](skills/clean-video-transcript/) | Raw video/ASR → polished markdown |
+| [artwork-prompts-handoff](skills/artwork-prompts-handoff/) | Paste-ready human art prompts |
 
 ## External skill sources
 

@@ -15,7 +15,7 @@ Agents covered: **Grok, Claude, Codex, Freebuff, Cursor, Gemini**, and any other
 
 | Layer | Location | Role |
 |-------|----------|------|
-| **Brain (skills)** | `F:\__ai-projects\agent-skills\` | Procedures, SPECs, matrices — shared, synced |
+| **Brain (skills)** | `G:\__ai-projects\_agent-skills\skills\<name>\` | Procedures, SPECs, matrices — shared, synced. Archives in `packages\` only. |
 | **Work (artifacts)** | The folder the user opened / named as the project | Transcripts, titles, pages, assets — **one shared root** |
 
 Do **not** create a parallel per-agent project tree (`/grok`, `/claude`, …) for the same topic.
@@ -67,7 +67,8 @@ When the user starts a **new** named topic and no project folder exists:
 **Creative-friendly intake:** the user may drop files into `mood/` or `sources/intake/` with **zero paperwork**.
 Formal `registry.yaml` is only for the shared source vault — not for every mood PNG.
 
-**Shared design pack (never duplicated into a project):** `F:\__ai-projects\design-resources\dynamic-symmetry-grids\`.
+**Dynamic Symmetry method (canonical skill):** `skills/dynamic-symmetry/`.  
+**Shared grid pack (never duplicated into a project):** `G:\__ai-projects\_resources\design-resources\dynamic-symmetry-grids\` (legacy `F:\__ai-projects\design-resources\…`).  
 Projects keep a short pointer under `references/dynamic-symmetry/README.md`.
 
 ---

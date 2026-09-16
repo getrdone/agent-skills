@@ -1,17 +1,14 @@
-# Hidden robocopy sync (no PowerShell window)
+# Hidden robocopy sync
 
-Keep a git clone of this repo. Pull when you want GitHub changes. Robocopy that clone into each agent home.
+Canonical tool: `G:\__ai-projects\_agent-tools\sync-agent-skills\`
 
-Do not schedule `powershell.exe`. Call `C:\Windows\System32\robocopy.exe` from Task Scheduler with Hidden=true.
+- Source: `G:\__ai-projects\_agent-skills\skills`
+- Destinations: `agent-homes.txt` (`.grok`, `.codex`, `.agents`, `.claude`, `.cursor`, `.openclaw`, …)
+- Task: `AgentSkillsRobocopy` (15 minutes, hidden)
+- Register: `register-sync-hidden.cmd`
+- Manual: `sync-all-agents.cmd`
+- Purge: `purge-retired-local.cmd` / `purge-retired-local.cmd 1`
 
-Example arguments:
+Copies **`skills\` only** (not the repo root). Does not `git pull`. Avoid `/MIR` until a home is only a mirror.
 
-```
-F:\__ai-projects\agent-skills  %USERPROFILE%\.grok\skills-from-repo  /E /XO /XD .git  /NFL /NDL /NJH /NJS /NP /R:1 /W:1
-```
-
-Avoid `/MIR` until the destination is only a mirror.
-
-Purge retired local folders if they still exist: html-page-standard, studio-web, interactive-components, modern-css-design, modern-html-aeo, optimized-deliverables, modern-web-development.
-
-Page work is `skills/web-studio/` only.
+Allowlist / layout standard: `../CATALOG.md`. Page work: `skills/web-studio/` only (`clone` → `images` → `theme` → `polish`).

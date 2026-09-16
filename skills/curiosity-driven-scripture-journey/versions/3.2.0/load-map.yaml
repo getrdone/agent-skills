@@ -104,8 +104,8 @@ lanes:
         when: a color theme or palette is created or materially revised
       - files: [repo:COLOR-PSYCHOLOGY.md]
         when: Scripture symbolism, audience/cultural meaning, intended or alternate interpretation, or a color-psychology claim materially affects the decision
-      - files: [references/dynamic-symmetry-glossary.md, references/dynamic-symmetry.md]
-        when: composition matters — skim the glossary first, open the full method only if needed
+      - files: [repo:skills/dynamic-symmetry/SKILL.md, repo:skills/dynamic-symmetry/references/glossary.md]
+        when: composition matters — load the Dynamic Symmetry skill; open method.md only if needed
       - files: [references/youtube-planning.md]
         when: the artifact is a video thumbnail
     max_files: 7
