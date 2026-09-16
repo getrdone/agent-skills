@@ -1,5 +1,12 @@
-# curl examples
+# Copy-paste request examples
 
-GET https://transcriptapi.com/api/v2/youtube/transcript?video_url=VIDEO_URL&format=text&include_timestamp=true&send_metadata=true
-Authorization: Bearer $TRANSCRIPT_API_KEY
-User-Agent: Grok/1.0
+The exact requests from SKILL.md as runnable one-liners. Same endpoints, same parameters, same headers.
+
+## GET /api/v2/youtube/transcript
+
+```bash
+curl -s "https://transcriptapi.com/api/v2/youtube/transcript\
+?video_url=VIDEO_URL&format=text&include_timestamp=true&send_metadata=true" \
+  -H "Authorization: Bearer $TRANSCRIPT_API_KEY" \
+  -H "User-Agent: YourAgent/1.0"
+```
