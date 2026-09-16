@@ -1,9 +1,10 @@
 # Skill catalog (read this first — do not load every skill)
 
+<!-- Agent: Grok · Model: Grok 4.6 · Date: 2026-09-15T21:08:00-07:00 · html-page-standard row replaced by web-studio. -->
+<!-- Agent: Grok · Model: Grok 4.6 · Date: 2026-09-15 · Added html-page-standard for screenshot-to-HTML pipeline. -->
 <!-- Agent: Grok · Model: Grok 4.5 · Thinking: not exposed · Date: 2026-09-01 -->
 <!-- Agent: Codex | Model: GPT-5 | Thinking: not exposed | Date: 2026-08-21 -->
 <!-- Agent: Codex | Model: GPT-5 | Thinking: not exposed | Date: 2026-09-08 -->
-<!-- Agent: grok · Model: Grok 4.6 · Date: 2026-09-15 · Added html-page-standard for screenshot-to-HTML pipeline. -->
 
 **Always also follow** [`WORKSPACE.md`](WORKSPACE.md). It is the single source of truth for file naming,
 file I/O, and continuity — progressive stems for deliberation artifacts, canonical-on-first-write for
@@ -41,10 +42,12 @@ If none match → use your own judgment; do not force a skill.
 | Skill | Path | Triggers (keywords / intent) |
 |-------|------|------------------------------|
 | clean-video-transcript | `skills/clean-video-transcript/` | clean transcript, clean video transcript, remove timestamps, ASR cleanup, Quick Reference, verse list, EGW reference list, YouTube transcript polish |
-| curiosity-driven-scripture-journey | `skills/curiosity-driven-scripture-journey/` | titles, descriptions, packaging, `.titles.md`, `.descriptions.md`, Scripture journey, Bible study page, discovery topic, source library, source ingestion, source SQLite, source alignment, learning patterns, teaching strategies, YouTube titles/ideas packaging, 17-category title matrix, thumbnail, ministry landing page, Scripture SEO/AEO, high-trust faith content, project brief gates |
+| curiosity-driven-scripture-journey | `skills/curiosity-driven-scripture-journey/` | titles, descriptions, packaging, `.titles.md`, `.descriptions.md`, Scripture journey, Bible study page, discovery topic, source library, source ingestion, source SQLite, source alignment, learning patterns, teaching strategies, YouTube titles/ideas packaging, 17-category title matrix, thumbnail, ministry landing page copy, Scripture SEO/AEO, high-trust faith content, project brief gates |
 | artwork-prompts-handoff | `skills/artwork-prompts-handoff/` | explicit manual prompt pack, art handoff, I'll generate the images myself, paste-ready prompts file |
 | color-palette-composition | `skills/color-palette-composition/` | color theme, palette, color combination, color scheme, 60-30-10, primary/secondary/accent, interior palette, graphic color pairing, web-page theme, undertones, tint/tone/shade, how much color, where to put color, palette critique or revision |
-| html-page-standard | `skills/html-page-standard/` | screenshot to HTML, mockup to HTML, clone screenshot, tokenize CSS, TUNE block, theme tokens, layout pack, static HTML page from raster, Pass A clone, Pass B tokenize, Pass C repair |
+| web-studio | `skills/web-studio/` | screenshot to page, mockup to HTML, landing page files, clone page, theme tokens, TUNE, one-off HTML edit, deliverable-clone, deliverable-theme, deliverable-polish |
+
+**Page files:** Scripture Journey and YouTube skills own copy, titles, and learning path. Living HTML uses **web-studio** only (`deliverable-clone` / `deliverable-theme` / `deliverable-polish`). Do not load html-page-standard, studio-web, or modern-web-development.
 
 ## External maintained skills
 
