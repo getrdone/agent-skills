@@ -46,23 +46,41 @@ When building sites:
 - Show the user only what helps them fix the problem (what to check, what to try next).
 - Never surface HTTP status codes, stack traces, binding names, or internal IDs in the UI.
 - Log full technical detail to `console.error` and/or an ops table (D1) for troubleshooting.
-- Prefer short, actionable copy.
+- Prefer short, actionable copy: “Check your connection and try again.” / “Please check your email and try again.”
+- Server APIs may return richer `error` strings for the client to map; the client still filters anything that looks technical before display.
 
 ## Recommended Workflow for a New Site
 
 1. Clarify goal, audience, conversion action (`web-studio`).
 2. Build or repair the page with `web-studio` before opening this skill.
 4. Create a Cloudflare Pages project (or Workers site).
-5. Add edge logic only if needed.
-6. Configure caching, images, security, and analytics.
+5. Add edge logic only if needed (auth, form handling, dynamic data).
+6. Configure caching, images, security, and analytics via Cloudflare dashboard or IaC.
 7. Deploy via Git integration or `wrangler pages deploy`.
 
 ## Retrieval Priority
 
-Always fetch latest from https://developers.cloudflare.com/ before citing limits, pricing, or API shapes. When references and live docs conflict, trust the live docs.
+Always fetch latest before citing limits, pricing, API shapes, or config options:
+- https://developers.cloudflare.com/
+- Product changelogs
+- Wrangler config schema
+- @cloudflare/workers-types
+
+When references and live docs conflict, trust the live docs.
+
+## Key References (load on demand)
+
+- Pages overview and Git deploys
+- Workers and bindings
+- D1 / KV / R2 patterns for sites
+- Turnstile for forms
+- Images product for media
+- Wrangler CLI best practices
+- Agents SDK if the site needs AI agents or chat
 
 ## Anti-patterns
 
 - Do not invent Cloudflare API signatures or limits from memory.
 - Do not force Workers when pure Pages static is sufficient.
-- Do not skip Core Web Vitals and security defaults Cloudflare already provides.
+- Do not bloat the client with heavy frameworks when edge + static HTML can handle the job.
+- Do not skip Core Web Vitals and security defaults that Cloudflare already provides for free.
