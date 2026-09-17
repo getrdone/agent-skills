@@ -1,16 +1,21 @@
 # Skill catalog (read this first — do not load every skill)
 
 <!-- Agent: Grok · Model: Grok 4.5 · Date: 2026-09-16 · Flatten reset: origin/main + local extras; images phase; Remotion on-request. -->
+<!-- Agent: ChatGPT Web · Model: GPT-5.6 Sol · Date: 2026-09-17 · Canonical resource resolution; superseded archive policy. -->
 
 **Always also follow** [`WORKSPACE.md`](WORKSPACE.md).
 
 **Whenever any image is generated or any visual layout places subjects/type on a canvas, load** [`skills/dynamic-symmetry/SKILL.md`](skills/dynamic-symmetry/SKILL.md). Soft standard: rectangle + armature + crop integrity. Write “Dynamic Symmetry” in full (never “DS”). Scripture Journey, web-studio, artwork prompts, and image-direction skills all route here — do not keep a second method copy.
 
+## Canonical resolution
+
+This catalog is authoritative for live skills and tools. Repository identities and local project paths come from `_agent-control/PROJECTS.yaml`. Do not recreate retired names as aliases, junctions, compatibility shims, duplicate skill folders, or fallback routes. If a skill, tool, repository, path, or resource is missing or conflicts with another instruction, re-read this catalog, `WORKSPACE.md`, `tools/TOOLS.md`, and the controller's `AGENT-CONTRACT.md` / `PROJECTS.yaml`. If those current records still do not resolve it, report the conflict instead of guessing.
+
 ## Layout standard (lock)
 
 1. Live skills live only under `skills/<kebab-name>/` with a root `SKILL.md`.
 2. **No nested skill packs** inside `skills/` (`agent-skills/`, `claude-skills/`, zip dumps).
-3. Archives / retired skills go in `packages/` — never auto-loaded, never synced as discoverable skills.
+3. Archives / retired skills do not participate in discovery or routing. Fully superseded repositories belong in `getrdone/zed-superseeded` pending explicit authorization for permanent deletion.
 4. Versioned skills (CDSJ) use `CURRENT` / `STABLE` + `versions/<ver>/` only when cross-release mixing is a real risk.
 5. **This catalog is the allowlist.** If a folder is not listed here, do not treat it as a default skill.
 6. **web-studio owns HTML.** Other skills call it; they do not invent parallel web pipelines.
@@ -79,7 +84,7 @@ If one skill matches → load **only** `skills/<name>/SKILL.md` (and files it po
 
 `html-page-standard`, `studio-web`, `modern-web-development`, `modern-web-development-v2`, `modern-html-aeo`, `modern-css-design`, `interactive-components`, `optimized-deliverables`, any `claude-skills` nest, any nested `skills/agent-skills` dump.
 
-Retired copies may exist under `packages/retired/` or `packages/archive/` for history only.
+These names are historical only and must not be restored as live skill folders or aliases. Fully retired standalone repositories are moved to `getrdone/zed-superseeded` and remain there until permanent deletion is explicitly authorized.
 
 ## External
 
