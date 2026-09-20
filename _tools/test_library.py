@@ -26,6 +26,13 @@ class Lifecycle(unittest.TestCase):
   lib.restore(snapshot,self.base/'restored');self.assertEqual((self.base/'restored/.hidden').read_bytes(),b'hidden');self.assertTrue((self.base/'restored/empty').is_dir())
   lib.restore(snapshot,self.base/'selected','file.txt');self.assertFalse((self.base/'selected/.hidden').exists())
   with self.assertRaises(ValueError):lib.restore(snapshot,source)
+ def test_file_link_is_recorded_without_following(self):
+  source=self.base/'links';source.mkdir();target=self.base/'external.txt';target.write_text('external resource')
+  try:(source/'resource.txt').symlink_to(target)
+  except OSError:self.skipTest('Host does not grant symbolic-link creation')
+  snapshot=self.base/'links-backup';lib.backup(source,snapshot)
+  manifest=lib.load(snapshot/'manifest.json')
+  self.assertEqual(manifest['files'],[]);self.assertEqual(manifest['links'][0]['path'],'resource.txt')
  def test_hash_sync_divergence_removal_and_idempotence(self):
   a=lib.sync(self.config,root=self.root);self.assertEqual(a['removed'],1);self.assertGreater(a['preserved_divergences'],0)
   self.assertTrue((self.home/'.system/keep.md').exists());self.assertTrue((self.home/'unrelated/SKILL.md').exists())

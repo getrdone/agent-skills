@@ -43,7 +43,10 @@ def backup(source,destination):
      links.append({'path':str(p.relative_to(source)),'target':os.readlink(p)});dirs.remove(d)
     else:directories.append(str(p.relative_to(source)))
    for n in names:
-    p=Path(base)/n;before=p.stat();data=p.read_bytes();after=p.stat()
+    p=Path(base)/n
+    if p.is_symlink():
+     links.append({'path':str(p.relative_to(source)),'target':os.readlink(p)});continue
+    before=p.stat();data=p.read_bytes();after=p.stat()
     if (before.st_size,before.st_mtime_ns)!=(after.st_size,after.st_mtime_ns):raise RuntimeError('Source changed during backup: '+str(p))
     name=p.relative_to(source).as_posix();z.writestr(name,data)
     entries.append({'path':name,'size':len(data),'sha256':hashlib.sha256(data).hexdigest(),'mtime_ns':after.st_mtime_ns})
@@ -82,7 +85,11 @@ def seal(root=ROOT):
    if previous and previous.get('sealed') and previous['files']!=content:raise RuntimeError('Immutable release changed: '+str(ver))
    save(path,{'schema':1,'name':name,'version':ver.name,'sealed':True,'files':content,'dependencies':{'library_release':index['release']},'provenance':'Local authoritative adaptation; source notices and licenses retained.'})
  manifest={p.relative_to(root).as_posix():sha(p) for p in files(root) if p.name!='library-manifest.json' and not p.relative_to(root).as_posix().startswith('_docs/run-')}
- save(root/'library-manifest.json',{'schema':1,'release':index['release'],'files':manifest})
+ save(root/'library-manifest.json',{'schema':1,'release':index['release'],'files':manifest,
+  'dependencies':{'lifecycle':'Python 3.11+ standard library','windows_launcher':'PowerShell and Windows Script Host','skill_runtime':'Task-specific packages, APIs and tools declared in the selected release'},
+  'compatibility':{'instructions':'Markdown/YAML for agents with local file access','installation':'Windows homes listed in _tools/agent-homes.json; other runtime installations require validation','vendor_system_skills':'Not owned or modified by this distribution','historical_selection':'Explicit version only, with resources from that version'},
+  'provenance':{'inventory':'_docs/capability-migration.json','source_records':'_docs/source-provenance.json','notices':'Source notices and licenses are retained inside their owning release'},
+  'skills':index['skills']})
  print('Sealed',len(index['skills']),'skills;',len(manifest),'files')
 def validate(root=ROOT):
  index=load(root/'release-index.json');whole=load(root/'library-manifest.json');errors=[]
