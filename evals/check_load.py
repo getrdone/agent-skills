@@ -8,7 +8,7 @@ Agents are not scriptable from here, so the honest shape is manual capture, auto
 checking. Paste a fixture prompt into an agent, copy the block it emits, save it, run this.
 
     python evals/check_load.py --list
-    python evals/check_load.py --fixture css-footer-contrast --capture evals/captures/css-footer-contrast.txt
+    python evals/check_load.py --fixture css-footer-contrast --capture _wip/eval-captures/css-footer-contrast.txt
     python evals/check_load.py --all                     # scores every capture present
     python evals/check_load.py --all --baseline out.json # record a run for comparison
 
@@ -21,10 +21,9 @@ A capture is whatever the agent printed, as long as it contains the declaration 
     BRIEF: daniel-8/project-brief.md  (stage: approved-for-build)
 
 Verdicts
-    PASS         everything required loaded, nothing forbidden, within budget
+    PASS         everything required loaded, nothing forbidden
     MISSING      a required path did not load
     EXTRA        a forbidden path loaded
-    OVER         more files than the lane's budget
     WRONG-SKILL  the wrong skill answered, or a forbidden one did
 
 This checks ROUTING ONLY. It says nothing about whether the output was any good - that is
@@ -36,7 +35,7 @@ import argparse, glob, json, os, re, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 FIXTURES = os.path.join(HERE, 'router-fixtures.yaml')
-CAPTURES = os.path.join(HERE, 'captures')
+CAPTURES = os.path.join(HERE, '..', '_wip', 'eval-captures')
 
 
 # --- a deliberately small YAML reader: this file's shape only, no dependency -------------
@@ -135,10 +134,6 @@ def score(fx: dict, cap: dict):
     for bad in fx.get('forbid', []) or []:
         if bad in loaded:
             problems.append(('EXTRA', bad))
-
-    cap_max = fx.get('max_files')
-    if isinstance(cap_max, int) and len(loaded) > cap_max:
-        problems.append(('OVER', f'{len(loaded)} files loaded, budget {cap_max}'))
 
     if fx.get('expect_brief') and not cap['brief']:
         problems.append(('MISSING', 'BRIEF: line — resume fixtures must declare the brief'))

@@ -1,0 +1,41 @@
+{
+  "schema": 1,
+  "name": "curiosity-driven-scripture-journey",
+  "version": "3.0.1",
+  "sealed": true,
+  "files": {
+    "manifest.yaml": "5d108ba58be3ef00810349bde847a9e0e7b5b45287291993b032a85ff3906cb5",
+    "README.md": "b86dca5007604677364728f435f6394c56ab3686b00c23c804b25ca7567d3f70",
+    "SKILL.md": "0e6c1327e13793580bab40b495153bef3b937a3f7f0e7dc2947937fe12a19dd0",
+    "agents/openai.yaml": "560d4542fb2730896c76fd2f0c632c15d9c0a34f174e854d291cae01867df161",
+    "assets/icon.svg": "2f264abab3ebabc3876f3f25a23bc7e05ce558ee176b3059598922889bc61ceb",
+    "references/branching-journey.md": "65b8377730191f4b694f5d6209884be5f64df71429bba370097d7acf6ad1a8b0",
+    "references/design-critique-and-anti-slop.md": "f146d7f980fb22b0a9d0f1c3dbd956f2ed42cd3bfa2727a09564e0778b0eda16",
+    "references/learning-and-writing.md": "d78ed45754308461d664b1760e00f9cc2f7f919f2c29606d48e77d8bfbf672b8",
+    "references/learning-pattern-sources.md": "2757a0ef088765f7309d91df56b74e9da72f13f6130a8efc240e408a4726c5e2",
+    "references/learning-patterns.md": "5fa7ad99dbc5313e78a69d34142c081697ddc53b9309c24e9855396d3ffc7696",
+    "references/motion-and-premium-ui.md": "8fc4be3404fad387011fa98df49023c378265b6f530eb2dc7b09a1e4128b17c7",
+    "references/pattern-access-agency-momentum.md": "c00f0230cef6a91042ecbd243ace546d645414bfa5c588680b9ebd36d93bc473",
+    "references/pattern-active-discovery.md": "b0972d85566b88c7b5c469b5946d4d4aaa29039568710371044611dfa32b1d0d",
+    "references/pattern-feedback-and-mastery.md": "9b667f44afd586985b13de69611395f51a4d7d3ff9b0d699d93ba1185d72628a",
+    "references/pattern-guided-understanding.md": "73637cd9d0b8a7bccb3c96a41a249c96b3324928f0f0a7d643ebf3ef09ebdecd",
+    "references/quality-gates.md": "0bc5baffe422db28fd125689cd81df09f0e64f79c349d64abc95be178b588f18",
+    "references/resources-and-authority.md": "5d15150168f6bd34be233c96f569bd65c0261d565019050be9609c9a2cda61b4",
+    "references/scripture-study.md": "ce968e19d699fadcfcd2cd2ba9a7c2ae7b48437d2c3d41659f4f8c95135d4751",
+    "references/source-governance.md": "7996ea5da02162d4529548ef1d001843291c447ddeedd32472cd1859fae307e7",
+    "references/standards-governance.md": "0ea24413c7949cd9b48b829a06ae0780aa704230b4f347ba9b4ec2c19e6c2380",
+    "references/v3-quality.md": "bbd37f48d262f9ca3ee023a4d7dbf22d0021fe2108c5e00611ca765893e4c2eb",
+    "references/v3-workflow.md": "b1c7bbe139ccb669adc0ee348ea5b4f3e11b32e2fc80387efc05eeea970bf7ad",
+    "references/web-experience.md": "8ef3c9fc21e335aa8bc6a4c984fb27c0de49687ec4f60284050363eb122e9084",
+    "references/youtube-planning.md": "22051624dff4f735e37e24dab795ecae1a809442bcfd3d3bdfd13b5ad46e4bc4",
+    "references/dynamic-symmetry-glossary.md": "043dbf30d5ac117ca7932fcaa332f045e9cd5b6522d5a6f25a7ec974ebf65761",
+    "references/dynamic-symmetry.md": "3b4de9132d62e18ad4c902cdf9950e9686f1a265ddf170b9733083a36ffc5e75",
+    "references/project-system.md": "734e9198103c6ccb3e9926a44e8d8623a79c15cd56a986cc852d1a0bf4d56f01",
+    "references/visual-system.md": "97579424070c462ba19491f340b9ec61da2636578ce5bedaed342e6ffffd745f",
+    "scripts/audit_html.py": "24032748e370b64e51d4d13c69b85c1047b33477699f616f0a20a85112349798"
+  },
+  "dependencies": {
+    "library_release": "unified-v5-2026-0920"
+  },
+  "provenance": "Local authoritative adaptation; source notices and licenses retained."
+}

@@ -1,0 +1,13 @@
+{
+  "schema": 1,
+  "name": "youtube-content-packaging",
+  "version": "1.0.0",
+  "sealed": true,
+  "files": {
+    "SKILL.md": "6a75eb2bad8492fdbc12d51ec519683a6612e5af6aa4201d601d060864ac4172"
+  },
+  "dependencies": {
+    "library_release": "unified-v5-2026-0920"
+  },
+  "provenance": "Local authoritative adaptation; source notices and licenses retained."
+}

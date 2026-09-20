@@ -4,21 +4,8 @@ description: Preview a Remotion video
 version: 4.0.506
 ---
 
-Execute the following command:
+# remotion-studio
 
-```bash
-npx remotion studio --no-open
-```
+Resolve an explicitly requested release, `STABLE` when requested, otherwise `CURRENT`. Read that release's manifest.json and SKILL.md under `versions/<release>/`. All resources belong to that release; do not mix releases. The complete authoritative library is this repository, not legacy or upstream files.
 
-If the Studio is already opened, the URL will be printed and the command will exit.
-Otherwise, a long-running process will start, and the URL will be printed.
-
-Open the URL in the browser.
-
-## Useful flags
-
-| Argument          | Purpose                                                                                       |
-| ----------------- | --------------------------------------------------------------------------------------------- |
-| `--log=<level>`   | Set `error`, `warn`, `info` (default), or `verbose` logging.                                  |
-| `--port=<number>` | Request a Studio server port; otherwise Remotion finds a free port.                           |
-| `--force-new`     | Start another Studio instance even when one is already running for the same project and port. |
+Current release: [1.1.0](versions/1.1.0/SKILL.md). Previous releases are available only on explicit selection.

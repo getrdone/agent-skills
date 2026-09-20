@@ -1,0 +1,31 @@
+{
+  "schema": 1,
+  "name": "web-studio",
+  "version": "1.1.0",
+  "sealed": true,
+  "files": {
+    "CHANGELOG.md": "ba43695d00c2e0ae3e6ddda04977fe0302a9460abe297b90969d4414b97aad48",
+    "CURRENT": "8a4434489576de41f28a2d1d6e9d15e53deac6b48c2a4f416a52b7584a92964f",
+    "deliverable-clone.md": "648ae7c5bffac876a023c34c93336cf5e651cb9617d1fe03182ac20327fc2802",
+    "deliverable-images.md": "561c8960ef827d0c93a6a3a1899c091565b20d3c66ecd6e4f5f2fca651104557",
+    "deliverable-polish.md": "6a7d0cd624ab706258ac1be9b066ed228b9b64baf156c92fff23054b66df208f",
+    "deliverable-theme.md": "dab7d5355629d1da670b693a332c7e6091692a7a1af78272f6487491a4de13f0",
+    "README.md": "71188aab828f278e1c46d5c740709bf3442a1bfe67849fec4c0accd305da7d7f",
+    "SKILL.md": "a861c2d0c698e72938b8380a2e561adce997f955b47800c9c0941392cf160a97",
+    "assets/DELIVERABLE.template.md": "3ef032f9660dc1bc08ea7272df704f23366c72810c8cf15e7289f75be864b21e",
+    "references/content-page-masthead.md": "adfc6844315ce1d88493077b305486b59f84a076a0a225b7b8fc53f930aae3bc",
+    "references/dynamic-symmetry.md": "e99155be4408b43ec2c2e8b7f58a0102ad7f5e906e8c233e52d887695ca95042",
+    "references/file-protocol.md": "28b2b6b0a8c55e06adfe24e3311b0b5686872011f0720d7d68dee9bfe519a92a",
+    "references/image-slots.md": "cacde8c27c2bd680410713402632fab6eba9f91d58e67a274e7d23eef321c5ac",
+    "references/image-veils.md": "d7f47ff90f17ae349eb0b5c73157671877fbcc93c18ab94931a98e49bdda9cfe",
+    "references/interaction.md": "75e98583fa86f1a3eefc03851ab9e74baed446842f48d9d46d9fa23f001043cb",
+    "references/local-dev-server.md": "f72569ac73af7142e6a16516b387d37b4d127d91db70f38b3e17f685ee913cf6",
+    "references/source-contract.md": "0113a3f69bb9b91c85fe87e2d484301f7c7d6e8ae0add40b371f26728c8e198d",
+    "references/tokenize-contract.md": "27c3ea7f49ef15acae59a718dd53e09d50a2ed4387ed157d111d88b6113d132d",
+    "references/voice.md": "4b668b1af5b5f4dac98e57af15e1a1a1e34273d50121dcffc0be5b224510cc9e"
+  },
+  "dependencies": {
+    "library_release": "unified-v5-2026-0920"
+  },
+  "provenance": "Local authoritative adaptation; source notices and licenses retained."
+}

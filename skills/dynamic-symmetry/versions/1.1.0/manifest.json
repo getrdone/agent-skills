@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "name": "dynamic-symmetry",
+  "version": "1.1.0",
+  "sealed": true,
+  "files": {
+    "SKILL.md": "435733dc4dff385cf3f644474b8172af9e37b8e98addbdf13df4c20e87d9a3c7",
+    "references/glossary.md": "ea8cf4cdfb2047aec2d4753f2f622d8a56894e44d384bdfd851c0b4eb20d4cec",
+    "references/method.md": "07213695e13015ec12a5b95f2b81270940d7d6352e285d592e5659337ea15d2d"
+  },
+  "dependencies": {
+    "library_release": "unified-v5-2026-0920"
+  },
+  "provenance": "Local authoritative adaptation; source notices and licenses retained."
+}

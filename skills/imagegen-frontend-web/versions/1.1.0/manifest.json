@@ -1,0 +1,13 @@
+{
+  "schema": 1,
+  "name": "imagegen-frontend-web",
+  "version": "1.1.0",
+  "sealed": true,
+  "files": {
+    "SKILL.md": "e1f4fe5db09029c6ac3daa319bf635a5ed8e9433b249ab6621be8f30967a923a"
+  },
+  "dependencies": {
+    "library_release": "unified-v5-2026-0920"
+  },
+  "provenance": "Local authoritative adaptation; source notices and licenses retained."
+}

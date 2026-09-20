@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "name": "remotion-create",
+  "version": "1.0.0",
+  "sealed": true,
+  "files": {
+    "SKILL.md": "2fb4af37a192a42001e1dbc74f066e9a0d6f257c6b670c8d000470fd8d4928c7",
+    "tailwind.md": "227275d9eb773b4f6767c7a4c0c309ede2eab144a7eb7827de8ecb486df05c63",
+    "video-layout.md": "201aa71c368999290047fffc292d0263dbe1260081528da726830ea64b4d011c",
+    "agents/openai.yaml": "5ca21a8c94be887127958febe84535cd6e01d7a9387c74b6cae01147ff7a708c",
+    "assets/remotion-icon.png": "662a084d72d99ab91b47c7a566dd0631f0ce0e4f0bf6032708c9200b0db09fd9"
+  },
+  "dependencies": {
+    "library_release": "unified-v5-2026-0920"
+  },
+  "provenance": "Local authoritative adaptation; source notices and licenses retained."
+}

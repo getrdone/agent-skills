@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "name": "color-palette-composition",
+  "version": "1.0.0",
+  "sealed": true,
+  "files": {
+    "SKILL.md": "07f26388ea93bbfe65fdcf934d6ed67f1cab6ddb04ee6303f75c575542f326f5",
+    "agents/openai.yaml": "e93992b7054bc500f356d9c585a88f7a373aaab7accda8d78425650ce0bd05be",
+    "references/core-composition.md": "f9e5bd1735823baedf724dc9bf0e38c5dc53f74cf606e0a40202cadebefa0482",
+    "references/medium-application.md": "5d444b0d0b9d3a048da0663b0b7c8d964f16b69988d1becb8c55d4c9def036e3",
+    "references/starter-kits.md": "61881b747ef53841128b05e114c62eb57fdfcbe9b017776b018696bfad60bf0c",
+    "references/validation-and-handoff.md": "2a5c4b7e3917d00416073a38f8d4af217e25c14b593ab2482fa90e8000cad4b3"
+  },
+  "dependencies": {
+    "library_release": "unified-v5-2026-0920"
+  },
+  "provenance": "Local authoritative adaptation; source notices and licenses retained."
+}

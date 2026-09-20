@@ -1,0 +1,48 @@
+{
+  "schema": 1,
+  "state": "C:/Users/noise/.agents/skill-library",
+  "homes": [
+    {
+      "id": "agents",
+      "path": "C:/Users/noise/.agents/skills",
+      "discover": true,
+      "note": "Managed entrypoints; version resources are outside discovery."
+    },
+    {
+      "id": "codex",
+      "path": "C:/Users/noise/.codex/skills",
+      "discover": false,
+      "note": "Codex discovers the shared .agents/skills home; keep .codex system skills untouched."
+    },
+    {
+      "id": "grok",
+      "path": "C:/Users/noise/.grok/skills",
+      "discover": true,
+      "note": "Managed entrypoints; version resources are outside discovery."
+    },
+    {
+      "id": "claude",
+      "path": "C:/Users/noise/.claude/skills",
+      "discover": true,
+      "note": "Managed entrypoints; version resources are outside discovery."
+    },
+    {
+      "id": "cursor",
+      "path": "C:/Users/noise/.cursor/skills",
+      "discover": true,
+      "note": "Managed entrypoints; version resources are outside discovery."
+    },
+    {
+      "id": "openclaw",
+      "path": "C:/Users/noise/.openclaw/skills",
+      "discover": true,
+      "note": "Managed entrypoints; version resources are outside discovery."
+    },
+    {
+      "id": "freebuff",
+      "path": "C:/Users/noise/.freebuff/skills",
+      "discover": true,
+      "note": "Managed entrypoints; version resources are outside discovery."
+    }
+  ]
+}

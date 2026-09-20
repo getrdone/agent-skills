@@ -1,62 +1,10 @@
 ---
 name: curiosity-driven-scripture-journey
-description: Plan, package, design, write, build, or review a curiosity-driven Scripture content project. Use for titles, descriptions, thumbnails, YouTube packaging, Bible-study questions and copy, topic discovery, ministry landing pages, and high-trust faith content. Version router — resolve CURRENT unless the user names a version or says stable. Living HTML pages use web-studio clone → images → theme → polish — this skill does not own page structure or tokens.
+description: Plan, package, design, write, build, or review a curiosity-driven Scripture content project from any entry point. Use for topic discovery, Bible-study questions and copy, source-library ingestion and alignment, source databases, YouTube ideas/titles/descriptions/thumbnails/scripts, graphic design, visual direction, learning architecture, interactive semantic HTML/CSS/JavaScript, SEO/AEO/GEO, project gates, or cross-channel consistency. Also use when continuing or changing one slice of an existing Scripture, ministry, educational, or high-trust project while preserving prior decisions.
 ---
 
-# Curiosity-Driven Scripture Journey — version router
+# curiosity-driven-scripture-journey
 
-1. If the user names an exact version, load `versions/<version>/manifest.yaml` and that version's `SKILL.md`.
-2. If the user says `stable`, resolve `STABLE`.
-3. Otherwise resolve `CURRENT`.
-4. Read that version's `load-map.yaml`, match the request to its lanes, and load **only** the files those lanes name.
-5. Do not silently mix Scripture Journey reference files from another version.
-6. Shared cross-skill dependencies are governed by the selected release manifest and the repository commit containing that release.
-7. For a new or materially revised color theme, use the selected release's `palette` lane. It opens the canonical `color-palette-composition` skill; load Color Psychology only when contextual interpretation materially changes the palette decision.
+Resolve an explicitly requested release, `STABLE` when requested, otherwise `CURRENT`. Read that release's manifest.json and SKILL.md under `versions/<release>/`. All resources belong to that release; do not mix releases. The complete authoritative library is this repository, not legacy or upstream files.
 
-Current: **3.2.0** (file `CURRENT`)
-Stable: **3.2.0** (file `STABLE`) — older releases archived in [getrdone/zzz-repo-archive](https://github.com/getrdone/zzz-repo-archive) at `2026-0920/archive/cdsj-versions/`
-
-## Path resolution (read this before opening any file)
-
-**Every relative path inside a version's `SKILL.md`, `load-map.yaml`, or reference files resolves under
-`versions/<resolved-version>/`.** When 3.2.0 says `references/quality-gates.md`, the file is
-`versions/3.2.0/references/quality-gates.md`. When `v3-quality.md` says `scripts/audit_html.py`, the file
-is `versions/3.2.0/scripts/audit_html.py`.
-
-There is **no** `references/` or `scripts/` directory beside this file, and there must never be one again.
-A second copy of a reference at the skill root is how two agents obeying the same instruction end up with
-different content. Paths prefixed `repo:` in `load-map.yaml` resolve from the repository root.
-
-## Declare what you loaded
-
-Before loading anything, emit:
-
-```text
-LANES: <lane>[, <lane>...]
-LOAD:  <one path per line — exactly the files you open>
-BRIEF: <path>/project-brief.md  (stage: <status>)     # when a work folder exists
-```
-
-Refuse a full-tree load. If a lane's `max_files` is not enough, say so in one line and name the extra file.
-
-## Workspace
-
-File naming, file I/O, and continuity are defined **only** in repo root
-[`WORKSPACE.md`](../../WORKSPACE.md). Read it when creating or naming files. No skill or reference
-restates its rules.
-
-## Web pages
-
-Living HTML uses repo skill [`web-studio`](../web-studio/SKILL.md) — `deliverable-clone` → `deliverable-images` → `deliverable-theme` → `deliverable-polish`. This skill owns journey copy, titles, learning paths, and source authority. It does not own page structure, tokens, or surgical HTML edits.
-
-## Version history
-
-`versions/` is history. Load a past release only when the user names it. Skill scanners (Grok
-`[skills].ignore`, junctions to this folder) must not advertise `versions/*/SKILL.md` as separate skills.
-
-<!-- Agent: Grok · Model: Grok 4.6 · Date: 2026-09-15T21:08:00-07:00 · Web pages defer to web-studio. -->
-<!-- Agent: Codex | Model: GPT-5 | Thinking: not exposed | Date: 2026-09-08 -->
-<!-- Agent: Codex · Model: GPT-5 · Thinking: not exposed · Date: 2026-09-09 · Released 3.2.0 color psychology and text-readability requirements. -->
-<!-- Agent: grok · Model: Grok 4.6 · Date: 2026-09-09 · Router description includes titles/descriptions so auto-invoke matches. -->
-<!-- Agent: claude · Model: claude-opus-5 · Thinking: not exposed · Date: 2026-09-10 · Deleted the duplicate root references/ tree and root manifest.yaml; stated the one path-resolution rule; added load-map routing and the LOAD declaration. -->
-<!-- Agent: Codex | Model: GPT-5 | Thinking: not exposed | Date: 2026-09-13 | Added the release-resolved canonical palette route. -->
+Current release: [3.3.0](versions/3.3.0/SKILL.md). Previous releases are available only on explicit selection.

@@ -1,0 +1,173 @@
+@layer reset, core, theme, layout, page;
+
+@layer reset {
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; }
+  img, svg { max-width: 100%; height: auto; display: block; }
+  button, input, textarea, select { font: inherit; }
+}
+
+@layer core {
+  /* ============================================================
+     TUNE — page
+     Edit these numbers. Everything else reads these tokens.
+     cqi = 1% of the component's own width, not the browser window.
+     stack = vertical gap / padding-block
+     inset = horizontal padding-inline
+     gutter = gap between sibling columns or chips
+     ============================================================ */
+  :root {
+    --font-display: "Source Serif 4", Georgia, serif;
+    --font-body: "Source Sans 3", system-ui, sans-serif;
+
+    --type-body: clamp(1rem, 2.4cqi, 1.125rem);
+    --type-lead: clamp(1.05rem, 2.8cqi, 1.3rem);
+    --type-h2: clamp(1.5rem, 4cqi, 2.25rem);
+    --type-h3: clamp(1.2rem, 3cqi, 1.6rem);
+    --type-kicker: 0.75rem;
+    --type-small: 0.875rem;
+    --leading-body: 1.6;
+    --leading-display: 1.15;
+    --measure: 38rem;
+
+    --space-stack-xs: 0.35rem;
+    --space-stack-s: 0.75rem;
+    --space-stack-m: 1.25rem;
+    --space-stack-l: clamp(2rem, 6cqi, 3.5rem);
+    --space-stack-xl: clamp(3rem, 10cqi, 6rem);
+    --space-section: var(--space-stack-xl);
+
+    --space-inset-s: 1rem;
+    --space-inset-m: clamp(1.25rem, 4cqi, 2rem);
+    --space-inset-l: clamp(1.5rem, 6cqi, 3rem);
+    --space-gutter: clamp(0.75rem, 3cqi, 1.5rem);
+
+    --radius-s: 0.35rem;
+    --radius-m: 0.75rem;
+    --line: 1px;
+
+    --move-fast: 160ms;
+    --move-med: 320ms;
+  }
+
+  html, body {
+    min-height: 100%;
+  }
+
+  body {
+    font-family: var(--font-body);
+    font-size: var(--type-body);
+    line-height: var(--leading-body);
+    background: var(--color-surface);
+    color: var(--color-ink);
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    line-height: var(--leading-display);
+    margin: 0 0 var(--space-stack-s);
+  }
+
+  h2 { font-size: var(--type-h2); }
+  h3 { font-size: var(--type-h3); }
+
+  p { margin: 0 0 var(--space-stack-s); max-width: var(--measure); }
+  .lead { font-size: var(--type-lead); }
+
+  /* TUNE — region:site-header */
+  #site-header {
+    container-type: inline-size;
+    container-name: site-header;
+    --site-header-stack: var(--space-stack-s);
+    --site-header-inset: var(--space-inset-m);
+  }
+  #site-header {
+    padding-block: var(--site-header-stack);
+    padding-inline: var(--site-header-inset);
+  }
+
+  /* TUNE — region:hero */
+  #hero {
+    container-type: inline-size;
+    container-name: hero;
+    --hero-title: clamp(2.25rem, 9cqi, 4.75rem);
+    --hero-lead: clamp(1.05rem, 3cqi, 1.35rem);
+    --hero-stack: var(--space-stack-l);
+    --hero-inset: var(--space-inset-l);
+  }
+  #hero {
+    padding-block: var(--hero-stack);
+    padding-inline: var(--hero-inset);
+  }
+  #hero h1 { font-size: var(--hero-title); line-height: var(--leading-display); }
+  #hero .lead { font-size: var(--hero-lead); }
+
+  /* TUNE — region:primary */
+  #primary {
+    container-type: inline-size;
+    container-name: primary;
+    --primary-stack: var(--space-section);
+    --primary-inset: var(--space-inset-l);
+    --primary-gutter: var(--space-gutter);
+  }
+  #primary {
+    padding-block: var(--primary-stack);
+    padding-inline: var(--primary-inset);
+  }
+
+  /* TUNE — region:evidence */
+  #evidence {
+    container-type: inline-size;
+    container-name: evidence;
+    --evidence-stack: var(--space-section);
+    --evidence-inset: var(--space-inset-l);
+    --evidence-gutter: var(--space-gutter);
+  }
+  #evidence {
+    padding-block: var(--evidence-stack);
+    padding-inline: var(--evidence-inset);
+  }
+
+  /* TUNE — region:next-path */
+  #next-path {
+    container-type: inline-size;
+    container-name: next-path;
+    --next-path-stack: var(--space-stack-l);
+    --next-path-inset: var(--space-inset-l);
+  }
+  #next-path {
+    padding-block: var(--next-path-stack);
+    padding-inline: var(--next-path-inset);
+  }
+
+  /* TUNE — region:site-footer */
+  #site-footer {
+    container-type: inline-size;
+    container-name: site-footer;
+    --site-footer-stack: var(--space-stack-m);
+    --site-footer-inset: var(--space-inset-m);
+  }
+  #site-footer {
+    padding-block: var(--site-footer-stack);
+    padding-inline: var(--site-footer-inset);
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-stack-xs);
+    padding: var(--space-stack-s) var(--space-inset-m);
+    border-radius: var(--radius-s);
+    border: var(--line) solid var(--color-line);
+    background: var(--color-accent);
+    color: var(--color-accent-ink);
+    text-decoration: none;
+    transition: transform var(--move-fast), background-color var(--move-fast);
+  }
+  .btn:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+  }
+}

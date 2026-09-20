@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Answers + revised work list — Steve's five questions</title>
+<meta name="description" content="Source-library layout, killing read/write churn, HTML vs markdown token cost, the junk list, transcript route verification, and the revised backlog.">
+<!-- Agent: claude · Model: claude-opus-5 · Thinking: not exposed · Date: 2026-09-10 · Answers to five follow-up questions; revised work list v2. -->
+<style>
+:root{
+  --bg:#f7f6f3; --panel:#ffffff; --ink:#14161a; --ink-2:#3d434d; --line:#d9d5cc;
+  --accent:#7a2e12; --good:#14532d; --bad:#7f1d1d; --warn:#713f12;
+  --chip:#efece4; --code-bg:#f0eee8;
+  --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;
+  --sans:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  --ui:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#111316; --panel:#171a1e; --ink:#f2f1ee; --ink-2:#c2c7cf; --line:#2e343c;
+    --accent:#e8a07a; --good:#86efac; --bad:#fca5a5; --warn:#fcd34d;
+    --chip:#20252b; --code-bg:#1c2126;
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.62}
+.wrap{max-width:60rem;margin:0 auto;padding:2.5rem 1.25rem 6rem}
+header.masthead{border-bottom:3px solid var(--ink);padding-bottom:1.1rem;margin-bottom:2rem}
+.kicker{font-family:var(--ui);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);margin:0 0 .5rem}
+h1{font-size:clamp(1.7rem,4.2vw,2.5rem);line-height:1.13;margin:0 0 .5rem;letter-spacing:-.015em}
+.sub{font-family:var(--ui);font-size:.9rem;color:var(--ink-2);margin:0}
+h2{font-size:clamp(1.2rem,2.5vw,1.55rem);margin:3rem 0 .35rem;letter-spacing:-.01em;line-height:1.2}
+h2 .num{font-family:var(--ui);font-size:.7em;color:var(--accent);font-weight:700;margin-right:.5rem}
+h3{font-family:var(--ui);font-size:1rem;margin:1.8rem 0 .4rem}
+h4{font-family:var(--ui);font-size:.85rem;text-transform:uppercase;letter-spacing:.09em;color:var(--ink-2);margin:1.3rem 0 .35rem}
+p{margin:.55rem 0}
+ul,ol{margin:.5rem 0 .9rem;padding-left:1.35rem}
+li{margin:.32rem 0}
+code{font-family:var(--mono);font-size:.85em;background:var(--code-bg);padding:.12em .34em;border-radius:3px;word-break:break-word}
+pre{background:var(--code-bg);border:1px solid var(--line);border-radius:6px;padding:.9rem 1rem;overflow-x:auto;font-family:var(--mono);font-size:.79rem;line-height:1.55}
+pre code{background:none;padding:0}
+a{color:var(--accent);text-underline-offset:2px}
+.lede{font-size:1.05rem;color:var(--ink-2)}
+.panel{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:4px;padding:1rem 1.15rem;margin:1.2rem 0}
+.panel h4{margin-top:0}
+.verdict{background:var(--panel);border:2px solid var(--ink);border-radius:4px;padding:1.1rem 1.3rem;margin:1.4rem 0}
+.verdict ol{margin:0;padding-left:1.3rem}
+.tablewrap{overflow-x:auto;margin:1rem 0;border:1px solid var(--line);border-radius:4px}
+table{border-collapse:collapse;width:100%;font-family:var(--ui);font-size:.83rem;background:var(--panel)}
+th,td{text-align:left;padding:.55rem .7rem;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--chip);font-weight:700;white-space:nowrap}
+tbody tr:last-child td{border-bottom:0}
+.tag{display:inline-block;font-family:var(--ui);font-size:.67rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:.13rem .45rem;border-radius:3px;white-space:nowrap}
+.t-do{background:var(--good);color:var(--bg)}
+.t-defer{background:var(--warn);color:var(--bg)}
+.t-kill{background:var(--bad);color:var(--bg)}
+.t-new{background:var(--accent);color:var(--bg)}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(17rem,1fr));gap:1rem;margin:1rem 0}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:.9rem 1rem}
+.card h4{margin-top:0}
+.no{color:var(--bad);font-weight:700}
+.yes{color:var(--good);font-weight:700}
+.arch{font-family:var(--mono);font-size:.76rem;line-height:1.62;background:var(--code-bg);border:1px solid var(--line);border-radius:6px;padding:1rem;overflow-x:auto;white-space:pre}
+.foot{font-family:var(--ui);font-size:.78rem;color:var(--ink-2);border-top:1px solid var(--line);margin-top:3.5rem;padding-top:1rem}
+.big{font-family:var(--ui);font-size:1.5rem;font-weight:700;color:var(--accent);line-height:1.1}
+.metric{display:flex;gap:1.2rem;flex-wrap:wrap;margin:1rem 0}
+.metric>div{background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:.7rem .95rem;min-width:9rem}
+.metric span{display:block;font-family:var(--ui);font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-2);margin-top:.2rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <p class="kicker">Follow-up · five questions · revised backlog</p>
+  <h1>Answers, and the work list v2</h1>
+  <p class="sub"><strong>Agent:</strong> claude · <strong>Model:</strong> claude-opus-5 · <strong>Thinking:</strong> not exposed · <strong>Date:</strong> 2026-09-10 (PT) · Companion to <code>HARDENING-PLAN-CLAUDE.html</code>, which stands as written.</p>
+</header>
+
+<div class="verdict">
+<ol>
+<li><strong>Source repo:</strong> the canonical layout already nests materials under <code>library/</code> — the problem is that it sits as one of nine peers at root. Two-bucket root fixes it: <code>sources/</code> and <code>_system/</code>. But a flat <code>items/</code> folder is not browsable by a human; you need a <em>generated</em> browse index living inside <code>sources/</code>.</li>
+<li><strong>The churn is not the file format. It is read-modify-write.</strong> Appending does not require reading. Four global rules kill ~90% of it, cost nothing, and apply to every request.</li>
+<li><strong>SQLite:</strong> yes for the source library — it is already specified and unbuilt. No for stem/run files: you read and mark those by hand, and a DB would make your own workflow worse.</li>
+<li><strong>HTML costs 1.3–1.8× markdown, measured on your own files.</strong> That is irrelevant if agents never re-read it. Keep HTML for plans and reports. Never for skill references.</li>
+<li><strong>Transcript route is healthy.</strong> Three files, ~11 KB, coherent, authoritative. Two fixes needed, neither blocking. Any transcript instructions inside the source-materials repo are junk by construction — that repo owns sources, not procedure.</li>
+</ol>
+</div>
+
+<h2 id="q1"><span class="num">1</span>The <code>bible-study-source-materials</code> repo</h2>
+
+<div class="panel">
+<h4>Disclosure</h4>
+<p>There is no local clone under <code>F:\__ai-projects\</code>, and the repo is private, so I have <strong>not</strong> seen the populated tree. Everything below is derived from the layout your own repo specifies in <code>agent-skills/processing/source-vault/sources-library-README.md</code> plus <code>source-record.schema.yaml</code>. Clone it locally and I will give you a file-by-file move plan instead of a shape.</p>
+</div>
+
+<h3>What is actually wrong</h3>
+<p>The specified root is nine peers: <code>registry.yaml · policy/ · schema/ · library/ · intake/ · indexes/ · database/ · scripts/ · alignments/</code>. Materials <em>are</em> already isolated — inside <code>library/</code>. The failure is that a human opening the repo sees eight machinery entries and one real one, with nothing marking which is which. That is a presentation defect, not a structural one, and it is cheap to fix.</p>
+
+<h3>Two-bucket root</h3>
+<div class="arch">bible-study-source-materials/
+  README.md              two paragraphs: "materials are in sources/. everything else is machinery."
+  sources/               <span style="opacity:.75">← THE folder. Open this. Nothing here needs explaining.</span>
+    BROWSE.html          generated. grouped by speaker · topic · passage · class. links into items/.
+    items/&lt;source-id&gt;/
+      record.yaml
+      &lt;human-title-slug&gt;.pdf     (was original.&lt;ext&gt; — keep the real name)
+      content.md
+      notes.md
+    people/&lt;person-id&gt;.yaml
+  _system/               <span style="opacity:.75">← machinery. leading underscore sorts it away and reads as "not yours".</span>
+    registry.yaml  policy/  schema/  intake/  indexes/
+    database/  scripts/  alignments/
+</div>
+
+<h3>Three arguments for this over what is specified</h3>
+<ol>
+<li><strong>Root arity, not depth, is what confuses people.</strong> Two entries with obvious roles beats nine flat ones. No item moves more than one level; <code>library/items/x</code> → <code>sources/items/x</code>. Every <code>content.file</code> path in the records needs one prefix rewrite, which is a script, not a project.</li>
+<li><strong>Rename <code>library/</code> → <code>sources/</code>.</strong> The repo is <em>source-materials</em>; the folder should say the same word. It also removes a live collision: <code>media-organizer</code> uses <code>library/</code> for the media library and ships a <code>library/README-DO-NOT-USE.txt</code> guard, and <code>G:\media\# library\</code> is a curated zone. Three different meanings of "library" across your stack is one too many.</li>
+<li><strong>A flat <code>items/</code> is not browsable, and pretending otherwise is the trap.</strong> Three hundred folders named <code>bohr-daniel-8-2019</code> is a database with a file explorer bolted on. You asked to open one folder and <em>find the studies</em> — that requires grouping, and grouping by topic would break "store each item once," which is the one rule in your design worth protecting. The resolution is a <strong>generated browse layer</strong>: <code>sources/BROWSE.html</code>, rebuilt from the registry alongside SQLite, grouping by speaker, topic, passage, and authority class, every entry linking into the single physical item. Your design already produces <code>indexes/</code> — it just files them in the machine folder and points them at machines. Point one of them at you, and put it where you look.</li>
+</ol>
+
+<div class="panel">
+<h4>The rule underneath this</h4>
+<p>Physical storage optimises for <em>one copy</em>. Human browsing optimises for <em>many paths in</em>. Those are different jobs and folders can only do the first. Every time you feel like reorganising a folder tree to make it browsable, the real answer is a generated index. Same rule that applies to the CDSJ reference tree.</p>
+</div>
+
+<h2 id="q2"><span class="num">2</span>Killing the read/write churn — globally</h2>
+
+<p>You framed this as a 120 KB problem. It is not a size problem, it is a <strong>method</strong> problem, and my own §5 edge 4 in the plan implied the bad method. Correcting it:</p>
+
+<div class="panel">
+<h4>Appending to a file does not require reading the file.</h4>
+<p>The churn happens because agents do <em>read whole file → hold it in context → write whole file back</em>. On a 120 KB stem file that is ~30 K tokens in and ~30 K out for a 400-token addition. An OS-level append costs <strong>the new text and nothing else</strong>, regardless of how big the file already is. A 2 MB file appends for the same price as an empty one.</p>
+</div>
+
+<h3>Four rules. Put them in <code>WORKSPACE.md</code> once; they apply to every request, every agent, every file type.</h3>
+
+<div class="tablewrap">
+<table>
+<thead><tr><th>#</th><th>Rule</th><th>Instead of</th><th>Cost</th></tr></thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>Append with the shell, never by rewriting.</strong><br><code>Add-Content -Path f.md -Value $block</code> (PowerShell) · <code>cat &gt;&gt; f.md &lt;&lt;'EOF'</code> (bash)</td>
+<td>Read → edit → Write whole file</td>
+<td>New text only. <strong>O(1) in file size.</strong></td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>Read by range, never whole-file.</strong><br><code>Select-String -Pattern 'SELECTED:BEGIN' -Context 0,40</code> · <code>sed -n '1,40p'</code> · <code>rg -n</code> to locate, then slice</td>
+<td>Loading 120 KB to read a 40-line fence</td>
+<td>~1–2% of the file.</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Move data with the OS, never through the model.</strong> Archiving old runs is <code>Get-Content -Tail</code> piped to append + truncate — the agent never holds the moved text.</td>
+<td>Re-typing 80 KB of old runs into the archive file</td>
+<td>≈0 tokens for any volume.</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>Edit in place with a pattern, never a paste.</strong> <code>sed -i</code> / a short read-modify-write <em>script</em> the agent writes but does not read the data through.</td>
+<td>Reproducing a file's contents from earlier tool output (which may be truncated — a correctness bug, not just a cost one)</td>
+<td>The pattern only.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<p><strong>Tool caveat, stated honestly:</strong> Claude Code's <code>Edit</code> tool requires a prior <code>Read</code> of the file by design, so inside that harness rule 1 means "use the shell, not Edit" for appends. Grok and Codex have no such constraint. This is exactly why the rule belongs in <code>WORKSPACE.md</code> as a contract rather than in one agent's config.</p>
+
+<h3>Then: does SQLite help?</h3>
+
+<div class="grid2">
+<div class="card">
+<h4 class="yes">Yes — for the source library</h4>
+<p>It is already specified and, as far as I can tell, unbuilt: <em>"<code>database/sources.sqlite3</code> is rebuilt deterministically… FTS5 content"</em> with a hard rule never to hand-edit it. That is the correct design and it directly answers your question — an agent asking "which approved sources cover Daniel 8:14" should run one query, not open thirty <code>record.yaml</code> files. <strong>Build it and make querying it mandatory before any record is opened.</strong> The dead <code>scripts/query_sources.py</code> pointer in <code>source-governance.md</code> is the stub where this was meant to land.</p>
+</div>
+
+<div class="card">
+<h4 class="no">No — for stem / run files</h4>
+<p>You read those. You mark winners with a trailing <code>~</code> by hand. Putting them in SQLite means you need a viewer to do what Notepad does today, and the <code>~</code> workflow — which works — dies. It would also make agent writes <em>more</em> expensive, not less, because every read comes back through the model as rows instead of as a range you skipped. <strong>Markdown plus rules 1–3 is already O(1). There is nothing left for a database to win.</strong></p>
+</div>
+</div>
+
+<p>If run logs ever do need machine querying, the cheap step is <code>stem.runs.jsonl</code> — one line appended per run, greppable, still O(1) — not a database. I would not build it until something actually needs to query runs, which nothing does today.</p>
+
+<h2 id="q3"><span class="num">3</span>HTML vs markdown — what it really costs</h2>
+
+<p>Measured on your own files, markup overhead over the same prose:</p>
+
+<div class="metric">
+<div><span class="big">1.34×</span><span>CLAUDE-REASONING-CHECK</span></div>
+<div><span class="big">1.58×</span><span>STACK-HARDENING-IDEAS</span></div>
+<div><span class="big">1.77×</span><span>STACK-ROBUSTNESS-PLAN</span></div>
+<div><span class="big">1.50×</span><span>HARDENING-PLAN (mine)</span></div>
+</div>
+
+<p>Raw bytes over extracted prose. Tokens run somewhat worse than bytes because tags, class names and hex colours fragment badly, so <strong>call it 1.5–2× tokens for the same content</strong> when an agent reads it. Roughly half of that is the one-time <code>&lt;style&gt;</code> block, which is why the small file shows the best ratio and a long document amortises it.</p>
+
+<div class="panel">
+<h4>But the ratio is the wrong thing to optimise. The question is who reads it.</h4>
+<p>A plan or report is written once by an agent and read many times by <strong>you</strong>. Your eyes cost nothing. If no agent ever loads it again, its format is free — 1.5× of zero is zero. A skill reference is the opposite: written rarely, loaded by an agent on <em>every matching request</em>, forever.</p>
+</div>
+
+<h4>The rule</h4>
+<ul>
+<li><strong>Human-facing, write-once</strong> — plans, reports, reviews, browse indexes, runbooks → <strong>HTML</strong>. Keep doing exactly what you are doing.</li>
+<li><strong>Agent-facing, read-often</strong> — <code>SKILL.md</code>, references, <code>WORKSPACE.md</code>, <code>CATALOG.md</code>, schemas, load maps → <strong>markdown / YAML</strong>. Converting these to HTML would tax every request forever.</li>
+<li><strong>Never both.</strong> Two formats of the same content is the twelve-homes problem again, and it is worse than either format alone.</li>
+</ul>
+<p>One consequence worth naming: an HTML plan is a <em>terminal</em> document. When an agent needs to act on it, the actionable parts must be restated in the agent-facing files — which is precisely what the work list below does. Do not ask agents to work from the HTML.</p>
+
+<h2 id="q4"><span class="num">4</span>What is junk</h2>
+
+<h3>Delete</h3>
+<div class="tablewrap">
+<table>
+<thead><tr><th>Path</th><th>Size</th><th>Why</th></tr></thead>
+<tbody>
+<tr><td><code>agent-skills/skills/CDSJ/references/</code> (21 files)</td><td>~250 KB</td><td>The duplicate live tree. Already item 1 — this is the single biggest piece of junk in the stack and one file of it is already stale.</td></tr>
+<tr><td><code>agent-skills/skills/CDSJ/manifest.yaml</code></td><td>943 B</td><td>Stale third copy claiming <code>release: 3.1.0</code>. <code>CURRENT</code> + the release manifest are sufficient.</td></tr>
+<tr><td><code>F:\__ai-projects\STACK-ROBUSTNESS-PLAN.md</code></td><td>—</td><td>Self-declared obsolete: <em>"is obsolete pointer only."</em> A file whose only content is "do not read me" should not exist.</td></tr>
+<tr><td><code>agent-skills/EXTERNAL-SKILLS.md</code></td><td>1.0 KB</td><td>Duplicates <code>CATALOG.md</code> §External maintained skills and §Specialized repositories almost sentence for sentence. Fold the two extra facts into CATALOG.</td></tr>
+<tr><td><code>agent-skills/CLAUDE-BURN-DAY-PROMPT.md</code></td><td>9.3 KB</td><td>A prompt with three stacked <code>UPDATE</code> sections, each reversing the last (split → do not split → stems). It is conversation archaeology sitting in the repo agents scan. Archive it outside <code>agent-skills/</code>.</td></tr>
+<tr><td><code>F:\__ai-projects\CLAUDE.md</code>, <code>GENERIC-AGENT.md</code></td><td>~800 B ea</td><td>Byte-identical to <code>AGENTS.md</code> apart from the title line. Three copies, three drift surfaces. Keep <code>AGENTS.md</code>; the other two become one-line pointers.</td></tr>
+<tr><td><code>F:\__ai-projects\TOMORROW.md</code></td><td>716 B</td><td>A fourth navigation filename, holding project-specific frozen state ("landing freeze stays live", "do not reopen Antichrist") at workspace root. That belongs in the Final Days project's own <code>NOW.md</code>.</td></tr>
+<tr><td><code>media-organizer/work/manifests/_qa_*.ps1</code> (5 files) + <code>work/run-cross-drive-dedupe-report.ps1</code></td><td>~12 KB</td><td>One-off QA scratch scripts living in an <em>output</em> folder, and tracked — <code>.gitignore</code> covers <code>*.json</code>/<code>*.txt</code> there but not <code>*.ps1</code>. Promote to <code>bin/</code> if reusable; otherwise delete.</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>Not junk, but wrong shape</h3>
+<ul>
+<li><code>skills/*/README.md</code> ×3 (430 B / 482 B / 742 B) — they earn their place as GitHub folder views, but today they restate the SKILL description <em>and</em> the naming convention. Cut each to a title, one line, and a link to <code>SKILL.md</code>.</li>
+<li><code>media-organizer/config.psd1</code> — tracked, and it carries your machine's drive roots. <code>.gitignore</code> covers <code>config.local.psd1</code> and <code>config.psd1.bak*</code> but not this. Add it; <code>config.example.psd1</code> is the one that should be committed.</li>
+</ul>
+
+<h3>Things that look like junk and are not — leave them alone</h3>
+<ul>
+<li><code>versions/2.0.0 … 3.1.0/</code> — history. Untouched.</li>
+<li><code>learning-pattern-sources.md</code> (20 KB) — big, but explicitly load-on-maintenance-only. Correctly excluded from normal work.</li>
+<li>The four <code>pattern-*.md</code> files — genuine selective load; the route table only pulls the selected family.</li>
+<li><code>media-organizer/library/README-DO-NOT-USE.txt</code> — a guard file that has clearly already done its job once.</li>
+<li><code>work/manifests/*.json</code> (53 MB) — untracked by <code>.gitignore</code>. Local clutter, not repo junk. Prune when you feel like it.</li>
+</ul>
+
+<h3>Junk on the idea board (carried from the plan, unchanged)</h3>
+<p><span class="tag t-kill">Kill</span> source-alignment verifier (unbuildable today) · 50–100-example fear corpus · <code>PROJECT-STATUS.md</code> · episode state machine as its own artifact · standalone token-budget mechanism. <span class="tag t-defer">Defer</span> TOOLS capability matrix · ministry-day runbook · palette→CSS compiler.</p>
+
+<h2 id="q5"><span class="num">5</span>The transcript route — verified for the job you are about to run</h2>
+
+<p>I read all three files end to end. <strong>Verdict: this is the healthiest thing in the repo.</strong> A 2.6 KB <code>SKILL.md</code> that loads exactly three files, a 5.4 KB <code>SPEC.md</code> that declares itself the single source of truth, a 3.2 KB <code>SPELLING.md</code> tuned to Bohr and historicist usage, and a worked example. About 11 KB total load. Nothing contradicts anything. No version tangle. Do not let the hardening work touch its substance.</p>
+
+<h3>Your suspicion is correct, and the answer is structural</h3>
+<div class="panel">
+<p>You believe the source materials you uploaded carry old transcript instructions. I cannot see that repo — but I do not need to. <strong>Any transcript-cleaning procedure inside <code>bible-study-source-materials</code> is junk by construction.</strong> That repo owns <em>sources</em>. <code>agent-skills/skills/clean-video-transcript/references/SPEC.md</code> owns <em>procedure</em>, and says so in its own first line. A second copy is not "possibly outdated" — it is guaranteed to diverge, and this is the same defect that put a stale <code>learning-and-writing.md</code> in the CDSJ root.</p>
+<p><strong>Action:</strong> delete any such file, or reduce it to one line — <em>"Transcript cleaning is defined by <code>agent-skills/skills/clean-video-transcript/references/SPEC.md</code>."</em> Do not reconcile the two. Do not read the old one for ideas.</p>
+</div>
+
+<h3>Two fixes to the skill (neither blocks today's run)</h3>
+<ol>
+<li><strong>Drop the <code>_&lt;agent&gt;</code> draft rule for transcripts.</strong> <code>SKILL.md</code> currently says write <code>name_&lt;agent&gt;.md</code> then <code>_v2</code> until promoted. That rule exists for <em>competing candidates</em> — titles, page designs, art prompts, things you choose between. A cleaned transcript has no candidates: it is one deterministic output of a spec, and a second agent running the same spec produces the same file. The rule buys nothing and costs a promote step every time. Evidence it is already misfiring: <code>__Personal.Projects/transcript-skill-demo/</code> contains <code>fake-video-hope-in-winter_codex.md</code> — an agent-suffixed name on a file nobody will ever choose between.<br>
+<strong>Replace with:</strong> cleaned transcript is canonical on first write — <code>&lt;stem&gt;.md</code> beside <code>&lt;stem&gt;.txt</code>, same basename, in-file agent stamp as always. Re-clean overwrites. The raw <code>.txt</code> is the thing that must never be touched, and SPEC already protects it.</li>
+<li><strong>Remove the stale board instruction.</strong> <code>SKILL.md</code> step: <em>"Update any series board when adding cleaned files."</em> <code>TOPIC-BOARD</code> is retired and <code>SERIES-BOARD.md</code> is now optional-for-multi-episode-only. Reword to: update the board <em>only if one already exists</em>.</li>
+</ol>
+
+<h4>Route for today, exactly</h4>
+<ol>
+<li><code>CATALOG.md</code> → trigger <em>clean transcript</em> → <code>skills/clean-video-transcript/</code>. Nothing else loads. Not CDSJ, not the design tree.</li>
+<li>Load <code>SPEC.md</code>, <code>SPELLING.md</code>, <code>examples/end-matter-sample.md</code>. That is the whole context.</li>
+<li>Write <code>&lt;same-basename&gt;.md</code> next to the raw <code>.txt</code>. Header template exactly: title, speaker, series line, <code>Video:</code>, <code>Video ID:</code> (bare id — required), <code>---</code>, <code>[Music]</code>, body.</li>
+<li>Body: no timestamps, no abridgment, 90–100% word count, KJV spelling preserved inside quotes and modern outside, Bohr's Hebrew/Greek terms italicised per <code>SPELLING.md</code>.</li>
+<li>Append <strong>Quick Reference</strong> — Bible / Ellen White / Other, in <em>presentation order</em>, one 8–20-word highlight each saying why <em>he</em> used it. Omit empty categories.</li>
+<li>Run the SPEC checklist, report path and word-count ratio, leave the <code>.txt</code> untouched.</li>
+</ol>
+<p>If the raw file has no <code>Video ID:</code> line and no parseable URL, stop and ask — do not invent one. SPEC requires the field and it is what makes the deep-links work later.</p>
+
+<h2 id="worklist"><span class="num">6</span>Work list v2</h2>
+
+<p>Same ranking discipline as before: AAA impact per hour, deletions preferred, nothing added that is not removed somewhere. Three new items slot in; nothing from v1 is dropped.</p>
+
+<div class="tablewrap">
+<table>
+<thead><tr><th>#</th><th>Item</th><th>Hrs</th><th>Status</th><th>Done when</th></tr></thead>
+<tbody>
+
+<tr><td>0</td><td><strong>Transcript route fixes</strong> — drop <code>_&lt;agent&gt;</code> for transcripts; fix the board line. Plus: delete or stub any transcript procedure found in <code>bible-study-source-materials</code>.</td><td>0.25</td><td><span class="tag t-new">New · today</span></td><td>Cleaned transcript lands on <code>&lt;stem&gt;.md</code> first time. One procedure exists, in one repo.</td></tr>
+
+<tr><td>1</td><td><strong>Collapse the duplicate CURRENT tree</strong> — delete root <code>references/</code> + root <code>manifest.yaml</code>; one line in the router; repoint the design-resources symlink.</td><td>2</td><td><span class="tag t-do">Do first</span></td><td>One <code>quality-gates.md</code> resolvable. <code>audit_html.py</code> resolvable from the file naming it. Net <strong>−22 files</strong>.</td></tr>
+
+<tr><td>2</td><td><strong>Single-source the convention</strong> — <code>WORKSPACE.md</code> §3 becomes the only statement; 11 restatements → pointers; fix the <code>NOW.md</code> contradiction; land progressive stems with the six hard edges; <strong>+ add the four churn rules from §2 above.</strong></td><td>3</td><td><span class="tag t-do">Do first</span> <span class="tag t-new">expanded</span></td><td><code>grep "_&lt;agent&gt;"</code> outside WORKSPACE → 0. One pickup file repo-wide. Appends provably do not read the target file.</td></tr>
+
+<tr><td>3</td><td><strong><code>load-map.yaml</code> + LOAD emission</strong> — 6 lanes from the existing route table, <code>v3-*</code> finally included, <code>max_files</code> per lane.</td><td>2</td><td><span class="tag t-do">Do first</span></td><td>Every reference in ≥1 lane. Titles run ≤4 files; CSS repair ≤3 (today: 6–8).</td></tr>
+
+<tr><td>4</td><td><strong>Junk sweep</strong> — the delete list in §4, plus README/config shape fixes.</td><td>1</td><td><span class="tag t-new">New</span></td><td>Eight paths gone. Two adapters become pointers. <code>config.psd1</code> gitignored.</td></tr>
+
+<tr><td>5</td><td><strong>Source-materials reshape</strong> — <code>sources/</code> + <code>_system/</code>; rename <code>library/</code>; rewrite <code>content.file</code> prefixes by script; generate <code>sources/BROWSE.html</code>; build <code>sources.sqlite3</code> and make querying it mandatory before opening records.</td><td>3</td><td><span class="tag t-new">New</span> — needs a local clone</td><td>Repo root has 3 entries. A stranger finds a study in one click. An agent answers "what covers Dan 8:14" with one query, zero record reads.</td></tr>
+
+<tr><td>6</td><td><strong>Fear / curiosity accept-reject</strong> — amend rule 8 to "manufactured fear"; append the four-question test + 12 examples to the canonical section.</td><td>1.5</td><td><span class="tag t-do">Do</span></td><td>Ten held-out titles score identically under two different agents.</td></tr>
+
+<tr><td>7</td><td><strong><code>project-brief.md</code> machine fields + resume rule</strong> — <code>stage</code>, <code>stem</code>, <code>last_lanes</code>, <code>open_gates</code>, <code>last_agent</code>. Not a new state file.</td><td>1.5</td><td><span class="tag t-do">Do</span></td><td>Cold second agent resumes the right stage, loads only its lanes. Files added: 0.</td></tr>
+
+<tr><td>8</td><td><strong>Router evals + a runner that runs</strong> — 24 fixtures, ~70-line checker.</td><td>3</td><td><span class="tag t-do">Do</span></td><td>PASS/FAIL/MISSING/EXTRA per fixture, baseline recorded. <strong>No runner ⇒ cut the item.</strong></td></tr>
+
+<tr><td>9</td><td><strong>Dead-reference janitor</strong> — scanner + the five confirmed hits.</td><td>1</td><td><span class="tag t-do">Do</span></td><td>Non-zero exit on a broken local link. <code>query_sources.py</code> either exists or its step is removed.</td></tr>
+
+<tr><td>10</td><td><strong>media-organizer M0 + M1</strong> — one <code>-Action</code> dispatcher over existing <code>bin/</code>, plus job JSON.</td><td>3</td><td><span class="tag t-do">Do</span></td><td>Every README invocation through one entry point. Dry-run still default. <code>bin/</code> behaviour unchanged.</td></tr>
+
+<tr><td>11–13</td><td><strong>Deferred:</strong> TOOLS capability matrix · ministry-day runbook (after 1–3) · palette→CSS + a11y (inside a real page build).</td><td>—</td><td><span class="tag t-defer">Defer</span></td><td>Reopen when a concrete failure points at them.</td></tr>
+
+<tr><td>14</td><td><strong>Killed:</strong> source-alignment verifier · fear corpus · <code>PROJECT-STATUS.md</code> · separate state machine · separate token budget.</td><td>—</td><td><span class="tag t-kill">Kill</span></td><td>Reasons in the main plan §8 and §11.</td></tr>
+
+</tbody>
+</table>
+</div>
+
+<div class="panel">
+<h4>Suggested order for the next session</h4>
+<p><strong>0 → 1 → 2 → 4</strong>. That is roughly 6.5 hours, it is almost entirely deletion, and it closes both structural defects plus the churn problem before anything new is built. Item 3 next, then 5 once the source repo is cloned locally. Everything from 6 down is genuinely optional until those land.</p>
+<p>Nothing in 0–10 adds a skill, a CATALOG row, or a state file. Net file count across the whole list is <strong>negative</strong>.</p>
+</div>
+
+<p class="foot">Read for this round: <code>clean-video-transcript/</code> (SKILL, SPEC, SPELLING, example) · <code>processing/source-vault/</code> (README, schema, sources-library-README, codex-handoff, inventory script) · <code>media-organizer/.gitignore</code> and work tree · <code>__Personal.Projects/transcript-skill-demo/</code> · markup ratios computed mechanically across all four HTML plans. <code>bible-study-source-materials</code> was <strong>not</strong> inspected — no local clone exists and the repo is private; its section is derived from your own specification of it.</p>
+
+</div>
+</body>
+</html>

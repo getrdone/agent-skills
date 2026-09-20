@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "name": "high-end-visual-design",
+  "version": "1.1.0",
+  "sealed": true,
+  "files": {
+    "SKILL.md": "7b8522eda6649154a4efc66eb86bb9c8e20a832c10b2a0dcd5c3ed850444e146",
+    "references/component-recipes.md": "7f7950f1aec738abf25183742f409c803a468da5df5e6751c10240fb49dbc279"
+  },
+  "dependencies": {
+    "library_release": "unified-v5-2026-0920"
+  },
+  "provenance": "Local authoritative adaptation; source notices and licenses retained."
+}

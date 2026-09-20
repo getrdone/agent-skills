@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "name": "remotion-best-practices",
+  "version": "1.0.0",
+  "sealed": true,
+  "files": {
+    "SKILL.md": "8ef5a2c0c2cf500a7a3903de7fe9e8b94df23bf2848b6d861409240ec955553a",
+    "agents/openai.yaml": "837f7b13b809031e5681b84d375ff98dd022984098629ef6c70c69223759ad9e",
+    "assets/remotion-icon.png": "662a084d72d99ab91b47c7a566dd0631f0ce0e4f0bf6032708c9200b0db09fd9"
+  },
+  "dependencies": {
+    "library_release": "unified-v5-2026-0920"
+  },
+  "provenance": "Local authoritative adaptation; source notices and licenses retained."
+}

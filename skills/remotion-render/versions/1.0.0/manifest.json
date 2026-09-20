@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "name": "remotion-render",
+  "version": "1.0.0",
+  "sealed": true,
+  "files": {
+    "SKILL.md": "d4900d3595433056d2f26ac5d1d63768db002604efde7bcd80264cebc6f9e71b",
+    "transparent-videos.md": "605d2e7ec91d17eec7ccdc9630edd0cae694b11494e6ecdddc9bec6ab3ae841a",
+    "agents/openai.yaml": "7a90154102baf24497ba76f42197d0d4af743f030fa63b91174752919ff0f6ed",
+    "assets/remotion-icon.png": "662a084d72d99ab91b47c7a566dd0631f0ce0e4f0bf6032708c9200b0db09fd9"
+  },
+  "dependencies": {
+    "library_release": "unified-v5-2026-0920"
+  },
+  "provenance": "Local authoritative adaptation; source notices and licenses retained."
+}

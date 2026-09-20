@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "name": "remotion-saas",
+  "version": "1.0.0",
+  "sealed": true,
+  "files": {
+    "framework.md": "a4930939c701d5355500bb3aee0229baed2cff77ab99440765e68b9f74641405",
+    "player.md": "44e4bd7612b509e0a1324448abf82a86e4346340722574cada6e77e7e712d1fb",
+    "rendering.md": "d47147f29dca95875aa26b6bbd48af7a000fe916497d706bbb7cc7de95066c3e",
+    "SKILL.md": "09a2fc49d15fddabc96e3484bcdc96f04dc87ba6dda25a8c0157a1bb76970562",
+    "agents/openai.yaml": "e868919ff25514a0e4a477f53988f71153f4215b92876be00e73b8b2404ec325",
+    "assets/remotion-icon.png": "662a084d72d99ab91b47c7a566dd0631f0ce0e4f0bf6032708c9200b0db09fd9"
+  },
+  "dependencies": {
+    "library_release": "unified-v5-2026-0920"
+  },
+  "provenance": "Local authoritative adaptation; source notices and licenses retained."
+}

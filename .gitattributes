@@ -1,0 +1,2 @@
+# Release manifests hash exact bytes; checkout must not normalize line endings.
+* -text

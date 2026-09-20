@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "name": "remotion-studio",
+  "version": "1.0.0",
+  "sealed": true,
+  "files": {
+    "SKILL.md": "93c237309b9a38f62767e546fe2e9bac0bfe9879c3ccb9f1a1bb2164d011509c",
+    "agents/openai.yaml": "1e6fc5bc17e2544ed92a73e806530a35005993d4a79d258431f880371b7a1a4f",
+    "assets/remotion-icon.png": "662a084d72d99ab91b47c7a566dd0631f0ce0e4f0bf6032708c9200b0db09fd9"
+  },
+  "dependencies": {
+    "library_release": "unified-v5-2026-0920"
+  },
+  "provenance": "Local authoritative adaptation; source notices and licenses retained."
+}

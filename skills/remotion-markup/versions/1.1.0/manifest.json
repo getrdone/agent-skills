@@ -1,0 +1,43 @@
+{
+  "schema": 1,
+  "name": "remotion-markup",
+  "version": "1.1.0",
+  "sealed": true,
+  "files": {
+    "3d.md": "22c36e087eefd6cfef597bda54f72ae1f39099f9cf33ec38079dd53c4b08e651",
+    "audio-visualization.md": "ddb4440fdd236484a06fb39c81b532c48caa4365505b3b12438224832cb2857f",
+    "audio.md": "6c49c2bebcc75adf01f81156973f9bbe5601e2a1c2512a954ce7ea11928066e4",
+    "calculate-metadata.md": "d2d86ffacae709de3dcba132ebbff6d8732f03fc24a43fea7862d8bf27c1f362",
+    "compositions.md": "33e6b5b3cd5343357c3a834ef654ab21f9aea8e8a989373b8dda817d6a7abddf",
+    "cropping.md": "952c9e55e26886e7ae9d8e99bec5f0cccd2d27ac863ef3dd30c72074f3235d1c",
+    "effects.md": "630b28f25dc4787e757ee77c136ead3dba191ab42545fad6193e0d4832d4b458",
+    "embedding-videos.md": "0ab62ce98532f03d247bd2ce913dbdc680e7425a0e92022fa1a854a676974a89",
+    "ffmpeg.md": "60f34e4aca7976774872fa1b0cfda4a049c44bc1e8838d5b35bdb7270aa2cf6c",
+    "gifs.md": "ed6a4a3952d4c04d744aa8289477b162939940c5bae4239494731c8a66da7a51",
+    "google-fonts.md": "7fe5ea475a51383016c0acf8052febb46ac8ad5a943217acf8083787addc6cc8",
+    "html-in-canvas.md": "2c220c03ae34a43a62c78f5bba3d7d35411eff7d4364851767b59f9a24eca79d",
+    "images.md": "815ff21943ce1bfb1efb82d0fd01b94874f4f1fb21af4bbc076cb64948b2df35",
+    "light-leaks.md": "877b38fc29da2164c6024ab4a8061827b66c55892375e53cff8d8008af10dc6d",
+    "local-fonts.md": "281ab53eecbbd18f6977c4eb26707a009d762de13987f67524688430e4f55c76",
+    "lottie.md": "2f93ee403d4b03bf4616b19d0cf1eb4f71c52858ad1c15f1bc7e7186f8d3b790",
+    "measuring-dom-nodes.md": "e093812aa55935fe9487462c8044ac09338ca5256643f4340faeff8c1e810df6",
+    "measuring-text.md": "fa36a45e193b1ffc5930dac6b5e7cb8f0e858da5352127a340f0258f05842777",
+    "multi-scene-video.md": "0aefd4c1e837ef6f946967a695eb2b9d3630f858c849d8103ca0a8af2cdfb256",
+    "parameters.md": "5955b1e509c8527372f7210911aab8c550c0ce38ecdbd1eeb85565ea25165b7a",
+    "sequencing.md": "d8bf2eee00436703ace5c57c184da8587ca9599c44275be7d4ed9e24e99df6e3",
+    "sfx.md": "f1da32a162c72a275ebe93c3345d617ca67d94082196929d9c7b7881fc06bade",
+    "silence-detection.md": "eb3bc6e9df59722caf7c2136c07264a87da059c979f9b955152c6db1e7c47cd5",
+    "SKILL.md": "59e0762c438569b3195aea688b6a0eaa41a89bd71944c4e2df510bcbe9d1a4a7",
+    "text-highlights.md": "036c46c1ef0cf667a184c26cfe8fb5b2208714825ddcc60f694fd154cc13a8e8",
+    "timing.md": "67b19b7c8f628030fd3e6ff4967f55c2134557f5e3710c30a14fe5a8d598b053",
+    "transitions.md": "2af74184c2bde1be094f1154c5d43561e1f9daae6242b2067f20e110c231a1c5",
+    "video-editing.md": "50ed471194a5027a997085c419f79a7b41be0392989e15ae041ba07dd14fde34",
+    "voiceover.md": "3022919c6d4b49bf0ef523f31e7701ca2d6ebf753ae2d819702f8a98cfb0044e",
+    "agents/openai.yaml": "9ea275e94ea0f1bc8fb0f0908f0729ff37883c265fe43811de3d352b874cfad1",
+    "assets/remotion-icon.png": "662a084d72d99ab91b47c7a566dd0631f0ce0e4f0bf6032708c9200b0db09fd9"
+  },
+  "dependencies": {
+    "library_release": "unified-v5-2026-0920"
+  },
+  "provenance": "Local authoritative adaptation; source notices and licenses retained."
+}

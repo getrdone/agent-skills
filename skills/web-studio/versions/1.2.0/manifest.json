@@ -1,0 +1,34 @@
+{
+  "schema": 1,
+  "name": "web-studio",
+  "version": "1.2.0",
+  "sealed": true,
+  "files": {
+    "CHANGELOG.md": "ba43695d00c2e0ae3e6ddda04977fe0302a9460abe297b90969d4414b97aad48",
+    "CURRENT": "8a4434489576de41f28a2d1d6e9d15e53deac6b48c2a4f416a52b7584a92964f",
+    "deliverable-clone.md": "3848bd403be4946fc9cb7dbae91b6b182145c3f76aee0706c1bac1eb2f4ddc51",
+    "deliverable-images.md": "e8e46872185d7432b5232de4fae3fd070f164e289d599aba8449f589d68c90f8",
+    "deliverable-polish.md": "55b9b8d0e995b23a1c18c01953e8a5563dd332d18eac6c79cc38a95dcb1f3041",
+    "deliverable-theme.md": "caf1acc51c7c3ee82d75864d514f8d57018a420ba3689d65c28e80738b281ac3",
+    "README.md": "71188aab828f278e1c46d5c740709bf3442a1bfe67849fec4c0accd305da7d7f",
+    "SKILL.md": "a8412469404e99bb22edd9c30f2c0ab0afe2a88052947824a96b344fdfaa8596",
+    "assets/core.template.css": "1f2e5ce028f4ab7c1cc9e1cab0ba775be3b4759da90b9b6796f68dd799973404",
+    "assets/DELIVERABLE.template.md": "3285ff7ff3bd8bf22d472879c7730dffc4857badf7272f04fe1497efe2c00a33",
+    "assets/index.shell.html": "70df94d16a2bdb0f214dbc4b879d2ede0f9ba80bb7ad63c8ee23bacedb72e8ef",
+    "assets/theme-default.template.css": "1be4cd8a76599d64adc36ba492e2aa3acb4197c0795f1a05809d4da8de042fa2",
+    "references/content-page-masthead.md": "adfc6844315ce1d88493077b305486b59f84a076a0a225b7b8fc53f930aae3bc",
+    "references/file-protocol.md": "28b2b6b0a8c55e06adfe24e3311b0b5686872011f0720d7d68dee9bfe519a92a",
+    "references/image-slots.md": "cacde8c27c2bd680410713402632fab6eba9f91d58e67a274e7d23eef321c5ac",
+    "references/image-veils.md": "d7f47ff90f17ae349eb0b5c73157671877fbcc93c18ab94931a98e49bdda9cfe",
+    "references/interaction.md": "876c273a01b786e9fcf3770a3e51ef1301b4125d1acb1960b62b279a846c4ae0",
+    "references/layout-packs.md": "06d8dabf980e4df4a0cfae1d38184e1f057dd5a2461f1bc28a7bfad14111ebcf",
+    "references/local-dev-server.md": "f72569ac73af7142e6a16516b387d37b4d127d91db70f38b3e17f685ee913cf6",
+    "references/source-contract.md": "0113a3f69bb9b91c85fe87e2d484301f7c7d6e8ae0add40b371f26728c8e198d",
+    "references/tokenize-contract.md": "27c3ea7f49ef15acae59a718dd53e09d50a2ed4387ed157d111d88b6113d132d",
+    "references/voice.md": "4b668b1af5b5f4dac98e57af15e1a1a1e34273d50121dcffc0be5b224510cc9e"
+  },
+  "dependencies": {
+    "library_release": "unified-v5-2026-0920"
+  },
+  "provenance": "Local authoritative adaptation; source notices and licenses retained."
+}

@@ -1,0 +1,13 @@
+{
+  "schema": 1,
+  "name": "youtube-title-writing",
+  "version": "1.0.0",
+  "sealed": true,
+  "files": {
+    "SKILL.md": "5243cc2ca8dc05be171718a8309bff2d6485777896d72de8d53e6fed5139b62b"
+  },
+  "dependencies": {
+    "library_release": "unified-v5-2026-0920"
+  },
+  "provenance": "Local authoritative adaptation; source notices and licenses retained."
+}

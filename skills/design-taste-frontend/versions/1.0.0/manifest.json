@@ -1,0 +1,13 @@
+{
+  "schema": 1,
+  "name": "design-taste-frontend",
+  "version": "1.0.0",
+  "sealed": true,
+  "files": {
+    "SKILL.md": "2e064e92aca020b2e0bad69326fe7ea55d59005ed53d1a8cbce1bd135d44b8b3"
+  },
+  "dependencies": {
+    "library_release": "unified-v5-2026-0920"
+  },
+  "provenance": "Local authoritative adaptation; source notices and licenses retained."
+}

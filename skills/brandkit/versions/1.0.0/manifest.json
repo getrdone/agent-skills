@@ -1,0 +1,13 @@
+{
+  "schema": 1,
+  "name": "brandkit",
+  "version": "1.0.0",
+  "sealed": true,
+  "files": {
+    "SKILL.md": "67adfd7c55b5b2ce99da2c6b1d9d3e1ad2dbabdaf7139bef7eb4b992fd6d0fb7"
+  },
+  "dependencies": {
+    "library_release": "unified-v5-2026-0920"
+  },
+  "provenance": "Local authoritative adaptation; source notices and licenses retained."
+}

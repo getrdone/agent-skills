@@ -1,0 +1,13 @@
+{
+  "schema": 1,
+  "name": "redesign-existing-projects",
+  "version": "1.0.0",
+  "sealed": true,
+  "files": {
+    "SKILL.md": "d5a62efaf36fa52ea1966e06ce74452b3466a4f179af34fbce65f2c8e5461349"
+  },
+  "dependencies": {
+    "library_release": "unified-v5-2026-0920"
+  },
+  "provenance": "Local authoritative adaptation; source notices and licenses retained."
+}

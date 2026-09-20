@@ -1,0 +1,13 @@
+{
+  "schema": 1,
+  "name": "imagegen-frontend-mobile",
+  "version": "1.1.0",
+  "sealed": true,
+  "files": {
+    "SKILL.md": "59168a82209d6bcc336b04ad0a33c2ac06cacdadb6e5e2a20f8350480fa42529"
+  },
+  "dependencies": {
+    "library_release": "unified-v5-2026-0920"
+  },
+  "provenance": "Local authoritative adaptation; source notices and licenses retained."
+}

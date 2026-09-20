@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hardening plan — agent-skills stack (Claude)</title>
+<meta name="description" content="Independent hardening plan for getrdone/agent-skills, CDSJ, and media-organizer. Evidence-based, ranked, with disagreements against prior plans.">
+<!-- Agent: claude · Model: claude-opus-5 · Thinking: not exposed · Date: 2026-09-10 · Independent hardening plan; evidence from live repo inspection. -->
+<style>
+:root{
+  --bg:#f7f6f3; --panel:#ffffff; --ink:#14161a; --ink-2:#3d434d; --line:#d9d5cc;
+  --accent:#7a2e12; --accent-ink:#ffffff; --good:#14532d; --bad:#7f1d1d; --warn:#713f12;
+  --chip:#efece4; --code-bg:#f0eee8;
+  --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;
+  --sans:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  --ui:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#111316; --panel:#171a1e; --ink:#f2f1ee; --ink-2:#c2c7cf; --line:#2e343c;
+    --accent:#e8a07a; --accent-ink:#14161a; --good:#86efac; --bad:#fca5a5; --warn:#fcd34d;
+    --chip:#20252b; --code-bg:#1c2126;
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.62}
+.wrap{max-width:60rem;margin:0 auto;padding:2.5rem 1.25rem 6rem}
+header.masthead{border-bottom:3px solid var(--ink);padding-bottom:1.1rem;margin-bottom:2rem}
+.kicker{font-family:var(--ui);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);margin:0 0 .5rem}
+h1{font-size:clamp(1.8rem,4.4vw,2.7rem);line-height:1.12;margin:0 0 .5rem;letter-spacing:-.015em}
+.sub{font-family:var(--ui);font-size:.9rem;color:var(--ink-2);margin:0}
+h2{font-size:clamp(1.25rem,2.6vw,1.6rem);margin:3rem 0 .35rem;letter-spacing:-.01em;line-height:1.2}
+h2 .num{font-family:var(--ui);font-size:.72em;color:var(--accent);font-weight:700;margin-right:.5rem}
+h3{font-family:var(--ui);font-size:1rem;margin:1.9rem 0 .4rem;letter-spacing:.005em}
+h4{font-family:var(--ui);font-size:.86rem;text-transform:uppercase;letter-spacing:.09em;color:var(--ink-2);margin:1.4rem 0 .35rem}
+p{margin:.55rem 0}
+ul,ol{margin:.5rem 0 .9rem;padding-left:1.35rem}
+li{margin:.32rem 0}
+code{font-family:var(--mono);font-size:.855em;background:var(--code-bg);padding:.12em .34em;border-radius:3px;word-break:break-word}
+pre{background:var(--code-bg);border:1px solid var(--line);border-radius:6px;padding:.9rem 1rem;overflow-x:auto;font-family:var(--mono);font-size:.8rem;line-height:1.55}
+pre code{background:none;padding:0}
+a{color:var(--accent);text-underline-offset:2px}
+hr{border:0;border-top:1px solid var(--line);margin:2.5rem 0}
+.lede{font-size:1.06rem;color:var(--ink-2)}
+.panel{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:4px;padding:1rem 1.15rem;margin:1.2rem 0}
+.panel h4{margin-top:0}
+.verdict{background:var(--panel);border:2px solid var(--ink);border-radius:4px;padding:1.15rem 1.3rem;margin:1.5rem 0}
+.verdict ol{margin:0;padding-left:1.3rem;font-size:1.02rem}
+.verdict li{margin:.4rem 0}
+.tablewrap{overflow-x:auto;margin:1rem 0;border:1px solid var(--line);border-radius:4px}
+table{border-collapse:collapse;width:100%;font-family:var(--ui);font-size:.83rem;background:var(--panel)}
+th,td{text-align:left;padding:.6rem .7rem;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--chip);font-weight:700;letter-spacing:.02em;white-space:nowrap}
+tbody tr:last-child td{border-bottom:0}
+.tag{display:inline-block;font-family:var(--ui);font-size:.68rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:.14rem .45rem;border-radius:3px;white-space:nowrap}
+.t-do{background:var(--good);color:var(--bg)}
+.t-defer{background:var(--warn);color:var(--bg)}
+.t-kill{background:var(--bad);color:var(--bg)}
+.t-fold{background:var(--ink-2);color:var(--bg)}
+.evi{font-family:var(--ui);font-size:.8rem;color:var(--ink-2);border-left:2px solid var(--line);padding-left:.8rem;margin:.5rem 0 .9rem}
+.evi strong{color:var(--ink)}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(17rem,1fr));gap:1rem;margin:1rem 0}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:.9rem 1rem}
+.card h4{margin-top:0}
+.no{color:var(--bad);font-weight:700}
+.yes{color:var(--good);font-weight:700}
+.arch{font-family:var(--mono);font-size:.76rem;line-height:1.65;background:var(--code-bg);border:1px solid var(--line);border-radius:6px;padding:1rem;overflow-x:auto;white-space:pre}
+.foot{font-family:var(--ui);font-size:.78rem;color:var(--ink-2);border-top:1px solid var(--line);margin-top:3.5rem;padding-top:1rem}
+.toc{font-family:var(--ui);font-size:.85rem;background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:.9rem 1.1rem;margin:1.5rem 0}
+.toc ol{margin:.3rem 0 0;columns:2;column-gap:2rem}
+@media (max-width:34rem){.toc ol{columns:1}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <p class="kicker">Independent review · not agree-mode</p>
+  <h1>Hardening plan — agent-skills, CDSJ, media-organizer</h1>
+  <p class="sub"><strong>Agent:</strong> claude · <strong>Model:</strong> claude-opus-5 · <strong>Thinking:</strong> not exposed · <strong>Date:</strong> 2026-09-10 (PT) · <strong>Repo:</strong> getrdone/agent-skills @ <code>main</code>, local clone <code>F:\__ai-projects\agent-skills</code></p>
+</header>
+
+<p class="lede">I read the live tree before forming a view: <code>CATALOG.md</code>, <code>WORKSPACE.md</code>, the CDSJ router, <code>versions/3.2.0/</code> in full, the reference tree, <code>tools/TOOLS.md</code>, <code>processing/source-vault/</code>, both prior plans, and <code>media-organizer/</code>. Every claim below names the file it came from. Where I disagree with chugAlong I say so and give the reason.</p>
+
+<nav class="toc" aria-label="Contents">
+  <strong>Contents</strong>
+  <ol>
+    <li><a href="#verdict">Executive verdict</a></li>
+    <li><a href="#fails">What actually fails today (A)</a></li>
+    <li><a href="#loading">Over-load / under-load (B)</a></li>
+    <li><a href="#critique">Critique of the prior plans (C)</a></li>
+    <li><a href="#stems">Progressive stems — hard edges (D)</a></li>
+    <li><a href="#fear">Real stakes vs fear-for-click (E)</a></li>
+    <li><a href="#arch">Target architecture</a></li>
+    <li><a href="#backlog">Ranked backlog (F)</a></li>
+    <li><a href="#evals">Eval / fixture design</a></li>
+    <li><a href="#paths">Exact file paths</a></li>
+    <li><a href="#notdoing">What I will not do</a></li>
+  </ol>
+</nav>
+
+<h2 id="verdict"><span class="num">1</span>Executive verdict</h2>
+
+<div class="verdict">
+<ol>
+<li><strong>The reliability problem is structural, not behavioural.</strong> The skill has <em>two</em> resolvable copies of CURRENT, and they have already silently diverged.</li>
+<li><code>skills/curiosity-driven-scripture-journey/references/learning-and-writing.md</code> is <strong>14 lines behind</strong> the 3.2.0 copy — it is missing the entire v3 ideation-mode routing. An agent that resolves <code>references/</code> at the skill root gets pre-v3 behaviour and never learns Standard is the default.</li>
+<li>The same root tree has <strong>no</strong> <code>v3-workflow.md</code>, <strong>no</strong> <code>v3-quality.md</code>, <strong>no</strong> <code>scripts/audit_html.py</code> — the three files 3.2.0 declares mandatory. Under-loading them is the <em>default</em> outcome, not disobedience.</li>
+<li>Root <code>manifest.yaml</code> still says <code>release: 3.1.0</code> while <code>CURRENT</code> says <code>3.2.0</code>. The repo contradicts itself about which release is live.</li>
+<li>One file-naming rule is restated in <strong>12 files, 35+ times</strong>. Steve's stem change is therefore a 12-file edit today. That is why conventions drift here.</li>
+<li><code>WORKSPACE.md</code> both mandates <code>NOW.md</code> (§2, §4) and forbids it (§3, "<em>Do not create NOW.md</em>"), and names <code>MEMORY.md</code> and <code>NOW.md</code> as session pickup two lines apart.</li>
+<li><strong>So: fix the tree before writing a load map.</strong> A machine load map authored over an ambiguous tree writes the ambiguity into a machine file and makes it look settled.</li>
+<li>I agree with chugAlong on the big calls — one skill, no pack split, versions/ untouched, PowerShell engine first. I disagree on <strong>ordering</strong>, on <strong>PROJECT-STATUS.md</strong> (it is a third state store), and on the <strong>50–100-example fear corpus</strong> (lowest yield item on the board).</li>
+<li>Net effect of my top item is <strong>deletion of ~21 duplicated files</strong>. Net-complexity well under zero before anything is added.</li>
+<li>I stopped after this plan. No repo writes. Two zero-risk fixes are staged and named at the end, awaiting your yes.</li>
+</ol>
+</div>
+
+<h2 id="fails"><span class="num">2</span>A — What actually fails today when different agents touch the same project</h2>
+
+<h3>A1. The skill has two roots, and <code>references/</code> means different things at each</h3>
+
+<p>Install is by symlink into <code>skills/curiosity-driven-scripture-journey/</code> (<code>SOURCES-OF-TRUTH.md</code> → Symlinks). So the skill root an agent sees is the CDSJ folder. Its <code>SKILL.md</code> is a 1.6 KB router that says "resolve <code>CURRENT</code>" → <code>versions/3.2.0/SKILL.md</code>. That file's route table then says things like <code>references/quality-gates.md</code> — <strong>with no base path stated anywhere</strong>.</p>
+
+<p>Two bases exist and both contain files with those names:</p>
+
+<div class="tablewrap">
+<table>
+<thead><tr><th>Resolved at</th><th>Files present</th><th>Consequence</th></tr></thead>
+<tbody>
+<tr><td><code>skills/CDSJ/references/</code></td><td>21 files. <span class="no">No</span> <code>v3-workflow.md</code>, <span class="no">no</span> <code>v3-quality.md</code>, <span class="no">no</span> <code>../scripts/</code></td><td>The version override at the top of 3.2.0 SKILL.md (line 8) cannot be satisfied. The deterministic audit cannot be run.</td></tr>
+<tr><td><code>skills/CDSJ/versions/3.2.0/references/</code></td><td>23 files + <code>scripts/audit_html.py</code></td><td>Correct — but only if the agent knows to rebase after following the router.</td></tr>
+</tbody>
+</table>
+</div>
+
+<p class="evi"><strong>Evidence — live divergence, not theory.</strong> Byte-diff of the two <code>learning-and-writing.md</code> copies (CR-normalised): root is missing the sections <em>"Version 3 ideation routing"</em> and <em>"Version 3 learner-job routing"</em>, and still reads <em>"do not invent an ad-hoc short list"</em> where 3.2.0 reads <em>"use the v3 ideation modes."</em> The other eight pairs I diffed are identical. So the duplicate tree is not inert — it is one file behind and no process noticed.</p>
+
+<p>This single defect explains most of the symptom Steve describes as "agents behave differently." Two agents can both be obedient, load the file the SKILL names, and get different instructions.</p>
+
+<h3>A2. One rule, twelve homes</h3>
+
+<p>The canonical-vs-draft filename rule is stated in <code>WORKSPACE.md</code> (16 occurrences), <code>artwork-prompts-handoff/SKILL.md</code> (6), <code>references/web-experience.md</code> (4), <code>references/project-system.md</code> (2), plus <code>CATALOG.md</code>, <code>agent-skills/README.md</code>, <code>clean-video-transcript/SKILL.md</code>, <code>references/visual-system.md</code>, <code>references/quality-gates.md</code>, <code>artwork-prompts-handoff/README.md</code>, <code>versions/3.2.0/SKILL.md</code> (line 25), and <code>F:\__ai-projects\README.md</code> (§Multi-agent file standard).</p>
+
+<p>Those restatements are not identical. <code>web-experience.md</code> §8 tells agents to update <code>START-HERE.md</code>; nothing else in the repo mentions that file. <code>project-system.md</code> §Multi-agent says pickup is <code>NOW.md</code>; the workspace adapters (<code>AGENTS.md</code>, <code>CLAUDE.md</code>, <code>GENERIC-AGENT.md</code>, all three identical) say read <code>MEMORY.md</code>. <code>TOMORROW.md</code> says <code>NOW.md</code> or <code>MEMORY.md</code>.</p>
+
+<h3>A3. <code>WORKSPACE.md</code> contradicts itself in the same file</h3>
+<ul>
+<li>§2 work-root tree lists <code>NOW.md  # session sticky note</code>. §4 says "Session pickup is <code>NOW.md</code>."</li>
+<li>§3 <em>What stays unsuffixed</em> says: "<strong>Do not</strong> create <code>NOW.md</code> or per-agent board files."</li>
+<li>§4 opens "Pickup is the project's <code>MEMORY.md</code>" and two lines later "Session pickup is <code>NOW.md</code>."</li>
+</ul>
+<p>An agent resolving this honestly has to pick a side. Different agents pick differently. That is the continuity failure, and it is authored, not emergent.</p>
+
+<h3>A4. Version metadata lies</h3>
+<p><code>skills/CDSJ/manifest.yaml</code> → <code>release: 3.1.0, status: current, released: 2026-09-08</code>. <code>CURRENT</code> → <code>3.2.0</code>. <code>versions/3.2.0/manifest.yaml</code> → <code>release: 3.2.0</code>. The root manifest is a stale third copy that nothing needs; an agent that reads it to answer "what release am I on" gets the wrong answer, including the wrong <code>color_psychology_reference</code> and contrast targets, which 3.2.0 added.</p>
+
+<h3>A5. Dead references (machine-verified, false positives removed)</h3>
+<p>I ran a link scan across every <code>.md</code>/<code>.yaml</code> outside <code>versions/&lt;older&gt;/</code> and hand-checked the hits against the real directory listing. Confirmed real:</p>
+<div class="tablewrap">
+<table>
+<thead><tr><th>File</th><th>Broken reference</th><th>Why it is real</th></tr></thead>
+<tbody>
+<tr><td><code>tools/TOOLS.md</code></td><td><code>skills/ubp-translator-pdf/</code></td><td>That skill was moved to <code>getrdone/ubp-tools</code> in 3.1.0. <code>skills/</code> now holds exactly three directories.</td></tr>
+<tr><td><code>CATALOG.md</code> §Folded external skills</td><td><code>curiosity-driven-scripture-journey/references/…</code> ×2</td><td>Missing the <code>skills/</code> prefix. Relative to repo root these paths do not exist.</td></tr>
+<tr><td><code>DESIGN-DIRECTIVES.md</code></td><td><code>curiosity-driven-scripture-journey/references/visual-system.md</code></td><td>Same missing prefix.</td></tr>
+<tr><td><code>references/source-governance.md</code> step 3</td><td><code>scripts/query_sources.py</code></td><td>No such file anywhere in the repo. The only script is <code>audit_html.py</code>. Either it lives in the private source repo — then say so and give the path — or the step is unexecutable.</td></tr>
+<tr><td><code>versions/3.2.0/references/v3-quality.md</code> §4</td><td><code>scripts/audit_html.py</code></td><td>Resolvable <em>only</em> from inside <code>versions/3.2.0/</code>. Unresolvable from the skill root. See A1.</td></tr>
+</tbody>
+</table>
+</div>
+<p>Not counted as findings (I checked and they are fine): the <code>awesome-copilot</code> paths in <code>motion-and-premium-ui.md</code> are upstream provenance, not local links; <code>SPELLING.md</code> and <code>source_vault_inventory.py</code> exist; <code>registry.yaml</code> / <code>record.yaml</code> / <code>content.md</code> live in the private source repo by design.</p>
+
+<h3>A6. What does <em>not</em> fail</h3>
+<p>Worth saying, because it changes the plan: routing at the CATALOG level is clean. Three skills, sharp non-overlapping triggers, no collision I can construct. The honest-curiosity standard in <code>youtube-planning.md</code> is genuinely good and already canonical ("Other Scripture Journey files point here rather than restating the list"). The quality-gate set is comprehensive. <strong>The knowledge is fine. The addressing is broken.</strong> That is why my plan is mostly deletions and pointers, not new documents.</p>
+
+<h2 id="loading"><span class="num">3</span>B — Where agents over-load or under-load CDSJ. Missing docs, or non-obedience?</h2>
+
+<p>Neither, mostly. The honest answer is that <strong>nobody can currently tell</strong>, because nothing emits what it loaded and nothing logs it. Any claim in either prior plan that agents "are not obeying load lists" is unevidenced. What I <em>can</em> evidence is that the route table itself prescribes both failure modes.</p>
+
+<h4>Structural over-load</h4>
+<p>Route-table row <em>"Build or review HTML/CSS/JS, landing pages, interactions, SEO/AEO/GEO, performance, or accessibility"</em> names six references: <code>web-experience</code> + <code>visual-system</code> + <code>motion-and-premium-ui</code> + <code>design-critique-and-anti-slop</code> + <code>branching-journey</code> + <code>learning-and-writing</code> ≈ 61 KB. <code>visual-system.md</code> then requires repo-root <code>COLOR-PSYCHOLOGY.md</code> (23 KB) whenever a colour decision exists, and <code>CATALOG.md</code> adds <code>DESIGN-DIRECTIVES.md</code> (16 KB) for "any design-bearing task." That is <strong>~100 KB ≈ 25–30 K tokens</strong> — for a request that may be "fix the footer contrast." The table has one row for "touch any HTML" and no smaller door. That is over-load by design, and no amount of agent discipline fixes it.</p>
+
+<h4>Structural under-load</h4>
+<p><code>v3-workflow.md</code> and <code>v3-quality.md</code> are the two most consequential files in 3.2.0 — Journey Concept gate, ideation modes, learner jobs, the review loop, the deterministic audit, the public-write abuse standard. They appear <strong>only</strong> in the prose override at the top of the SKILL, <strong>never in the route table</strong>, and they <strong>do not exist</strong> at the root <code>references/</code> path. Three independent reasons an agent misses them. Under-load is the default.</p>
+
+<h4>The obedience residue</h4>
+<p>There is a real residue — agents do reach for adjacent files — but it is small compared to the above and it is unmeasurable until (a) paths are unambiguous and (b) runs emit a LOAD list. <strong>Sequencing conclusion: fix docs and structure first, then measure obedience, then police it.</strong> Building the eval harness first measures a moving target against a contradictory spec.</p>
+
+<h2 id="critique"><span class="num">4</span>C — Critique of chugAlong's "soft lanes + load-map + STATUS" plan</h2>
+
+<h3 class="yes">Strong, keep</h3>
+<ul>
+<li><strong>Refusing the pack split.</strong> The reasoning is right and better argued than the earlier "do split" note it reverses: separate CATALOG entry points let agents skip the spine and the gates. Reversing its own prior position is a mark in its favour, not against.</li>
+<li><strong>LOAD emission.</strong> Making the router print what it loaded is the single cheapest observability win in the whole board. Keep, and keep it early.</li>
+<li><strong>STATUS-first resume rule.</strong> "Read state → resume that stage's lanes only → never reload the whole skill; missing state ⇒ intake only." Correct rule. My objection is to the <em>file</em>, not the rule.</li>
+<li><strong>media-organizer M0→M4 phasing.</strong> Orchestrator, then job JSON, then a GUI that is a viewer/approver over the same engine. I would not change a line of that section.</li>
+<li><strong>Net-complexity ≤ 0.</strong> Adopt it, and make it a visible PR checklist item rather than doctrine.</li>
+</ul>
+
+<h3 class="no">Weak, change</h3>
+
+<h4>1. The ordering is backwards</h4>
+<p>The plan's burn-day order starts at <em>"Author load-map.yaml for 3.2.0."</em> At the moment there are two candidate <code>references/</code> roots and one of them is stale. Whoever writes the load map picks a base path by instinct, and from then on the ambiguity is encoded in a machine file that reviewers will trust. <strong>Collapse the tree first. It is a deletion and takes about two hours.</strong> Then the load map has exactly one legal answer for every path.</p>
+
+<h4>2. <code>PROJECT-STATUS.md</code> is a third state store — reject</h4>
+<p>The repo already has two: <code>project-brief.md</code> (YAML, ~40 fields, <em>already</em> carries <code>status:</code>, <code>locked_decisions</code>, <code>open_decisions</code>, <code>source_records</code>, <code>chosen_title</code>, and per-lane <code>*_status</code> fields) and <code>NOW.md</code> (Now/Next/Blocked). The observed failure mode in this repo is precisely <em>several files that can disagree</em> (A2, A3). Adding a third file that restates <code>stage</code>, <code>stem</code>, and <code>last_lanes</code> reproduces the disease and calls it the cure.</p>
+<p><strong>Do instead:</strong> add five machine fields to the existing <code>project-brief.md</code> block — <code>stage</code>, <code>stem</code>, <code>last_lanes</code>, <code>open_gates</code>, <code>last_agent</code> — and define <code>NOW.md</code> as human-only prose that is never parsed. Net new files: zero. The resume rule chugAlong wrote survives verbatim; only the filename changes. This also satisfies Steve's "fewer files" constraint, which the PROJECT-STATUS proposal quietly violates.</p>
+
+<h4>3. The lane vocabulary duplicates a routing system that already works</h4>
+<p>Nine proposed lanes — <code>spine · discover · titles · descriptions · visual · study · web · publish · youtube</code> — over a 23-file tree. Three of them (<code>titles</code>, <code>descriptions</code>, <code>youtube</code>) resolve to the same file, <code>youtube-planning.md</code>. Meanwhile the SKILL already has a route table with eight rows that agents already follow. Inventing a second vocabulary means two things to keep in sync, which is how A2 happened.</p>
+<p><strong>Do instead:</strong> the load map <em>is</em> the route table, expressed as YAML, with the row labels as lane names. Six lanes: <code>spine</code>, <code>project</code>, <code>study</code>, <code>packaging</code>, <code>visual</code>, <code>web</code> — plus <code>governance</code> for standards changes. Add the missing <code>max_files</code> and the missing <code>v3-workflow</code>/<code>v3-quality</code> entries and the table is finally complete, which it currently is not.</p>
+
+<h4>4. "Agents ignore load lists" is asserted, not shown</h4>
+<p>Both prior documents rest on this claim. Neither cites a run, a log, or a diff. My inspection produced a different and checkable explanation (A1, B): the spec is ambiguous and one copy is stale. I would not spend a burn day policing obedience to a spec that does not yet resolve.</p>
+
+<h4>5. The fear corpus is the worst effort-to-value item on the board</h4>
+<p>"50–100 labeled examples" is many hours, ages quickly, and duplicates an existing 14-rule standard plus a fail/pass table that already lives in <code>youtube-planning.md</code>. Worse, it treats the problem as coverage when the problem is a <em>missing decision procedure</em> — and a genuine contradiction with Steve's brief that nobody has flagged (see §6). <strong>Replace with a four-question test and ~12 examples, appended to the section that already owns this.</strong></p>
+
+<h4>6. Progressive stems are framed as a <code>WORKSPACE.md</code> edit. They are a 12-file edit</h4>
+<p>Both prior docs say "update WORKSPACE.md guidance." That is one of twelve places the rule lives (A2). Ship the convention change and eleven files still teach <code>_&lt;agent&gt;_vN</code>, including <code>web-experience.md</code>'s <em>Automatic page-build contract</em>, which is marked REQUIRED and explicitly says the user does not need to restate it. <strong>Single-source the rule in the same pass, or the change does not take.</strong></p>
+
+<h4>7. Source-alignment verifier cannot be built from this repo</h4>
+<p>It needs the private <code>getrdone/bible-study-source-materials</code> registry plus <code>scripts/query_sources.py</code>, which does not exist (A5). Both prior plans list it as implementable. It is not, today. Downgrade to the gate line that already exists in <code>quality-gates.md</code> §2 and re-open when the source repo is reachable from the working machine.</p>
+
+<h2 id="stems"><span class="num">5</span>D — Progressive stem + append model: race conditions, growth, parsing</h2>
+
+<p>The convention is right — one file per stage beats per-agent sprawl, and it matches how Steve actually reviews. But as written on the idea board it will turn into a mush file within a week. Six hard edges, all cheap:</p>
+
+<div class="grid2">
+
+<div class="card">
+<h4>1 · Concurrency</h4>
+<p>Windows gives no advisory locking here and every agent writes whole files. Two appends inside the same minute = last-writer-wins truncation, silently.</p>
+<p><strong>Edge:</strong> append is <em>read → verify → write</em>. Before writing, re-read the file and compare its byte length to the length observed at read time. If it changed, re-read and re-append after the newest section. Never rewrite regions you did not author. One writer per stem per session; a second agent that finds a newer trailing timestamp waits or appends after it.</p>
+</div>
+
+<div class="card">
+<h4>2 · The SELECTED block must be tamper-evident, not just "user-owned"</h4>
+<p>"Agents must not clobber it" is a wish unless a checker can see a violation.</p>
+<p><strong>Edge:</strong> fence it — <code>&lt;!-- SELECTED:BEGIN --&gt;</code> … <code>&lt;!-- SELECTED:END --&gt;</code>. Agents hash that region before and after their run and refuse to save on mismatch. A fence also lets the next stage quote it mechanically.</p>
+</div>
+
+<div class="card">
+<h4>3 · Two selection mechanisms will fight</h4>
+<p>This is the one nobody flagged. The existing gesture is a trailing <code>~</code> on title lines (<code>SKILL.md</code> §Title selection; <code>project-system.md</code> §Piecemeal). SELECTED is a second selection truth. When they disagree — and they will — which wins?</p>
+<p><strong>Edge:</strong> <code>~</code> stays the human's marking gesture, inside a Run's candidate list. SELECTED is <em>generated from</em> <code>~</code> marks on request and is the only thing downstream stages read. Marks are preserved, never authoritative twice.</p>
+</div>
+
+<div class="card">
+<h4>4 · Growth</h4>
+<p><code>stem.titles+descriptions+visuals.md</code> accumulates every run of three stages forever. At ~40 candidates per run it is unreadable by run six and expensive to load.</p>
+<p><strong>Edge:</strong> RUN LOG keeps the newest 5 runs. Older runs move, in one move, to <code>stem.archive.md</code> — one archive per stem, never one file per run. Soft cap 120 KB per stem file; over it, archive before appending.</p>
+</div>
+
+<div class="card">
+<h4>5 · Parsing</h4>
+<p>Free-form run headers are unscannable, which defeats the point of one file.</p>
+<p><strong>Edge:</strong> fixed grammar, regex-checkable:<br>
+<code>## Run — YYYY-MM-DD HH:MM PT — agent/model</code><br>
+then exactly <code>### Reasoning</code> and <code>### Candidates</code>. Anything else is a lint failure. <code>+</code> in filenames is safe on NTFS and in PowerShell globs; the only real hazard is URL contexts, so never link these files by raw URL.</p>
+</div>
+
+<div class="card">
+<h4>6 · Which stem is authoritative?</h4>
+<p><code>stem.titles.md</code> and <code>stem.titles+descriptions.md</code> can both exist, both with a SELECTED block. Two live sources of truth again.</p>
+<p><strong>Edge:</strong> the longest compound stem present wins; earlier stems become read-only the moment the next compound is created, and get a one-line <code>SUPERSEDED BY</code> pointer at the top. The compound file's SELECTED opens by quoting the upstream SELECTED verbatim under a <code>INHERITED FROM</code> heading, so drift is visible at a glance.</p>
+</div>
+
+</div>
+
+<h4>Canonical shape</h4>
+<pre><code># &lt;stem&gt; — titles
+
+&lt;!-- SELECTED:BEGIN --&gt;
+## SELECTED (user-owned — agents never edit inside this fence)
+1. ...
+&lt;!-- SELECTED:END --&gt;
+
+## RUN LOG  (append below; newest at bottom; keep 5, archive the rest)
+
+## Run — 2026-09-10 09:15 PT — claude/claude-opus-5
+### Reasoning
+### Candidates
+</code></pre>
+
+<p><strong>Verdict on D:</strong> implement, with edges 1–3 mandatory and 4–6 as lint rules. Without edge 3 the convention actively regresses an existing working workflow.</p>
+
+<h2 id="fear"><span class="num">6</span>E — Real stakes vs fear-for-click: a crisp accept/reject test</h2>
+
+<div class="panel">
+<h4>First, a contradiction that has to be fixed before any test is written</h4>
+<p><code>youtube-planning.md</code> §<em>Honest curiosity vs manufactured suspense</em>, rule 8, currently reads: "<strong>Do not use fear</strong>, guilt, shame, FOMO, scarcity, false urgency, coercion, or deceptive certainty as attention tools." Read literally, that rejects exactly what Steve's brief permits — real fear that is genuinely in the subject matter. Judgment, death, deception and persecution are load-bearing in this material; a rule that bans the emotion rather than the manufacture will either be obeyed (and neuter the work) or quietly ignored (and erode the whole standard). <strong>Amend rule 8 to "manufactured fear"</strong> and let the test below carry the distinction. One-line edit, high value.</p>
+</div>
+
+<p>The existing standard is 14 prohibitions. Prohibitions do not decide edge cases; a procedure does. Four questions, all four must pass:</p>
+
+<div class="tablewrap">
+<table>
+<thead><tr><th>#</th><th>Test</th><th>Question</th><th>Fails when</th></tr></thead>
+<tbody>
+<tr><td>1</td><td><strong>Source</strong></td><td>Is the fear <em>in</em> the subject — the passage, the documented event, the real consequence — or introduced by the packaging?</td><td>Remove the packaging and the fear disappears. Then it was manufactured.</td></tr>
+<tr><td>2</td><td><strong>Proportion</strong></td><td>Would someone who already knows the full content call this language proportionate?</td><td>The line implies more danger, more concealment, or more certainty than the content supports.</td></tr>
+<tr><td>3</td><td><strong>Resolution</strong></td><td>Does the content answer the fear it raises — early, plainly, without stretching it out?</td><td>The stake is raised and never resolved, or the answer is withheld past the point of teaching.</td></tr>
+<tr><td>4</td><td><strong>Transfer</strong></td><td>Could this line be pasted, unchanged, onto an unrelated topic?</td><td>Yes ⇒ generic bait. <em>(Already rule 12; reuse it, don't restate it.)</em></td></tr>
+</tbody>
+</table>
+</div>
+
+<p>Plus one standing constraint: <strong>fear may never be the only reason to click.</strong> Every line must name a real subject — a passage, a person, an event, a claim. "What's coming will terrify you" fails test 1 and the constraint. "The one verse Adventists and Catholics read the same way" carries real stakes and names its subject.</p>
+
+<p><strong>Where it lands:</strong> appended to the existing canonical section in <code>versions/3.2.0/references/youtube-planning.md</code> as <em>"Real stakes vs fear-for-click (accept/reject)"</em>, with ~12 labelled examples (6 pass, 6 fail) drawn from actual Final Days topics. <strong>No new file</strong> — that section already declares itself canonical and other files already point at it. Gate wording in <code>quality-gates.md</code> §1 and §6 gets a pointer, not a copy.</p>
+
+<h2 id="arch"><span class="num">7</span>Target architecture</h2>
+
+<p>Centralized CDSJ, one resolution root, one convention file, one state file, one packaging standard. Nothing added that is not deleted somewhere else.</p>
+
+<div class="arch">agent-skills/                     BRAIN — one copy of every rule
+  CATALOG.md                      routing table only (3 rows) + pointer to WORKSPACE
+  WORKSPACE.md                    THE file-naming + continuity contract. Nothing else restates it.
+  DESIGN-DIRECTIVES.md            design chain
+  COLOR-PSYCHOLOGY.md             loaded only when a colour decision exists
+  evals/
+    router-fixtures.yaml          24 fixtures
+    check_load.py                 ~70-line runner
+  skills/curiosity-driven-scripture-journey/
+    SKILL.md                      router + ONE new line: "relative paths resolve under versions/&lt;v&gt;/"
+    CURRENT  STABLE  CHANGELOG.md
+    versions/3.2.0/               <span style="opacity:.75">← the only live tree</span>
+      SKILL.md  manifest.yaml  load-map.yaml
+      references/ (23)  scripts/audit_html.py
+    versions/2.0.0 … 3.1.0/       history, untouched
+  <span style="opacity:.55">skills/CDSJ/references/          ← DELETED (21 duplicated files)</span>
+  <span style="opacity:.55">skills/CDSJ/manifest.yaml        ← DELETED (stale 3.1.0 third copy)</span>
+
+&lt;project folder&gt;/                 STUDIO — work, per topic
+  project-brief.md                THE state file. YAML. + stage, stem, last_lanes,
+                                  open_gates, last_agent. Machine-read.
+  NOW.md                          human prose. Never parsed. Never authoritative.
+  stem.titles.md                  SELECTED fence + RUN LOG (append-only)
+  stem.titles+descriptions.md     inherits SELECTED; supersedes the above
+  stem.archive.md                 runs 6+
+  deliverables/                   promoted finals
+
+media-organizer/                  LIBRARY OPS — PowerShell engine, unchanged
+  MediaOrganizer.ps1              M0: single -Action dispatcher over existing bin/
+  work/jobs/*.json                M1: one job contract for CLI, GUI, exe
+</div>
+
+<h4>The three rules that make it hold</h4>
+<ol>
+<li><strong>One resolution root.</strong> Relative paths inside a version's SKILL resolve under that version. Stated once, in the router, and made true by deleting the alternative.</li>
+<li><strong>One home per rule.</strong> Any rule stated in two files is a defect. Second mentions are pointers.</li>
+<li><strong>One machine state file.</strong> <code>project-brief.md</code>. Everything else in a work folder is prose for humans or a deliverable.</li>
+</ol>
+
+<h2 id="backlog"><span class="num">8</span>F — Ranked implementation backlog</h2>
+
+<p>Ranked by AAA impact per hour. Items 1–3 are the burn day; the rest is a second session. Everything below item 8 is explicitly deferred or killed, with the reason.</p>
+
+<div class="tablewrap">
+<table>
+<thead><tr><th>#</th><th>Item</th><th>Hrs</th><th>Call</th><th>Success criteria (checkable)</th></tr></thead>
+<tbody>
+
+<tr>
+<td>1</td>
+<td><strong>Collapse the duplicate CURRENT tree.</strong> Delete <code>skills/CDSJ/references/</code> (21 files) and <code>skills/CDSJ/manifest.yaml</code>. Add one sentence to the router: relative paths resolve under <code>versions/&lt;resolved&gt;/</code>. Repoint the <code>design-resources</code> GLOSSARY symlink and the two prefix-broken doc links.</td>
+<td>2</td>
+<td><span class="tag t-do">Do first</span></td>
+<td>Exactly one <code>quality-gates.md</code> resolvable from the skill root. <code>audit_html.py</code> resolvable from the file that names it. No basename appears twice outside <code>versions/</code>. <code>design-resources/dynamic-symmetry-grids/GLOSSARY.md</code> still opens. Net files: <strong>−22</strong>.</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td><strong>Single-source the convention, then change it.</strong> Make <code>WORKSPACE.md</code> §3 the only statement of file naming + continuity; replace the 11 restatements with one-line pointers; resolve the <code>NOW.md</code> forbidden/required contradiction and the <code>MEMORY.md</code>/<code>NOW.md</code>/<code>START-HERE.md</code> pickup conflict; then land the progressive-stem convention with the six hard edges from §5.</td>
+<td>2.5</td>
+<td><span class="tag t-do">Do first</span></td>
+<td><code>grep -rn "_&lt;agent&gt;" agent-skills --exclude WORKSPACE.md</code> → 0 hits. Exactly one file named as session pickup, repo-wide. Stem grammar regex documented once. <code>web-experience.md</code> §Automatic page-build contract updated (it is marked REQUIRED — if it is missed, nothing changed).</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td><strong><code>load-map.yaml</code> = the route table, machine-readable</strong> — 6 lanes mapped 1:1 onto existing rows, <code>v3-workflow</code>/<code>v3-quality</code> finally included, <code>max_files</code> per lane, zero orphan references. Router emits a <code>LOAD:</code> block every run.</td>
+<td>2</td>
+<td><span class="tag t-do">Do first</span></td>
+<td>Every one of the 23 references appears in ≥1 lane. A titles-only run declares ≤4 files. A CSS-repair run declares ≤3 (today's table forces 6–8). Every run's first output line is <code>LANES:</code> / <code>LOAD:</code>.</td>
+</tr>
+
+<tr>
+<td>4</td>
+<td><strong>Fear/curiosity accept-reject procedure</strong> — amend rule 8 to "manufactured fear"; append the four-question test + 12 labelled examples to the existing canonical section; add pointers (not copies) in <code>quality-gates.md</code> §1 and §6.</td>
+<td>1.5</td>
+<td><span class="tag t-do">Do</span></td>
+<td>Ten held-out titles (5 real-stakes, 5 fear-bait) score correctly by the four tests, by two different agents, with the same verdicts. No new file created.</td>
+</tr>
+
+<tr>
+<td>5</td>
+<td><strong>Extend <code>project-brief.md</code> with the 5 machine fields + resume rule.</strong> Not a new PROJECT-STATUS.md.</td>
+<td>1.5</td>
+<td><span class="tag t-do">Do</span></td>
+<td>A cold second agent, given only the work folder, resumes at the correct stage and loads only that stage's lanes. Files added to the project shell: <strong>0</strong>.</td>
+</tr>
+
+<tr>
+<td>6</td>
+<td><strong>Router eval fixtures + a real runner.</strong> 24 fixtures, ~70-line checker comparing declared LOAD against the load map. See §9.</td>
+<td>3</td>
+<td><span class="tag t-do">Do</span></td>
+<td>Runner executes and prints PASS/FAIL/MISSING/EXTRA per fixture. Baseline recorded. <strong>If the runner does not run, cut the item</strong> — a fixtures YAML with no runner is a document pretending to be a test.</td>
+</tr>
+
+<tr>
+<td>7</td>
+<td><strong>Dead-reference janitor + fix the five confirmed hits</strong> (A5). The scanner already exists — I wrote and ran it for this review; it needs the false-positive filter for provenance links and private-repo paths.</td>
+<td>1</td>
+<td><span class="tag t-do">Do</span></td>
+<td>Scanner exits non-zero on a broken local link. Five known hits fixed. Runs in CI or as a pre-commit line.</td>
+</tr>
+
+<tr>
+<td>8</td>
+<td><strong>media-organizer M0 + M1.</strong> <code>MediaOrganizer.ps1 -Action {dedupe|organize|foldermap|import} </code> dispatching to the existing <code>bin/</code> scripts, plus <code>work/jobs/*.json</code>. No second logic path; <code>lib/MediaCommon.ps1</code> stays the engine.</td>
+<td>3</td>
+<td><span class="tag t-do">Do</span></td>
+<td>Every README invocation reachable through one entry point. Dry-run remains default. A job JSON round-trips: CLI writes it, CLI replays it. <code>bin/*.ps1</code> unchanged in behaviour.</td>
+</tr>
+
+<tr>
+<td>9</td>
+<td><strong>clean-video → CDSJ bridge</strong></td>
+<td>0.25</td>
+<td><span class="tag t-fold">Fold into 3</span></td>
+<td>It is eight lines — "cleaned transcript lands here, open the <code>packaging</code> lane, create <code>stem.titles.md</code>, carry source IDs and the topic promise" — appended to the <em>next step</em> section of both SKILLs. It does not deserve a deliverable, a fixture set, or a CATALOG row.</td>
+</tr>
+
+<tr>
+<td>10</td>
+<td><strong>TOOLS.md → capability matrix</strong></td>
+<td>2</td>
+<td><span class="tag t-defer">Defer</span></td>
+<td>The concrete harm today is one dead pointer to <code>skills/ubp-translator-pdf/</code>, fixed free in item 7. A matrix is real work with a maintenance tail and no current failure to point at. Revisit when a tool choice actually goes wrong.</td>
+</tr>
+
+<tr>
+<td>11</td>
+<td><strong>Ministry-day runbook</strong></td>
+<td>2</td>
+<td><span class="tag t-defer">Defer to after 1–3</span></td>
+<td>It is a synthesis of the chain. Written now it bakes today's ambiguous paths into a document people will follow literally. Written after item 3 it is nearly free, because the lanes are already named.</td>
+</tr>
+
+<tr>
+<td>12</td>
+<td><strong>Palette → CSS token compiler + a11y check</strong></td>
+<td>4</td>
+<td><span class="tag t-defer">Defer</span></td>
+<td>Real value, wrong week. <code>COLOR-PSYCHOLOGY.md</code> plus the 7:1 / 4.5:1 floors already give the rule, and <code>audit_html.py</code> already gives a mechanical floor. A compiler is net-new code with an ongoing tail. Build it inside a real page build, not speculatively.</td>
+</tr>
+
+<tr>
+<td>13</td>
+<td><strong>Source-alignment verifier</strong></td>
+<td>—</td>
+<td><span class="tag t-kill">Kill for now</span></td>
+<td>Cannot be built or tested from this repo: it needs the private source registry and <code>scripts/query_sources.py</code>, which does not exist anywhere (A5). Keep the existing <code>quality-gates.md</code> §2 checklist. Re-open when the source repo is reachable — and fix or delete the dead <code>query_sources.py</code> pointer either way.</td>
+</tr>
+
+<tr>
+<td>14</td>
+<td><strong>Episode state machine as its own artifact</strong></td>
+<td>—</td>
+<td><span class="tag t-kill">Kill</span></td>
+<td>Absorbed by item 5. <code>project-system.md</code> already defines the eight-state progression (<code>idea → … → released</code>). It needs a <code>stage</code> field and a resume rule, not a new schema document.</td>
+</tr>
+
+<tr>
+<td>15</td>
+<td><strong>Token/file load budget as a separate mechanism</strong></td>
+<td>—</td>
+<td><span class="tag t-fold">Fold into 3</span></td>
+<td>One <code>max_files</code> key per lane in <code>load-map.yaml</code>. A standalone budget system would be a second thing to keep in sync with the first.</td>
+</tr>
+
+<tr>
+<td>16</td>
+<td><strong>Net-complexity ≤ 0 rule</strong></td>
+<td>0.1</td>
+<td><span class="tag t-do">Do (free)</span></td>
+<td>One line in <code>agent-skills/README.md</code> §Agent contract: any PR adding a skill row or a long reference names what it deleted or shrank. Enforced by review, not tooling.</td>
+</tr>
+
+</tbody>
+</table>
+</div>
+
+<p><strong>Burn-day total for items 1–3: ~6.5 hours, net −22 files, and both structural defects closed.</strong> Items 4–8 are a solid second session. Nothing in items 1–8 adds a skill, a CATALOG row, or a state file.</p>
+
+<h2 id="evals"><span class="num">9</span>Eval / fixture design sketch</h2>
+
+<p>Design constraint: it must actually execute, and it must not claim more automation than exists. Agents are not scriptable from here, so the honest shape is <em>manual capture, automatic checking</em>.</p>
+
+<h4>Contract</h4>
+<p>Every CDSJ run opens with a machine-parseable block, which is also the LOAD emission from item 3:</p>
+<pre><code>LANES: packaging
+LOAD: versions/3.2.0/references/youtube-planning.md
+LOAD: versions/3.2.0/references/learning-and-writing.md
+BRIEF: psalm-23/project-brief.md  (stage: content-approved)</code></pre>
+
+<h4><code>evals/router-fixtures.yaml</code></h4>
+<pre><code>- id: titles-from-transcript
+  prompt: "Here's the cleaned transcript. Give me titles for this episode."
+  expect_skill: curiosity-driven-scripture-journey
+  expect_lanes: [spine, packaging]
+  expect_load:
+    - versions/3.2.0/references/youtube-planning.md
+    - versions/3.2.0/references/learning-and-writing.md
+  max_files: 4
+  forbid:
+    - versions/3.2.0/references/web-experience.md
+    - versions/3.2.0/references/visual-system.md
+    - COLOR-PSYCHOLOGY.md</code></pre>
+
+<h4>Coverage — 24 fixtures</h4>
+<div class="tablewrap">
+<table>
+<thead><tr><th>Class</th><th>n</th><th>What it catches</th></tr></thead>
+<tbody>
+<tr><td>Titles / ideation</td><td>5</td><td>Design-tree over-load on a packaging ask; wrong ideation mode (the A1 drift bug reproduces here exactly)</td></tr>
+<tr><td>Descriptions after <code>~</code> selection</td><td>3</td><td>Selection-set handling; the 80–110 word rule; SELECTED-vs-<code>~</code> conflict (§5 edge 3)</td></tr>
+<tr><td>Transcript clean</td><td>3</td><td>Wrong-skill routing into CDSJ; <code>SPELLING.md</code> resolution</td></tr>
+<tr><td>Artwork handoff</td><td>2</td><td>Paid-API default violation; prompts-file naming under the new stem rule</td></tr>
+<tr><td>Page build (substantial)</td><td>3</td><td><strong>Missing <code>v3-workflow.md</code> / <code>v3-quality.md</code></strong> — the highest-value assertion in the set; missing Journey Concept gate; missing deterministic audit</td></tr>
+<tr><td>Narrow CSS/contrast repair</td><td>2</td><td>Structural over-load: ~100 KB pulled for a footer fix</td></tr>
+<tr><td>Resume from brief</td><td>3</td><td>Cold second agent lands on the right stage and only that stage's lanes</td></tr>
+<tr><td>No skill match</td><td>2</td><td>Skill invention; preloading siblings</td></tr>
+<tr><td>Honest-curiosity adversarial</td><td>1</td><td>The four-question test applied to a held-out fear-bait line</td></tr>
+</tbody>
+</table>
+</div>
+
+<h4><code>evals/check_load.py</code> — ~70 lines</h4>
+<p>Reads a captured LOAD block, resolves it against <code>load-map.yaml</code>, and reports per fixture: <code>PASS</code>, <code>MISSING</code> (a required path absent), <code>EXTRA</code> (a forbidden or unlisted path), <code>OVER</code> (file count above <code>max_files</code>), <code>WRONG-SKILL</code>. Exit non-zero on any failure. It never inspects prose quality — that is what the gates are for; this is a routing checker only, and calling it anything more would be dishonest about what it measures.</p>
+
+<h4>Baseline expectation</h4>
+<p>Run once <em>before</em> items 1–3 to get a real baseline. My prediction from the code read: the three page-build fixtures fail on missing <code>v3-*</code>, and both CSS-repair fixtures fail <code>OVER</code>. If they pass, my diagnosis in §2/§3 was wrong and this plan should be re-ranked accordingly.</p>
+
+<h2 id="paths"><span class="num">10</span>Exact file paths I would touch</h2>
+
+<div class="tablewrap">
+<table>
+<thead><tr><th>Item</th><th>Path</th><th>Action</th></tr></thead>
+<tbody>
+<tr><td>1</td><td><code>agent-skills/skills/curiosity-driven-scripture-journey/references/</code> (21 files)</td><td><strong>delete</strong></td></tr>
+<tr><td>1</td><td><code>agent-skills/skills/curiosity-driven-scripture-journey/manifest.yaml</code></td><td><strong>delete</strong> (stale <code>release: 3.1.0</code>)</td></tr>
+<tr><td>1</td><td><code>agent-skills/skills/curiosity-driven-scripture-journey/SKILL.md</code></td><td>+1 line: relative paths resolve under <code>versions/&lt;resolved&gt;/</code></td></tr>
+<tr><td>1</td><td><code>design-resources/dynamic-symmetry-grids/GLOSSARY.md</code> (sibling repo)</td><td>repoint symlink → <code>versions/3.2.0/references/dynamic-symmetry-glossary.md</code></td></tr>
+<tr><td>1,7</td><td><code>agent-skills/CATALOG.md</code></td><td>fix 2 missing <code>skills/</code> prefixes; add versioned-path note</td></tr>
+<tr><td>1,7</td><td><code>agent-skills/DESIGN-DIRECTIVES.md</code></td><td>fix 1 missing <code>skills/</code> prefix</td></tr>
+<tr><td>2</td><td><code>agent-skills/WORKSPACE.md</code></td><td>rewrite §3 + §4; resolve the <code>NOW.md</code> contradiction; land stem convention + 6 edges</td></tr>
+<tr><td>2</td><td><code>agent-skills/README.md</code></td><td>rule 7 → pointer; + net-complexity line (item 16)</td></tr>
+<tr><td>2</td><td><code>agent-skills/skills/artwork-prompts-handoff/SKILL.md</code>, <code>README.md</code></td><td>6+1 restatements → pointer</td></tr>
+<tr><td>2</td><td><code>agent-skills/skills/clean-video-transcript/SKILL.md</code></td><td>1 restatement → pointer; + bridge lines (item 9)</td></tr>
+<tr><td>2</td><td><code>…/versions/3.2.0/references/web-experience.md</code></td><td>§Automatic page-build contract items 1, 2, 6, 8 — naming + drop <code>START-HERE.md</code></td></tr>
+<tr><td>2,5</td><td><code>…/versions/3.2.0/references/project-system.md</code></td><td>§Multi-agent → pointer; brief YAML + 5 machine fields; resume rule</td></tr>
+<tr><td>2</td><td><code>…/versions/3.2.0/references/visual-system.md</code>, <code>quality-gates.md</code></td><td>1 restatement each → pointer</td></tr>
+<tr><td>2</td><td><code>…/versions/3.2.0/SKILL.md</code></td><td>line 25 workspace pointer; §Dependency gates <code>index_&lt;agent&gt;(_vN).html</code></td></tr>
+<tr><td>2</td><td><code>F:\__ai-projects\README.md</code></td><td>§Multi-agent file standard → pointer to WORKSPACE.md</td></tr>
+<tr><td>3</td><td><code>…/versions/3.2.0/load-map.yaml</code></td><td><strong>new</strong> (only new file in items 1–3)</td></tr>
+<tr><td>4</td><td><code>…/versions/3.2.0/references/youtube-planning.md</code></td><td>amend rule 8; append accept/reject test + 12 examples</td></tr>
+<tr><td>6</td><td><code>agent-skills/evals/router-fixtures.yaml</code>, <code>evals/check_load.py</code></td><td><strong>new</strong></td></tr>
+<tr><td>7</td><td><code>agent-skills/tools/TOOLS.md</code></td><td>fix <code>skills/ubp-translator-pdf/</code> → <code>getrdone/ubp-tools</code></td></tr>
+<tr><td>7</td><td><code>…/versions/3.2.0/references/source-governance.md</code></td><td>fix or remove <code>scripts/query_sources.py</code> step 3</td></tr>
+<tr><td>7</td><td><code>agent-skills/tools/check_links.py</code></td><td><strong>new</strong> (scanner already written and run for this review)</td></tr>
+<tr><td>8</td><td><code>media-organizer/MediaOrganizer.ps1</code>, <code>work/jobs/</code></td><td><strong>new</strong> — dispatcher only; <code>bin/</code> and <code>lib/</code> untouched</td></tr>
+<tr><td>all</td><td><code>…/curiosity-driven-scripture-journey/CHANGELOG.md</code></td><td>one Unreleased entry per landed item</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2 id="notdoing"><span class="num">11</span>What I will not do, and why</h2>
+
+<ol>
+<li><strong>Split CDSJ into packs or CATALOG skills.</strong> Agreeing with the lock and with chugAlong's reasoning. Separate entry points let agents skip the spine and the gates, and the actual pain is addressing, not size. I found no evidence that would justify arguing for a split.</li>
+<li><strong>Touch <code>versions/2.0.0</code> … <code>3.1.0</code>.</strong> History stays. My deletions are confined to the duplicated <em>root</em> copies of CURRENT, which are not history — they are a second live tree.</li>
+<li><strong>Re-absorb Cloudflare or UBP.</strong> No.</li>
+<li><strong>Add <code>PROJECT-STATUS.md</code>.</strong> A third state store in a repo whose measured failure is contradictory state stores. The rule survives; the file does not.</li>
+<li><strong>Build a 50–100-example fear corpus.</strong> Hours of work, ages fast, duplicates 14 existing rules, and misses the real defect — that rule 8 currently bans the thing Steve wants allowed. Four questions and 12 examples do the job.</li>
+<li><strong>Write <code>load-map.yaml</code> before item 1.</strong> It would encode the path ambiguity in a machine file and make it look decided.</li>
+<li><strong>Ship a fixtures file without a runner.</strong> That is documentation wearing a test costume, and it is worse than nothing because it looks like coverage.</li>
+<li><strong>Build the source-alignment verifier.</strong> Not constructible from this repo today (A5).</li>
+<li><strong>Add a CATALOG row, a skill, or a new philosophy document anywhere in items 1–8.</strong> Net complexity across the whole plan is negative.</li>
+<li><strong>Write to the repo in this session.</strong> Item 1 deletes files and touches a cross-repo symlink — that needs your explicit yes, not my judgement. This plan is the only file I have written.</li>
+</ol>
+
+<div class="panel">
+<h4>Two fixes that are safe enough to land the moment you say go</h4>
+<ol>
+<li><code>skills/curiosity-driven-scripture-journey/manifest.yaml</code> — currently claims <code>release: 3.1.0, status: current</code>. Either delete it (my preference; item 1 removes it anyway) or correct it to 3.2.0. Right now the repo's own metadata is wrong about which release is live.</li>
+<li>The three prefix/pointer dead links: <code>tools/TOOLS.md</code> → <code>skills/ubp-translator-pdf/</code>, and the missing <code>skills/</code> prefix in <code>CATALOG.md</code> (×2) and <code>DESIGN-DIRECTIVES.md</code> (×1). Pure link repair, no behaviour change.</li>
+</ol>
+<p>Neither touches <code>versions/</code>, the symlink, or any rule. Say the word and they go in with a proper agent-trailer commit.</p>
+</div>
+
+<p class="foot">
+Sources inspected in this review: <code>agent-skills/</code> — <code>CATALOG.md</code>, <code>README.md</code>, <code>WORKSPACE.md</code>, <code>EXTERNAL-SKILLS.md</code>, <code>DESIGN-DIRECTIVES.md</code>, <code>COLOR-PSYCHOLOGY.md</code>, <code>tools/TOOLS.md</code>, <code>processing/source-vault/*</code>, all three <code>skills/*/SKILL.md</code>, the full CDSJ root and <code>versions/3.2.0/</code> trees, <code>CHANGELOG.md</code>, <code>CURRENT</code>, <code>STABLE</code>, both <code>manifest.yaml</code>, <code>agents/openai.yaml</code>, git remote + last 12 commits. Workspace — <code>README.md</code>, <code>AGENTS.md</code>, <code>CLAUDE.md</code>, <code>GENERIC-AGENT.md</code>, <code>SOURCES-OF-TRUTH.md</code>, <code>TOMORROW.md</code>, <code>STACK-ROBUSTNESS-PLAN.html</code>, <code>STACK-HARDENING-IDEAS.html</code>, <code>CLAUDE-BURN-DAY-PROMPT.md</code>. <code>media-organizer/</code> — <code>README.md</code>, <code>AGENTS.md</code>, <code>FUTURE.md</code>, <code>bin/*.ps1</code>, <code>lib/MediaCommon.ps1</code>, <code>work/</code> manifests. Diffs and the link scan were run mechanically, not eyeballed; provenance links and private-repo paths were excluded by hand before any finding was reported.
+</p>
+
+</div>
+</body>
+</html>

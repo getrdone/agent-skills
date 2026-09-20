@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "name": "remotion-interactivity",
+  "version": "1.0.0",
+  "sealed": true,
+  "files": {
+    "SKILL.md": "3aebe713e75da6715df1e2bc5f16720450b2814794d4a27830e2110371809a7b",
+    "agents/openai.yaml": "ea70409b8efb730ff2d29d3531ce2bca6bffd164dcf32162a75acec3201e8633",
+    "assets/remotion-icon.png": "662a084d72d99ab91b47c7a566dd0631f0ce0e4f0bf6032708c9200b0db09fd9"
+  },
+  "dependencies": {
+    "library_release": "unified-v5-2026-0920"
+  },
+  "provenance": "Local authoritative adaptation; source notices and licenses retained."
+}

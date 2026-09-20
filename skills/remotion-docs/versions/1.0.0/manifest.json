@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "name": "remotion-docs",
+  "version": "1.0.0",
+  "sealed": true,
+  "files": {
+    "SKILL.md": "93dde0422644cc0aa82658a44be848659aa69a25a002c5786c7203ed30529a73",
+    "agents/openai.yaml": "9e425fee1b8274ee824c24431c96024f8a5c9fffbb4ddd05073b403777e33f6e",
+    "assets/remotion-icon.png": "662a084d72d99ab91b47c7a566dd0631f0ce0e4f0bf6032708c9200b0db09fd9"
+  },
+  "dependencies": {
+    "library_release": "unified-v5-2026-0920"
+  },
+  "provenance": "Local authoritative adaptation; source notices and licenses retained."
+}

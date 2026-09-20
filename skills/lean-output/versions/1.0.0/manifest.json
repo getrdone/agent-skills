@@ -1,0 +1,13 @@
+{
+  "schema": 1,
+  "name": "lean-output",
+  "version": "1.0.0",
+  "sealed": true,
+  "files": {
+    "SKILL.md": "4b9870b0933335820b1a64d7742669862d0542312fb0815d9db10dd2245ab145"
+  },
+  "dependencies": {
+    "library_release": "unified-v5-2026-0920"
+  },
+  "provenance": "Local authoritative adaptation; source notices and licenses retained."
+}

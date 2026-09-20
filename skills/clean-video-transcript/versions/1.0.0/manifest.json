@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "name": "clean-video-transcript",
+  "version": "1.0.0",
+  "sealed": true,
+  "files": {
+    "README.md": "831668b1db95da2bc774ba5301f16563f89703404213841e2429cc07d51cd991",
+    "SKILL.md": "ce9723ff92b6977d00c8d5fae29ff15cf6f297db85fb13f019059d85aa70c161",
+    "examples/end-matter-sample.md": "8142c3969cc24198776fd91c83e9f2e8d3a21d4aac5fe51c54f50d1494716e07",
+    "references/SPEC.md": "3738a9ea4276fc1b5ce82fb492ef9a2ace2a9b51bddce41753a897e29d4c33fb",
+    "references/SPELLING.md": "eca4b574d962d105486a18bccb7294066544b159556e43f5caa1643d4656bbd0"
+  },
+  "dependencies": {
+    "library_release": "unified-v5-2026-0920"
+  },
+  "provenance": "Local authoritative adaptation; source notices and licenses retained."
+}

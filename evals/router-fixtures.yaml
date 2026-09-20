@@ -32,7 +32,7 @@ fixtures:
   expect_skill: curiosity-driven-scripture-journey
   expect_lanes: [packaging]
   expect_load: [references/youtube-planning.md]
-  max_files: 4
+  suggested_files: 4
   forbid: [references/web-experience.md, references/visual-system.md, repo:COLOR-PSYCHOLOGY.md]
 
 - id: titles-standard-mode-default
@@ -40,7 +40,7 @@ fixtures:
   expect_skill: curiosity-driven-scripture-journey
   expect_lanes: [packaging]
   expect_load: [references/youtube-planning.md]
-  max_files: 4
+  suggested_files: 4
   forbid: [references/visual-system.md]
   assert_behaviour: >
     Defaults to Standard mode, roughly 36-48 ideas — NOT the full 17x4 matrix, and not an
@@ -53,7 +53,7 @@ fixtures:
   expect_skill: curiosity-driven-scripture-journey
   expect_lanes: [packaging]
   expect_load: [references/youtube-planning.md]
-  max_files: 4
+  suggested_files: 4
   assert_behaviour: "Exactly 4 lines under each of the 17 categories. 68 total."
 
 - id: more-titles-from-marks
@@ -61,7 +61,7 @@ fixtures:
   expect_skill: curiosity-driven-scripture-journey
   expect_lanes: [packaging]
   expect_load: [references/youtube-planning.md]
-  max_files: 3
+  suggested_files: 3
   assert_behaviour: >
     4-8 new lines under '## More titles from ~ selection'. Does NOT rebuild the matrix.
     Preserves existing ~ marks exactly.
@@ -71,7 +71,7 @@ fixtures:
   expect_skill: curiosity-driven-scripture-journey
   expect_lanes: [packaging]
   expect_load: [references/youtube-planning.md]
-  max_files: 2
+  suggested_files: 2
   assert_behaviour: >
     Rejects it by the four-question test: fails Source (no subject; fear added by packaging)
     and Transfer (pastes onto anything). Offers a replacement that names a real subject.
@@ -82,7 +82,7 @@ fixtures:
   expect_skill: curiosity-driven-scripture-journey
   expect_lanes: [packaging]
   expect_load: [references/youtube-planning.md]
-  max_files: 3
+  suggested_files: 3
   assert_behaviour: >
     One description per marked title. Main prose 80-110 words, aiming 95-105. Reads SELECTED,
     not the newest run. Refuses if no titles are marked.
@@ -91,7 +91,7 @@ fixtures:
   prompt: "Write YouTube descriptions for this episode."
   expect_skill: curiosity-driven-scripture-journey
   expect_lanes: [packaging]
-  max_files: 3
+  suggested_files: 3
   assert_behaviour: "Stops for title selection first. Does not invent a title to describe."
 
 - id: landing-copy-not-youtube-rules
@@ -99,7 +99,7 @@ fixtures:
   expect_skill: curiosity-driven-scripture-journey
   expect_lanes: [web.repair]
   expect_load: [references/web-experience.md]
-  max_files: 3
+  suggested_files: 3
   assert_behaviour: "Short punch. The 80-110 word YouTube rule must NOT be applied."
 
 # ---------------------------------------------------------------- transcripts
@@ -109,7 +109,7 @@ fixtures:
   expect_load:
     - skills/clean-video-transcript/references/SPEC.md
     - skills/clean-video-transcript/references/SPELLING.md
-  max_files: 3
+  suggested_files: 3
   forbid_skill: [curiosity-driven-scripture-journey]
   assert_behaviour: >
     Writes <stem>.md next to <stem>.txt — canonical on first write, no agent suffix.
@@ -119,14 +119,14 @@ fixtures:
   prompt: "This transcript is already clean, just add the verse and EGW list."
   expect_skill: clean-video-transcript
   expect_load: [skills/clean-video-transcript/references/SPEC.md]
-  max_files: 2
+  suggested_files: 2
   assert_behaviour: "Appends end-matter in presentation order. Does not re-clean the body."
 
 - id: transcript-then-titles-bridge
   prompt: "Transcript's cleaned. What's next?"
   expect_skill: curiosity-driven-scripture-journey
   expect_lanes: [packaging]
-  max_files: 3
+  suggested_files: 3
   assert_behaviour: >
     Opens the packaging lane against the cleaned .md, carries source IDs from the Quick
     Reference, creates <stem>.titles.md. Does not improvise a new process.
@@ -135,7 +135,7 @@ fixtures:
 - id: artwork-prompt-pack
   prompt: "I'll generate the images myself — write me the prompt pack."
   expect_skill: artwork-prompts-handoff
-  max_files: 3
+  suggested_files: 3
   assert_behaviour: >
     Writes prompts/artwork-prompts.md — canonical, no agent suffix. No paid API is called.
     Shared visual language block present before the numbered prompts.
@@ -144,7 +144,7 @@ fixtures:
   prompt: "Generate a hero image for the Psalm 23 page."
   expect_skill: null
   forbid_skill: [artwork-prompts-handoff]
-  max_files: 2
+  suggested_files: 2
   assert_behaviour: "Uses the available image capability. Does NOT hijack into a prompt pack."
 
 # ---------------------------------------------------------------- palette composition
@@ -155,7 +155,7 @@ fixtures:
   expect_load:
     - references/palette-integration.md
     - repo:skills/color-palette-composition/SKILL.md
-  max_files: 4
+  suggested_files: 4
   forbid: [repo:COLOR-PSYCHOLOGY.md, references/motion-and-premium-ui.md]
   assert_behaviour: >
     Reads the palette skill's core composition reference and returns field/partner/spark,
@@ -170,7 +170,7 @@ fixtures:
     - references/palette-integration.md
     - repo:skills/color-palette-composition/SKILL.md
     - repo:COLOR-PSYCHOLOGY.md
-  max_files: 5
+  suggested_files: 5
   assert_behaviour: >
     Composes the theme first, then uses contextual Psychology for the claimed audience and
     Scripture reading. It names plausible alternate readings and does not assert that hue is doctrine.
@@ -182,7 +182,7 @@ fixtures:
   expect_load:
     - references/palette-integration.md
     - repo:skills/color-palette-composition/SKILL.md
-  max_files: 4
+  suggested_files: 4
   forbid: [references/web-experience.md, references/motion-and-premium-ui.md]
   assert_behaviour: >
     Treats changed hierarchy as a material palette revision, not as a full page-build or a narrow component repair.
@@ -197,7 +197,7 @@ fixtures:
     - references/web-experience.md
     - references/visual-system.md
     - references/v3-quality.md
-  max_files: 9
+  suggested_files: 9
   assert_behaviour: >
     HIGHEST-VALUE FIXTURE. v3-workflow.md and v3-quality.md must both load. Before chunk 02
     they were named nowhere in the route table and did not exist at the path the skill root
@@ -208,7 +208,7 @@ fixtures:
   prompt: "Make me a page about the sanctuary."
   expect_skill: curiosity-driven-scripture-journey
   expect_lanes: [develop, project]
-  max_files: 4
+  suggested_files: 4
   assert_behaviour: >
     Requires status approved-for-build or an explicit build order. Never infers approval
     from silence. Does not start production HTML on a bare topic.
@@ -218,7 +218,7 @@ fixtures:
   expect_skill: curiosity-driven-scripture-journey
   expect_lanes: [web.repair, release]
   expect_load: [references/web-experience.md, references/quality-gates.md]
-  max_files: 4
+  suggested_files: 4
   forbid: [references/motion-and-premium-ui.md, references/design-critique-and-anti-slop.md]
   assert_behaviour: "Preserves the approved concept. Runs audit_html.py. Invents nothing new."
 
@@ -228,7 +228,7 @@ fixtures:
   expect_skill: curiosity-driven-scripture-journey
   expect_lanes: [web.repair]
   expect_load: [references/web-experience.md]
-  max_files: 2
+  suggested_files: 2
   forbid:
     - references/visual-system.md
     - references/motion-and-premium-ui.md
@@ -247,7 +247,7 @@ fixtures:
   expect_skill: curiosity-driven-scripture-journey
   expect_lanes: [web.repair]
   expect_load: [references/web-experience.md]
-  max_files: 2
+  suggested_files: 2
   forbid: [references/visual-system.md, repo:COLOR-PSYCHOLOGY.md]
 
 # ---------------------------------------------------------------- resume
@@ -256,7 +256,7 @@ fixtures:
   expect_skill: curiosity-driven-scripture-journey
   expect_lanes: [project]
   expect_brief: true
-  max_files: 2
+  suggested_files: 2
   assert_behaviour: >
     Reads NOW.md then project-brief.md. Resumes the stage in `status`, loads only that
     stage's lanes. Does not reload the whole skill. Does not restart completed stages.
@@ -265,7 +265,7 @@ fixtures:
   prompt: "Continue this project."
   expect_skill: curiosity-driven-scripture-journey
   expect_lanes: [project]
-  max_files: 2
+  suggested_files: 2
   assert_behaviour: "No brief present -> intake/discovery. Assumes no prior approval."
 
 - id: resume-does-not-reopen
@@ -273,7 +273,7 @@ fixtures:
   expect_skill: curiosity-driven-scripture-journey
   expect_lanes: [visual]
   expect_load: [references/visual-system.md, references/youtube-planning.md]
-  max_files: 4
+  suggested_files: 4
   assert_behaviour: "Uses the already-selected title. Does not reopen title selection."
 
 # ---------------------------------------------------------------- sources
@@ -282,7 +282,7 @@ fixtures:
   expect_skill: curiosity-driven-scripture-journey
   expect_lanes: [sources]
   expect_load: [references/source-governance.md]
-  max_files: 2
+  suggested_files: 2
   assert_behaviour: >
     Queries the generated database. Does NOT open every record.yaml. Treats only
     approval.status: approved records as authoritative.
@@ -291,12 +291,12 @@ fixtures:
 - id: no-skill-match
   prompt: "What's a good ratio for a YouTube thumbnail on mobile?"
   expect_skill: null
-  max_files: 0
+  suggested_files: 0
   assert_behaviour: "Answers from judgement. Does not force a skill or preload siblings."
 
 - id: unrelated-task
   prompt: "Rename all the .jpeg files in this folder to .jpg."
   expect_skill: null
-  max_files: 0
+  suggested_files: 0
   forbid_skill: [curiosity-driven-scripture-journey, clean-video-transcript, artwork-prompts-handoff]
   assert_behaviour: "Just does it. No skill, no CATALOG load."

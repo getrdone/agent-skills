@@ -1,0 +1,27 @@
+{
+  "backup": "G:\\__ai-projects\\_zzz-repo-archive\\2026-0920\\unified-v5-124957",
+  "restore": "full and selected file verified",
+  "lifecycle_tests": 7,
+  "current_skills": 38,
+  "historical_cdsj": [
+    "2.0.0",
+    "3.0.0",
+    "3.0.1",
+    "3.1.0",
+    "3.2.0"
+  ],
+  "project_moves": 116,
+  "current_cdsj": "3.3.1",
+  "current_web_studio": "1.2.1",
+  "fresh_sessions": {
+    "codex": "passed policy/discovery/resource inspection",
+    "grok": "passed policy/discovery/resource inspection",
+    "others": "installation hash checks only; headless runtime unavailable"
+  },
+  "link_audit": {
+    "references_checked": 307,
+    "missing": 0,
+    "cdsj_reference_files": 22,
+    "orphans": 0
+  }
+}

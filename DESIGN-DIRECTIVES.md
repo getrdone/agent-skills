@@ -2,7 +2,7 @@
 
 **Cross-skill design constitution.** Load this file for source-led/brand-led visual systems, design-token or gradient architecture, CSS implementation, developer handoff, or a full visual system. For a stand-alone new or revised theme, start with `skills/color-palette-composition/SKILL.md`; add this file only when the chosen palette needs source locks, canonical names, semantic roles, gradients, or implementation guidance.
 
-This file owns **design reasoning and color-system architecture**. Individual skills may add stricter rules for composition, CSS mechanics, HTML, accessibility, motion, or artwork production, but they should not contradict this foundation.
+This file owns **design reasoning and color-system architecture**. Individual skills contribute contextual recommendations for composition, CSS mechanics, HTML, accessibility, motion, or artwork production, but they should not contradict this foundation.
 
 **Palette-generation route:** whenever a color theme, palette, scheme, allocation, accent plan, mixing, or placement is created or materially revised, load `skills/color-palette-composition/SKILL.md` first. It owns visual-weight composition, Itten/Munsell application, ratios, mixing, placement, and the palette handoff. This file owns the source-specific naming contract, locked values, story-to-role token architecture, named gradients, and implementation guidance.
 
@@ -264,7 +264,7 @@ When a vibrant brand color fails as normal body text, keep the brand color if it
 - Use modern color tools (`oklch`, relative color syntax, `color-mix(in oklab, ...)`) for derived states when browser support/project constraints allow.
 - Do not convert an official hex to OKLCH and then round-trip it back to a visibly different hex while still calling it the official value.
 - Prefer generated state colors over bloating the core palette with many one-off variants.
-- Pair with container-query-first layout and the `modern-css-design` skill for CSS mechanics.
+- Pair with container-query-first layout and the `web-studio` skill for CSS mechanics.
 
 ### Graphic design
 
@@ -307,9 +307,9 @@ If the answer to any of these is no, the color system is not finished.
 
 ## Relationship to skill-specific rules
 
-- **`skills/curiosity-driven-scripture-journey/versions/3.2.0/references/visual-system.md`** — composition, Gestalt, typography, imagery, motion, design fingerprint; this file supplies the deeper cross-project color-system reasoning.
-- **`modern-css-design`** — CSS architecture and implementation mechanics; this file decides how source/brand color systems are structured conceptually.
-- **`modern-html-aeo`** — page structure, conversion, performance, semantics, AEO/GEO/SEO; use these directives before encoding the visual system into the page.
+- **`skills/curiosity-driven-scripture-journey/versions/3.3.0/references/visual-system.md`** — composition, Gestalt, typography, imagery, motion, design fingerprint; this file supplies the deeper cross-project color-system reasoning.
+- **`web-studio`** — CSS architecture and implementation mechanics; this file decides how source/brand color systems are structured conceptually.
+- **`web-studio`** — page structure, conversion, performance, semantics, AEO/GEO/SEO; use these directives before encoding the visual system into the page.
 - **`artwork-prompts-handoff`** — artwork generation brief/handoff; use these directives to establish the shared palette and color-grade language before writing per-image prompts.
 - **`skills/color-palette-composition`** — the canonical palette-generation workflow: field/partner/spark allocation, visual weight, Itten/Munsell theory, harmony, mixing, placement, and verification. This file owns architecture, source-specific naming, semantic tokens, gradients, and implementation guidance.
 

@@ -1,100 +1,50 @@
-# Skill catalog (read this first — do not load every skill)
+# Available managed skills
 
-<!-- Agent: Grok · Model: Grok 4.5 · Date: 2026-09-16 · Flatten reset: origin/main + local extras; images phase; Remotion on-request. -->
-<!-- Agent: ChatGPT Web · Model: GPT-5.6 Sol · Date: 2026-09-17 · Canonical resource resolution; superseded archive policy. -->
+This is the authoritative discovery catalog. Load relevant entrypoints and targeted resources progressively. There is no numerical specialist cap. Current user requests and accepted project requirements outrank specialist recommendations and illustrative examples.
 
-**Always also follow** [`WORKSPACE.md`](WORKSPACE.md).
+Coding work uses coding-workflow. Web implementation is coordinated by web-studio. The project design specification owns identity; Awesome Design provides examples, Dynamic Symmetry composition, Color Palette Composition color relationships, and the design critique skills assess refinement. Content and imagery retain their specialist owners. Remotion is available for relevant composition/video work, not mandatory on ordinary pages.
 
-**Whenever any image is generated or any visual layout places subjects/type on a canvas, load** [`skills/dynamic-symmetry/SKILL.md`](skills/dynamic-symmetry/SKILL.md). Soft standard: rectangle + armature + crop integrity. Write “Dynamic Symmetry” in full (never “DS”). Scripture Journey, web-studio, artwork prompts, and image-direction skills all route here — do not keep a second method copy.
+Only root entrypoints are discoverable. CURRENT/STABLE and explicit releases resolve inside this repository. No old skill names or redirect aliases are registered. Vendor/system plugins remain managed by their providers.
 
-## Canonical resolution
+| Skill | Entrypoint folder | Capability / trigger |
+|---|---|---|
+| ai-image-generation | `skills/ai-image-generation/` | Generate or edit images via the inference.sh belt CLI (GPT-Image-2, FLUX, Gemini, Grok Imagine, Seedream, Reve, and related apps). Use ONLY when the user explicitly requests AI image generation / editing / upscaling through belt or this skill by name |
+| artwork-prompts-handoff | `skills/artwork-prompts-handoff/` | Create a numbered, paste-ready artwork prompt pack for manual generation in the user's chosen tools. Use only when the user explicitly asks for prompts, an art handoff, or says they will generate the images themselves. Do not intercept ordinary reque |
+| awesome-design-md | `skills/awesome-design-md/` | Consult locally maintained design-system references for typography, color, spacing, layout, component states, and responsive behavior; adapt them to the project identity. |
+| brandkit | `skills/brandkit/` | Premium brand-kit image generation skill for creating high-end brand-guidelines boards, logo systems, identity decks, and visual-world presentations. Trained for minimalist, cinematic, editorial, dark-tech, luxury, cultural, security, gaming, developer-tool, and consumer-app brand systems. Optimized for intentional logo concepting, refined composition, sparse typography, strong symbolic meaning, premium mockups, art-directed imagery, and flexible grid layouts. |
+| character-turnaround-sheet | `skills/character-turnaround-sheet/` | Build repeatable 5-panel cinematic character turnaround sheets for AI video (InVideo GPT Image 2 or Grok Imagine). Use for character sheet, turnaround, FACE CLOSE UP FRONT BACK LEFT PROFILE RIGHT PROFILE, biblical or period costume identity lock. |
+| clean-video-transcript | `skills/clean-video-transcript/` | Clean raw video transcripts (sermons, lectures, teaching series, YouTube captures, and similar) applicable), normalize paragraphs, require Video URL + Video ID in the header, and append a presentation-order Quick Reference of Bible verses, Ellen Whit |
+| cloudflare-platform | `skills/cloudflare-platform/` | Comprehensive guidance for building sites and apps on Cloudflare Pages, Workers, storage, AI, and security. Use when deploying static or dynamic sites, edge functions, full-stack apps, or integrating Cloudflare with HTML/CSS skills. Prefer live docs over trained knowledge. Triggers on Cloudflare, Workers, Pages, edge, deploy site, wrangler. |
+| coding-workflow | `skills/coding-workflow/` | Plan, implement, debug, and verify coding work in reviewable chunks; reuse existing capabilities and preserve the full requested outcome. |
+| color-palette-composition | `skills/color-palette-composition/` | Create, revise, critique, or document high-attention color themes for interiors, graphics, brands, web pages, interfaces, data displays, and print. Use whenever a request needs a coordinated palette, color scheme, proportions, placement, mixing, or visual hierarchy; not for one isolated color choice. |
+| curiosity-driven-scripture-journey | `skills/curiosity-driven-scripture-journey/` | Plan, package, design, write, build, or review a curiosity-driven Scripture content project from any entry point. Use for topic discovery, Bible-study questions and copy, source-library ingestion and alignment, source databases, YouTube ideas/titles/descriptions/thumbnails/scripts, graphic design, visual direction, learning architecture, interactive semantic HTML/CSS/JavaScript, SEO/AEO/GEO, project gates, or cross-channel consistency. Also use when continuing or changing one slice of an existing Scripture, ministry, educational, or high-trust project while preserving prior decisions. |
+| design-taste-frontend | `skills/design-taste-frontend/` | Anti-slop frontend skill for landing pages, portfolios, and redesigns. The agent reads the brief, infers the right design direction, and ships interfaces that do not look templated. Real design systems when applicable, audit-first on redesigns, strict pre-flight check. |
+| dynamic-symmetry | `skills/dynamic-symmetry/` | Soft-standard composition for any image generation and visual layout. Choose a lawful rectangle (root / phi / 1.5), apply an armature (diagonals, reciprocals, eyes), place focal points with crop integrity. Use for heroes, thumbnails, section art, bra |
+| high-end-visual-design | `skills/high-end-visual-design/` | Teaches the AI to design like a high-end agency. Defines the exact fonts, spacing, shadows, card structures, and animations that make a website feel expensive. Blocks all the common defaults that make AI designs look cheap or generic. |
+| i-have-adhd | `skills/i-have-adhd/` | 'Shape output for a reader with ADHD: lead with the next action, number multi-step work, restate state across turns, suppress tangents, give specific time estimates, make wins visible. Invoke with /i-have-adhd; stays on until "stop adhd mode".' |
+| imagegen-frontend-mobile | `skills/imagegen-frontend-mobile/` | Elite mobile app image-generation skill for creating premium, app-native screen concepts and flows. Designed for iOS, Android, and cross-platform mobile products. Prioritizes clean hierarchy, comfortably readable text, strong multi-screen consistency, controlled color palettes, non-generic creative direction, textured surfaces, image-led composition, tasteful custom iconography, and clean phone mockup framing. By default, screens should be shown inside a subtle premium iPhone or similar phone mockup with a visible frame, while the main focus stays on the app content itself. This skill generates images only. It does not write code. |
+| imagegen-frontend-web | `skills/imagegen-frontend-web/` | Elite frontend image-direction skill for generating premium, conversion-aware website design references. CRITICAL OUTPUT RULE — generate ONE separate horizontal image FOR EVERY section. A landing page with 8 sections produces 8 images. Never compress multiple sections into one image. Enforces composition variety (not always left-text / right-image), background-image freedom, varied CTAs, varied hero scales (giant / mid / mini minimalist), narrative concept spine, second-read moments, and a single consistent palette across all images. Optimized for landing pages, marketing sites, and product comps that developers or coding models can accurately recreate. |
+| lean-output | `skills/lean-output/` | Activate when the user wants concise, high-density answers with low token cost. Triggers include lean, brief, short answer, no fluff, tldr, token savings, high information density, skip preamble. |
+| multi-cli-dispatch | `skills/multi-cli-dispatch/` | Use when dispatching work across goBot, Grok CLI, or Codex exec — job cards, per-run effort, background watcher, DONE/BLOCKED without babysitting, delete gate. |
+| redesign-existing-projects | `skills/redesign-existing-projects/` | Upgrades existing websites and apps to premium quality. Audits current design, identifies generic AI patterns, and applies high-end design standards without breaking functionality. Works with any CSS framework or vanilla CSS. |
+| remotion-best-practices | `skills/remotion-best-practices/` | Router for all Remotion skills. Load only when the user asks for Remotion, compositions, captions, Player, Studio, or related video-code work. |
+| remotion-captions | `skills/remotion-captions/` | Transcribing, displaying and animating captions |
+| remotion-create | `skills/remotion-create/` | Create a new Remotion video |
+| remotion-docs | `skills/remotion-docs/` | Search Remotion documentation |
+| remotion-interactivity | `skills/remotion-interactivity/` | Structure Remotion markup for interactivity |
+| remotion-maps | `skills/remotion-maps/` | Remotion Map animation knowledge |
+| remotion-markup | `skills/remotion-markup/` | Content, animation and effects best practices |
+| remotion-multimedia | `skills/remotion-multimedia/` | Interacting with Mediabunny |
+| remotion-render | `skills/remotion-render/` | Export a Remotion video |
+| remotion-saas | `skills/remotion-saas/` | Build an app with Remotion |
+| remotion-studio | `skills/remotion-studio/` | Preview a Remotion video |
+| remotion-upgrade | `skills/remotion-upgrade/` | Upgrade Remotion, and related packages |
+| transcript | `skills/transcript/` | Use when the spoken content of a YouTube video is needed — even if not explicitly requested. Supports two output modes: (1) structured format with approximate section markers, video header metadata, and ordered master reference lists for Bible verses, Spirit of Prophecy, and other sources (default) and (2) exact timestamps. Triggers on video links/IDs, requests to transcribe, summarize, quote, or extract from video. Not for uploads or account management. |
+| web-studio | `skills/web-studio/` | Parent web craft for Grok, Codex, and Claude. Routes page work to deliverable-clone, deliverable-images, deliverable-theme, or deliverable-polish. Use for landing pages, ministry sites, screenshot-to-page, tokens, and one-off HTML edits. Do not use f |
+| youtube-content-packaging | `skills/youtube-content-packaging/` | End-to-end packaging of YouTube videos — idea evaluation, click psychology, titles, thumbnails, hooks, and story cycles — so content earns the click and holds attention. Use for full video strategy sessions, packaging reviews, growth system design, or when an idea needs market validation and presentation. Triggers include packaging, YouTube strategy, content system, click triggers, story cycles, idea evaluation, retention structure. |
+| youtube-idea-generation | `skills/youtube-idea-generation/` | Generate high-potential YouTube video ideas using systematic combination of topics, formats, and angles. Use when brainstorming content ideas, overcoming creative blocks, building a content pipeline, or preparing for title and thumbnail work. Triggers include idea generation, video concepts, content ideation, daily idea habit, unique combinations. |
+| youtube-thumbnail-design | `skills/youtube-thumbnail-design/` | Design high-CTR YouTube thumbnails using content-composition-contrast principles, faces, hierarchy, and curiosity-gap visuals. Use when creating or critiquing thumbnails, pairing with titles, improving click rate, or applying glanceable design. Triggers include thumbnail design, YouTube thumbnails, scroll stoppers, three Cs, face thumbnails, contrast hierarchy. |
+| youtube-title-writing | `skills/youtube-title-writing/` | Write high-CTR YouTube titles using curiosity gaps, psychological click triggers, RO structure, and proven formulas. Use when crafting or refining titles, improving click-through rate, packaging video ideas, or generating title variations. Triggers include title writing, YouTube titles, curiosity gap, click triggers, RO formula, title formulas. |
+| youtube-video-planner | `skills/youtube-video-planner/` | Plan a YouTube video BEFORE recording using the idea-and-packaging framework from Chris Do x Aprilynne Alter. Use when the user wants to brainstorm or validate a video idea, judge if an idea will get views (TAM / outliers / remarkability), generate a |
 
-This catalog is authoritative for live skills and tools. Repository identities and local project paths come from `_agent-control/PROJECTS.yaml`. Do not recreate retired names as aliases, junctions, compatibility shims, duplicate skill folders, or fallback routes. If a skill, tool, repository, path, or resource is missing or conflicts with another instruction, re-read this catalog, `WORKSPACE.md`, `tools/TOOLS.md`, and the controller's `AGENT-CONTRACT.md` / `PROJECTS.yaml`. If those current records still do not resolve it, report the conflict instead of guessing.
-
-## Layout standard (lock)
-
-1. Live skills live only under `skills/<kebab-name>/` with a root `SKILL.md`.
-2. **No nested skill packs** inside `skills/` (`agent-skills/`, `claude-skills/`, zip dumps).
-3. Archives / retired skills do not participate in discovery or routing. They live in [getrdone/zzz-repo-archive](https://github.com/getrdone/zzz-repo-archive) (`G:\__ai-projects\_zzz-repo-archive`), under dated folders `yyyy-MMdd`. Never auto-loaded, never synced as discoverable skills. Do not keep a second copy under `packages/`.
-4. Versioned skills (CDSJ) use `CURRENT` / `STABLE` + `versions/<ver>/` only when cross-release mixing is a real risk.
-5. **This catalog is the allowlist.** If a folder is not listed here, do not treat it as a default skill.
-6. **web-studio owns HTML.** Other skills call it; they do not invent parallel web pipelines.
-7. Sync mirrors `skills/` into agent homes (`~/.grok/skills`, etc.). It does not `git pull`.
-
-If one skill matches → load **only** `skills/<name>/SKILL.md` (and files it points to).
-
-### Core (Grok main pack + GitHub HEAD)
-
-| Skill | Path | Triggers |
-|-------|------|----------|
-| clean-video-transcript | `skills/clean-video-transcript/` | clean transcript, ASR cleanup, verse list, EGW list |
-| curiosity-driven-scripture-journey | `skills/curiosity-driven-scripture-journey/` | titles, descriptions, Scripture journey, learning paths, ministry copy |
-| artwork-prompts-handoff | `skills/artwork-prompts-handoff/` | art handoff, paste-ready prompts |
-| color-palette-composition | `skills/color-palette-composition/` | palette, color scheme, 60-30-10 |
-| dynamic-symmetry | `skills/dynamic-symmetry/` | Dynamic Symmetry, armature, root rectangle, phi, crop integrity, composition grid, placement |
-| web-studio | `skills/web-studio/` | screenshot to page, clone, images, theme tokens, TUNE, polish, one-off HTML edit |
-| lean-output | `skills/lean-output/` | lean, brief, tldr, no fluff |
-| youtube-idea-generation | `skills/youtube-idea-generation/` | idea generation, video concepts |
-| youtube-title-writing | `skills/youtube-title-writing/` | YouTube titles, curiosity gap, RO formula |
-| youtube-thumbnail-design | `skills/youtube-thumbnail-design/` | YouTube thumbnails, three Cs |
-| youtube-content-packaging | `skills/youtube-content-packaging/` | packaging, click triggers, story cycles |
-| youtube-video-planner | `skills/youtube-video-planner/` | video brief, package my video, hook |
-| transcript | `skills/transcript/` | transcribe, YouTube transcript, captions |
-| character-turnaround-sheet | `skills/character-turnaround-sheet/` | character sheet, turnaround, FACE CLOSE UP |
-| cloudflare-platform | `skills/cloudflare-platform/` | Cloudflare, Workers, Pages, wrangler |
-
-### Local ops extras
-
-| Skill | Path | Triggers |
-|-------|------|----------|
-| ai-image-generation | `skills/ai-image-generation/` | explicit only: belt / inference.sh image gen, or this skill by name |
-| multi-cli-dispatch | `skills/multi-cli-dispatch/` | dispatch goBot / Grok CLI / Codex jobs, job cards, background watcher |
-
-### Image-direction (on-request; web-studio images / polish companions)
-
-| Skill | Path | Triggers |
-|-------|------|----------|
-| imagegen-frontend-web | `skills/imagegen-frontend-web/` | section art comps, landing image direction, one image per section |
-| imagegen-frontend-mobile | `skills/imagegen-frontend-mobile/` | mobile app screen comps (images only) |
-| brandkit | `skills/brandkit/` | brand boards, logo systems, identity decks |
-| design-taste-frontend | `skills/design-taste-frontend/` | anti-slop frontend taste, redesign audit |
-| high-end-visual-design | `skills/high-end-visual-design/` | premium agency spacing/type/shadow critique |
-| redesign-existing-projects | `skills/redesign-existing-projects/` | upgrade existing site quality without breaking behavior |
-
-**web-studio phase order:** `clone` → `images` → `theme` → `polish` (one phase per turn unless chained by name).
-
-### Remotion (on-request only)
-
-| Skill | Path | Triggers |
-|-------|------|----------|
-| remotion-best-practices | `skills/remotion-best-practices/` | Remotion router — load first when Remotion is requested |
-| remotion-create | `skills/remotion-create/` | new Remotion video / project |
-| remotion-markup | `skills/remotion-markup/` | Remotion React markup |
-| remotion-maps | `skills/remotion-maps/` | Remotion maps / geo |
-| remotion-multimedia | `skills/remotion-multimedia/` | Mediabunny / browser media |
-| remotion-interactivity | `skills/remotion-interactivity/` | Studio interactivity |
-| remotion-render | `skills/remotion-render/` | advanced render |
-| remotion-studio | `skills/remotion-studio/` | Remotion Studio |
-| remotion-captions | `skills/remotion-captions/` | captions |
-| remotion-saas | `skills/remotion-saas/` | Player / Lambda / SaaS |
-| remotion-docs | `skills/remotion-docs/` | Remotion docs lookup |
-| remotion-upgrade | `skills/remotion-upgrade/` | upgrade Remotion |
-
-## Banned / retired (do not load)
-
-`html-page-standard`, `studio-web`, `modern-web-development`, `modern-web-development-v2`, `modern-html-aeo`, `modern-css-design`, `interactive-components`, `optimized-deliverables`, any `claude-skills` nest, any nested `skills/agent-skills` dump.
-
-These names are historical only and must not be restored as live skill folders or aliases. Retired copies live in [getrdone/zzz-repo-archive](https://github.com/getrdone/zzz-repo-archive) (current dump: `2026-0920/`). Do not load them.
-
-## External
-
-| Source | Routing |
-|--------|---------|
-| [Cloudflare Skills](https://github.com/cloudflare/skills) | Grok marketplace plugin `cloudflare`. Do not keep a second clone under this workspace. |
-| [getrdone/ubp-tools](https://github.com/getrdone/ubp-tools) | Trip-specific UBP tooling; not default routing. |
-
-## Sync
-
-Tool: `G:\__ai-projects\_agent-tools\sync-agent-skills\`  
-Source: `G:\__ai-projects\_agent-skills\skills`  
-Task: `AgentSkillsRobocopy` (15m). Pull this git repo when GitHub changes, then sync.
+Follow WORKSPACE.md for file placement. Temporary plans and drafts go in project _wip; reusable project tools go in _tools. The master tool catalog is _tools/TOOLS.md.

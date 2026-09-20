@@ -1,7 +1,7 @@
 # Workspace conventions (all agents, all skills)
 
 **Always apply.** This file is part of the agent-skills contract, not a single skill.
-Read with `CATALOG.md`. Every skill inherits these rules unless a skill explicitly tightens them.
+Read with `CATALOG.md`. Skills follow these conventions; specialist recommendations cannot override the user or accepted project requirements.
 
 Agents covered: **Grok, Claude, Codex, Freebuff, Cursor, Gemini**, and any other local agent.
 
@@ -10,6 +10,16 @@ Agents covered: **Grok, Claude, Codex, Freebuff, Cursor, Gemini**, and any other
 > any rule below anywhere in the repo, that copy is a defect — delete it and link here instead.
 
 ---
+
+## 0. Authoritative workflow and working locations
+
+This repository is the complete source of truth for managed skills. Installed copies are generated distributions. Never load a legacy skill, shim, alias, archive or upstream instruction file to fill a gap. Integrate required knowledge here first. References within the new library are direct ownership links.
+
+For coding use `skills/coding-workflow/SKILL.md`. For web work use `skills/web-studio/SKILL.md`. Current user instructions and accepted project requirements take precedence over recommendations and reference examples. Modular source, dependencies, Motion/Framer Motion, GSAP, Remotion and Lottie are allowed when appropriate. Self-contained output is an explicit export request.
+
+Temporary plans, captures, diagnostics, experiments and drafts go in `_wip/<task>/`, never the project root or durable planning folders. Reusable project utilities go in `_tools/`; shared tools retain one shared home. Skill-bound scripts stay in their release. Read the master `_tools/TOOLS.md` in this library before creating a utility. Project `_tools/TOOLS.md` lists local tools and links directly to the master. Do not copy the master into each project. Accepted plans remain in established durable documentation.
+
+Work in cohesive verifiable chunks: outcome, affected area, check, evidence, status, next action. No elapsed-time work quota, inactivity deadline or automatic kill. Continue authorized work without repeated approval gates; no automatic job retry or model switching. Explicit user stop requests and actual failures remain actionable.
 
 ## 1. Brain vs work
 
@@ -25,8 +35,7 @@ Do **not** fork skill bodies into the work folder.
 
 ## 2. One shared work folder
 
-All agents write into the **same** user-chosen directory. When a topic outgrows a flat list
-(~6+ artifact types), use **one topic/episode subfolder** — still shared by every agent, never one folder per agent.
+All agents share the user-chosen project. Put drafts, temporary plans, experiments and intermediate artifacts in `_wip/<task>/`. Put reusable project tools in `_tools/`. Keep actual source, tests, assets, accepted documentation and deliverables in their established locations.
 
 ```text
 work-root/
@@ -54,11 +63,12 @@ When the user starts a **new** named topic and no project folder exists:
   02-TASKS.md               # open work that outlives a session
   03-MEMORY.md              # durable locks and settled decisions
   project-brief.md          # one living brief (YAML) — durable + machine state
-  planning/                 # optional long plans
+  _wip/                    # temporary plans and task intermediates
+  _tools/                  # reusable project utilities and local index
   mood/                     # finished inspiration / generated art
   prompts/                  # artwork prompt packs
   references/               # project-specific refs
-    dynamic-symmetry/       # optional: README pointing at design-resources pack
+    dynamic-symmetry/       # project composition notes, if needed
   sources/intake/           # user may dump files here — no forms required
   deliverables/             # shippable page, exports, finals
     assets/                 # finished art named to match the prompts file (p01-….png)
@@ -68,8 +78,7 @@ When the user starts a **new** named topic and no project folder exists:
 Formal `registry.yaml` is only for the shared source vault — not for every mood PNG.
 
 **Dynamic Symmetry method (canonical skill):** `skills/dynamic-symmetry/`.  
-**Shared grid pack (never duplicated into a project):** `G:\__ai-projects\_resources\design-resources\dynamic-symmetry-grids\` (legacy `F:\__ai-projects\design-resources\…`).  
-Projects keep a short pointer under `references/dynamic-symmetry/README.md`.
+**Shared grid pack (never duplicated into a project):** `repo:resources/dynamic-symmetry-grids/`. Project composition notes may cite selected grids directly within this library.
 
 ---
 
@@ -360,9 +369,9 @@ There is **no** aggregated task file. A roll-up would be a second copy of every 
 the moment a project file changed. Aggregate on demand instead — the answer is always live:
 
 ```powershell
-F:\__ai-projects\_agent-control\bin\open-tasks.ps1              # every project
-F:\__ai-projects\_agent-control\bin\open-tasks.ps1 -Project final-days
-F:\__ai-projects\_agent-control\bin\open-tasks.ps1 -Owner @grok
+G:\__ai-projects\_agent-control\bin\open-tasks.ps1              # every project
+G:\__ai-projects\_agent-control\bin\open-tasks.ps1 -Project final-days
+G:\__ai-projects\_agent-control\bin\open-tasks.ps1 -Owner @grok
 ```
 
 It reads `_agent-control\PROJECTS.yaml` for the project list, scans each `02-TASKS.md`, and prints every
@@ -386,7 +395,7 @@ approval.
 ### 6h. Drift detection
 
 ```powershell
-F:\__ai-projects\_agent-control\bin\workspace-doctor.ps1
+G:\__ai-projects\_agent-control\bin\workspace-doctor.ps1
 ```
 
 Run after changing any numbered file. Exit 1 means the contract is broken — fix it before you stop.
@@ -395,7 +404,7 @@ retired name returns, or if the machine-wide template regresses. Conventions hol
 
 ## 7. Local `AGENTS.md` in a work folder
 
-A consumer folder may keep a short `AGENTS.md` that points at `F:\__ai-projects\agent-skills` and this
+A consumer folder may keep a short `AGENTS.md` that points at `G:\__ai-projects\_agent-skills` and this
 file, and states that all agents share the folder. It must **not** restate the rules above.
 `CLAUDE.md` may be `@AGENTS.md` only.
 
@@ -412,3 +421,5 @@ file, and states that all agents share the folder. It must **not** restate the r
 <!-- Agent: claude · Model: claude-opus-5 · Thinking: not exposed · Date: 2026-09-10 · §6 restored MEMORY.md as a first-class file; numbered five-file model in order of need, task queue + lifecycle, the derivability test, brief-cites-never-copies, and on-demand cross-project task discovery. -->
 <!-- Agent: grok · Model: Grok 4.6 · Thinking: not exposed · Date: 2026-09-10 · ACTIVE-WORK.md is a leftover state file; doctor FAILs pickup pointers at NOW.md/MEMORY.md. -->
 <!-- Agent: grok · Model: Grok 4.5 · Date: 2026-09-13 · §3d: human-readable instruction folders are _docs/, not docs/. -->
+
+<!-- Agent: Codex | Model: GPT-6 | Thinking: not exposed | Date: 2026-09-20 -->

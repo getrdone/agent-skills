@@ -1,0 +1,13 @@
+{
+  "schema": 1,
+  "name": "youtube-thumbnail-design",
+  "version": "1.0.0",
+  "sealed": true,
+  "files": {
+    "SKILL.md": "7adc995242d3ed9ab96ca96302594866b43f629756d0fc8628f1f10f8d9357af"
+  },
+  "dependencies": {
+    "library_release": "unified-v5-2026-0920"
+  },
+  "provenance": "Local authoritative adaptation; source notices and licenses retained."
+}

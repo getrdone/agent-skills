@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "name": "youtube-video-planner",
+  "version": "1.0.0",
+  "sealed": true,
+  "files": {
+    "SKILL.md": "954638e0ff89362e629fb2deb9742faa1906f7adef35863cff2b80225a9cd7d5",
+    "references/checklists.md": "b10c27225c5075359eeedbabe188b77fa3194e35f5b32c8b3072489f37fa2c50",
+    "references/framework.md": "979693b45eb8253ab1bacb62b7f69a0626aa20a5585791fc91d238cb1cd38011"
+  },
+  "dependencies": {
+    "library_release": "unified-v5-2026-0920"
+  },
+  "provenance": "Local authoritative adaptation; source notices and licenses retained."
+}

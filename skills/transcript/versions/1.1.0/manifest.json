@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "name": "transcript",
+  "version": "1.1.0",
+  "sealed": true,
+  "files": {
+    "SKILL.md": "e68cb7e2cb232e81272697e99b62c9ffcecb974fcf4cd81b2e82719d3f4e8662",
+    "references/auth-setup.md": "645f8a528939cfae17be243033eac267e140f25e97ee79256e968e2a86b3ce9d",
+    "references/curl-examples.md": "bd4f368b4e8c1b90a880f5ec5807d9a7889f43d3bbfb2d0f39b304fdb145c067",
+    "references/structured-format.md": "6cff9e1a08618a2ed98a6a6a1f7a6c8503ecce7a9f4d8765bca1c5fc37973be1"
+  },
+  "dependencies": {
+    "library_release": "unified-v5-2026-0920"
+  },
+  "provenance": "Local authoritative adaptation; source notices and licenses retained."
+}

@@ -7,3 +7,8 @@
 evals/captures/*
 !evals/captures/.gitkeep
 evals/baseline-*.json
+
+# Transient work never enters the release.
+_wip/
+**/__pycache__/
+*.pending

@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "name": "remotion-upgrade",
+  "version": "1.0.0",
+  "sealed": true,
+  "files": {
+    "SKILL.md": "b4f7784165d0284e02a019cd4531a4660163fc6b3c6d917723b4f295d352e188",
+    "agents/openai.yaml": "b9f4169b00cffc0f3d5b2251c67b1fc49f63427436a1e63de7f1fa0390cdf293",
+    "assets/remotion-icon.png": "662a084d72d99ab91b47c7a566dd0631f0ce0e4f0bf6032708c9200b0db09fd9"
+  },
+  "dependencies": {
+    "library_release": "unified-v5-2026-0920"
+  },
+  "provenance": "Local authoritative adaptation; source notices and licenses retained."
+}

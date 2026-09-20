@@ -1,0 +1,78 @@
+# Pattern index
+
+Search within selected documents for Typography, Color, Layout, Spacing, Component, Responsive, Motion, and State. Select by the project need; brand names are reference labels.
+
+- [airbnb](collection/design-md/airbnb/DESIGN.md) — Overview, Colors, Typography, Layout, Elevation, Components, Responsive Behavior, Known Gaps
+- [airtable](collection/design-md/airtable/DESIGN.md) — Overview, Colors, Typography, Layout, Elevation & Depth, Shapes, Components, Do's and Don'ts, Responsive Behavior, Iteration Guide
+- [apple](collection/design-md/apple/DESIGN.md) — Overview, Colors, Typography, Layout, Elevation & Depth, Shapes, Components, Do's and Don'ts, Responsive Behavior, Iteration Guide
+- [binance](collection/design-md/binance/DESIGN.md) — Overview, Colors, Typography, Layout, Elevation & Depth, Shapes, Components, Do's and Don'ts, Responsive Behavior, Iteration Guide
+- [bmw](collection/design-md/bmw/DESIGN.md) — Overview, Colors, Typography, Layout, Elevation & Depth, Shapes, Components, Do's and Don'ts, Responsive Behavior, Iteration Guide
+- [bmw-m](collection/design-md/bmw-m/DESIGN.md) — Overview, Colors, Typography, Layout, Elevation & Depth, Shapes, Components, Do's and Don'ts, Responsive Behavior, Iteration Guide
+- [bugatti](collection/design-md/bugatti/DESIGN.md) — Overview, Colors, Typography, Layout, Elevation & Depth, Shapes, Components, Do's and Don'ts, Responsive Behavior, Iteration Guide
+- [cal](collection/design-md/cal/DESIGN.md) — Overview, Colors, Typography, Layout, Elevation & Depth, Shapes, Components, Do's and Don'ts, Responsive Behavior, Iteration Guide
+- [claude](collection/design-md/claude/DESIGN.md) — Overview, Colors, Typography, Layout, Elevation & Depth, Shapes, Components, Do's and Don'ts, Responsive Behavior, Iteration Guide
+- [clay](collection/design-md/clay/DESIGN.md) — Overview, Colors, Typography, Layout, Elevation & Depth, Shapes, Components, Do's and Don'ts, Responsive Behavior, Iteration Guide
+- [clickhouse](collection/design-md/clickhouse/DESIGN.md) — Overview, Colors, Typography, Layout, Elevation & Depth, Shapes, Components, Do's and Don'ts, Responsive Behavior, Iteration Guide
+- [cohere](collection/design-md/cohere/DESIGN.md) — Overview, Colors, Typography, Layout, Elevation & Depth, Shapes, Components, Do's and Don'ts, Responsive Behavior, Iteration Guide
+- [coinbase](collection/design-md/coinbase/DESIGN.md) — Overview, Colors, Typography, Layout, Elevation & Depth, Shapes, Components, Do's and Don'ts, Responsive Behavior, Iteration Guide
+- [composio](collection/design-md/composio/DESIGN.md) — Overview, Colors, Typography, Layout, Elevation & Depth, Shapes, Components, Do's and Don'ts, Responsive Behavior, Iteration Guide
+- [cursor](collection/design-md/cursor/DESIGN.md) — Overview, Colors, Typography, Layout, Elevation & Depth, Shapes, Components, Do's and Don'ts, Responsive Behavior, Iteration Guide
+- [dell-1996](collection/design-md/dell-1996/DESIGN.md) — Overview, Colors, Typography, Layout, Elevation & Depth, Shapes, Components, Do's and Don'ts
+- [elevenlabs](collection/design-md/elevenlabs/DESIGN.md) — Overview, Colors, Typography, Layout, Elevation & Depth, Shapes, Components, Do's and Don'ts, Responsive Behavior, Iteration Guide
+- [expo](collection/design-md/expo/DESIGN.md) — Overview, Colors, Typography, Layout, Elevation & Depth, Shapes, Components, Do's and Don'ts, Responsive Behavior, Iteration Guide
+- [ferrari](collection/design-md/ferrari/DESIGN.md) — Overview, Colors, Typography, Layout, Elevation & Depth, Shapes, Components, Do's and Don'ts, Responsive Behavior, Iteration Guide
+- [figma](collection/design-md/figma/DESIGN.md) — Overview, Colors, Typography, Layout, Elevation & Depth, Shapes, Components, Do's and Don'ts, Responsive Behavior, Iteration Guide
+- [framer](collection/design-md/framer/DESIGN.md) — Overview, Colors, Typography, Layout, Elevation & Depth, Shapes, Components, Do's and Don'ts, Responsive Behavior, Iteration Guide
+- [hashicorp](collection/design-md/hashicorp/DESIGN.md) — Overview, Colors, Typography, Layout, Elevation & Depth, Shapes, Components, Do's and Don'ts, Responsive Behavior, Iteration Guide
+- [hp](collection/design-md/hp/DESIGN.md) — Overview, Colors, Typography, Layout, Elevation & Depth, Shapes, Components, Do's and Don'ts, Responsive Behavior, Iteration Guide
+- [ibm](collection/design-md/ibm/DESIGN.md) — Overview, Colors, Typography, Layout, Elevation & Depth, Shapes, Components, Do's and Don'ts, Responsive Behavior, Iteration Guide
+- [intercom](collection/design-md/intercom/DESIGN.md) — Overview, Colors, Typography, Layout, Elevation & Depth, Shapes, Components, Do's and Don'ts, Responsive Behavior, Iteration Guide
+- [kraken](collection/design-md/kraken/DESIGN.md) — 1. Visual Theme & Atmosphere, 2. Color Palette & Roles, 3. Typography Rules, 4. Component Stylings, 5. Layout Principles, 6. Depth & Elevation, 7. Do's and Don'ts, 8. Responsive Behavior, 9. Agent Prompt Guide
+- [lamborghini](collection/design-md/lamborghini/DESIGN.md) — 1. Visual Theme & Atmosphere, 2. Color Palette & Roles, 3. Typography Rules, 4. Component Stylings, 5. Layout Principles, 6. Depth & Elevation, 7. Do's and Don'ts, 8. Responsive Behavior, 9. Agent Prompt Guide
+- [linear.app](collection/design-md/linear.app/DESIGN.md) — Overview, Colors, Typography, Layout, Elevation & Depth, Shapes, Components, Do's and Don'ts, Responsive Behavior, Iteration Guide
+- [lovable](collection/design-md/lovable/DESIGN.md) — 1. Visual Theme & Atmosphere, 2. Color Palette & Roles, 3. Typography Rules, 4. Component Stylings, 5. Layout Principles, 6. Depth & Elevation, 7. Do's and Don'ts, 8. Responsive Behavior, 9. Agent Prompt Guide
+- [mastercard](collection/design-md/mastercard/DESIGN.md) — 1. Visual Theme & Atmosphere, 2. Color Palette & Roles, 3. Typography Rules, 4. Component Stylings, 5. Layout Principles, 6. Depth & Elevation, 7. Do's and Don'ts, 8. Responsive Behavior, 9. Agent Prompt Guide
+- [meta](collection/design-md/meta/DESIGN.md) — Overview, Colors, Typography, Layout, Elevation & Depth, Shapes, Components, Do's and Don'ts, Responsive Behavior, Iteration Guide
+- [minimax](collection/design-md/minimax/DESIGN.md) — Overview, Colors, Typography, Layout, Elevation & Depth, Shapes, Components, Do's and Don'ts, Responsive Behavior, Iteration Guide
+- [mintlify](collection/design-md/mintlify/DESIGN.md) — Overview, Colors, Typography, Layout, Elevation & Depth, Shapes, Components, Do's and Don'ts, Responsive Behavior, Iteration Guide
+- [miro](collection/design-md/miro/DESIGN.md) — Overview, Colors, Typography, Layout, Elevation & Depth, Shapes, Components, Do's and Don'ts, Responsive Behavior, Iteration Guide
+- [mistral.ai](collection/design-md/mistral.ai/DESIGN.md) — Overview, Colors, Typography, Layout, Elevation & Depth, Shapes, Components, Do's and Don'ts, Responsive Behavior, Iteration Guide
+- [mongodb](collection/design-md/mongodb/DESIGN.md) — Overview, Colors, Typography, Layout, Elevation & Depth, Shapes, Components, Do's and Don'ts, Responsive Behavior, Iteration Guide
+- [nike](collection/design-md/nike/DESIGN.md) — Overview, Colors, Typography, Layout, Elevation & Depth, Shapes, Components, Do's and Don'ts, Responsive Behavior, Iteration Guide
+- [nintendo-2001](collection/design-md/nintendo-2001/DESIGN.md) — Overview, Colors, Typography, Layout, Elevation & Depth, Shapes, Components, Do's and Don'ts
+- [notion](collection/design-md/notion/DESIGN.md) — Overview, Colors, Typography, Layout, Elevation & Depth, Shapes, Components, Do's and Don'ts, Responsive Behavior, Iteration Guide
+- [nvidia](collection/design-md/nvidia/DESIGN.md) — Overview, Colors, Typography, Layout, Elevation & Depth, Shapes, Components, Do's and Don'ts, Responsive Behavior, Iteration Guide
+- [ollama](collection/design-md/ollama/DESIGN.md) — Overview, Colors, Typography, Layout, Elevation & Depth, Shapes, Components, Do's and Don'ts, Responsive Behavior, Iteration Guide
+- [opencode.ai](collection/design-md/opencode.ai/DESIGN.md) — Overview, Colors, Typography, Layout, Elevation & Depth, Shapes, Components, Do's and Don'ts, Responsive Behavior, Iteration Guide
+- [pinterest](collection/design-md/pinterest/DESIGN.md) — Overview, Colors, Typography, Layout, Elevation & Depth, Shapes, Components, Do's and Don'ts, Responsive Behavior, Iteration Guide
+- [playstation](collection/design-md/playstation/DESIGN.md) — Overview, Colors, Typography, Layout, Elevation & Depth, Shapes, Components, Do's and Don'ts, Responsive Behavior, Iteration Guide
+- [posthog](collection/design-md/posthog/DESIGN.md) — Overview, Colors, Typography, Layout, Elevation & Depth, Shapes, Components, Do's and Don'ts, Responsive Behavior, Iteration Guide
+- [raycast](collection/design-md/raycast/DESIGN.md) — Overview, Colors, Typography, Layout, Elevation & Depth, Shapes, Components, Do's and Don'ts, Responsive Behavior, Iteration Guide
+- [renault](collection/design-md/renault/DESIGN.md) — Overview, Colors, Typography, Layout, Elevation & Depth, Shapes, Components, Do's and Don'ts, Responsive Behavior, Iteration Guide
+- [replicate](collection/design-md/replicate/DESIGN.md) — Overview, Colors, Typography, Layout, Elevation & Depth, Shapes, Components, Do's and Don'ts, Responsive Behavior, Iteration Guide
+- [resend](collection/design-md/resend/DESIGN.md) — Overview, Colors, Typography, Layout, Elevation & Depth, Shapes, Components, Do's and Don'ts, Responsive Behavior, Iteration Guide
+- [revolut](collection/design-md/revolut/DESIGN.md) — Overview, Colors, Typography, Layout, Elevation & Depth, Shapes, Components, Do's and Don'ts, Responsive Behavior, Iteration Guide
+- [runwayml](collection/design-md/runwayml/DESIGN.md) — 1. Visual Theme & Atmosphere, 2. Color Palette & Roles, 3. Typography Rules, 4. Component Stylings, 5. Layout Principles, 6. Depth & Elevation, 7. Do's and Don'ts, 8. Responsive Behavior, 9. Agent Prompt Guide
+- [sanity](collection/design-md/sanity/DESIGN.md) — 1. Visual Theme & Atmosphere, 2. Color Palette & Roles, 3. Typography Rules, 4. Component Stylings, 5. Layout Principles, 6. Depth & Elevation, 7. Do's and Don'ts, 8. Responsive Behavior, 9. Agent Prompt Guide
+- [sentry](collection/design-md/sentry/DESIGN.md) — Overview, Colors, Typography, Layout, Elevation & Depth, Shapes, Components, Do's and Don'ts, Responsive Behavior, Iteration Guide
+- [shopify](collection/design-md/shopify/DESIGN.md) — Overview, Colors, Typography, Layout, Elevation & Depth, Shapes, Components, Do's and Don'ts, Responsive Behavior, Iteration Guide
+- [slack](collection/design-md/slack/DESIGN.md) — Overview, Colors, Typography, Layout, Elevation & Depth, Shapes, Components, Do's and Don'ts, Responsive Behavior, Iteration Guide
+- [spacex](collection/design-md/spacex/DESIGN.md) — Overview, Colors, Typography, Layout, Elevation & Depth, Shapes, Components, Do's and Don'ts, Responsive Behavior, Iteration Guide
+- [spotify](collection/design-md/spotify/DESIGN.md) — 1. Visual Theme & Atmosphere, 2. Color Palette & Roles, 3. Typography Rules, 4. Component Stylings, 5. Layout Principles, 6. Depth & Elevation, 7. Do's and Don'ts, 8. Responsive Behavior, 9. Agent Prompt Guide
+- [starbucks](collection/design-md/starbucks/DESIGN.md) — 1. Visual Theme & Atmosphere, 2. Color Palette & Roles, 3. Typography Rules, 4. Component Stylings, 5. Layout Principles, 6. Depth & Elevation, 7. Do's and Don'ts, 8. Responsive Behavior, 9. Agent Prompt Guide
+- [stripe](collection/design-md/stripe/DESIGN.md) — Overview, Colors, Typography, Layout, Elevation & Depth, Shapes, Components, Do's and Don'ts, Responsive Behavior, Iteration Guide
+- [supabase](collection/design-md/supabase/DESIGN.md) — Overview, Colors, Typography, Layout, Elevation & Depth, Shapes, Components, Do's and Don'ts, Responsive Behavior, Iteration Guide
+- [superhuman](collection/design-md/superhuman/DESIGN.md) — Overview, Colors, Typography, Layout, Elevation & Depth, Shapes, Components, Do's and Don'ts, Responsive Behavior, Iteration Guide
+- [tesla](collection/design-md/tesla/DESIGN.md) — 1. Visual Theme & Atmosphere, 2. Color Palette & Roles, 3. Typography Rules, 4. Component Stylings, 5. Layout Principles, 6. Depth & Elevation, 7. Do's and Don'ts, 8. Responsive Behavior, 9. Agent Prompt Guide
+- [theverge](collection/design-md/theverge/DESIGN.md) — 1. Visual Theme & Atmosphere, 2. Color Palette & Roles, 3. Typography Rules, 4. Component Stylings, 5. Layout Principles, 6. Depth & Elevation, 7. Do's and Don'ts, 8. Responsive Behavior, 9. Agent Prompt Guide
+- [together.ai](collection/design-md/together.ai/DESIGN.md) — Overview, Colors, Typography, Layout, Elevation & Depth, Shapes, Components, Do's and Don'ts
+- [uber](collection/design-md/uber/DESIGN.md) — Overview, Colors, Typography, Layout, Elevation & Depth, Shapes, Components, Do's and Don'ts
+- [vercel](collection/design-md/vercel/DESIGN.md) — Overview, Colors, Typography, Layout, Elevation & Depth, Shapes, Components, Do's and Don'ts
+- [vodafone](collection/design-md/vodafone/DESIGN.md) — Overview, Colors, Typography, Layout, Elevation & Depth, Shapes, Components, Do's and Don'ts
+- [voltagent](collection/design-md/voltagent/DESIGN.md) — Overview, Colors, Typography, Layout, Elevation & Depth, Shapes, Components, Do's and Don'ts
+- [warp](collection/design-md/warp/DESIGN.md) — Overview, Colors, Typography, Layout, Elevation & Depth, Shapes, Components, Do's and Don'ts
+- [webflow](collection/design-md/webflow/DESIGN.md) — Overview, Colors, Typography, Layout, Elevation & Depth, Shapes, Components, Do's and Don'ts
+- [wired](collection/design-md/wired/DESIGN.md) — Overview, Colors, Typography, Layout, Elevation & Depth, Shapes, Components, Do's and Don'ts
+- [wise](collection/design-md/wise/DESIGN.md) — Overview, Colors, Typography, Layout, Elevation & Depth, Shapes, Components, Do's and Don'ts
+- [x.ai](collection/design-md/x.ai/DESIGN.md) — Overview, Colors, Typography, Layout, Elevation & Depth, Shapes, Components, Do's and Don'ts
+- [zapier](collection/design-md/zapier/DESIGN.md) — Overview, Colors, Typography, Layout, Elevation & Depth, Shapes, Components, Do's and Don'ts

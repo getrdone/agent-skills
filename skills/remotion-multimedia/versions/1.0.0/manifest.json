@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "name": "remotion-multimedia",
+  "version": "1.0.0",
+  "sealed": true,
+  "files": {
+    "get-audio-duration.md": "04a1e12146554e6eaae4bacf64a90c37abb2ce09c0f8e25cfd0a910f998d26f5",
+    "get-video-dimensions.md": "7e69da749a5682a9aee902d1d99496e883ef6f3349501b792a77e3ec21a16c75",
+    "get-video-duration.md": "caf1f4400541a40c022b5ddaee570ceda25b427b8644cdc798472f1594963c83",
+    "SKILL.md": "3646cc6ea3b573ae363984f82f4d599b01c2e206edb5e741fda4b664089aa09c",
+    "agents/openai.yaml": "82282338fb5770af01e51c0d30f021586d5c31c80910d7f74c951a77d770847d",
+    "assets/remotion-icon.png": "662a084d72d99ab91b47c7a566dd0631f0ce0e4f0bf6032708c9200b0db09fd9"
+  },
+  "dependencies": {
+    "library_release": "unified-v5-2026-0920"
+  },
+  "provenance": "Local authoritative adaptation; source notices and licenses retained."
+}

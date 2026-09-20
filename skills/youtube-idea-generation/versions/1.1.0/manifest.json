@@ -1,0 +1,13 @@
+{
+  "schema": 1,
+  "name": "youtube-idea-generation",
+  "version": "1.1.0",
+  "sealed": true,
+  "files": {
+    "SKILL.md": "1dcf98d148c3e6464a714c5622bebc61517267873ad5550d0206d0f476a90b9d"
+  },
+  "dependencies": {
+    "library_release": "unified-v5-2026-0920"
+  },
+  "provenance": "Local authoritative adaptation; source notices and licenses retained."
+}

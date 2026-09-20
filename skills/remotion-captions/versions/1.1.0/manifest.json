@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "name": "remotion-captions",
+  "version": "1.1.0",
+  "sealed": true,
+  "files": {
+    "display-captions.md": "6611d38ee9dcb7bbf0a4176e4540feb1b39499a27fa57d2d9d3d0c04beb3671f",
+    "import-srt-captions.md": "d87f42376221d4802b84ad2f81906a568b9ebb81525ccd1698dc434cea3eaa5c",
+    "SKILL.md": "33a50533689e0a3bf909398f3b1358d7d69c96ec6d80cf47c11cc332e21bfbd2",
+    "transcribe-captions.md": "c28bc6bb42ea61e8021019839df8f9eabaab91da85950f098c9bf3f2f4b65505",
+    "agents/openai.yaml": "8552f8c6909d2e245fa121975a54c21d9840f2967cd63ee0c9dd4000adc0d240",
+    "assets/remotion-icon.png": "662a084d72d99ab91b47c7a566dd0631f0ce0e4f0bf6032708c9200b0db09fd9"
+  },
+  "dependencies": {
+    "library_release": "unified-v5-2026-0920"
+  },
+  "provenance": "Local authoritative adaptation; source notices and licenses retained."
+}

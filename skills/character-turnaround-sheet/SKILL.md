@@ -6,12 +6,8 @@ metadata:
   version: "1.0"
 ---
 
-# Character Turnaround Sheet
+# character-turnaround-sheet
 
-One locked identity sheet per character. Five panels. Same face, body, costume, lighting.
+Resolve an explicitly requested release, `STABLE` when requested, otherwise `CURRENT`. Read that release's manifest.json and SKILL.md under `versions/<release>/`. All resources belong to that release; do not mix releases. The complete authoritative library is this repository, not legacy or upstream files.
 
-Load [`skills/dynamic-symmetry/SKILL.md`](../dynamic-symmetry/SKILL.md) for the sheet crop (≈ root 3 / 16:9) and panel placement on a theme armature. Stamp rectangle + armature before generating.
-
-Read `references/prompt-template.md`, `references/layout-spec.md`, `references/invideo-workflow.md`.
-
-Hard layout: landscape 16:9, labels FACE CLOSE UP | FRONT | BACK | LEFT PROFILE | RIGHT PROFILE, height rulers, identity lock, empty hands unless specified.
+Current release: [1.1.0](versions/1.1.0/SKILL.md). Previous releases are available only on explicit selection.

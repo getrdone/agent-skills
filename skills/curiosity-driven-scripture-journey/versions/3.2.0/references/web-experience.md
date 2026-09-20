@@ -10,7 +10,7 @@ Use this file to plan, build, repair, or review semantic HTML/CSS/JavaScript exp
 
 When the user asks to **build a Scripture Journey page**, **build a page**, **build the HTML**, **rebuild the page**, or any equivalent production HTML request, apply **all** of the following automatically. The user does **not** need to restate fonts, motion, JS, verification, naming, art order, or promote rules.
 
-1. **Naming.** A built page is a deterministic deliverable: write the canonical name on the first pass — `deliverables/index.html`, `prompts/artwork-prompts.md`, `planning/gate-results.md`. Iterate in place. Full rules, including the bake-off exception when the user asks two agents for rival designs: repo [`WORKSPACE.md`](../../../../WORKSPACE.md) §3.
+1. **Naming.** A built page is a deterministic deliverable: write the canonical name on the first pass — `deliverables/index.html`, `prompts/artwork-prompts.md`, `planning/gate-results.md`. Iterate in place. Full rules, including the bake-off exception when the user asks two agents for rival designs: repo [`WORKSPACE.md`](../../../../../WORKSPACE.md) §3.
 2. **Art path is automatic.** If the design needs pixel art and assets are missing: write or update the prompts pack via skill **artwork-prompts-handoff**; wire expected filenames under `deliverables/assets/`; **still ship a complete, beautiful page** using CSS/SVG/gradients so missing JPGs do not leave a broken or empty layout. When `mood/` or existing assets exist, use them. Stage/hero backgrounds must use `background-size: cover` + `background-repeat: no-repeat` (never the `background:` shorthand for fallbacks — it reintroduces tiling).
 3. **Working bar is a hard FAIL.** Console-breaking errors, dead primary controls, non-functional map/trail/game/scroll interactions, or collapsed phone/desktop layout = FAIL. Loop: build → open in browser → exercise every interaction → fix → re-check until the designed experience works.
 4. **Craft level is automatic.** Treat interactive HTML as premium agency work (network fonts, full motion, first-class JS, anti-slop). Do not ship cream-paper + Inter/system defaults or static shells with half-wired scripts.
@@ -24,7 +24,7 @@ When the user asks to **build a Scripture Journey page**, **build a page**, **bu
 - For a new build, require a content-approved brief, visual direction, interaction plan, and `status: approved-for-build`.
 - For an existing page audit or narrow repair, preserve the current approved concept and fix the requested problem without inventing a new one.
 - Reuse the project’s chosen title, promise, learning map, visual DNA, and design fingerprint.
-- **File naming:** repo [`WORKSPACE.md`](../../../../WORKSPACE.md) §3. Do not restate naming rules in a project folder.
+- **File naming:** repo [`WORKSPACE.md`](../../../../../WORKSPACE.md) §3. Do not restate naming rules in a project folder.
 
 ## Build sequence
 

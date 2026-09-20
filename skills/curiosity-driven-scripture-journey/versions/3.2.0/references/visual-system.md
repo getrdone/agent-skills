@@ -78,12 +78,12 @@ Design is instruction. The viewer should see what matters, what belongs together
 - **How to use (short):**
   1. Lock the delivery crop (16:9, 9:16, 1:1, page, print…).
   2. Match a root/phi/1.5 rectangle (e.g. 16:9 ≈ root 3).
-  3. Overlay a black-line PNG from `G:\__ai-projects\_resources\design-resources\dynamic-symmetry-grids\` (US or A4, horizontal or vertical) **or** construct the basic armature.
+  3. Overlay a black-line PNG from `repo:resources/dynamic-symmetry-grids/` (US or A4, horizontal or vertical) **or** construct the basic armature.
   4. Put the dominant subject and type on strong lines/eyes; let negative space be intentional.
   5. Use MAD/themes when the frame has multiple zones; vary themes across pieces so work does not clone itself.
 - **Why:** hierarchy and spacing become *related* instead of arbitrary; thumbnails and web heroes stay calm under bold ideas; anti-repetition stays lawful.
 - Compute for the **actual** canvas. Cropping to a different ratio after compose breaks the armature—match final delivery ratio when choosing the grid.
-- **Never** use nude/sexually explicit study imagery from educational PDFs; only use line grids and pure method knowledge (see `skills/dynamic-symmetry/references/method.md` safety table).
+- **Never** use nude/sexually explicit study imagery from educational PDFs; only use line grids and pure method knowledge (see `skills/dynamic-symmetry/versions/1.0.0/references/method.md` safety table).
 - Use negative space, editorial asymmetry, centered iconic composition, timelines, evidence trails, comparisons, diagrams, photographic journeys, and other archetypes **on top of** the armature as appropriate.
 - Consider a broad journey bank before defaulting: evidence trail, visual investigation, comparison journey, timeline, progressive discovery, document/exhibit, story-led journey, question-and-answer path, layered diagram, text-to-text investigation, immersive photographic journey, editorial feature, or interactive explorer.
 - Avoid repetitive “hero + card + card + three columns + CTA” layouts unless the content genuinely calls for them.
@@ -142,7 +142,7 @@ Journey-specific additions:
 
 Use the image-generation or design capability explicitly requested by the user when it is available. Load **`artwork-prompts-handoff`** only when the user asks for a manual prompt pack, says they will generate the images themselves, or the project explicitly requires a recorded human-generation handoff.
 
-For a manual handoff, write the prompts pack with each paste-ready prompt, aspect ratio, Dynamic Symmetry note, target filename, and checkbox. Naming: repo root [`WORKSPACE.md`](../../../../WORKSPACE.md) §3.
+For a manual handoff, write the prompts pack with each paste-ready prompt, aspect ratio, Dynamic Symmetry note, target filename, and checkbox. Naming: repo root [`WORKSPACE.md`](../../../../../WORKSPACE.md) §3.
 
 ## Motion and interaction
 

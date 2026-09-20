@@ -1,74 +1,15 @@
-# agent-skills
+# Authoritative agent skill library
 
-<!-- Agent: Codex | Model: GPT-5 | Thinking: not exposed | Date: 2026-09-08 -->
-<!-- Agent: grok · Model: Grok 4.6 · Date: 2026-09-09 · Memory-first pickup; CATALOG on skill match. -->
+This repository contains the complete managed skill instructions and resources. Installed copies are generated distributions. No legacy aliases, redirect stubs or fallback loading are supported. Historical attribution is provenance, not a required dependency.
 
-**Canonical skill library for all agents.** Do **not** load the whole repo into context.
+Read CATALOG.md to discover capabilities; load only task-relevant skills and references. For coding, use coding-workflow. For web work, use web-studio and the accepted project design specification. File placement and working conventions are in WORKSPACE.md. Search _tools/TOOLS.md before creating a utility.
 
-## Agent contract (required)
+Each skill has CURRENT/STABLE selectors and immutable releases. Root SKILL.md selects a release; installed entrypoints contain the selected release instructions. Historical releases are explicitly selectable and excluded from discovery. Release manifests contain all file hashes. tools do not silently mix versions.
 
-```
-1. Resolve the project. Read its MEMORY.md (Now / Next / Blocked).
-2. Open CATALOG.md only on a skill match (titles, descriptions, thumbnails, Bible study, Scripture journey, transcripts, art handoff). Then load that one SKILL.md and only the files it names.
-3. WORKSPACE.md is file-naming, not a session-start pile. Read it when creating or naming files.
-4. If the task needs support tooling → open the matching processing/ package only.
-5. If no match → proceed with normal judgment; do not invent a skill or load siblings.
-6. Never preload all skills “just in case.”
-7. All agents share one work folder. File naming, file I/O, and continuity are defined ONLY in WORKSPACE.md §§3–6. Do not restate them anywhere else.
-8. Every agent/sub-agent repo commit must identify execution identity: `Agent: <agent> | Model: <model> | Thinking: <level-or-not-exposed> | What changed: <summary>`; never guess a thinking level. Full rule: WORKSPACE.md §5.
-9. **Net complexity ≤ 0.** Any change that adds a skill row, a new reference, or a long section must name what it deleted, folded, or shortened. State it in the commit body.
-```
+Temporary work belongs in project _wip; reusable utilities belong in project _tools. Complete broad requests through verifiable chunks without duration quotas, inactivity deadlines or automatic job termination. Modular files and suitable animation libraries are available.
 
-Consumer projects **reference** this repo; they do not own a divergent copy of a skill. Propose skill changes here.
+## Maintenance
 
-**Agent homes** are filled by `_agent-tools\sync-agent-skills\` (robocopy of `skills\` → `~/.grok/skills`, etc.). Pull this git repo when GitHub changes; the 15-minute task does not `git pull`.
+Run `python _tools/library.py validate` before release, then `python _tools/library.py sync --config _tools/agent-homes.json`. Sync verifies the release manifest, preserves divergent installed files, and updates only manifest-owned files. Use --dry-run to inspect changes. Git updates are separate: `python _tools/library.py git-update <repository>` fast-forwards a clean checkout only. No reset, force-push or automatic model switching.
 
-Sibling private pack repo: [getrdone/design-resources](https://github.com/getrdone/design-resources) → `G:\__ai-projects\design-resources\`.
-Sibling private archive: [getrdone/zzz-repo-archive](https://github.com/getrdone/zzz-repo-archive) → `G:\__ai-projects\_zzz-repo-archive\<yyyy-MMdd>\`.
-
-## Layout
-
-```
-CATALOG.md               # allowlist — read first
-WORKSPACE.md             # multi-agent file/folder standard
-README.md
-skills/                  # LIVE skills only — flat: skills/<name>/SKILL.md
-  web-studio/
-  curiosity-driven-scripture-journey/   # versioned exception (CURRENT → versions/3.2.0)
-  …
-processing/
-  source-vault/
-tools/
-  TOOLS.md
-```
-
-**Do not** nest packs under `skills/` (`agent-skills/`, `claude-skills/`). See `CATALOG.md` layout standard.
-
-## Skills
-
-See **[CATALOG.md](CATALOG.md)** for the full allowlist and triggers. Highlights:
-
-| Skill | Purpose |
-|-------|---------|
-| [web-studio](skills/web-studio/) | HTML pipeline: clone → images → theme → polish |
-| [curiosity-driven-scripture-journey](skills/curiosity-driven-scripture-journey/) | Scripture content studio (CURRENT 3.2.0) |
-| [clean-video-transcript](skills/clean-video-transcript/) | Raw video/ASR → polished markdown |
-| [artwork-prompts-handoff](skills/artwork-prompts-handoff/) | Paste-ready human art prompts |
-
-## External skill sources
-
-- [Cloudflare Skills](https://github.com/cloudflare/skills) ships as the Grok marketplace plugin `cloudflare` (`~/.grok/installed-plugins/skills-39968d19/`). Do not keep a parallel `cloudflare-skills` clone under this workspace. Route Workers/Pages/D1/Wrangler work through that plugin; never fold CF skill bodies into this repo.
-- [getrdone/ubp-tools](https://github.com/getrdone/ubp-tools) contains the trip-specific UBP translator-PDF and related Plain Vision tooling.
-
-## Processing
-
-| Package | Purpose |
-|---------|---------|
-| [source-vault](processing/source-vault/) | Private source inventory/registration without dumping vault into context |
-| [tools registry](tools/TOOLS.md) | Shared tool list (design, research, UBP PDF builders) |
-
-## Ownership
-Single source of truth for agent skills. Prefer sharp catalog triggers and small load sets.
-
-<!-- Agent: claude · Model: claude-opus-5 · Thinking: not exposed · Date: 2026-09-10 · Naming rules single-sourced to WORKSPACE.md; added net-complexity rule. -->
-<!-- Agent: grok · Model: Grok 4.5 · Thinking: not exposed · Date: 2026-09-10 · Cloudflare = Grok plugin, not cloudflare-skills clone. -->
+Recovery copies live in the separate private zzz-repo-archive repository; they are never consulted during normal skill use. Migration coverage and release evidence are in _docs. Operational SQLite memory is a desired next project to evaluate; it is not implemented here.

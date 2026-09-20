@@ -4,32 +4,8 @@ description: Transcribing, displaying and animating captions
 version: 4.0.506
 ---
 
-All captions must be processed in JSON. The captions must use the [`Caption`](https://www.remotion.dev/docs/captions/caption.md) type which is the following:
+# remotion-captions
 
-```ts
-import type { Caption } from "@remotion/captions";
-```
+Resolve an explicitly requested release, `STABLE` when requested, otherwise `CURRENT`. Read that release's manifest.json and SKILL.md under `versions/<release>/`. All resources belong to that release; do not mix releases. The complete authoritative library is this repository, not legacy or upstream files.
 
-This is the definition:
-
-```ts
-type Caption = {
-  text: string;
-  startMs: number;
-  endMs: number;
-  timestampMs: number | null;
-  confidence: number | null;
-};
-```
-
-## Generating captions
-
-To transcribe video and audio files to generate captions, load the [transcribe-captions.md](transcribe-captions.md) file for more instructions.
-
-## Displaying captions
-
-To display captions in your video, load the [display-captions.md](display-captions.md) file for more instructions.
-
-## Importing captions
-
-To import captions from a .srt file, load the [import-srt-captions.md](import-srt-captions.md) file for more instructions.
+Current release: [1.1.0](versions/1.1.0/SKILL.md). Previous releases are available only on explicit selection.

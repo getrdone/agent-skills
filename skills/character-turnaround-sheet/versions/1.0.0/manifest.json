@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "name": "character-turnaround-sheet",
+  "version": "1.0.0",
+  "sealed": true,
+  "files": {
+    "SKILL.md": "0f0da5b07c59d4acf976cd14c135e95da4c051554bda71139f648939cbc42deb",
+    "assets/invideo-prompt-card.md": "78af8759ab820cc3132559c948c5d96ea6fda9e65a61b1d3a985ed7fa8b28a24",
+    "references/invideo-workflow.md": "beec300160d9346fdb4dbae80b1e18c96f1623d4aef0ba9be48a54baa7d53877",
+    "references/layout-spec.md": "1add51d75a6b7ebcbce50f57df60aad4d5b0ab91d4415f6c15a161ea107b0fdb",
+    "references/prompt-template.md": "b73349d73ec05ee66702e031afc26ef3ef0ceb0a9a37c18244d34e0bdcfa263d"
+  },
+  "dependencies": {
+    "library_release": "unified-v5-2026-0920"
+  },
+  "provenance": "Local authoritative adaptation; source notices and licenses retained."
+}

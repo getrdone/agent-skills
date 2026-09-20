@@ -1,0 +1,274 @@
+[
+  {
+    "project": "ai-agent-control",
+    "path": "G:/__ai-projects/_agent-control/_tools/Run-GrokMemoryAudit.ps1",
+    "purpose": "Run GrokMemoryAudit",
+    "invocation": "powershell -File _tools/Run-GrokMemoryAudit.ps1",
+    "dependencies": "PowerShell",
+    "reuse": "Existing command and implementation; inspect arguments before invoking"
+  },
+  {
+    "project": "ai-agent-control",
+    "path": "G:/__ai-projects/_agent-control/scripts/register-project.ps1",
+    "purpose": "register project",
+    "invocation": "powershell -File scripts/register-project.ps1",
+    "dependencies": "PowerShell",
+    "reuse": "Existing command and implementation; inspect arguments before invoking"
+  },
+  {
+    "project": "ai-agent-control",
+    "path": "G:/__ai-projects/_agent-control/scripts/sync-project.ps1",
+    "purpose": "sync project",
+    "invocation": "powershell -File scripts/sync-project.ps1",
+    "dependencies": "PowerShell",
+    "reuse": "Existing command and implementation; inspect arguments before invoking"
+  },
+  {
+    "project": "ai-agent-control",
+    "path": "G:/__ai-projects/_agent-control/scripts/workspace-status.ps1",
+    "purpose": "workspace status",
+    "invocation": "powershell -File scripts/workspace-status.ps1",
+    "dependencies": "PowerShell",
+    "reuse": "Existing command and implementation; inspect arguments before invoking"
+  },
+  {
+    "project": "ai-agent-control",
+    "path": "G:/__ai-projects/_agent-control/bin/install-mcp-servers.sh",
+    "purpose": "install mcp servers",
+    "invocation": "bash bin/install-mcp-servers.sh",
+    "dependencies": "Bash",
+    "reuse": "Existing command and implementation; inspect arguments before invoking"
+  },
+  {
+    "project": "ai-agent-control",
+    "path": "G:/__ai-projects/_agent-control/bin/migrate-project-files.ps1",
+    "purpose": "migrate project files",
+    "invocation": "powershell -File bin/migrate-project-files.ps1",
+    "dependencies": "PowerShell",
+    "reuse": "Existing command and implementation; inspect arguments before invoking"
+  },
+  {
+    "project": "ai-agent-control",
+    "path": "G:/__ai-projects/_agent-control/bin/open-tasks.ps1",
+    "purpose": "open tasks",
+    "invocation": "powershell -File bin/open-tasks.ps1",
+    "dependencies": "PowerShell",
+    "reuse": "Existing command and implementation; inspect arguments before invoking"
+  },
+  {
+    "project": "ai-agent-control",
+    "path": "G:/__ai-projects/_agent-control/bin/prune-to-archive.ps1",
+    "purpose": "prune to archive",
+    "invocation": "powershell -File bin/prune-to-archive.ps1",
+    "dependencies": "PowerShell",
+    "reuse": "Existing command and implementation; inspect arguments before invoking"
+  },
+  {
+    "project": "ai-agent-control",
+    "path": "G:/__ai-projects/_agent-control/bin/run-mailbox-mcp.ps1",
+    "purpose": "run mailbox mcp",
+    "invocation": "powershell -File bin/run-mailbox-mcp.ps1",
+    "dependencies": "PowerShell",
+    "reuse": "Existing command and implementation; inspect arguments before invoking"
+  },
+  {
+    "project": "ai-agent-control",
+    "path": "G:/__ai-projects/_agent-control/bin/start-browser-use-cdp.ps1",
+    "purpose": "start browser use cdp",
+    "invocation": "powershell -File bin/start-browser-use-cdp.ps1",
+    "dependencies": "PowerShell",
+    "reuse": "Existing command and implementation; inspect arguments before invoking"
+  },
+  {
+    "project": "ai-agent-control",
+    "path": "G:/__ai-projects/_agent-control/bin/workspace-doctor.ps1",
+    "purpose": "workspace doctor",
+    "invocation": "powershell -File bin/workspace-doctor.ps1",
+    "dependencies": "PowerShell",
+    "reuse": "Existing command and implementation; inspect arguments before invoking"
+  },
+  {
+    "project": "final-days-international",
+    "path": "G:/__ai-projects/__Final.Days.International/final-days-video-landing-page/_tools/build-transcript-body.js",
+    "purpose": "build transcript body",
+    "invocation": "node _tools/build-transcript-body.js",
+    "dependencies": "Node.js",
+    "reuse": "Existing command and implementation; inspect arguments before invoking"
+  },
+  {
+    "project": "final-days-international",
+    "path": "G:/__ai-projects/__Final.Days.International/final-days-video-landing-page/_tools/srt_to_transcript.js",
+    "purpose": "srt to transcript",
+    "invocation": "node _tools/srt_to_transcript.js",
+    "dependencies": "Node.js",
+    "reuse": "Existing command and implementation; inspect arguments before invoking"
+  },
+  {
+    "project": "final-days-international",
+    "path": "G:/__ai-projects/__Final.Days.International/final-days-video-landing-page/scripts/init-local-d1.ps1",
+    "purpose": "init local d1",
+    "invocation": "powershell -File scripts/init-local-d1.ps1",
+    "dependencies": "PowerShell",
+    "reuse": "Existing command and implementation; inspect arguments before invoking"
+  },
+  {
+    "project": "final-days-international",
+    "path": "G:/__ai-projects/__Final.Days.International/final-days-video-landing-page/scripts/refresh-local-sqlite.ps1",
+    "purpose": "refresh local sqlite",
+    "invocation": "powershell -File scripts/refresh-local-sqlite.ps1",
+    "dependencies": "PowerShell",
+    "reuse": "Existing command and implementation; inspect arguments before invoking"
+  },
+  {
+    "project": "final-days-international",
+    "path": "G:/__ai-projects/__Final.Days.International/final-days-video-landing-page/scripts/refresh_local_sqlite.py",
+    "purpose": "refresh local sqlite",
+    "invocation": "python scripts/refresh_local_sqlite.py",
+    "dependencies": "Python 3",
+    "reuse": "Existing command and implementation; inspect arguments before invoking"
+  },
+  {
+    "project": "bible-study-source-materials",
+    "path": "G:/__ai-projects/_resources/bible-studies--source-materials/scripts/build_source_db.py",
+    "purpose": "build source db",
+    "invocation": "python scripts/build_source_db.py",
+    "dependencies": "Python 3; requirements.txt",
+    "reuse": "Existing command and implementation; inspect arguments before invoking"
+  },
+  {
+    "project": "bible-study-source-materials",
+    "path": "G:/__ai-projects/_resources/bible-studies--source-materials/scripts/query_sources.py",
+    "purpose": "query sources",
+    "invocation": "python scripts/query_sources.py",
+    "dependencies": "Python 3; requirements.txt",
+    "reuse": "Existing command and implementation; inspect arguments before invoking"
+  },
+  {
+    "project": "bible-study-source-materials",
+    "path": "G:/__ai-projects/_resources/bible-studies--source-materials/scripts/validate_sources.py",
+    "purpose": "validate sources",
+    "invocation": "python scripts/validate_sources.py",
+    "dependencies": "Python 3; requirements.txt",
+    "reuse": "Existing command and implementation; inspect arguments before invoking"
+  },
+  {
+    "project": "scripture-discovery-journey",
+    "path": "G:/__ai-projects/__Ministry.Projects/scripture-discovery-journey/scripts/source_vault_inventory.py",
+    "purpose": "source vault inventory",
+    "invocation": "python scripts/source_vault_inventory.py",
+    "dependencies": "Python 3",
+    "reuse": "Existing command and implementation; inspect arguments before invoking"
+  },
+  {
+    "project": "agent-memory",
+    "path": "G:/__ai-projects/agent-memory/bin/install-schedule.ps1",
+    "purpose": "install schedule",
+    "invocation": "powershell -File bin/install-schedule.ps1",
+    "dependencies": "PowerShell",
+    "reuse": "Existing command and implementation; inspect arguments before invoking"
+  },
+  {
+    "project": "agent-memory",
+    "path": "G:/__ai-projects/agent-memory/bin/memory.cmd",
+    "purpose": "memory",
+    "invocation": "cmd /c bin/memory.cmd",
+    "dependencies": "Windows cmd",
+    "reuse": "Existing command and implementation; inspect arguments before invoking"
+  },
+  {
+    "project": "agent-memory",
+    "path": "G:/__ai-projects/agent-memory/bin/memory.ps1",
+    "purpose": "memory",
+    "invocation": "powershell -File bin/memory.ps1",
+    "dependencies": "PowerShell",
+    "reuse": "Existing command and implementation; inspect arguments before invoking"
+  },
+  {
+    "project": "agent-memory",
+    "path": "G:/__ai-projects/agent-memory/bin/memory.py",
+    "purpose": "memory",
+    "invocation": "python bin/memory.py",
+    "dependencies": "Python 3",
+    "reuse": "Existing command and implementation; inspect arguments before invoking"
+  },
+  {
+    "project": "agent-memory",
+    "path": "G:/__ai-projects/agent-memory/bin/nightly.ps1",
+    "purpose": "nightly",
+    "invocation": "powershell -File bin/nightly.ps1",
+    "dependencies": "PowerShell",
+    "reuse": "Existing command and implementation; inspect arguments before invoking"
+  },
+  {
+    "project": "agent-memory",
+    "path": "G:/__ai-projects/agent-memory/bin/open-memory.ps1",
+    "purpose": "open memory",
+    "invocation": "powershell -File bin/open-memory.ps1",
+    "dependencies": "PowerShell",
+    "reuse": "Existing command and implementation; inspect arguments before invoking"
+  },
+  {
+    "project": "ai-agent-control",
+    "path": "G:/__ai-projects/_agent-control/jobs/bin/Complete-Job.ps1",
+    "purpose": "Complete Job",
+    "invocation": "pwsh -File G:/__ai-projects/_agent-control/jobs/bin/Complete-Job.ps1",
+    "dependencies": "PowerShell 7; Git/Grok/Codex for selected lane",
+    "reuse": "Shared job queue lifecycle; inspect parameters and jobs/README.md"
+  },
+  {
+    "project": "ai-agent-control",
+    "path": "G:/__ai-projects/_agent-control/jobs/bin/Invoke-CodexJob.ps1",
+    "purpose": "Invoke CodexJob",
+    "invocation": "pwsh -File G:/__ai-projects/_agent-control/jobs/bin/Invoke-CodexJob.ps1",
+    "dependencies": "PowerShell 7; Git/Grok/Codex for selected lane",
+    "reuse": "Shared job queue lifecycle; inspect parameters and jobs/README.md"
+  },
+  {
+    "project": "ai-agent-control",
+    "path": "G:/__ai-projects/_agent-control/jobs/bin/Invoke-GrokJob.ps1",
+    "purpose": "Invoke GrokJob",
+    "invocation": "pwsh -File G:/__ai-projects/_agent-control/jobs/bin/Invoke-GrokJob.ps1",
+    "dependencies": "PowerShell 7; Git/Grok/Codex for selected lane",
+    "reuse": "Shared job queue lifecycle; inspect parameters and jobs/README.md"
+  },
+  {
+    "project": "ai-agent-control",
+    "path": "G:/__ai-projects/_agent-control/jobs/bin/New-Job.ps1",
+    "purpose": "New Job",
+    "invocation": "pwsh -File G:/__ai-projects/_agent-control/jobs/bin/New-Job.ps1",
+    "dependencies": "PowerShell 7; Git/Grok/Codex for selected lane",
+    "reuse": "Shared job queue lifecycle; inspect parameters and jobs/README.md"
+  },
+  {
+    "project": "ai-agent-control",
+    "path": "G:/__ai-projects/_agent-control/jobs/bin/Start-JobLane.ps1",
+    "purpose": "Start JobLane",
+    "invocation": "pwsh -File G:/__ai-projects/_agent-control/jobs/bin/Start-JobLane.ps1",
+    "dependencies": "PowerShell 7; Git/Grok/Codex for selected lane",
+    "reuse": "Shared job queue lifecycle; inspect parameters and jobs/README.md"
+  },
+  {
+    "project": "ai-agent-control",
+    "path": "G:/__ai-projects/_agent-control/jobs/bin/Start-JobWatcher.ps1",
+    "purpose": "Start JobWatcher",
+    "invocation": "pwsh -File G:/__ai-projects/_agent-control/jobs/bin/Start-JobWatcher.ps1",
+    "dependencies": "PowerShell 7; Git/Grok/Codex for selected lane",
+    "reuse": "Shared job queue lifecycle; inspect parameters and jobs/README.md"
+  },
+  {
+    "project": "ai-agent-control",
+    "path": "G:/__ai-projects/_agent-control/jobs/bin/Test-ApproveDelete.ps1",
+    "purpose": "Test ApproveDelete",
+    "invocation": "pwsh -File G:/__ai-projects/_agent-control/jobs/bin/Test-ApproveDelete.ps1",
+    "dependencies": "PowerShell 7; Git/Grok/Codex for selected lane",
+    "reuse": "Shared job queue lifecycle; inspect parameters and jobs/README.md"
+  },
+  {
+    "project": "ai-agent-control",
+    "path": "G:/__ai-projects/_agent-control/jobs/bin/Watch-Jobs.ps1",
+    "purpose": "Watch Jobs",
+    "invocation": "pwsh -File G:/__ai-projects/_agent-control/jobs/bin/Watch-Jobs.ps1",
+    "dependencies": "PowerShell 7; Git/Grok/Codex for selected lane",
+    "reuse": "Shared job queue lifecycle; inspect parameters and jobs/README.md"
+  }
+]

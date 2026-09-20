@@ -1,0 +1,13 @@
+{
+  "schema": 1,
+  "name": "ai-image-generation",
+  "version": "1.0.0",
+  "sealed": true,
+  "files": {
+    "SKILL.md": "b1dbf6260954f191b980bcb2cad445172ab826fa721c48dcfe483e3ae0110acb"
+  },
+  "dependencies": {
+    "library_release": "unified-v5-2026-0920"
+  },
+  "provenance": "Local authoritative adaptation; source notices and licenses retained."
+}

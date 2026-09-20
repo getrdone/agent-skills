@@ -1,0 +1,13 @@
+{
+  "schema": 1,
+  "name": "multi-cli-dispatch",
+  "version": "1.1.0",
+  "sealed": true,
+  "files": {
+    "SKILL.md": "096f4214c9ac9d021dec8f1161ebf965eaa9c1016d5149f9cff9ef55840da47d"
+  },
+  "dependencies": {
+    "library_release": "unified-v5-2026-0920"
+  },
+  "provenance": "Local authoritative adaptation; source notices and licenses retained."
+}

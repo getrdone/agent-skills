@@ -1,0 +1,13 @@
+{
+  "schema": 1,
+  "name": "cloudflare-platform",
+  "version": "1.0.0",
+  "sealed": true,
+  "files": {
+    "SKILL.md": "e627818f5ec2406ead6cc84ca1b5c817e0f758d437d830ea74242dff680cbab5"
+  },
+  "dependencies": {
+    "library_release": "unified-v5-2026-0920"
+  },
+  "provenance": "Local authoritative adaptation; source notices and licenses retained."
+}

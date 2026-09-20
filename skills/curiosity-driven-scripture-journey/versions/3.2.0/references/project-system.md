@@ -20,8 +20,8 @@ For a small prompt such as `Psalm 23`, keep it creative-friendly—**no bureaucr
 ### 0) Scaffold first (if this is a new project)
 
 If no topic folder exists yet, create the standard shell from **`WORKSPACE.md` §2b** (AGENTS.md, 01-NOW.md, 02-TASKS.md, project-brief.md, `planning/`, `mood/`, `prompts/`, `references/`, `sources/intake/`, `deliverables/assets/`).  
-If the folder already exists, **do not rebuild**—only add missing folders/files and use what is already there. Point `references/dynamic-symmetry/` at `G:\__ai-projects\_resources\design-resources\dynamic-symmetry-grids\` (do not copy the whole pack). Composition method lives in skill `skills/dynamic-symmetry/`.  
-When artwork is needed, use skill **`artwork-prompts-handoff`** → `prompts/artwork-prompts.md` (human generates; no paid image APIs by default). Naming: repo [`WORKSPACE.md`](../../../../WORKSPACE.md) §3.
+If the folder already exists, **do not rebuild**—only add missing folders/files and use what is already there. Point `references/dynamic-symmetry/` at `repo:resources/dynamic-symmetry-grids/` (do not copy the whole pack). Composition method lives in skill `skills/dynamic-symmetry/`.  
+When artwork is needed, use skill **`artwork-prompts-handoff`** → `prompts/artwork-prompts.md` (human generates; no paid image APIs by default). Naming: repo [`WORKSPACE.md`](../../../../../WORKSPACE.md) §3.
 
 ### 1) Then one compact decision round
 
@@ -196,7 +196,7 @@ Keep planning assets separate from production files. Do not turn the brief into 
 ## Multi-agent workspace
 
 File naming, file I/O, and continuity are defined **only** in the agent-skills root
-[`WORKSPACE.md`](../../../../WORKSPACE.md) §3–§6. Read it when creating or naming files. Do not restate its rules here or in a
+[`WORKSPACE.md`](../../../../../WORKSPACE.md) §3–§6. Read it when creating or naming files. Do not restate its rules here or in a
 project folder.
 
 The two things this skill adds on top:
