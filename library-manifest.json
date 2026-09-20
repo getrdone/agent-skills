@@ -995,7 +995,7 @@
     "_tools/install.py": "1fc2fa465000d522ff216999a9e7fe0261d8f50b67a43140daf86de598f66495",
     "_tools/library.py": "2dbae2218e6ab607980c98dcf8b8cf84cdd59b2ced2697987866df59198ea376",
     "_tools/managed-baseline.json": "8790c4519137a05042bdcbc6627ad790e0cc137006ef153034c3f5c247e0ecf8",
-    "_tools/startup-context.ps1": "18a19cb5e5e9d948bac5cba15388d20879c501acdccd4678201448743382b699",
+    "_tools/startup-context.ps1": "b935661656c9a870a07df86bb21bd832551e90b6ec795eb10f1c5206bdab773d",
     "_tools/sync-hidden.vbs": "4ac506dcc84666a48c6abc77b79a602c87ad36b5be4342dc9ff3cd3041bde689",
     "_tools/sync.ps1": "732123c07853f5adcec13aaa5cd08bbbfeb9ccdcc41feb372792af953b5dea22",
     "_tools/test_library.py": "f1fcc8df77a6383a6c9751d3ecefbdfde948ab6813c8a4ae382255a4cc443fc0",
