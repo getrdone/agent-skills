@@ -24,6 +24,7 @@ Consumer projects **reference** this repo; they do not own a divergent copy of a
 **Agent homes** are filled by `_agent-tools\sync-agent-skills\` (robocopy of `skills\` → `~/.grok/skills`, etc.). Pull this git repo when GitHub changes; the 15-minute task does not `git pull`.
 
 Sibling private pack repo: [getrdone/design-resources](https://github.com/getrdone/design-resources) → `G:\__ai-projects\design-resources\`.
+Sibling private archive: [getrdone/zzz-repo-archive](https://github.com/getrdone/zzz-repo-archive) → `G:\__ai-projects\_zzz-repo-archive\<yyyy-MMdd>\`.
 
 ## Layout
 
@@ -35,7 +36,6 @@ skills/                  # LIVE skills only — flat: skills/<name>/SKILL.md
   web-studio/
   curiosity-driven-scripture-journey/   # versioned exception (CURRENT → versions/3.2.0)
   …
-packages/                # archives / retired — never auto-loaded
 processing/
   source-vault/
 tools/

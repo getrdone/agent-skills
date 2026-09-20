@@ -15,7 +15,7 @@ Agents covered: **Grok, Claude, Codex, Freebuff, Cursor, Gemini**, and any other
 
 | Layer | Location | Role |
 |-------|----------|------|
-| **Brain (skills)** | `G:\__ai-projects\_agent-skills\skills\<name>\` | Procedures, SPECs, matrices — shared, synced. Archives in `packages\` only. |
+| **Brain (skills)** | `G:\__ai-projects\_agent-skills\skills\<name>\` | Procedures, SPECs, matrices — shared, synced. Archives live in `G:\__ai-projects\_zzz-repo-archive\<yyyy-MMdd>\` only. |
 | **Work (artifacts)** | The folder the user opened / named as the project | Transcripts, titles, pages, assets — **one shared root** |
 
 Do **not** create a parallel per-agent project tree (`/grok`, `/claude`, …) for the same topic.

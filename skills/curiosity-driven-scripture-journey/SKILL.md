@@ -14,7 +14,7 @@ description: Plan, package, design, write, build, or review a curiosity-driven S
 7. For a new or materially revised color theme, use the selected release's `palette` lane. It opens the canonical `color-palette-composition` skill; load Color Psychology only when contextual interpretation materially changes the palette decision.
 
 Current: **3.2.0** (file `CURRENT`)
-Stable: **3.2.0** (file `STABLE`) — older releases archived under `packages/archive/cdsj-versions/`
+Stable: **3.2.0** (file `STABLE`) — older releases archived in [getrdone/zzz-repo-archive](https://github.com/getrdone/zzz-repo-archive) at `2026-0920/archive/cdsj-versions/`
 
 ## Path resolution (read this before opening any file)
 

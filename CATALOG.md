@@ -15,7 +15,7 @@ This catalog is authoritative for live skills and tools. Repository identities a
 
 1. Live skills live only under `skills/<kebab-name>/` with a root `SKILL.md`.
 2. **No nested skill packs** inside `skills/` (`agent-skills/`, `claude-skills/`, zip dumps).
-3. Archives / retired skills do not participate in discovery or routing. Fully superseded repositories belong in `getrdone/zed-superseeded` pending explicit authorization for permanent deletion.
+3. Archives / retired skills do not participate in discovery or routing. They live in [getrdone/zzz-repo-archive](https://github.com/getrdone/zzz-repo-archive) (`G:\__ai-projects\_zzz-repo-archive`), under dated folders `yyyy-MMdd`. Never auto-loaded, never synced as discoverable skills. Do not keep a second copy under `packages/`.
 4. Versioned skills (CDSJ) use `CURRENT` / `STABLE` + `versions/<ver>/` only when cross-release mixing is a real risk.
 5. **This catalog is the allowlist.** If a folder is not listed here, do not treat it as a default skill.
 6. **web-studio owns HTML.** Other skills call it; they do not invent parallel web pipelines.
@@ -84,7 +84,7 @@ If one skill matches → load **only** `skills/<name>/SKILL.md` (and files it po
 
 `html-page-standard`, `studio-web`, `modern-web-development`, `modern-web-development-v2`, `modern-html-aeo`, `modern-css-design`, `interactive-components`, `optimized-deliverables`, any `claude-skills` nest, any nested `skills/agent-skills` dump.
 
-These names are historical only and must not be restored as live skill folders or aliases. Fully retired standalone repositories are moved to `getrdone/zed-superseeded` and remain there until permanent deletion is explicitly authorized.
+These names are historical only and must not be restored as live skill folders or aliases. Retired copies live in [getrdone/zzz-repo-archive](https://github.com/getrdone/zzz-repo-archive) (current dump: `2026-0920/`). Do not load them.
 
 ## External
 
