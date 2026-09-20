@@ -1,0 +1,13 @@
+{
+  "schema": 1,
+  "name": "i-have-adhd",
+  "version": "1.2.0",
+  "sealed": true,
+  "files": {
+    "SKILL.md": "7200b30cd75d76909cafcbd88436733675408b596f15ec2c48e7230d17b14dd4"
+  },
+  "dependencies": {
+    "library_release": "unified-v5-2026-0920"
+  },
+  "provenance": "Local authoritative adaptation; source notices and licenses retained."
+}

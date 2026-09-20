@@ -6,17 +6,17 @@ import library
 ROOT=Path(__file__).resolve().parents[1]
 START='<!-- BEGIN AUTHORITATIVE SKILLS -->';END='<!-- END AUTHORITATIVE SKILLS -->'
 def context(root):
- return f'''# Authoritative skills and working conventions
+ return f'''# Authoritative skills
 
-The complete managed skill library is `{root.as_posix()}`. Read its CATALOG.md to discover skills and its WORKSPACE.md for working conventions. Installed skills are generated distributions; do not use old aliases, redirect files, archived guidance or upstream files as missing instruction dependencies.
+Library: `{root.as_posix()}`. Installed copies are generated. Payload: `C:/Users/noise/.agents/skill-library` (`current.json`).
 
-Coding work uses coding-workflow. Web implementation uses web-studio and accepted project design decisions. Load relevant specialists progressively without a numerical cap. Resolve CURRENT/STABLE or an explicitly requested release dynamically; never mix releases.
+Default voice: lean-output and i-have-adhd. Talk to a person. No inner-agent chatter. No jargon walls.
 
-Use project `_wip/<task>/` for drafts, temporary plans, diagnostic captures and intermediate artifacts. Use project `_tools/` for reusable utilities. Keep established source, tests, assets, accepted documentation and deliverables in their proper locations. Consult `{(root/'_tools/TOOLS.md').as_posix()}` before writing a tool; project tool indexes link directly to that master.
+When a specialist is needed, read CATALOG.md for the name, then load that skill's CURRENT file. Follow only that release. Do not load the rest until named. Never mix releases. Never load retired names (html-page-standard, studio-web, modern-html-aeo, modern-css-design, interactive-components, optimized-deliverables) — use web-studio.
 
-Complete the full authorized request through cohesive verifiable chunks: outcome, affected area, check, evidence, status and next action. No 2–5-minute requirements, inactivity deadlines, time-based job kills, automatic retries, silent model changes or repeated approval gates. Long operations remain responsive; honor explicit stop requests and actual failures.
+Project memory is on disk, not chat: 01-NOW.md every session; 02-TASKS.md for the queue; 03-MEMORY.md before changing anything that looks decided; image-slots.md before any image path or generate/promote. Graphics does not edit HTML. Code does not invent image paths.
 
-Preserve a suitable stack. Modular source, dependencies, Motion/Framer Motion, GSAP, Remotion and Lottie are allowed when appropriate. Self-contained delivery is an explicit export request. Project identity and accessibility govern design choices; illustrative examples are not mandatory styles.
+Drafts go in project `_wip/<task>/`. Reusable tools go in `_tools/` after checking `{(root/'_tools/TOOLS.md').as_posix()}`.
 '''
 def install(user,backup_root):
  user=Path(user);backup_root=Path(backup_root);records=[]

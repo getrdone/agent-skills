@@ -6,7 +6,8 @@
       "id": "agents",
       "path": "C:/Users/noise/.agents/skills",
       "discover": true,
-      "note": "Managed entrypoints; version resources are outside discovery."
+      "publish": ["skill-router", "lean-output", "i-have-adhd"],
+      "note": "Tiny discovery set; version resources stay in the payload."
     },
     {
       "id": "codex",
@@ -18,31 +19,36 @@
       "id": "grok",
       "path": "C:/Users/noise/.grok/skills",
       "discover": true,
-      "note": "Managed entrypoints; version resources are outside discovery."
+      "publish": ["skill-router", "lean-output", "i-have-adhd"],
+      "note": "Tiny discovery set; version resources stay in the payload."
     },
     {
       "id": "claude",
       "path": "C:/Users/noise/.claude/skills",
       "discover": true,
-      "note": "Managed entrypoints; version resources are outside discovery."
+      "publish": ["skill-router", "lean-output", "i-have-adhd"],
+      "note": "Tiny discovery set; version resources stay in the payload."
     },
     {
       "id": "cursor",
       "path": "C:/Users/noise/.cursor/skills",
       "discover": true,
-      "note": "Managed entrypoints; version resources are outside discovery."
+      "publish": ["skill-router", "lean-output", "i-have-adhd"],
+      "note": "Tiny discovery set; version resources stay in the payload."
     },
     {
       "id": "openclaw",
       "path": "C:/Users/noise/.openclaw/skills",
       "discover": true,
-      "note": "Managed entrypoints; version resources are outside discovery."
+      "publish": ["skill-router", "lean-output", "i-have-adhd"],
+      "note": "Tiny discovery set; version resources stay in the payload."
     },
     {
       "id": "freebuff",
       "path": "C:/Users/noise/.freebuff/skills",
       "discover": true,
-      "note": "Managed entrypoints; version resources are outside discovery."
+      "publish": ["skill-router", "lean-output", "i-have-adhd"],
+      "note": "Tiny discovery set; version resources stay in the payload."
     }
   ]
 }

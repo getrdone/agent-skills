@@ -64,5 +64,23 @@ class Lifecycle(unittest.TestCase):
   self.assertFalse((self.base/'state').exists())
  def test_restore_path_traversal_rejected(self):
   with self.assertRaises(ValueError):lib.contained(self.base/'elsewhere',self.root)
+ def test_publish_allowlist(self):
+  other=self.root/'skills/other/versions/1.0.0';other.mkdir(parents=True)
+  (other/'SKILL.md').write_text('---\nname: other\ndescription: Other fixture\n---\n# Other\n')
+  folder=other.parents[1];(folder/'SKILL.md').write_text('Select CURRENT');(folder/'CURRENT').write_text('1.0.0');(folder/'STABLE').write_text('1.0.0')
+  index=lib.load(self.root/'release-index.json');index['skills']['other']={'current':'1.0.0','stable':'1.0.0'};lib.save(self.root/'release-index.json',index)
+  lib.seal(self.root)
+  c=lib.load(self.config);c['homes'][0]['publish']=['example'];lib.save(self.config,c)
+  lib.sync(self.config,root=self.root)
+  self.assertTrue((self.home/'example/SKILL.md').exists());self.assertFalse((self.home/'other').exists())
+  c['homes'][0]['publish']=['missing'];lib.save(self.config,c)
+  with self.assertRaises(ValueError):lib.sync(self.config,root=self.root)
+  c['homes'][0]['publish']=[];lib.save(self.config,c)
+  lib.sync(self.config,root=self.root)
+  self.assertFalse((self.home/'example/SKILL.md').exists())
+  del c['homes'][0]['publish'];lib.save(self.config,c)
+  lib.sync(self.config,root=self.root)
+  self.assertTrue((self.home/'example/SKILL.md').exists());self.assertTrue((self.home/'other/SKILL.md').exists())
+  dry=lib.sync(self.config,True,root=self.root);self.assertTrue(dry['dry_run']);self.assertEqual(dry['homes'][0]['skills'],2)
 
 if __name__=='__main__':unittest.main()

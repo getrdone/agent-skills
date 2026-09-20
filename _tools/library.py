@@ -129,6 +129,14 @@ def lock(path):
   if os.name=='nt':f.seek(0);msvcrt.locking(f.fileno(),msvcrt.LK_UNLCK,1)
   else:fcntl.flock(f,fcntl.LOCK_UN)
   f.close()
+def home_publish(home,index):
+ if not home.get('discover',True):return []
+ if 'publish' not in home:return list(index['skills'])
+ names=home['publish']
+ if not isinstance(names,list):raise ValueError('publish must be a list of skill names')
+ bad=[n for n in names if n not in index['skills']]
+ if bad:raise ValueError('Unknown publish skill: '+', '.join(bad))
+ return list(names)
 def native_entry(body,release,library):
  # The installed entry contains the actual instructions. Resource references are direct.
  text=body
@@ -152,8 +160,11 @@ def sync(config,dry=False,root=ROOT):
    if q.exists() and (q.is_symlink() or (os.name=='nt' and q.lstat().st_file_attributes & stat.FILE_ATTRIBUTE_REPARSE_POINT)):raise ValueError('Reparse destination '+str(q))
   targets.append((x,p))
  index=load(root/'release-index.json');manifest=load(root/'library-manifest.json');gen=sha(root/'library-manifest.json')[:16]
- payload=state/'releases'/gen;result={'generation':gen,'validation':validation,'updated':0,'removed':0,'preserved_divergences':0,'homes':[],'dry_run':dry}
- if dry:print(json.dumps({'generation':gen,'homes':[str(p) for _,p in targets],'skills':len(index['skills']),'dry_run':True}));return result
+ payload=state/'releases'/gen;result={'generation':gen,'validation':validation,'updated':0,'removed':0,'preserved_divergences':0,'homes':[],'dry_run':dry,'library_skills':len(index['skills'])}
+ plan=[{'id':c['id'],'path':str(p),'skills':home_publish(c,index)} for c,p in targets]
+ if dry:
+  out={'generation':gen,'homes':[{**h,'names':h['skills'],'skills':len(h['skills'])} for h in plan],'library_skills':len(index['skills']),'dry_run':True}
+  print(json.dumps(out,indent=2));result['homes']=out['homes'];return result
  with lock(state/'sync.lock'):
   if not (payload/'library-manifest.json').exists():
    stage=state/'staging'/gen;stage.mkdir(parents=True,exist_ok=True)
@@ -170,18 +181,18 @@ def sync(config,dry=False,root=ROOT):
    oldpath=state/'installed'/((config['id'])+'.json')
    old=load(oldpath)['files'] if oldpath.exists() else baseline
    desired={}
-   if config.get('discover',True):
-    for name,sel in index['skills'].items():
-     release=payload/'skills'/name/'versions'/sel['current']
-     desired[name+'/SKILL.md']=native_entry((release/'SKILL.md').read_text(encoding='utf-8-sig'),release,payload).encode('utf-8')
-     meta=release/'agents/openai.yaml'
-     if meta.exists():
-      desired[name+'/agents/openai.yaml']=meta.read_bytes()
-      # Native UI metadata resolves icons relative to the native skill root.
-      for icon in re.findall(r'^\s*icon_(?:small|large):\s*[\"\x27]?([^\s\"\x27]+)',meta.read_text(encoding='utf-8-sig'),re.M):
-       resource=contained(release/icon,release)
-       if not resource.is_file():raise RuntimeError('Missing native icon: '+str(resource))
-       desired[name+'/'+icon]=resource.read_bytes()
+   for name in home_publish(config,index):
+    sel=index['skills'][name]
+    release=payload/'skills'/name/'versions'/sel['current']
+    desired[name+'/SKILL.md']=native_entry((release/'SKILL.md').read_text(encoding='utf-8-sig'),release,payload).encode('utf-8')
+    meta=release/'agents/openai.yaml'
+    if meta.exists():
+     desired[name+'/agents/openai.yaml']=meta.read_bytes()
+     # Native UI metadata resolves icons relative to the native skill root.
+     for icon in re.findall(r'^\s*icon_(?:small|large):\s*[\"\x27]?([^\s\"\x27]+)',meta.read_text(encoding='utf-8-sig'),re.M):
+      resource=contained(release/icon,release)
+      if not resource.is_file():raise RuntimeError('Missing native icon: '+str(resource))
+      desired[name+'/'+icon]=resource.read_bytes()
    beforeback=state/'backups'/stamp/config['id'];owned={}
    for rel in sorted(set(old)|set(desired)):
     dst=contained(p/rel,p);data=desired.get(rel);exists=dst.exists();newhash=hashlib.sha256(data).hexdigest() if data is not None else None
@@ -204,7 +215,7 @@ def sync(config,dry=False,root=ROOT):
      for base,dirs,fs in os.walk(d,topdown=False):
       q=contained(base,p)
       if not any(q.iterdir()):q.rmdir()
-   save(oldpath,{'generation':gen,'files':owned,'discover':config.get('discover',True)})
+   save(oldpath,{'generation':gen,'files':owned,'discover':config.get('discover',True),'publish':config.get('publish')})
    result['homes'].append({'id':config['id'],'skills':sum(r.endswith('/SKILL.md') for r in owned),'hashes':'pass'})
   save(state/'current.json',{'generation':gen,'library':str(payload)})
   save(state/'last-sync.json',result)

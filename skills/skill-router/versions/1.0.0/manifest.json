@@ -1,0 +1,13 @@
+{
+  "schema": 1,
+  "name": "skill-router",
+  "version": "1.0.0",
+  "sealed": true,
+  "files": {
+    "SKILL.md": "44ff2d45046f97d22e57f4a890b38cb4e3ac2b2122d921270eae6efc65ceb62a"
+  },
+  "dependencies": {
+    "library_release": "unified-v5-2026-0920"
+  },
+  "provenance": "Local authoritative adaptation; source notices and licenses retained."
+}
