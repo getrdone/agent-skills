@@ -126,6 +126,8 @@ Procedure: private repo [getrdone/ubp-tools](https://github.com/getrdone/ubp-too
 
 ## Registered project utility indexes
 
+- Personal Bible Studies: `G:/__ai-projects/__Personal.Projects/bible-studies--personal/_tools/TOOLS.md` — source-study workspace; no standalone utilities identified.
+
 - ai-agent-control: `G:/__ai-projects/_agent-control/_tools/TOOLS.md` — local tools, invocation and reusable components.
 - final-days-international: `G:/__ai-projects/__Final.Days.International/_tools/TOOLS.md` — local tools, invocation and reusable components.
 - design-resources: `G:/__ai-projects/_resources/design-resources/_tools/TOOLS.md` — local tools, invocation and reusable components.
