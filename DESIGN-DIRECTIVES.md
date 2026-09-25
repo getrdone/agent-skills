@@ -307,7 +307,7 @@ If the answer to any of these is no, the color system is not finished.
 
 ## Relationship to skill-specific rules
 
-- **`skills/curiosity-driven-scripture-journey/versions/3.3.0/references/visual-system.md`** — composition, Gestalt, typography, imagery, motion, design fingerprint; this file supplies the deeper cross-project color-system reasoning.
+- **`skills/curiosity-driven-scripture-journey/versions/<CURRENT>/references/visual-system.md`** — composition, Gestalt, typography, imagery, motion, design fingerprint; this file supplies the deeper cross-project color-system reasoning. Resolve `<CURRENT>` through the Scripture Journey router before opening it.
 - **`web-studio`** — CSS architecture and implementation mechanics; this file decides how source/brand color systems are structured conceptually.
 - **`web-studio`** — page structure, conversion, performance, semantics, AEO/GEO/SEO; use these directives before encoding the visual system into the page.
 - **`artwork-prompts-handoff`** — artwork generation brief/handoff; use these directives to establish the shared palette and color-grade language before writing per-image prompts.

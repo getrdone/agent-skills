@@ -1,0 +1,42 @@
+{
+  "schema": 1,
+  "name": "curiosity-driven-scripture-journey",
+  "version": "3.4.0",
+  "sealed": true,
+  "files": {
+    "load-map.yaml": "f4b1c29e53507d7b160ec61ffebb4dd8303618c782e3400a6db33bbdd3135930",
+    "manifest.yaml": "79cb7a3323631ee8e321994391244f67f3f81d6f3fa2eaa20e1c127982674145",
+    "README.md": "b86dca5007604677364728f435f6394c56ab3686b00c23c804b25ca7567d3f70",
+    "SKILL.md": "a6b7d30d1f0732504707ad358fbf4fccacf9e67606bb3030618ce6fd2b9cf94e",
+    "agents/openai.yaml": "560d4542fb2730896c76fd2f0c632c15d9c0a34f174e854d291cae01867df161",
+    "assets/icon.svg": "2f264abab3ebabc3876f3f25a23bc7e05ce558ee176b3059598922889bc61ceb",
+    "scripts/audit_html.py": "24032748e370b64e51d4d13c69b85c1047b33477699f616f0a20a85112349798",
+    "references/standards-governance.md": "7b623f3f968b849918ce7e66ab49e0772aabfd617cc8ab7403433770ea4a7443",
+    "references/web-experience.md": "a4074248cc39e68d8302db78016543a6015c89a35fdfac18062e1d462c72890a",
+    "references/scripture-study.md": "b6b32af3401eae22bac3b9ede5fd9250eb5bed7f990da88c71127b51c4e4fc5e",
+    "references/pattern-active-discovery.md": "b0972d85566b88c7b5c469b5946d4d4aaa29039568710371044611dfa32b1d0d",
+    "references/learning-patterns.md": "abbb85e8d7536a97972ca4c77a83fcc60201a5a5bec696c61079ba715ee59386",
+    "references/quality-gates.md": "48e46d2e16d527a28fa17bdba5f1cff7dd2d93fc0c337131c029acdf0e29a1cd",
+    "references/palette-integration.md": "135b1427977e7bc044622001463bee2b1f753a3d94d39cf91fb1e0e64d29f2a9",
+    "references/v3-workflow.md": "b1c7bbe139ccb669adc0ee348ea5b4f3e11b32e2fc80387efc05eeea970bf7ad",
+    "references/design-critique-and-anti-slop.md": "c8b4d95b37738870e9697828bbb260e678e4fa756a866ce573b7177cb1ad950b",
+    "references/motion-and-premium-ui.md": "8fc4be3404fad387011fa98df49023c378265b6f530eb2dc7b09a1e4128b17c7",
+    "references/learning-and-writing.md": "b470b0060423f454fb7b94001e55cabce19faa60387ab80dfc90d62a017e8b38",
+    "references/pattern-access-agency-momentum.md": "c00f0230cef6a91042ecbd243ace546d645414bfa5c588680b9ebd36d93bc473",
+    "references/v3-quality.md": "bbd37f48d262f9ca3ee023a4d7dbf22d0021fe2108c5e00611ca765893e4c2eb",
+    "references/pattern-guided-understanding.md": "73637cd9d0b8a7bccb3c96a41a249c96b3324928f0f0a7d643ebf3ef09ebdecd",
+    "references/learning-pattern-sources.md": "2757a0ef088765f7309d91df56b74e9da72f13f6130a8efc240e408a4726c5e2",
+    "references/source-governance.md": "b1190fb81a67aae420e245f96fc98240ceb0d414563aae118e18daaad7ee7227",
+    "references/pattern-feedback-and-mastery.md": "9b667f44afd586985b13de69611395f51a4d7d3ff9b0d699d93ba1185d72628a",
+    "references/visual-system.md": "55b1f3caa5ad669feaf9ed6fb769ad8d61498a2572372c712775ad783381fcc8",
+    "references/youtube-planning.md": "fa66d13996968b1f5c6bc051e02a18e35eb373b1f966080ed7de350fb2e46ade",
+    "references/resources-and-authority.md": "355bfae8aa166e63612a8cb2f00305c9173b964820888a0ff09fc4485ecd50c9",
+    "references/project-system.md": "92f4b975d793fa3a97c2b4f99a5d807a73a5c8ac4e993bedf800596b138d5f37",
+    "references/branching-journey.md": "33c39081c20aabdb07364403319c27e27d43ad13f2535d566ae5d81c12c0e819",
+    "references/story-craft.md": "1a28d5424c79b980a2d25c511fa4fbc7f1b219fa21fca146946040c2233f8f6a"
+  },
+  "dependencies": {
+    "library_release": "unified-v5-2026-0920"
+  },
+  "provenance": "Local authoritative adaptation; source notices and licenses retained."
+}

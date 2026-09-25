@@ -1,5 +1,5 @@
 """Behavioral lifecycle tests. Codex | GPT-6 | 2026-09-20."""
-import unittest,tempfile,json,hashlib,contextlib,io
+import unittest,tempfile,json,hashlib,contextlib,io,re
 from pathlib import Path
 import library as lib
 
@@ -82,5 +82,102 @@ class Lifecycle(unittest.TestCase):
   lib.sync(self.config,root=self.root)
   self.assertTrue((self.home/'example/SKILL.md').exists());self.assertTrue((self.home/'other/SKILL.md').exists())
   dry=lib.sync(self.config,True,root=self.root);self.assertTrue(dry['dry_run']);self.assertEqual(dry['homes'][0]['skills'],2)
+
+class CuriosityPolicy(unittest.TestCase):
+ """Regression checks for the active Scripture Journey trust policy."""
+
+ ROOT = Path(__file__).resolve().parents[1]
+ SKILL = ROOT / 'skills' / 'curiosity-driven-scripture-journey'
+
+ def setUp(self):
+  self.version = (self.SKILL / 'CURRENT').read_text(encoding='utf-8').strip()
+  self.release = self.SKILL / 'versions' / self.version
+  self.assertTrue(self.release.is_dir(), f'missing active release: {self.release}')
+
+ def read(self, relative):
+  return (self.release / relative).read_text(encoding='utf-8')
+
+ def test_current_release_matches_manifest(self):
+  manifest = json.loads(self.read('manifest.json'))
+  self.assertEqual(manifest['version'], self.version)
+  self.assertEqual(manifest['sealed'], True)
+
+ def test_banned_influence_methods_have_explicit_prohibitions(self):
+  story = self.read('references/story-craft.md').lower()
+  for phrase in (
+   'banned influence and reprogramming methods',
+   'the following are hard bans',
+   'hypnosis',
+   'theta states',
+   'subliminal',
+   'nlp-style',
+   'coercive emotional conditioning',
+   'affirmation-only',
+   'manifestation',
+  ):
+   self.assertIn(phrase, story)
+  for relative in (
+   'SKILL.md',
+   'references/learning-and-writing.md',
+   'references/scripture-study.md',
+   'references/youtube-planning.md',
+   'references/quality-gates.md',
+   'references/branching-journey.md',
+   'references/learning-patterns.md',
+  ):
+   text = self.read(relative).lower()
+   self.assertTrue(
+    any(marker in text for marker in ('hard ban', 'banned', 'do not use', 'must not', 'never')),
+    f'{relative} lost its influence-method prohibition',
+   )
+
+ def test_banned_methods_cannot_reappear_as_instructions(self):
+  pattern = re.compile(
+   r'\b(?:use|using|apply|prescribe|practice|teach|try|run)\s+'
+   r'(?:hypnosis|hypnotherapy|theta|brainwave entrainment|subliminal|NLP|'
+   r'affirmation-based mind reprogramming|manifestation)\b',
+   re.IGNORECASE,
+  )
+  negative = ('do not', 'never', 'hard ban', 'banned', 'not use', 'must not', 'rejected')
+  for relative in (
+   'SKILL.md',
+   'references/story-craft.md',
+   'references/learning-and-writing.md',
+   'references/scripture-study.md',
+   'references/youtube-planning.md',
+   'references/quality-gates.md',
+   'references/branching-journey.md',
+   'references/learning-patterns.md',
+  ):
+   for number, line in enumerate(self.read(relative).splitlines(), 1):
+    if pattern.search(line) and not any(marker in line.lower() for marker in negative):
+     self.fail(f'{relative}:{number} presents a banned method as an instruction: {line}')
+
+ def test_neuroscience_requires_explicit_user_approval(self):
+  story = self.read('references/story-craft.md').lower()
+  for phrase in (
+   'approval-gated neuroscience',
+   'ask the user whether that use is acceptable',
+   'if the user does not explicitly approve it',
+   'source and evidence strength',
+   'what the evidence does not establish',
+  ):
+   self.assertIn(phrase, story)
+  for relative in (
+   'SKILL.md',
+   'references/learning-and-writing.md',
+   'references/scripture-study.md',
+   'references/youtube-planning.md',
+   'references/quality-gates.md',
+   'references/branching-journey.md',
+  ):
+   text = self.read(relative).lower()
+   self.assertTrue(
+    'neuroscience' in text and ('approval' in text or 'approve' in text or 'ask the user' in text),
+    f'{relative} lacks the neuroscience approval gate',
+   )
+
+
+# Agent: Buffy | Model: GPT-5 · Thinking: not exposed | Date: 2026-09-24 | Added Scripture Journey influence-method and neuroscience-policy regression checks. -->
 
 if __name__=='__main__':unittest.main()

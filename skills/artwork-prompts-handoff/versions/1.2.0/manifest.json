@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "name": "artwork-prompts-handoff",
+  "version": "1.2.0",
+  "sealed": true,
+  "files": {
+    "examples/artwork-prompts-sample.md": "08a3a1fbc787ec8c2151b351d70332d3e36b4febe898049539293448238c9314",
+    "README.md": "d079912b92bd964170e0e1f142c1f3b25b83d96d10c07bb1dc78eef54d29d158",
+    "SKILL.md": "e8ab51b6d10197846b567025426c2b977c4dd40b1aef1c1a618b6dc492211bb0"
+  },
+  "dependencies": {
+    "library_release": "unified-v5-2026-0920"
+  },
+  "provenance": "Local authoritative adaptation; source notices and licenses retained. Adds the mandatory concrete subject/concept opening rule; unapproved examples remain in WIP evaluation material."
+}

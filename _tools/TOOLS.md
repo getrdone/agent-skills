@@ -41,6 +41,8 @@ Root: `G:\__ai-projects\_agent-tools\` · Put `bin\` on PATH · Approve-only too
 | `markdown-app\` | Markdown editor app | Browser markdown editor, current milestone v03.5.0 (was `tools\markdown-app`) |
 | `ga4-blocker\` | GA4 Blocker Chrome extension v1.2 | Manifest V3 declarativeNetRequest blocker (was `tools\ga4-blocker`) |
 | `auto-sized-timeline\` | AutoSizedTimeline v02.7.0 (DaVinci Resolve Lua) | Builds timeline sized to selected clips (was `tools\auto-sized-timeline`) |
+| `resolve-project-health-scan\` | Project Health Scan v1.0.0 (DaVinci Resolve Python) | Missing Fusion fonts, Color/Fusion OFX, log plugin IDs, offline media. `install.ps1` then Workspace > Scripts > Project Health Scan. CLI: `py scan.py` with Resolve open. |
+| `whisper-local\` | Isolated faster-whisper YouTube transcription runner | `prepare --detach`; CUDA/model `doctor` + `smoke-test`; detached `start --request`, durable `status --job`, resumable checkpoints, TXT/SRT/VTT/JSON/MD exports. Uses bundled yt-dlp/FFmpeg; local model and caches stay under the tool. |
 | `approve-only\` | PsExec, NirCmdC | **Never run unsupervised** — also no PsShutdown/SDelete/PsPasswd/raw Sysmon without Steve |
 | `_review-tools\` | Tool-review working files | 2026-09 review packet, logs, pids — not for daily use |
 | Skill library lifecycle | `_tools/library.py` in this repository | Verified snapshots, releases, validation, managed content-hash sync, and safe Git updates. |

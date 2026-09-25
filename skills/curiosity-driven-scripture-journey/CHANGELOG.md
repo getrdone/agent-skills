@@ -1,5 +1,23 @@
 # Curiosity-Driven Scripture Journey changelog
 
+## 3.4.1 — 2026-09-24
+
+- Added a hard ban on hypnosis, hypnotherapy, theta/brainwave reprogramming, subliminal or covert influence, coercive emotional conditioning, NLP-style rewiring, affirmation-based mind reprogramming, and manifestation methods as usable content, formation, or conversion techniques.
+- Kept neuroscience available for understanding and story development, but required source disclosure, limitations, proposed-use explanation, overstatement-risk review, and explicit user approval before concrete neuroscience claims enter a task or story.
+- Propagated the ban and approval gate through the shared spine, writing, Scripture study, YouTube planning, branching, learning-pattern, and quality-gate references.
+- Updated CURRENT/STABLE routing and release metadata to 3.4.1; historical releases remain immutable.
+
+## 3.4.0 — 2026-09-24
+
+- Added `references/story-craft.md` as a routed high-trust craft reference.
+- Added optional truthful story architecture: hook, real stakes, evidence-based turn, scene, meaning, answer/payoff, and next curiosity.
+- Added PAST scene cards with strict source integrity for place, action, speech, and thoughts; reconstruction must be labeled, and biblical dialogue, historical detail, or inner states may not be invented.
+- Added explicit story-to-meaning handoff and identity-safe transfer guidance.
+- Added conversational delivery checks, meaningful pauses, one-person address, analogy/visual bridges, and a plain-language clarity test.
+- Added a claim ledger that preserves the useful source ideas as notes while rejecting unsupported neuroscience, psychology, sales, manifestation, subconscious, and guaranteed-outcome claims.
+- Updated the load map so study, packaging, narrative web copy, and release validation can load the new reference.
+- Updated CURRENT/STABLE routing to 3.4.0; attached cross-skill references continue to resolve the latest release through CURRENT.
+
 ## Unreleased
 
 - Clarified honest curiosity vs manufactured suspense for titles, thumbnails, and pre-click copy: an honest, concrete gap is required packaging; empty reaction bait, stacked opaque teasers, unsupported insinuation, and trailer language are banned.

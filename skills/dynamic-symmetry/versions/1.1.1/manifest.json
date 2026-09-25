@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "name": "dynamic-symmetry",
+  "version": "1.1.1",
+  "sealed": true,
+  "files": {
+    "SKILL.md": "435733dc4dff385cf3f644474b8172af9e37b8e98addbdf13df4c20e87d9a3c7",
+    "references/glossary.md": "254472cf3bda4a84f58d0014b1eec27090190e584305401a6b1ec48316191252",
+    "references/method.md": "b16f4649b6a7f9d507c7bed47f7de1e0ed23b687f0eedc75eb8aec4bdfe256bd"
+  },
+  "dependencies": {
+    "library_release": "unified-v5-2026-0920"
+  },
+  "provenance": "Local authoritative adaptation; source notices and licenses retained. Routing references now resolve Scripture Journey through its CURRENT router."
+}

@@ -1,0 +1,42 @@
+{
+  "schema": 1,
+  "name": "curiosity-driven-scripture-journey",
+  "version": "3.4.1",
+  "sealed": true,
+  "files": {
+    "agents/openai.yaml": "560d4542fb2730896c76fd2f0c632c15d9c0a34f174e854d291cae01867df161",
+    "assets/icon.svg": "2f264abab3ebabc3876f3f25a23bc7e05ce558ee176b3059598922889bc61ceb",
+    "load-map.yaml": "dc4478a1a0902da785ef7af9ab8ecd2d00ebe7092df53b31c4f509e8a0547cad",
+    "manifest.yaml": "b53fb24d58d5eebd2dc405592049105497346c7b67bccf1f7c11e26513b2e3f1",
+    "README.md": "b86dca5007604677364728f435f6394c56ab3686b00c23c804b25ca7567d3f70",
+    "references/branching-journey.md": "afaf6c8cef0fa87b8975a62b2a5fc172a4e5f1634d882b58d1a2b281ae738c98",
+    "references/design-critique-and-anti-slop.md": "c8b4d95b37738870e9697828bbb260e678e4fa756a866ce573b7177cb1ad950b",
+    "references/learning-and-writing.md": "4729f07e11a1a39318440a9c45fe895e3ffd9fe8e3b3286d9797cdb193c52494",
+    "references/learning-pattern-sources.md": "2757a0ef088765f7309d91df56b74e9da72f13f6130a8efc240e408a4726c5e2",
+    "references/learning-patterns.md": "3e3dad17fb42935570baa8e28d8988e9f4313a2088f9e6560347b4142d4e35fe",
+    "references/motion-and-premium-ui.md": "8fc4be3404fad387011fa98df49023c378265b6f530eb2dc7b09a1e4128b17c7",
+    "references/palette-integration.md": "135b1427977e7bc044622001463bee2b1f753a3d94d39cf91fb1e0e64d29f2a9",
+    "references/pattern-access-agency-momentum.md": "c00f0230cef6a91042ecbd243ace546d645414bfa5c588680b9ebd36d93bc473",
+    "references/pattern-active-discovery.md": "b0972d85566b88c7b5c469b5946d4d4aaa29039568710371044611dfa32b1d0d",
+    "references/pattern-feedback-and-mastery.md": "9b667f44afd586985b13de69611395f51a4d7d3ff9b0d699d93ba1185d72628a",
+    "references/pattern-guided-understanding.md": "73637cd9d0b8a7bccb3c96a41a249c96b3324928f0f0a7d643ebf3ef09ebdecd",
+    "references/project-system.md": "92f4b975d793fa3a97c2b4f99a5d807a73a5c8ac4e993bedf800596b138d5f37",
+    "references/quality-gates.md": "227dcf4b6617d4ac5a5b0e0be55a9cd11e3b23c8524c7e9620c021a8399fde27",
+    "references/resources-and-authority.md": "355bfae8aa166e63612a8cb2f00305c9173b964820888a0ff09fc4485ecd50c9",
+    "references/scripture-study.md": "471b5ddde70465d272540b2c0a4d2701fdc7ee566dbd4cfd9208d43176ce786a",
+    "references/source-governance.md": "b1190fb81a67aae420e245f96fc98240ceb0d414563aae118e18daaad7ee7227",
+    "references/standards-governance.md": "7b623f3f968b849918ce7e66ab49e0772aabfd617cc8ab7403433770ea4a7443",
+    "references/story-craft.md": "d6243c737687ccefd465925d7d4c05df8181468a9f755b999bb53d47ef11526e",
+    "references/v3-quality.md": "bbd37f48d262f9ca3ee023a4d7dbf22d0021fe2108c5e00611ca765893e4c2eb",
+    "references/v3-workflow.md": "b1c7bbe139ccb669adc0ee348ea5b4f3e11b32e2fc80387efc05eeea970bf7ad",
+    "references/visual-system.md": "55b1f3caa5ad669feaf9ed6fb769ad8d61498a2572372c712775ad783381fcc8",
+    "references/web-experience.md": "a4074248cc39e68d8302db78016543a6015c89a35fdfac18062e1d462c72890a",
+    "references/youtube-planning.md": "0e5e503580d3c1fa51b762ed27cf708fbe60b0f4195c9b0a42591dde44ce145f",
+    "scripts/audit_html.py": "24032748e370b64e51d4d13c69b85c1047b33477699f616f0a20a85112349798",
+    "SKILL.md": "799c6e08fe26fa5d1098507e6000ba6fe2eb0a7c8625d4bc9ebc5a46b69f9533"
+  },
+  "dependencies": {
+    "library_release": "unified-v5-2026-0920"
+  },
+  "provenance": "Local authoritative adaptation; source notices and licenses retained. Adds the broad influence-method ban and approval-gated neuroscience use."
+}

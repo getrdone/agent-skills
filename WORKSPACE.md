@@ -186,6 +186,15 @@ Prefer **`_docs/`** (leading underscore, kebab-case inside) for instruction PDFs
 - Bare version piles: `final.html`, `latest.html`, `index_v2.html` as a working file
 - Agent suffixes on normal work (they survive only for an explicitly requested bake-off, §3b)
 - A second canonical name for the same artifact
+- Copying a whole `versions/<n>/` tree for a small CSS, JS, or copy fix
+
+### 3g. Project version folders (Steve, 2026-09-20)
+
+When a project keeps working copies under `versions/<current>/` (named in that project's `01-NOW.md`):
+
+- Small CSS, JS, and copy fixes **edit that folder in place**. Do not copy the tree to `versions/<n+1>/`.
+- A new `versions/<n>/` folder is only for a schema or function change, a visual pass the user asked to keep separate, or a freeze they asked for.
+- Do not create files or folders just to create them.
 
 ---
 
@@ -423,3 +432,4 @@ file, and states that all agents share the folder. It must **not** restate the r
 <!-- Agent: grok · Model: Grok 4.5 · Date: 2026-09-13 · §3d: human-readable instruction folders are _docs/, not docs/. -->
 
 <!-- Agent: Codex | Model: GPT-6 | Thinking: not exposed | Date: 2026-09-20 -->
+<!-- Agent: grok · Model: Grok 4.6 · Date: 2026-09-20 · §3g: do not copy a versions tree for a small CSS/JS/copy fix. -->
