@@ -7,9 +7,9 @@
     "DESIGN-DIRECTIVES.md": "022848b08db358dfb04641d9babfaa7ff5adb74b6d3165329c6f5612a9ce7a80",
     "README.md": "1c2ece40c1a0aa1605903554fcb18606afad6ffe119367b0f6032c4cd342904e",
     "WORKSPACE.md": "dd0d580fb26ad76e9e3a10d4c772c48e95608b27d821280f6b2ea9a38f4aa58f",
-    "CATALOG.md": "4fa4b7dd53c9b415e54350cb5a7605a86c419068ce732517caac1ccdd86256d3",
+    "CATALOG.md": "e5f3ab2e063fe4a6df7afd2ea80fe40a1fe4452c608c31e712da91eb0bd74964",
     "AGENTS.md": "865b44328dc40715f1d259bfd436bc034c98906be6e0ab4478f0eb088beac86e",
-    "release-index.json": "5df44c36e5a757b1f08a458e01a2fc68557c1f74c9256e00e91554ee720fd67b",
+    "release-index.json": "67b0f4de1cdf554c70a32de1c33cc333cb237fc009793114bac7e6bb62fb5f60",
     ".gitattributes": "221d7b7fdd893e38f0602704744365647929ec9b934dc22c8153f96cb136a068",
     "evals/check_load.py": "d2d8ececa3480872d9008be833c1413bdfa598d58c3be23829c634df11deec3a",
     "evals/README.md": "4007472346a2a55fb36d55990ff758e66b50c3dc9e0fad1e3c53a45a07a621db",
@@ -995,15 +995,15 @@
     "_docs/MAINTENANCE.md": "7054a2dc6d7e9b76105df59a7f59d4f2a775385ba033976f5cba6029233adf64",
     "_docs/project-organization.json": "504152d9c4d3382e435c33fc0cb7440ec81f0f6cdb8cd0a2cde10e63e1f2af3c",
     "_docs/release-decisions.md": "1c5e5712795890aa94ab9d71a174311ece101aae740e79bdcd17208252b4e1f6",
-    "_docs/source-provenance.json": "ae34fa455e55a0758846c2e68067dc0b38a59c59dfd6667b24464fc14531e79f",
+    "_docs/source-provenance.json": "583a9515f8520d5b496b1e6cdb6490faa2c701f941a71f1958a9c3b57e65be61",
     "_docs/verification.json": "483e671af98e61388f1ad822872614d47c1eb65772b1d37cf681779fd43da62c",
     "_docs/reference-plans/ANSWERS-AND-WORKLIST-CLAUDE.html": "8ef9ba99f9b6bb7f129d34e73d3e31716723ade0de385e952daacd2bc7672af5",
     "_docs/reference-plans/HARDENING-PLAN-CLAUDE.html": "559c408930b30bec8ea2e8504baaa4a1ab4bc13f8347e8f3fc49e70cd4c1093d",
-    "_tools/agent-homes.json": "dc049a83c54e5d342d630c40cc3517d02abb9e50c69c91f3815c5e4bd15a4a29",
-    "_tools/install.py": "1fc2fa465000d522ff216999a9e7fe0261d8f50b67a43140daf86de598f66495",
+    "_tools/agent-homes.json": "b1b13dae604e04dcf273b051a046b5469d7652c35bdf8fd0224bf3b602eba1fd",
+    "_tools/install.py": "65aabc2a14e738833879633f9ba1ce2f3c3522c9a996b3f537c76ca2160516ab",
     "_tools/library.py": "2dbae2218e6ab607980c98dcf8b8cf84cdd59b2ced2697987866df59198ea376",
     "_tools/managed-baseline.json": "8790c4519137a05042bdcbc6627ad790e0cc137006ef153034c3f5c247e0ecf8",
-    "_tools/startup-context.ps1": "b935661656c9a870a07df86bb21bd832551e90b6ec795eb10f1c5206bdab773d",
+    "_tools/startup-context.ps1": "6eb2a8691952155505d17cb492011dc29a8af3ff0d24698b69a329933ad7c116",
     "_tools/sync-hidden.vbs": "4ac506dcc84666a48c6abc77b79a602c87ad36b5be4342dc9ff3cd3041bde689",
     "_tools/sync.ps1": "732123c07853f5adcec13aaa5cd08bbbfeb9ccdcc41feb372792af953b5dea22",
     "_tools/test_library.py": "955da9801a8162a264b42b7c089baf989e88aa31d7e72ba865e779170a2be410",
@@ -2079,7 +2079,18 @@
     "skills/curiosity-driven-scripture-journey/versions/3.4.1/references/resources-and-authority.md": "355bfae8aa166e63612a8cb2f00305c9173b964820888a0ff09fc4485ecd50c9",
     "skills/curiosity-driven-scripture-journey/versions/3.4.1/references/project-system.md": "92f4b975d793fa3a97c2b4f99a5d807a73a5c8ac4e993bedf800596b138d5f37",
     "skills/curiosity-driven-scripture-journey/versions/3.4.1/references/branching-journey.md": "afaf6c8cef0fa87b8975a62b2a5fc172a4e5f1634d882b58d1a2b281ae738c98",
-    "skills/curiosity-driven-scripture-journey/versions/3.4.1/references/story-craft.md": "d6243c737687ccefd465925d7d4c05df8181468a9f755b999bb53d47ef11526e"
+    "skills/curiosity-driven-scripture-journey/versions/3.4.1/references/story-craft.md": "d6243c737687ccefd465925d7d4c05df8181468a9f755b999bb53d47ef11526e",
+    "_docs/skill-source-register.md": "816a60244dd18d30b73cb304bba16fccebe8b47ea09e267c5bdc28a142482d51",
+    "skills/video-library/CURRENT": "6ca2e3356014241331fb2b399428fca23c558e3f3d428edcf4f56eb0fe907069",
+    "skills/video-library/SKILL.md": "5e5c36ae998fbadaf2ea5a67fbef5cc3d5a0e589301f928bad20fc8e3e52a296",
+    "skills/video-library/STABLE": "6ca2e3356014241331fb2b399428fca23c558e3f3d428edcf4f56eb0fe907069",
+    "skills/video-library/versions/1.0.0/SKILL.md": "784e518a4554aa690abbf3bcdf345c7c1b0bb171ca060808f69018ea2e6ae447",
+    "skills/video-library/versions/1.0.0/manifest.json": "c8308871ee10216ec7279bee54dca0f3b29fdd8c7eaee47d50baf53f90c24b60",
+    "skills/video-library/versions/1.0.0/whisper.md": "ac4e81aa837d522e3da3fc421bfa9f46567ea4214ec274cf5c72474ef4658fc9",
+    "skills/video-library/versions/1.1.0/SKILL.md": "1873151856a55247ef03ef7821ca7f814b97a730c12de22c517ccbcc58c6fe3b",
+    "skills/video-library/versions/1.1.0/handoff.md": "90bd3ff0cf1e1f882ce2e4c5ab5d77e4684d08f5678e28441f2dec65590ff9d3",
+    "skills/video-library/versions/1.1.0/manifest.json": "32a9ee67755763cde7f254f0ee76c117839827c55244478f668f1d2e3c71b8f2",
+    "skills/video-library/versions/1.1.0/whisper.md": "ac4e81aa837d522e3da3fc421bfa9f46567ea4214ec274cf5c72474ef4658fc9"
   },
   "dependencies": {
     "lifecycle": "Python 3.11+ standard library",
@@ -2290,6 +2301,11 @@
     },
     "youtube-video-planner": {
       "baseline": "1.0.0",
+      "current": "1.1.0",
+      "stable": "1.1.0"
+    },
+    "video-library": {
+      "baseline": null,
       "current": "1.1.0",
       "stable": "1.1.0"
     }

@@ -157,6 +157,17 @@
       "sourceType": "github",
       "skillPath": "skills/stitch-skill/SKILL.md",
       "computedHash": "c96b580192b34167efa01f460bbc669ff4315cf97f3cf6ff85ded8029aa720b8"
+    },
+    "video-library": {
+      "source": "Steve user instructions, 2026-09-29",
+      "sourceType": "user-workflow",
+      "skillPath": "skills/video-library/versions/1.1.0/SKILL.md",
+      "inheritedSources": [
+        "clean-video-transcript (semantic cleanup workflow)",
+        "transcript (acquisition and timing design reference)",
+        "Existing local DLP and Whisper integration"
+      ],
+      "notes": "Local request preservation, duplicate counters, categorized SQLite/Markdown/HTML archive. No substantive source-video teachings incorporated. User follow-ups: default for configured agents and ChatGPT web, with verified local Work/Codex handoff."
     }
   }
 }
