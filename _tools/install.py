@@ -12,6 +12,8 @@ Library: `{root.as_posix()}`. Installed copies are generated. Payload: `C:/Users
 
 Default voice: lean-output and i-have-adhd. Talk to a person. No inner-agent chatter. No jargon walls.
 
+Video Library is a default for all specifically requested videos: resolve `skills/video-library/CURRENT`, record the request once before retrieval, and increment the existing video counter for each new request. Web/cloud sessions without local access must send a verified handoff to local ChatGPT Work/Codex through available messaging tools, or clearly provide an unsent pending handoff if no route exists. This is an explicit exception to named-only specialist loading.
+
 When a specialist is needed, read CATALOG.md for the name, then load that skill's CURRENT file. Follow only that release. Do not load the rest until named. Never mix releases. Never load retired names (html-page-standard, studio-web, modern-html-aeo, modern-css-design, interactive-components, optimized-deliverables) — use web-studio.
 
 Project memory is on disk, not chat: 01-NOW.md every session; 02-TASKS.md for the queue; 03-MEMORY.md before changing anything that looks decided; image-slots.md before any image path or generate/promote. Graphics does not edit HTML. Code does not invent image paths.

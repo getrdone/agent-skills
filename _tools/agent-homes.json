@@ -6,7 +6,7 @@
       "id": "agents",
       "path": "C:/Users/noise/.agents/skills",
       "discover": true,
-      "publish": ["skill-router", "lean-output", "i-have-adhd"],
+      "publish": ["skill-router", "lean-output", "i-have-adhd", "video-library"],
       "note": "Tiny discovery set; version resources stay in the payload."
     },
     {
@@ -19,35 +19,35 @@
       "id": "grok",
       "path": "C:/Users/noise/.grok/skills",
       "discover": true,
-      "publish": ["skill-router", "lean-output", "i-have-adhd"],
+      "publish": ["skill-router", "lean-output", "i-have-adhd", "video-library"],
       "note": "Tiny discovery set; version resources stay in the payload."
     },
     {
       "id": "claude",
       "path": "C:/Users/noise/.claude/skills",
       "discover": true,
-      "publish": ["skill-router", "lean-output", "i-have-adhd"],
+      "publish": ["skill-router", "lean-output", "i-have-adhd", "video-library"],
       "note": "Tiny discovery set; version resources stay in the payload."
     },
     {
       "id": "cursor",
       "path": "C:/Users/noise/.cursor/skills",
       "discover": true,
-      "publish": ["skill-router", "lean-output", "i-have-adhd"],
+      "publish": ["skill-router", "lean-output", "i-have-adhd", "video-library"],
       "note": "Tiny discovery set; version resources stay in the payload."
     },
     {
       "id": "openclaw",
       "path": "C:/Users/noise/.openclaw/skills",
       "discover": true,
-      "publish": ["skill-router", "lean-output", "i-have-adhd"],
+      "publish": ["skill-router", "lean-output", "i-have-adhd", "video-library"],
       "note": "Tiny discovery set; version resources stay in the payload."
     },
     {
       "id": "freebuff",
       "path": "C:/Users/noise/.freebuff/skills",
       "discover": true,
-      "publish": ["skill-router", "lean-output", "i-have-adhd"],
+      "publish": ["skill-router", "lean-output", "i-have-adhd", "video-library"],
       "note": "Tiny discovery set; version resources stay in the payload."
     }
   ]
