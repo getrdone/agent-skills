@@ -199,8 +199,8 @@
     },
     "video-library": {
       "baseline": null,
-      "current": "1.2.0",
-      "stable": "1.2.0"
+      "current": "1.2.1",
+      "stable": "1.2.1"
     }
   }
 }
