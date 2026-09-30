@@ -4,6 +4,27 @@
 
 Root: `G:\__ai-projects\_agent-tools\` · Put `bin\` on PATH · Approve-only tools need explicit human sign-off.
 
+## Before you run anything: how to start it without a window
+
+**Read this before invoking any tool on this list.** This is Steve's active desktop, and a console window
+that flashes is a window on his screen — for reads and status checks exactly as for long jobs.
+
+There is exactly one permitted spawn, and it has two hops: `pythonw.exe`, created through WMI/CIM,
+running `G:\__ai-projects\_agent-control\bin\silent-run.py`, which creates the real command with
+`CREATE_NO_WINDOW` and writes the exit code, duration, stdout and stderr into a JSON file.
+
+    powershell -NoProfile -NonInteractive -WindowStyle Hidden -Command "Invoke-CimMethod -ClassName Win32_Process -MethodName Create -Arguments @{CommandLine='\"C:\Users\noise\AppData\Local\Programs\Python\Python313\pythonw.exe\" \"G:\__ai-projects\_agent-control\bin\silent-run.py\" \"<result.json>\" -- <command> [args]'}"
+
+- **`Invoke-CimMethod` may only ever create `pythonw.exe`.** `cmd.exe`, `powershell.exe`, `pwsh.exe`,
+  `python.exe`, `node.exe` and `bash.exe` are console programs; `Win32_Process::Create` cannot pass
+  `CREATE_NO_WINDOW`, so creating one raises a window. This has already happened from an agent that had
+  read the rule.
+- **Never `cmd /c <anything>`** — not to redirect output into a file, not to chain commands, not to reach
+  a PowerShell script. `-- powershell -NoProfile -NonInteractive -File <script.ps1>` goes through the same
+  launcher instead. The launcher already captures both streams.
+- **Read the JSON result.** Do not re-run a command to see its output.
+- **One exception:** a local web server surfaced in the browser, so Steve can see the result.
+
 ## Daily shims — `bin\` (on PATH)
 
 | Shim | Tool | Typical agent use |

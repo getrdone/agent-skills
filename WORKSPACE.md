@@ -224,6 +224,30 @@ Code's `Edit` is one). Inside those, rule 1 means *use the shell for appends*, n
 
 ---
 
+## 4b. Running anything without a window (NON-NEGOTIABLE — all agents, all code runs)
+
+This box is a person's active desktop. A console window that flashes is a window on Steve's screen, and it
+happens for reads and status checks exactly as it does for long jobs.
+
+**There is exactly one permitted spawn, and it has two hops:** `pythonw.exe`, created through WMI/CIM,
+running `G:\__ai-projects\_agent-control\bin\silent-run.py`, which creates the real command with
+`CREATE_NO_WINDOW` and writes the exit code, duration, stdout and stderr into a JSON file.
+
+    powershell -NoProfile -NonInteractive -WindowStyle Hidden -Command "Invoke-CimMethod -ClassName Win32_Process -MethodName Create -Arguments @{CommandLine='\"C:\Users\noise\AppData\Local\Programs\Python\Python313\pythonw.exe\" \"G:\__ai-projects\_agent-control\bin\silent-run.py\" \"<result.json>\" -- <command> [args]'}"
+
+A PowerShell script goes through that same launcher — `-- powershell -NoProfile -NonInteractive -File
+<script.ps1>` — never through `cmd`.
+
+**`Invoke-CimMethod` may only ever create `pythonw.exe`.** `cmd.exe`, `powershell.exe`, `pwsh.exe`,
+`python.exe`, `node.exe` and `bash.exe` are console programs, and `Win32_Process::Create` has no way to
+pass `CREATE_NO_WINDOW`, so creating one raises a window. **Never `cmd /c <anything>`** — not to redirect
+output, not to chain commands, not to reach a script. `silent-run.py` already captures both streams, so
+redirection is never the reason. Read the JSON; do not re-run a command to see its output.
+
+The one exception: a local web server surfaced in the browser, so Steve can see the result.
+
+---
+
 ## 5. Agent identification (NON-NEGOTIABLE — all agents, all tasks)
 
 Multiple agents read and write the **same** folders. The human must always be able to tell **who**

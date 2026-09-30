@@ -22,6 +22,8 @@ History is opt-in: write `04-ACTIVITY.md` or a handoff only when the run asks. P
 
 Dates have one form everywhere: four-digit year, zero-padded two-digit month, zero-padded two-digit day, written 2026-0930. Never produce a self-contained or offline build unless Steve asks for one in that run. Graphics does not edit HTML. Code does not invent image paths.
 
+Start nothing on Steve's screen. There is exactly one permitted spawn, and it has two hops: `pythonw.exe` created through WMI/CIM, running `G:/__ai-projects/_agent-control/bin/silent-run.py`, which creates the real command with `CREATE_NO_WINDOW` and writes the exit code, stdout and stderr to a JSON file. `Invoke-CimMethod` may only ever create `pythonw.exe`. Never `cmd /c` for any reason, and never `cmd.exe`, `powershell.exe` or `python.exe` through CIM: `Win32_Process::Create` cannot pass `CREATE_NO_WINDOW`, so a console program created that way flashes a window. Read the JSON result; do not re-run a command to see its output. The one exception is a local web server surfaced in the browser.
+
 Drafts go in project `_wip/<task>/`. Reusable tools go in `_tools/` after checking `{(root/'_tools/TOOLS.md').as_posix()}`.
 '''
 def install(user,backup_root):
