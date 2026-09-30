@@ -1,4 +1,4 @@
-"""Install current startup guidance directly; no legacy launchers. Codex GPT-6, 2026-09-20."""
+"""Install current startup guidance directly; no legacy launchers. Codex GPT-6, 20260920."""
 from pathlib import Path
 import argparse,datetime,hashlib,json,os,shutil
 import library
@@ -12,9 +12,15 @@ Library: `{root.as_posix()}`. Installed copies are generated. Payload: `C:/Users
 
 Default voice: lean-output and i-have-adhd. Talk to a person. No inner-agent chatter. No jargon walls.
 
+Video Library is a default for all specifically requested videos: resolve `skills/video-library/CURRENT`, record the request once before retrieval, and increment the existing video counter for each new request. Web/cloud sessions without local access must send a verified handoff to local ChatGPT Work/Codex through available messaging tools, or clearly provide an unsent pending handoff if no route exists. This is an explicit exception to named-only specialist loading.
+
 When a specialist is needed, read CATALOG.md for the name, then load that skill's CURRENT file. Follow only that release. Do not load the rest until named. Never mix releases. Never load retired names (html-page-standard, studio-web, modern-html-aeo, modern-css-design, interactive-components, optimized-deliverables) — use web-studio.
 
-Project memory is on disk, not chat: 01-NOW.md every session; 02-TASKS.md for the queue; 03-MEMORY.md before changing anything that looks decided; image-slots.md before any image path or generate/promote. Graphics does not edit HTML. Code does not invent image paths.
+Project memory is on disk, not chat: 01-NOW.md every session; 03-MEMORY.md before changing anything that looks decided; image-slots.md before any image path or generate/promote. The task queue is the single database `todos.db` - read it with `G:/__ai-projects/_agent-control/bin/open-tasks.ps1` or `G:/__ai-projects/_agent-control/_tools/todos.py`, never from a markdown file.
+
+History is opt-in: write `04-ACTIVITY.md` or a handoff only when the run asks. Provenance goes in the commit trailer as `Agent`, `Model`, `Thinking`, `Date`.
+
+Dates have one form everywhere: four-digit year, zero-padded two-digit month, zero-padded two-digit day, written 2026-0930. Never produce a self-contained or offline build unless Steve asks for one in that run. Graphics does not edit HTML. Code does not invent image paths.
 
 Drafts go in project `_wip/<task>/`. Reusable tools go in `_tools/` after checking `{(root/'_tools/TOOLS.md').as_posix()}`.
 '''

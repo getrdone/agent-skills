@@ -1,0 +1,235 @@
+# Curiosity-Driven Scripture Journey — load map for release 3.6.0
+#
+# Agent: claude | Model: claude-opus-5 | Thinking: not exposed | Date: 2026-09-10
+#
+# This file is the machine-readable form of the "Route the request" table in SKILL.md.
+# It is not a second routing vocabulary: every lane below is one row of that table.
+# If the table and this file ever disagree, the table is wrong — fix both in one commit.
+#
+# PATH RESOLUTION: every path here is relative to this file's directory,
+#   skills/curiosity-driven-scripture-journey/versions/3.6.0/
+# except paths marked `repo:` which are relative to the repository root.
+#
+# EVERY run must emit, before loading anything:
+#   LANES: <lane>[, <lane>...]
+#   LOAD:  <one path per line, exactly the files opened>
+#   BRIEF: <path to project-brief.md>  (stage: <status>)   — when a work folder exists
+#
+# suggested_files is a discovery hint for a typical lane, not a maximum, spine excluded.
+# Load additional relevant material when the task requires it.
+
+release: 3.6.0
+resolves_under: skills/curiosity-driven-scripture-journey/versions/3.6.0/
+
+spine:
+  # Always applied. Held in SKILL.md itself — no reference file is loaded for it.
+  files: []
+  note: >
+    The shared spine, dependency gates, and output discipline live in SKILL.md.
+    Reading SKILL.md is not counted against any lane's suggested_files.
+
+lanes:
+
+  develop:
+    when: Substantial new work — a new journey, page, or study before production begins.
+    files:
+      - references/v3-workflow.md
+      - references/motivation-and-curiosity.md
+      - references/memory-and-learning.md
+    conditional:
+      - files: [references/ethical-persuasion.md]
+        when: developing a case, advocated conclusion, or invitation
+      - files: [references/presentation-craft.md]
+        when: developing spoken teaching or teaching visuals
+    suggested_files: 3
+    note: >
+      Required before project planning, ideation, learning architecture, visual direction,
+      or HTML production. It was absent from the 3.3.1 route table; that was the single
+      most common under-load in this skill.
+
+  project:
+    when: Start a project, resume from mixed artifacts, set status, coordinate deliverables.
+    files:
+      - references/project-system.md
+    suggested_files: 1
+
+  study:
+    when: Plan or write a Bible study, Scripture Journey page, evidence path, source trail,
+          translation review, interactions, or next-study choices.
+    files:
+      - references/scripture-study.md
+      - references/learning-and-writing.md
+      - references/story-craft.md
+      - references/learning-patterns.md
+      - references/branching-journey.md
+      - references/resources-and-authority.md
+      - references/motivation-and-curiosity.md
+      - references/memory-and-learning.md
+    conditional:
+      - files: [references/ethical-persuasion.md]
+        when: developing a case, advocated conclusion, or invitation
+      - files: [references/presentation-craft.md]
+        when: developing spoken teaching or teaching visuals
+      - files: [references/presentation-evidence.md]
+        when: researching or explaining presentation and persuasion claims
+      - files: [references/learning-evidence.md]
+        when: researching, maintaining, or explaining a scientific learning claim
+      - files: [references/source-governance.md]
+        when: the study depends on registered source records
+      - files:
+          - references/pattern-guided-understanding.md
+          - references/pattern-active-discovery.md
+          - references/pattern-feedback-and-mastery.md
+          - references/pattern-access-agency-momentum.md
+        when: after learner jobs are chosen — load ONLY the selected family file(s), never all four
+    suggested_files: 9
+
+  sources:
+    when: Ingest, approve, classify, index, query, or audit source material or its database.
+    files:
+      - references/source-governance.md
+    suggested_files: 1
+
+  packaging:
+    when: YouTube ideas, titles, descriptions, packaging, video structure, scripts, retention,
+          or spoken delivery, teaching visuals, stage/camera craft, and rehearsal.
+    files:
+      - references/youtube-planning.md
+      - references/story-craft.md
+    conditional:
+      - files: [references/learning-and-writing.md, references/motivation-and-curiosity.md, references/memory-and-learning.md, references/presentation-craft.md, references/ethical-persuasion.md]
+        when: writing or revising substantive script or teaching content
+      - files: [references/motivation-and-curiosity.md]
+        when: targeted motivation or curiosity framing for titles or packaging
+      - files: [references/presentation-craft.md]
+        when: planning or reviewing spoken delivery, teaching visuals, or rehearsal
+      - files: [references/ethical-persuasion.md]
+        when: reviewing advocated conclusions or invitations in packaging
+      - files: [references/presentation-evidence.md]
+        when: researching or explaining presentation and persuasion claims
+      - files: [references/learning-evidence.md]
+        when: researching or explaining a scientific learning claim
+    suggested_files: 7
+
+  palette:
+    when: Create, revise, or critique a color theme, palette, color scheme, or web-page theme for a Scripture Journey.
+    files:
+      - references/palette-integration.md
+      - repo:skills/color-palette-composition/SKILL.md
+    conditional:
+      - files: [repo:COLOR-PSYCHOLOGY.md]
+        when: Scripture symbolism, audience/cultural meaning, intended or alternate interpretation, or a color-psychology claim materially affects the decision
+      - files: [repo:DESIGN-DIRECTIVES.md]
+        when: turning the chosen palette into locked story names, semantic tokens, named gradients, implementation states, or developer/print handoff
+      - files: [references/visual-system.md]
+        when: this palette decision is part of a new or revised full visual system
+    suggested_files: 6
+
+  visual:
+    when: Thumbnail, graphic, moodboard, visual direction, typography, layout, motion language.
+    files:
+      - references/visual-system.md
+    conditional:
+      - files: [repo:skills/color-palette-composition/SKILL.md]
+        when: a color theme or palette is created or materially revised
+      - files: [repo:COLOR-PSYCHOLOGY.md]
+        when: Scripture symbolism, audience/cultural meaning, intended or alternate interpretation, or a color-psychology claim materially affects the decision
+      - files: [repo:skills/dynamic-symmetry/SKILL.md]
+        when: composition matters — load the Dynamic Symmetry skill; open method.md only if needed
+      - files: [references/youtube-planning.md]
+        when: the artifact is a video thumbnail
+    suggested_files: 7
+    hands_off_to: artwork-prompts-handoff        # actual image generation is that skill's job
+
+  web:
+    when: Build or review HTML/CSS/JS, landing pages, interactions, SEO/AEO/GEO, performance, accessibility.
+    profiles:
+      repair:
+        when: A narrow fix to an existing page — one component, a contrast problem, a broken control.
+              Do NOT open the design tree for this.
+        files:
+          - references/web-experience.md
+        suggested_files: 1
+      build:
+        when: A new page, or a rebuild that changes the concept.
+        files:
+          - references/web-experience.md
+          - references/visual-system.md
+          - references/motion-and-premium-ui.md
+          - references/design-critique-and-anti-slop.md
+          - references/branching-journey.md
+          - references/learning-and-writing.md
+          - references/motivation-and-curiosity.md
+          - references/memory-and-learning.md
+        conditional:
+          - files: [repo:skills/color-palette-composition/SKILL.md]
+            when: the page includes a new or materially revised color theme
+          - files: [repo:COLOR-PSYCHOLOGY.md]
+            when: Scripture symbolism, audience/cultural meaning, intended or alternate interpretation, or a color-psychology claim materially affects the page theme
+          - files: [repo:DESIGN-DIRECTIVES.md]
+            when: the chosen theme needs token, gradient, implementation-state, or developer handoff
+          - files: [references/story-craft.md]
+            when: the page includes narrative, illustration, story-led, or transfer copy
+          - files: [references/ethical-persuasion.md]
+            when: the page advocates a conclusion or action
+          - files: [references/presentation-craft.md]
+            when: developing narrated content or an explanatory visual sequence
+        suggested_files: 10
+        also_load_lanes: [develop, release]
+    note: >
+      Splitting repair from build is the point of this lane. The 3.3.1 table had one door for
+      "touch any HTML", which pulled ~100 KB for a footer fix.
+
+  release:
+    when: Validate a plan, artifact, experience, or release.
+    files:
+      - references/quality-gates.md
+      - references/v3-quality.md
+    conditional:
+      - files: [references/story-craft.md]
+        when: validating a script, story-led lesson, narrative page, or transfer copy
+      - files: [references/motivation-and-curiosity.md, references/memory-and-learning.md]
+        when: reviewing substantial teaching and its learning design
+      - files: [references/learning-evidence.md]
+        when: reviewing scientific learning claims
+      - files: [references/presentation-craft.md]
+        when: reviewing a spoken script, presentation, teaching video, or teaching visuals
+      - files: [references/ethical-persuasion.md]
+        when: reviewing a case, advocated conclusion, or invitation
+      - files: [references/presentation-evidence.md]
+        when: reviewing empirical presentation or persuasion claims
+    scripts:
+      - scripts/audit_html.py                    # mandatory on every substantial HTML candidate
+    suggested_files: 2
+
+  governance:
+    when: Change the standard, validators, releases, syncing, version compatibility,
+          or maintain the learning-pattern catalogue.
+    files:
+      - references/standards-governance.md
+      - references/learning-pattern-sources.md
+    conditional:
+      - files: [references/learning-evidence.md]
+        when: maintaining motivation, curiosity, or memory research
+      - files: [references/presentation-evidence.md]
+        when: maintaining presentation or persuasion research
+    suggested_files: 3
+
+# ---------------------------------------------------------------------------
+# Cross-skill entry points. These are not CDSJ lanes; they are where a run arrives from.
+bridges:
+  artwork-prompts-handoff:
+    entered_from: [visual, web]
+    note: Manual prompt pack only. Never loaded for ordinary image generation.
+
+# ---------------------------------------------------------------------------
+# Orphan check: every file under references/ must appear in at least one lane above.
+# tools/check_links.py --load-map enforces this.
+reference_count: 29
+
+# Agent: Buffy | Model: GPT-5 | Thinking: not exposed | Date: 2026-09-24 | Routed story-craft through study, packaging, narrative, and release.
+
+
+# Agent: Codex | Model: GPT-6 | Thinking: not exposed | Date: 2026-09-25 | Routed core learning systems; removed automatic transcript handoff.
+
+# Agent: Codex | Model: GPT-6 | Date: 2026-09-25 | Routed presentation craft, ethical persuasion, and evidence.

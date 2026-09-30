@@ -1,0 +1,95 @@
+name: curiosity-driven-scripture-journey
+release: 3.6.0
+status: superseded
+released: 2026-09-25
+
+compatibility:
+  source_library_registry_schema: ">=2,<3"
+  source_library_sqlite_schema: ">=2,<3"
+  project_state_storage: file-based
+  sqlite_project_state: deferred
+  cross_skill_dependencies: pinned-by-release-commit
+
+workflow:
+  substantial_new_work: develop-then-build
+  default_ideation_mode: standard
+  full_matrix_available: true
+  default_accessibility_minimum: WCAG-2.2-AA
+  default_experience_target: AA
+  deterministic_html_audit_required: true
+  color_palette_composition_skill: repository-root/skills/color-palette-composition/SKILL.md
+  color_palette_load_trigger: new-or-materially-revised-theme
+  color_psychology_reference: repository-root/COLOR-PSYCHOLOGY.md
+  color_psychology_load_trigger: consequential-meaning-cultural-or-scripture-context
+  sustained_text_contrast_target: "7:1"
+  normal_text_contrast_floor: "4.5:1"
+  story_craft_reference: references/story-craft.md
+  story_craft_claim_discipline: required
+  motivation_and_curiosity: core-substantial-teaching
+  memory_and_learning: core-substantial-teaching
+  learning_evidence_reference: references/learning-evidence.md
+  presentation_craft_reference: references/presentation-craft.md
+  ethical_persuasion_reference: references/ethical-persuasion.md
+  presentation_evidence_reference: references/presentation-evidence.md
+  transcript_processing: independent-project
+  public_neuroscience_claims: scoped-authorization
+
+security:
+  public_write_abuse_protection: required
+  default_challenge_strategy: escalate-only
+  sms_requires_valid_phone_and_approved_capability: true
+
+routing:
+  scripture_journey_owns_web_experience: false
+  web_implementation_owner: web-studio
+  attached_skills_resolve_curiosity_release_via: CURRENT
+  retired_competing_skills:
+    - interactive-components
+    - modern-css-design
+    - optimized-deliverables
+  cloudflare_source: external-official
+
+
+release_changes:
+  backward_compatible: true
+  migration_required: false
+  added_requirements:
+    - canonical-palette-composition-route
+    - required-itten-munsell-theme-rationale
+    - evidence-calibrated-color-psychology
+    - hard-readable-text-gate
+    - contextual-cultural-and-scripture-color-check
+    - truthful-story-architecture
+    - past-scene-integrity
+    - story-to-meaning-handoff
+    - delivery-and-claim-discipline
+    - identity-safe-transfer
+    - current-release-routing
+    - hard-ban-hypnosis-and-adjacent-influence-methods
+    - scoped-public-neuroscience-claims
+    - toward-away-motivation-with-agency
+    - evidence-calibrated-curiosity
+    - working-memory-and-multimedia-load
+    - retrieval-feedback-spaced-return-transfer
+    - evidence-aligned-presentation-beats
+    - voice-pause-gesture-and-visual-craft
+    - comprehension-oriented-rehearsal
+    - inspectable-arguments-and-voluntary-invitations
+  affected_areas:
+    - visual-direction
+    - palettes
+    - thumbnails
+    - artwork
+    - web-theming
+    - accessibility
+    - learning-architecture
+    - scripture-teaching
+    - youtube-scripts
+    - branching
+    - quality-gates
+    - cross-skill-routing
+
+# Agent: Codex | Model: GPT-5 | Thinking: not exposed | Date: 2026-09-13 | Routed material theme work to color-palette-composition and restricted Psychology to consequential contextual interpretation.
+# Agent: Buffy | Model: GPT-5 | Thinking: not exposed | Date: 2026-09-24 | Added high-trust story craft, source integrity, claim discipline, hard-banned influence methods, approval-gated neuroscience, and CURRENT-release routing.
+
+# Agent: Codex | Model: GPT-6 | Thinking: not exposed | Date: 2026-09-25

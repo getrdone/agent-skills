@@ -15,17 +15,23 @@ Agents covered: **Grok, Claude, Codex, Freebuff, Cursor, Gemini**, and any other
 
 This repository is the complete source of truth for managed skills. Installed copies are generated distributions. Never load a legacy skill, shim, alias, archive or upstream instruction file to fill a gap. Integrate required knowledge here first. References within the new library are direct ownership links.
 
-For coding use `skills/coding-workflow/SKILL.md`. For web work use `skills/web-studio/SKILL.md`. Current user instructions and accepted project requirements take precedence over recommendations and reference examples. Modular source, dependencies, Motion/Framer Motion, GSAP, Remotion and Lottie are allowed when appropriate. Self-contained output is an explicit export request.
+For coding use `skills/coding-workflow/SKILL.md`. For web work use `skills/web-studio/SKILL.md`. Current user instructions and accepted project requirements take precedence over recommendations and reference examples. Modular source, dependencies, Motion/Framer Motion, GSAP, Remotion and Lottie are allowed when appropriate. Never produce a self-contained or offline build unless Steve asks for one in that run; modular source with dependencies is the default. Dates have one form everywhere: four-digit year, zero-padded two-digit month, zero-padded two-digit day, written 2026-0930.
 
 Temporary plans, captures, diagnostics, experiments and drafts go in `_wip/<task>/`, never the project root or durable planning folders. Reusable project utilities go in `_tools/`; shared tools retain one shared home. Skill-bound scripts stay in their release. Read the master `_tools/TOOLS.md` in this library before creating a utility. Project `_tools/TOOLS.md` lists local tools and links directly to the master. Do not copy the master into each project. Accepted plans remain in established durable documentation.
 
 Work in cohesive verifiable chunks: outcome, affected area, check, evidence, status, next action. No elapsed-time work quota, inactivity deadline or automatic kill. Continue authorized work without repeated approval gates; no automatic job retry or model switching. Explicit user stop requests and actual failures remain actionable.
 
+## 0b. Source provenance for every new or materially updated skill
+
+Every skill created, combined, or materially revised must record the substantive videos, research, articles, datasets, source skills, and other references that shaped it. Maintain the library-wide per-skill entry in [`_docs/skill-source-register.md`](_docs/skill-source-register.md) and keep `_docs/source-provenance.json` in sync where applicable.
+
+For each video, capture its exact title, creator/channel, canonical URL, and the concepts it contributed. For research, capture the exact title, author/publisher, direct URL, and the claim or method supported. When a skill combines prior skills or source material, preserve the lineage and list inherited sources under the resulting skill too. Never invent missing citations: mark them `needs-identification` and retain useful identifying clues until verified. Before sealing a new release, check that its sources are represented in the register.
+
 ## 1. Brain vs work
 
 | Layer | Location | Role |
 |-------|----------|------|
-| **Brain (skills)** | `G:\__ai-projects\_agent-skills\skills\<name>\` | Procedures, SPECs, matrices — shared, synced. Archives live in `G:\__ai-projects\_zzz-repo-archive\<yyyy-MMdd>\` only. |
+| **Brain (skills)** | `G:\__ai-projects\_agent-skills\skills\<name>\` | Procedures, SPECs, matrices — shared, synced. Archives live in `G:\__ai-projects\_zzz-repo-archive\<YYYY-MMDD>\` only. |
 | **Work (artifacts)** | The folder the user opened / named as the project | Transcripts, titles, pages, assets — **one shared root** |
 
 Do **not** create a parallel per-agent project tree (`/grok`, `/claude`, …) for the same topic.
@@ -41,7 +47,7 @@ All agents share the user-chosen project. Put drafts, temporary plans, experimen
 work-root/
   AGENTS.md                 # optional local pointer to this contract
   01-NOW.md                 # session pickup (Now / Blocked)
-  02-TASKS.md               # the queue
+  03-MEMORY.md              # durable locks and settled decisions
   project-brief.md          # durable decisions + machine state
   <stem>.txt                # source
   <stem>.titles.md          # progressive stem (see §3)
@@ -60,7 +66,6 @@ When the user starts a **new** named topic and no project folder exists:
 <topic-slug>/
   AGENTS.md                 # short pointer to agent-skills + this file
   01-NOW.md                 # Now / Blocked
-  02-TASKS.md               # open work that outlives a session
   03-MEMORY.md              # durable locks and settled decisions
   project-brief.md          # one living brief (YAML) — durable + machine state
   _wip/                    # temporary plans and task intermediates
@@ -71,7 +76,7 @@ When the user starts a **new** named topic and no project folder exists:
     dynamic-symmetry/       # project composition notes, if needed
   sources/intake/           # user may dump files here — no forms required
   deliverables/             # shippable page, exports, finals
-    assets/                 # finished art named to match the prompts file (p01-….png)
+    assets/                 # finished art named to match the prompts file (e.g. topic_p01.webp)
 ```
 
 **Creative-friendly intake:** the user may drop files into `mood/` or `sources/intake/` with **zero paperwork**.
@@ -144,6 +149,7 @@ There is nothing to choose between, so there is nothing to promote.
 - Re-running the same spec **overwrites** the canonical file.
 - Keeping a prior copy for comparison uses `_vN`: `index_v2.html`. Nothing else.
 - Source inputs the user supplied (`<stem>.txt`, files in `mood/` and `sources/intake/`) are **never** modified.
+- Artwork prompt IDs and generated asset filenames use the same topic-prefixed sequence: `<topic>_p01`, `<topic>_p02`, etc. Use one lowercase topic stem per pack (kebab-case for multiple words), retain the number across revisions, and use the chosen image extension. Example: `antichrist_p01.webp`.
 - **Exception — competing proposals.** When two agents are deliberately asked for rival versions of the
   same deliverable (a design bake-off), those are deliberation artifacts for the duration:
   `index_<agent>.html`, promoted to `index.html` when the user picks one. This is the *only*
@@ -155,8 +161,8 @@ A Run is appended to the bottom of a progressive stem file. Fixed grammar so hum
 scripts can find it:
 
 ```markdown
-## Run — 2026-09-10 09:15 PT — claude/claude-opus-5 — Thinking: not exposed
-SUPERSEDES: 2026-09-09 16:40 PT        <!-- only when this run retracts an earlier one -->
+## Run — 20260910 09:15 PT — claude/claude-opus-5 — Thinking: not exposed
+SUPERSEDES: 20260909 16:40 PT        <!-- only when this run retracts an earlier one -->
 ### Reasoning
 ### Candidates
 1. …
@@ -188,7 +194,7 @@ Prefer **`_docs/`** (leading underscore, kebab-case inside) for instruction PDFs
 - A second canonical name for the same artifact
 - Copying a whole `versions/<n>/` tree for a small CSS, JS, or copy fix
 
-### 3g. Project version folders (Steve, 2026-09-20)
+### 3g. Project version folders (Steve, 20260920)
 
 When a project keeps working copies under `versions/<current>/` (named in that project's `01-NOW.md`):
 
@@ -256,93 +262,125 @@ by another, identify the committing agent and note co-authorship in `What change
 - Chat-only signatures with no disk stamp
 - A commit naming the agent but omitting model or thinking level
 
-### Lean chat
+### Lean chat — always on
 
-Brief status only — what / path / blocked. **No** code, diffs, patches, or full dumps in chat. Those live in files.
+**`lean-output` is the default chat voice for every agent, every session, and it does not need to be invoked.** It is not an opt-in style. Treat its rules as the baseline unless the user asks for something else explicitly.
+
+Brief status only — what / path / blocked. **No** code, diffs, patches, or full dumps in chat. Those live in files. No preamble, no closer, no restating the question, no summary of what you are about to do.
+
+Length is a budget, not a courtesy. Deliverables stay whole — pages, documents, slides, and code files are never trimmed to make the chat shorter. Only the chat is compressed.
+
+The one thing that overrides this: if the user asks a direct question, answer it in the fewest lines that fully answer it, and stop.
 
 ---
 
-## 6. Continuity — five numbered files, created when that layer has content
+## 6. Continuity - the numbered files that exist, plus one database
 
-Filenames are numbered in **order of need**. A directory listing tells you the reading order without
-opening anything. Create a numbered file when that layer has something to say. Do **not** scaffold
-empty `03-MEMORY.md` / `04-ACTIVITY.md` / `05-ARCHIVE.md` just to have all five. Never use the old
-names (`NOW.md`, `MEMORY.md`, `AGENT-ACTIVITY.md`, `MEMORY-ARCHIVE.md`).
+There is one queue and it is not a markdown file. Open work lives in
+`todos.db` at the workspace root, read with `_agent-control\_tools\todos.py`
+or `_agent-control\bin\open-tasks.ps1`. Everything else is a numbered file,
+created when that layer has something to say. Do **not** scaffold empty
+`03-MEMORY.md` / `04-ACTIVITY.md` / `05-ARCHIVE.md` just to have the set. Never
+use the old names (`NOW.md`, `MEMORY.md`, `AGENT-ACTIVITY.md`,
+`MEMORY-ARCHIVE.md`, `02-TASKS.md`).
 
 | File | Scope | Read | Written by |
 |------|-------|------|-----------|
 | `01-NOW.md` | this session | **every session** | agent + human |
-| `02-TASKS.md` | open work that outlives a session | **every session** | agent + human |
 | `03-MEMORY.md` | the whole project | before changing settled work | mostly human |
-| `04-ACTIVITY.md` | one dated entry per material change | rarely | agent, append-only |
+| `04-ACTIVITY.md` | opt-in journal | when a run asks for history | that run only |
 | `05-ARCHIVE.md` | pruned locks and closed tasks | only when asked | nobody directly |
+| `todos.db` | every open task, every project | before planning anything | `todos.py` |
 
-`AGENTS.md` and `CLAUDE.md` stay **unnumbered** — those exact names are what Codex and Claude Code look
-for. Numbered files are this workspace's contract; unnumbered files are tool entry points.
+`AGENTS.md` stays **unnumbered** - that exact name is what the tools look for.
+Numbered files are this workspace's contract; unnumbered files are tool entry
+points.
 
-`project-brief.md` is a sixth file belonging to **one deliverable**, not the project. See §6d.
+`project-brief.md` is a sixth file belonging to **one deliverable**, not the
+project. See §6d.
 
-There are no other state files. Not `NOW.md`, not `MEMORY.md`, not `TOPIC-BOARD.md`, `START-HERE.md`,
-`PROJECT-STATUS.md`, `STATUS.md`, `CURRENT.md`, `ACTIVE-WORK.md`, or a per-agent board. If you find one, it is a leftover:
-fold it into the numbered file that owns its content and delete it.
+There are no other state files. Not `NOW.md`, not `MEMORY.md`, not
+`02-TASKS.md`, not `TOPIC-BOARD.md`, `START-HERE.md`, `PROJECT-STATUS.md`,
+`STATUS.md`, `CURRENT.md`, `ACTIVE-WORK.md`, or a per-agent board. If you find
+one, it is a leftover: fold it into the file that owns its content and delete
+it.
 
 ### 6a. What each one is for
 
-**`01-NOW.md` — what is in flight.** Now and Blocked. Not a queue — the queue is `02-TASKS.md`, and
-duplicating it here is the most likely way this drifts. Never a `## Next` heading. Never task
-checkboxes. `workspace-doctor.ps1` fails if either returns. Read first, every session; update before
-ending substantial work. Keep under ~3 KB.
+**`01-NOW.md` - what is in flight.** Now and Blocked. Not a queue - the queue
+is `todos.db`, and duplicating it here is the most likely way this drifts.
+Never a `## Next` heading. Never task checkboxes. `workspace-doctor.ps1` fails
+if either returns. Read first, every session; update before ending substantial
+work. Keep under ~3 KB.
 
-**`02-TASKS.md` — the queue.** Open work that survives past this session. One task per line, fixed
-shape (§6b). This is the only place tasks are authored, in any project.
+**`todos.db` - the queue.** Open work that survives past this session, for
+every project, in one database. Add, check, hold, search and close it with
+`_agent-control\_tools\todos.py`; never hand-write SQL and never write a
+markdown task list. A closed todo is archived automatically with its subtask
+rollup.
 
-**`03-MEMORY.md` — durable locks.** The only file in the system that can hold a **no**. Git records
-what changed, not what is forbidden. The artifacts hold the locked copy but not the fact that it is
-locked — an agent reading a page sees copy it could improve, and improving it is the failure. Agent
-chat memory does not cross agents and never overrides repo files.
+**`03-MEMORY.md` - durable locks.** The only file in the system that can hold
+a **no**. Git records what changed, not what is forbidden. The artifacts hold
+the locked copy but not the fact that it is locked - an agent reading a page
+sees copy it could improve, and improving it is the failure. Agent chat memory
+does not cross agents and never overrides repo files.
 
-So this holds standing constraints and settled decisions: locked copy, locked visual direction,
-closed choices, "do not reopen X", "Y is on hold". Read it before touching anything that looks already
-decided. **A thing being improvable is not permission to change it.**
+So this holds standing constraints and settled decisions: locked copy, locked
+visual direction, closed choices, "do not reopen X", "Y is on hold". Read it
+before touching anything that looks already decided. **A thing being improvable
+is not permission to change it.**
 
-**`04-ACTIVITY.md` — the journal.** One dated entry when material work finishes, shaped by
-`_agent-control\templates\AGENT-ACTIVITY-ENTRY.md`. Append only; never rewrite an earlier entry. It
-answers "why is this odd thing here" months later, and grows freely because nobody reads it in bulk.
+**`04-ACTIVITY.md` - opt-in, not a default.** Written only when the current
+request asks for history, shaped by
+`_agent-control\templates\AGENT-ACTIVITY-ENTRY.md`. Append only; never
+rewrite an earlier entry. Provenance does **not** go here by default - it goes
+in the commit trailer as `Agent`, `Model`, `Thinking`, `Date`, so `git log`
+answers who did what and at what depth without any working file growing. A
+later agent may offer a higher-thinking-level re-evaluation of shallow work in
+one line; that is an offer, never a requirement, and never a reason to pause.
 
-**`05-ARCHIVE.md` — a destination, not a source.** Its only job is letting `03-MEMORY.md` and
-`02-TASKS.md` stay short. Content arrives **only** by being pruned out of one of them. Never write to
-it directly, never read it unless asked.
+**`05-ARCHIVE.md` - a destination, not a source.** Its only job is letting
+`03-MEMORY.md` stay short. Content arrives **only** by being pruned out of
+`03-MEMORY.md`, and only when a run asks. Never write to it directly, never
+read it unless asked.
 
-### 6b. Task format (fixed — a regex has to parse it)
+### 6b. The task commands (there is no line format to hand-write)
 
-```markdown
-## Open
-- [ ] 2026-09-12 :: @grok :: Wire AF auto-send using the short URL
-- [ ] :: :: Hide the theme switcher before ads
-
-## Done (keep the last 10, prune the rest to 05-ARCHIVE.md)
-- [x] 2026-09-09 :: @claude :: Local D1 smoke test
+```powershell
+G:\__ai-projects\_agent-control\_tools\todos.py add global "Retitle the queue filter pills"
+G:\__ai-projects\_agent-control\_tools\todos.py add project video-library "Add transcript resync"
+G:\__ai-projects\_agent-control\_tools\todos.py list
+G:\__ai-projects\_agent-control\_tools\todos.py search "dashboard"
+G:\__ai-projects\_agent-control\_tools\todos.py show 42
+G:\__ai-projects\_agent-control\_tools\todos.py check 42
+G:\__ai-projects\_agent-control\_tools\todos.py hold 42 "waiting on Steve"
+G:\__ai-projects\_agent-control\_tools\todos.py resume 42
+G:\__ai-projects\_agent-control\_tools\todos.py supersede 42 "merged into 17"
+G:\__ai-projects\_agent-control\_tools\todos.py archive
 ```
 
-One task per line. `- [ ]` or `- [x]`, then due date (or empty), then owner (or empty), then the text.
-Never wrap a task across lines. Never nest sub-tasks — split them into separate lines.
+Titles are written for people in ordinary language, not agent shorthand. A
+task is recorded only when Steve asked for one, or when the change is a major
+addition to shipped code or a deliberate change of direction. A bug found and
+fixed in the same change is not a task.
 
-### 6c. Task lifecycle (the workflow — follow it exactly)
+### 6c. Task lifecycle (the workflow - follow it exactly)
 
-A task leaves `02-TASKS.md` by exactly one of four routes. It is never in two places at once.
+A task leaves the queue by exactly one of four routes. It is never in two
+places at once.
 
-| What happened | Where it goes | What is left behind in `02-TASKS.md` |
+| What happened | Where it goes | What is left in the queue |
 |---|---|---|
-| **Picked up** — you are working it now | name it in `01-NOW.md` under Now | the line stays, unchecked |
-| **Finished** | tick it `- [x]`, leave it under Done | nothing more; prune past 10 to `05-ARCHIVE.md` |
-| **Became a decision** — it settled into a standing constraint, a lock, or a "we are not doing this" | write it in `03-MEMORY.md` | **delete the line.** It is a decision now, not work |
-| **Abandoned** | one line of why in `04-ACTIVITY.md` | **delete the line** |
+| **Picked up** - you are working it now | name it in `01-NOW.md` under Now | the todo stays open |
+| **Finished** | `todos.py check <id>` | archived with its subtask rollup |
+| **Became a decision** - it settled into a standing constraint, a lock, or a "we are not doing this" | write it in `03-MEMORY.md`, then close the todo | nothing |
+| **Abandoned** | `todos.py supersede <id> "<reason>"` | nothing |
 
-The third row is the one that keeps `02-TASKS.md` honest. "Decide whether to gate the theme switcher"
-is a task; once decided, "theme switcher stays hidden until ads are wired" is a lock. If the decision
-stays in the task file, agents keep re-opening a settled question — which is the exact failure
-`03-MEMORY.md` exists to prevent.
-
+The third route is the one that keeps the queue honest. "Decide whether to
+gate the theme switcher" is a task; once decided, "theme switcher stays hidden
+until ads are wired" is a lock. If the decision stays in the queue, agents keep
+re-opening a settled question - the exact failure `03-MEMORY.md` exists to
+prevent.
 ### 6d. `project-brief.md` — one deliverable, not the project
 
 The structured production record for a **single** Scripture Journey deliverable: status, audience, core
@@ -365,7 +403,7 @@ scaffold an empty forty-field YAML nobody will fill in.
 **Could an agent discover this by reading the code?** If yes, it does not belong there — it belongs in
 the project README, or nowhere. `03-MEMORY.md` earns its length only with what cannot be inferred.
 
-Target under ~8 KB. Past that, prune the derivable material to `05-ARCHIVE.md` in one file operation
+Target under ~8 KB. Past that, prune the derivable material to `05-ARCHIVE.md` in one file operation, when a run asks for it,
 (§4 rule 3) — never by re-typing it through the model.
 
 Cross-project preferences — how the user likes to be worked with in general — are **not** project
@@ -383,20 +421,18 @@ G:\__ai-projects\_agent-control\bin\open-tasks.ps1 -Project final-days
 G:\__ai-projects\_agent-control\bin\open-tasks.ps1 -Owner @grok
 ```
 
-It reads `_agent-control\PROJECTS.yaml` for the project list, scans each `02-TASKS.md`, and prints every
-open line with its source path and line number. When the user asks *"what is open"*, *"show me all my
+It reads `todos.db` and prints every open item with its project and id. When the user asks *"what is open"*, *"show me all my
 to-dos"*, or anything of that shape across projects — **run that, do not guess and do not hand-collect.**
 
-Without the script, the same thing by hand:
+Without the script, the same thing with the CLI:
 
 ```powershell
-Get-ChildItem F:\__ai-projects -Recurse -Filter 02-TASKS.md -Depth 3 |
-  Select-String -Pattern '^- \[ \]'
+G:\__ai-projects\_agent-control\_tools\todos.py list
 ```
 
 ### 6g. Resume rule
 
-Read `01-NOW.md`. Read `02-TASKS.md`. Read `03-MEMORY.md` before changing anything already settled. For a
+Read `01-NOW.md`. Read the `todos.db` queue. Read `03-MEMORY.md` before changing anything already settled. For a
 staged Scripture Journey deliverable, read its `project-brief.md`: if `status` is set, resume that stage
 and load only its lanes. With no brief, treat the work as intake/discovery — never assume a prior
 approval.
@@ -415,7 +451,6 @@ retired name returns, or if the machine-wide template regresses. Conventions hol
 
 A consumer folder may keep a short `AGENTS.md` that points at `G:\__ai-projects\_agent-skills` and this
 file, and states that all agents share the folder. It must **not** restate the rules above.
-`CLAUDE.md` may be `@AGENTS.md` only.
 
 ---
 
@@ -425,11 +460,12 @@ file, and states that all agents share the folder. It must **not** restate the r
 2. The skill's procedure for *how*
 3. **This file** for *where* files go, *how* they are named, and *how* they are read and written
 
-<!-- Agent: goBot · Date: 2026-09-09 · TOPIC-BOARD retired; NOW.md is session pickup. -->
-<!-- Agent: claude · Model: claude-opus-5 · Thinking: not exposed · Date: 2026-09-10 · Single-sourced the naming contract; progressive stems + run-log journal; added §4 file I/O rules. -->
-<!-- Agent: claude · Model: claude-opus-5 · Thinking: not exposed · Date: 2026-09-10 · §6 restored MEMORY.md as a first-class file; numbered five-file model in order of need, task queue + lifecycle, the derivability test, brief-cites-never-copies, and on-demand cross-project task discovery. -->
-<!-- Agent: grok · Model: Grok 4.6 · Thinking: not exposed · Date: 2026-09-10 · ACTIVE-WORK.md is a leftover state file; doctor FAILs pickup pointers at NOW.md/MEMORY.md. -->
-<!-- Agent: grok · Model: Grok 4.5 · Date: 2026-09-13 · §3d: human-readable instruction folders are _docs/, not docs/. -->
+<!-- Agent: goBot · Date: 20260909 · TOPIC-BOARD retired; NOW.md is session pickup. -->
+<!-- Agent: claude · Model: claude-opus-5 · Thinking: not exposed · Date: 20260910 · Single-sourced the naming contract; progressive stems + run-log journal; added §4 file I/O rules. -->
+<!-- Agent: claude · Model: claude-opus-5 · Thinking: not exposed · Date: 20260910 · §6 restored MEMORY.md as a first-class file; numbered five-file model in order of need, task queue + lifecycle, the derivability test, brief-cites-never-copies, and on-demand cross-project task discovery. -->
+<!-- Agent: grok · Model: Grok 4.6 · Thinking: not exposed · Date: 20260910 · ACTIVE-WORK.md is a leftover state file; doctor FAILs pickup pointers at NOW.md/MEMORY.md. -->
+<!-- Agent: grok · Model: Grok 4.5 · Date: 20260913 · §3d: human-readable instruction folders are _docs/, not docs/. -->
 
-<!-- Agent: Codex | Model: GPT-6 | Thinking: not exposed | Date: 2026-09-20 -->
-<!-- Agent: grok · Model: Grok 4.6 · Date: 2026-09-20 · §3g: do not copy a versions tree for a small CSS/JS/copy fix. -->
+<!-- Agent: Codex | Model: GPT-6 | Thinking: not exposed | Date: 20260920 -->
+<!-- Agent: grok · Model: Grok 4.6 · Date: 20260920 · §3g: do not copy a versions tree for a small CSS/JS/copy fix. -->
+

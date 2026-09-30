@@ -37,7 +37,8 @@ Root: `G:\__ai-projects\_agent-tools\` · Put `bin\` on PATH · Approve-only too
 | `nirsoft\` | Curated NirSoft utilities | From official nirsoft.net |
 | `mailbox-mcp-server\` | Mailbox MCP server | Email access for agents; run via `_agent-control\bin\run-mailbox-mcp.ps1` |
 | `qpdf\` | qpdf 12.3.2 (MSVC64) | PDF manipulation (was in old `__claude\tools\`) |
-| `media-organizer\` | MediaOrganizer.ps1 suite | Media file organization tool (own README/config) |
+| `media-organizer\` | MediaOrganizer.ps1 suite | Media file organization tool (own README/config). Scan root `G:\media`; library zones are now `images`, `inbox`, `library`, `photos`, `reference` (`# by-device` and `_for-mom` keep their names) |
+| `reference-image-library\` | Palette cards, colour extraction, named signature gradients, library intake | Python 3.13 + own `.venv` (Pillow). `bin\reference-image-library.ps1 inventory\|palette\|intake\|verify\|hashes`. Every path is an explicit argument, dry-run by default, `--apply` to execute; manifests carry relative asset paths so they work across drives. Library: `G:\media\images\reference-images\`. |
 | `markdown-app\` | Markdown editor app | Browser markdown editor, current milestone v03.5.0 (was `tools\markdown-app`) |
 | `ga4-blocker\` | GA4 Blocker Chrome extension v1.2 | Manifest V3 declarativeNetRequest blocker (was `tools\ga4-blocker`) |
 | `auto-sized-timeline\` | AutoSizedTimeline v02.7.0 (DaVinci Resolve Lua) | Builds timeline sized to selected clips (was `tools\auto-sized-timeline`) |
@@ -46,6 +47,11 @@ Root: `G:\__ai-projects\_agent-tools\` · Put `bin\` on PATH · Approve-only too
 | `approve-only\` | PsExec, NirCmdC | **Never run unsupervised** — also no PsShutdown/SDelete/PsPasswd/raw Sysmon without Steve |
 | `_review-tools\` | Tool-review working files | 2026-09 review packet, logs, pids — not for daily use |
 | Skill library lifecycle | `_tools/library.py` in this repository | Verified snapshots, releases, validation, managed content-hash sync, and safe Git updates. |
+| Codex model advisor settings reader | `G:/__ai-projects/_agent-control/_tools/model-advisor/current-setting.ps1` | Read-only current-chat model/effort metadata plus last execution; used by the personal global Codex advisor instructions. No polling, model calls, switching, or conversation output. |
+
+| Durable local Codex orchestration | `G:/__ai-projects/_agent-control/_tools/task-orchestrator/orchestrator.ps1` | Serial local jobs, explicit settings, observed execution, idempotency, cancellation/recovery and coordinator acceptance. Read sibling README; native chat remains default. |
+| Video Library database maintenance | `G:/__ai-projects/__Personal.Projects/video-library/library.py optimize-db` | Python 3.13 stdlib. During idle maintenance: verified gzip SQLite backup, exact metadata gzip archives, compact metadata/export migration, integrity checks and VACUUM. Does not fetch videos or alter transcript/request history. See project README. |
+| Video Library private GitHub backup | `G:/__ai-projects/__Personal.Projects/video-library/_tools/private-github-backup.py` | VACUUM, verified SQLite snapshot, transcript-bearing folders, private-visibility check, GitHub push and remote-head verification. Hourly/sign-in Windows task; run state in local SQLite. |
 
 ## Scripts — `scripts\`
 
@@ -55,10 +61,10 @@ Root: `G:\__ai-projects\_agent-tools\` · Put `bin\` on PATH · Approve-only too
 | `srt_export.py` | Rebuild timing-accurate `.srt` from finished translation sheet (with the Translation Sheet project) |
 | `audit_image_veils.js` | Static audit of image-veil/mask patterns in HTML/CSS (seams, mask-composite, // CSS comments, non-zero mask fades, bottom-anchor traps). Companion to `_agent-skills\skills\web-studio\references\image-veils.md`. Exit 1 on fail. |
 | `audit_page.js` | One-command full-page static audit: CSS brace balance, // CSS comments, mask-composite (comment-aware), inline `<script>` parse (vm, no execution), div balance, video play contract (CONFIG.videoUrl / data-open-video / VideoStage.init / .is-playing), fd-page identity metas, document structure (DOCTYPE position incl. comment-before-doctype quirks trap, charset, title), plus delegation to audit_image_veils.js. `--json` output; folder = recursive. Exit 1 on fail. Validated: 10.11.2 index PASS (1 intentional warn: version-stamp comment above DOCTYPE = quirks mode); transcript page flags 3 warns (no DOCTYPE/charset/title — pre-existing since 10.9.3); negative tests fire. |
-| `analyze_screenshot_rows.js` | Zero-dep Node PNG analyzer — measures ink bands (text rows) + vertical gaps in screenshots, to verify spacing claims from user captures (2026-09-17) |
-| `analyze_video_choppiness.js` | Zero-dep Node per-frame RMS delta analyzer — pair with ffmpeg frame extraction (`ffmpeg -i clip.mp4 /tmp/f/%04d.png`) to measure animation smoothness/choppiness from screen recordings (2026-09-17) |
-| `cdp_shot.js` | Zero-dep headless-Chrome screenshot + DOM metrics via CDP: `node cdp_shot.js <url> <out.png> [eval-js] [--width N] [--height N]`. Evaluates JS in the live page, dumps console errors, captures full-page PNG. Emulation is set BEFORE navigation (mobile:false + dpr 1) so media queries/cqi resolve at the emulated width. Requires Node >= 22. (2026-09-17) |
-| `clean_thumbnail.js` | ffmpeg-backed thumbnail artifact analyzer + cleaner: `analyze <image>` reports dark edge bands / vertical seam columns (luminance + per-channel steps, bottom-third zones); `clean <in> <out.jpg>` crops detected margins and rescales. Used in the Final Days thumbnail investigation (2026-09-18); root cause there turned out to be CSS, not the image. Requires ffmpeg on PATH. |
+| `analyze_screenshot_rows.js` | Zero-dep Node PNG analyzer — measures ink bands (text rows) + vertical gaps in screenshots, to verify spacing claims from user captures (20260917) |
+| `analyze_video_choppiness.js` | Zero-dep Node per-frame RMS delta analyzer — pair with ffmpeg frame extraction (`ffmpeg -i clip.mp4 /tmp/f/%04d.png`) to measure animation smoothness/choppiness from screen recordings (20260917) |
+| `cdp_shot.js` | Zero-dep headless-Chrome screenshot + DOM metrics via CDP: `node cdp_shot.js <url> <out.png> [eval-js] [--width N] [--height N]`. Evaluates JS in the live page, dumps console errors, captures full-page PNG. Emulation is set BEFORE navigation (mobile:false + dpr 1) so media queries/cqi resolve at the emulated width. Requires Node >= 22. (20260917) |
+| `clean_thumbnail.js` | ffmpeg-backed thumbnail artifact analyzer + cleaner: `analyze <image>` reports dark edge bands / vertical seam columns (luminance + per-channel steps, bottom-third zones); `clean <in> <out.jpg>` crops detected margins and rescales. Used in the Final Days thumbnail investigation (20260918); root cause there turned out to be CSS, not the image. Requires ffmpeg on PATH. |
 | `shrink-video.sh` | Detached-safe video shrinker + quality check: `shrink-video.sh <in> <out> [crf=20] [preset=slow]` encodes libx264 CRF (High profile, yuv420p, `+faststart`), **copies the audio stream untouched**, and writes `<out>.status` / `.progress` / `.log` so it can run in the background while the agent polls with short reads (workspace §8). `--compare <original> <shrunk>` prints SSIM and PSNR — the quality it actually cost. Run it detached via `Start-Process`, never in the foreground. |
 
 ## EULA & PATH notes
@@ -69,13 +75,13 @@ Root: `G:\__ai-projects\_agent-tools\` · Put `bin\` on PATH · Approve-only too
 
 ## AI web-services registry
 
-Browser-driven AI accounts (Claude, SuperGrok, Leonardo via Canva, Gemini, Meta AI, NightCafe, Labs FX, Flow, ChatGPT, DeepSeek), login identities, verified status, and routing guidance: see `_docs\AI-Tools-Registry.md` (archived 2026-09-15 from the old `__claude\memory\` copy; browser-tool registry, not disk tools).
+Browser-driven AI accounts (Claude, SuperGrok, Leonardo via Canva, Gemini, Meta AI, NightCafe, Labs FX, Flow, ChatGPT, DeepSeek), login identities, verified status, and routing guidance: see `_docs\AI-Tools-Registry.md` (archived 20260915 from the old `__claude\memory\` copy; browser-tool registry, not disk tools).
 
-<!-- Agent: Codex | Model: GPT-6 | Thinking: not exposed | Date: 2026-09-17 | Updated sync tool entry. -->
+<!-- Agent: Codex | Model: GPT-6 | Thinking: not exposed | Date: 20260917 | Updated sync tool entry. -->
 
 
 ## Shared historical memory
-<!-- Agent: Codex | Model: GPT-6 | Thinking: not exposed | Date: 2026-09-17 -->
+<!-- Agent: Codex | Model: GPT-6 | Thinking: not exposed | Date: 20260917 -->
 | Tool | Location | Use |
 |------|----------|-----|
 | Agent Memory | `G:\__ai-projects\agent-memory\bin\memory.cmd` | SQLite archive: search, native sync, project events, source-backed decisions, artifacts, localhost UI, verified backups, recent replica. User-authorized self-contained exception to the usual `_agent-tools` location. Read `G:\__ai-projects\agent-memory\AGENT-MEMORY.md`. |
@@ -121,12 +127,14 @@ Procedure: private repo [getrdone/ubp-tools](https://github.com/getrdone/ubp-too
 | Plain Vision | Library: Modular `_Sequence` + slides + notes | active |
 | Xodo PDF | Pixel markup of travel-review PDFs | active |
 
-<!-- Agent: claude · Model: claude-opus-5 · Thinking: not exposed · Date: 2026-09-10 · Fixed dead pointer to the retired ubp-translator-pdf skill. -->
+<!-- Agent: claude · Model: claude-opus-5 · Thinking: not exposed · Date: 20260910 · Fixed dead pointer to the retired ubp-translator-pdf skill. -->
 
-<!-- Agent: Codex | Model: GPT-6 | Thinking: not exposed | Date: 2026-09-20 -->
+<!-- Agent: Codex | Model: GPT-6 | Thinking: not exposed | Date: 20260920 -->
 
 
 ## Registered project utility indexes
+
+- Video Library: `G:/__ai-projects/__Personal.Projects/video-library/_tools/TOOLS.md` — local video intake, backup, handoff, and dashboard launcher.
 
 - Personal Bible Studies: `G:/__ai-projects/__Personal.Projects/bible-studies--personal/_tools/TOOLS.md` — source-study workspace; no standalone utilities identified.
 
@@ -141,6 +149,7 @@ Procedure: private repo [getrdone/ubp-tools](https://github.com/getrdone/ubp-too
 ## Authoritative lifecycle tools
 
 - `_tools/library.py`: Python 3.11+, standard library. `backup`, `restore`, `seal`, `validate`, `sync`, `git-update`.
+- `_agent-control/_tools/todos.py`: Python 3.13 stdlib. The single workspace task queue, `G:/__ai-projects/todos.db` (tables `global_todo`, `project_todo`, `subtask`, `archive`). Replaces the per-project `02-TASKS.md` files. Schema in `todos_schema.sql`; `migrate_tasks.py` for the one-time import. `_agent-control/bin/open-tasks.ps1` reads it.
 - `_tools/install.py`: Python 3.11+, installs current native startup instructions and the Grok hook with verified before-images.
 - `_tools/sync.ps1` and `_tools/sync-hidden.vbs`: native silent Windows scheduler entrypoints.
 - `_tools/test_library.py`: lifecycle regression checks; isolated fixtures.

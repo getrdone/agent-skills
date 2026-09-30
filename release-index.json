@@ -9,8 +9,8 @@
     },
     "artwork-prompts-handoff": {
       "baseline": "1.0.0",
-      "current": "1.2.0",
-      "stable": "1.2.0"
+      "current": "1.2.3",
+      "stable": "1.2.3"
     },
     "awesome-design-md": {
       "baseline": null,
@@ -29,8 +29,8 @@
     },
     "clean-video-transcript": {
       "baseline": "1.0.0",
-      "current": "1.1.0",
-      "stable": "1.1.0"
+      "current": "1.2.0",
+      "stable": "1.2.0"
     },
     "cloudflare-platform": {
       "baseline": "1.0.0",
@@ -49,13 +49,13 @@
     },
     "curiosity-driven-scripture-journey": {
       "baseline": "3.2.0",
-      "current": "3.4.1",
-      "stable": "3.4.1"
+      "current": "3.6.1",
+      "stable": "3.6.0"
     },
     "design-taste-frontend": {
       "baseline": "1.0.0",
-      "current": "1.1.0",
-      "stable": "1.1.0"
+      "current": "1.2.0",
+      "stable": "1.2.0"
     },
     "dynamic-symmetry": {
       "baseline": "1.0.0",
@@ -159,13 +159,13 @@
     },
     "skill-router": {
       "baseline": null,
-      "current": "1.0.0",
-      "stable": "1.0.0"
+      "current": "1.1.0",
+      "stable": "1.1.0"
     },
     "transcript": {
       "baseline": "1.0.0",
-      "current": "1.1.0",
-      "stable": "1.1.0"
+      "current": "1.2.0",
+      "stable": "1.2.0"
     },
     "web-studio": {
       "baseline": "1.1.0",
@@ -196,6 +196,16 @@
       "baseline": "1.0.0",
       "current": "1.1.0",
       "stable": "1.1.0"
+    },
+    "task-orchestrator": {
+      "baseline": null,
+      "current": "1.1.0",
+      "stable": "1.1.0"
+    },
+    "video-library": {
+      "baseline": null,
+      "current": "1.4.1",
+      "stable": "1.4.0"
     }
   }
 }
