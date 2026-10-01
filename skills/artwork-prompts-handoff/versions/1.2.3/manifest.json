@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "name": "artwork-prompts-handoff",
+  "version": "1.2.3",
+  "sealed": true,
+  "files": {
+    "README.md": "3606eab341c29cbc0de8d8820de014d7bf04cf9bc3544bad87932f476c769253",
+    "SKILL.md": "29530ca16c7498d8d12ddc29b6c6c8753736382cfe6ea9089655c3fa06d28ed4"
+  },
+  "dependencies": {
+    "library_release": "unified-v5-2026-0920"
+  },
+  "provenance": "Local authoritative adaptation; source notices and licenses retained."
+}

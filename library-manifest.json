@@ -9,7 +9,7 @@
     "WORKSPACE.md": "eb5334e687365fb1a8064021553c24818f01819eb384c9a400f54476864102c5",
     "CATALOG.md": "88d75bd071bec4832ae9298f58eda4dd4dac478158c97b846b1c7459ce7f877a",
     "AGENTS.md": "865b44328dc40715f1d259bfd436bc034c98906be6e0ab4478f0eb088beac86e",
-    "release-index.json": "e614406274c6beae33917d51d468f329d5b4b8b5a698a2b3c1e755d086f2a265",
+    "release-index.json": "5ba661f8ea84f0615fd683d60ccf8df8d0f24c44f3c863ae501aaa9fd5e598af",
     ".gitattributes": "221d7b7fdd893e38f0602704744365647929ec9b934dc22c8153f96cb136a068",
     "evals/check_load.py": "d2d8ececa3480872d9008be833c1413bdfa598d58c3be23829c634df11deec3a",
     "evals/README.md": "4007472346a2a55fb36d55990ff758e66b50c3dc9e0fad1e3c53a45a07a621db",
@@ -22,8 +22,8 @@
     "processing/source-vault/sources-library-README.md": "5aef5df9ff2ce43b7c33c83f1b5adb087524846e59aeebbde6b66c1bb52b36cd",
     "processing/source-vault/source_vault_inventory.py": "3c40f79ba394c169cf468f5390b5e292b9ede5d56ab0e6593f9e966fc8940421",
     "skills/artwork-prompts-handoff/SKILL.md": "3081587a731beb401ad8f05a2f0bf5f38e74126dab1121d8b7c324bfad528f3a",
-    "skills/artwork-prompts-handoff/CURRENT": "d82f34ae9aa41bc4a0cb529a1ac0898fed09d6b479fb1cc44cb66c34f15ee84d",
-    "skills/artwork-prompts-handoff/STABLE": "d82f34ae9aa41bc4a0cb529a1ac0898fed09d6b479fb1cc44cb66c34f15ee84d",
+    "skills/artwork-prompts-handoff/CURRENT": "1d49cbfbc364eac9020bffeba776ebc50c4c40e3dd586bacec97a786f61ac7e4",
+    "skills/artwork-prompts-handoff/STABLE": "1d49cbfbc364eac9020bffeba776ebc50c4c40e3dd586bacec97a786f61ac7e4",
     "skills/artwork-prompts-handoff/versions/1.0.0/README.md": "d079912b92bd964170e0e1f142c1f3b25b83d96d10c07bb1dc78eef54d29d158",
     "skills/artwork-prompts-handoff/versions/1.0.0/SKILL.md": "f3b69a3257c271df22c814d21938a78460807321d98fa2f4e0facdb4063368e3",
     "skills/artwork-prompts-handoff/versions/1.0.0/manifest.json": "da9e2395b73fafbd94722509135571058af20f06dbedebc6753eae784c5691d0",
@@ -45,6 +45,9 @@
     "skills/artwork-prompts-handoff/versions/1.2.3/README.md": "3606eab341c29cbc0de8d8820de014d7bf04cf9bc3544bad87932f476c769253",
     "skills/artwork-prompts-handoff/versions/1.2.3/SKILL.md": "29530ca16c7498d8d12ddc29b6c6c8753736382cfe6ea9089655c3fa06d28ed4",
     "skills/artwork-prompts-handoff/versions/1.2.3/manifest.json": "60ac3e82258db06549c29b636f21a8ba4c0a3510993ce8d15ea1784055830b9e",
+    "skills/artwork-prompts-handoff/versions/1.2.4/SKILL.md": "807a9d9fe2a4fb3bbbff5c7742292232f451d8008578cf625e571c96eb567883",
+    "skills/artwork-prompts-handoff/versions/1.2.4/README.md": "f35bc32b784cbbd8544f750ea4159f76289cd2aa560f502190eb2caa0f6e55d1",
+    "skills/artwork-prompts-handoff/versions/1.2.4/manifest.json": "607510c3541c5f1e9d6c239d7a2a3b6b284aee11a46ce9d942266b2af2340448",
     "skills/clean-video-transcript/SKILL.md": "a8506ee888f1936e5ac006b75829ab4c8b757eeb4eb531d30e899f7680a05647",
     "skills/clean-video-transcript/CURRENT": "a64708b010e2bcf628154ddc205ed49688a6347ef93a66a42492430f63f021b1",
     "skills/clean-video-transcript/STABLE": "a64708b010e2bcf628154ddc205ed49688a6347ef93a66a42492430f63f021b1",
@@ -2296,8 +2299,8 @@
     },
     "artwork-prompts-handoff": {
       "baseline": "1.0.0",
-      "current": "1.2.3",
-      "stable": "1.2.3"
+      "current": "1.2.4",
+      "stable": "1.2.4"
     },
     "awesome-design-md": {
       "baseline": null,
