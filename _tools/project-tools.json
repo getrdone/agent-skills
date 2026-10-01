@@ -302,5 +302,21 @@
     "invocation": "G:/__ai-projects/Video-Library.bat",
     "dependencies": "none - batch launcher, no console window",
     "reuse": "Check video-library/_tools/TOOLS.md before use"
+  },
+  {
+    "project": "workspace",
+    "path": "G:/__ai-projects/_agent-control/_tools/backup-databases.py",
+    "purpose": "snapshot both workspace databases, AGENTS.md and the launcher batch files",
+    "invocation": "py _tools/backup-databases.py; register the schedule with bin/register-database-backup.ps1",
+    "dependencies": "Python 3.13",
+    "reuse": "Silent by design; read state in _backups/backup-state.sqlite. Never copy a live database file - this uses VACUUM INTO"
+  },
+  {
+    "project": "workspace",
+    "path": "G:/__ai-projects/_agent-control/bin/register-database-backup.ps1",
+    "purpose": "register the three-daily silent backup task",
+    "invocation": "powershell -NoProfile -File bin/register-database-backup.ps1",
+    "dependencies": "PowerShell; current user, no elevation",
+    "reuse": "Action is pythonw.exe, which has no console; -At sets the times, -Unregister removes it"
   }
 ]

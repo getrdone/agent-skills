@@ -73,6 +73,7 @@ running `G:\__ai-projects\_agent-control\bin\silent-run.py`, which creates the r
 | Durable local Codex orchestration | `G:/__ai-projects/_agent-control/_tools/task-orchestrator/orchestrator.ps1` | Serial local jobs, explicit settings, observed execution, idempotency, cancellation/recovery and coordinator acceptance. Read sibling README; native chat remains default. |
 | Video Library database maintenance | `G:/__ai-projects/__Personal.Projects/video-library/library.py optimize-db` | Python 3.13 stdlib. During idle maintenance: verified gzip SQLite backup, exact metadata gzip archives, compact metadata/export migration, integrity checks and VACUUM. Does not fetch videos or alter transcript/request history. See project README. |
 | Video Library private GitHub backup | `G:/__ai-projects/__Personal.Projects/video-library/_tools/private-github-backup.py` | VACUUM, verified SQLite snapshot, transcript-bearing folders, private-visibility check, GitHub push and remote-head verification. Hourly/sign-in Windows task; run state in local SQLite. |
+| Workspace database backup | `G:/__ai-projects/_agent-control/_tools/backup-databases.py` | Python 3.13 stdlib. Snapshots both workspace databases with `VACUUM INTO` (never a file copy) plus AGENTS.md and the launcher batch files to `G:/__ai-projects/_backups/databases/YYYY-MMDD--HHMM/`. Gzip, sha256, `PRAGMA quick_check` and row counts per run; 12 days kept; unrecognised folders reported, never deleted. Prints nothing. Register the schedule with `G:/__ai-projects/_agent-control/bin/register-database-backup.ps1` (three daily triggers, action is pythonw.exe so there is no console to flash); run state in `_backups/backup-state.sqlite`. |
 
 ## Scripts — `scripts\`
 
@@ -170,7 +171,7 @@ Procedure: private repo [getrdone/ubp-tools](https://github.com/getrdone/ubp-too
 ## Authoritative lifecycle tools
 
 - `_tools/library.py`: Python 3.11+, standard library. `backup`, `restore`, `seal`, `validate`, `sync`, `git-update`.
-- `_agent-control/_tools/todos.py`: Python 3.13 stdlib. The single workspace task queue, `G:/__ai-projects/todos.db` (tables `global_todo`, `project_todo`, `subtask`, `archive`). Replaces the per-project `02-TASKS.md` files. Schema in `todos_schema.sql`; `migrate_tasks.py` for the one-time import. `_agent-control/bin/open-tasks.ps1` reads it.
+- `_agent-control/_tools/todos.py`: Python 3.13 stdlib. The single workspace database, `G:/__ai-projects/projects-and-todos.sqlite` — tasks (`global_todo`, `project_todo`, `subtask`, `archive`) and project memory (`project`, `project_lock`, `project_file`, `project_note`). Replaces the per-project `02-TASKS.md` files. Schema in `todos_schema.sql` plus numbered `NNNN_*.sql` migrations; `migrate_tasks.py` for the one-time import. `_agent-control/bin/open-tasks.ps1` reads it. Every database file in this workspace uses the `.sqlite` extension.
 - `_tools/install.py`: Python 3.11+, installs current native startup instructions and the Grok hook with verified before-images.
 - `_tools/sync.ps1` and `_tools/sync-hidden.vbs`: native silent Windows scheduler entrypoints.
 - `_tools/test_library.py`: lifecycle regression checks; isolated fixtures.
