@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "name": "video-library",
+  "version": "1.4.3",
+  "sealed": true,
+  "files": {
+    "SKILL.md": "f4252fe7e14e7e2865f625a57cbf88cb04ada7c0d9fd80f105e8a4684a39a178",
+    "handoff.md": "90bd3ff0cf1e1f882ce2e4c5ab5d77e4684d08f5678e28441f2dec65590ff9d3",
+    "whisper.md": "ed5bad8730b7bfe366fa0771a127001416a0ccd564d5d00d31560fb27de42036"
+  },
+  "dependencies": {
+    "library_release": "unified-v5-2026-0920"
+  },
+  "provenance": "Local authoritative adaptation; source notices and licenses retained."
+}

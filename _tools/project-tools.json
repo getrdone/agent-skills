@@ -270,5 +270,37 @@
     "invocation": "pwsh -File G:/__ai-projects/_agent-control/jobs/bin/Watch-Jobs.ps1",
     "dependencies": "PowerShell 7; Git/Grok/Codex for selected lane",
     "reuse": "Shared job queue lifecycle; inspect parameters and jobs/README.md"
+  },
+  {
+    "project": "video-library",
+    "path": "G:/__ai-projects/__Personal.Projects/video-library/library.py",
+    "purpose": "video intake, transcript fetch/search, dashboard",
+    "invocation": "py library.py",
+    "dependencies": "Python 3.13",
+    "reuse": "Check video-library/_tools/TOOLS.md before use"
+  },
+  {
+    "project": "video-library",
+    "path": "G:/__ai-projects/__Personal.Projects/video-library/_tools/backup.py",
+    "purpose": "SQLite and transcript backup",
+    "invocation": "py _tools/backup.py DESTINATION",
+    "dependencies": "Python 3.13",
+    "reuse": "Check video-library/_tools/TOOLS.md before use"
+  },
+  {
+    "project": "video-library",
+    "path": "G:/__ai-projects/__Personal.Projects/video-library/_tools/import-handoff.py",
+    "purpose": "agent/web handoff import",
+    "invocation": "py _tools/import-handoff.py NOTE.json",
+    "dependencies": "Python 3.13",
+    "reuse": "Check video-library/_tools/TOOLS.md before use"
+  },
+  {
+    "project": "video-library",
+    "path": "G:/__ai-projects/__Personal.Projects/video-library/_tools/open-library.ps1",
+    "purpose": "open local dashboard",
+    "invocation": "G:/__ai-projects/Video-Library.bat",
+    "dependencies": "none - batch launcher, no console window",
+    "reuse": "Check video-library/_tools/TOOLS.md before use"
   }
 ]
