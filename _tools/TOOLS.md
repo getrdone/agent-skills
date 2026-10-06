@@ -75,6 +75,49 @@ running `G:\__ai-projects\_agent-control\bin\silent-run.py`, which creates the r
 | Video Library private GitHub backup | `G:/__ai-projects/__Personal.Projects/video-library/_tools/private-github-backup.py` | VACUUM, verified SQLite snapshot, transcript-bearing folders, private-visibility check, GitHub push and remote-head verification. Hourly/sign-in Windows task; run state in local SQLite. |
 | Workspace database backup | `G:/__ai-projects/_agent-control/_tools/backup-databases.py` | Python 3.13 stdlib. Snapshots both workspace databases with `VACUUM INTO` (never a file copy) plus AGENTS.md and the launcher batch files to `G:/__ai-projects/_backups/databases/YYYY-MMDD--HHMM/`. Gzip, sha256, `PRAGMA quick_check` and row counts per run; 12 days kept; unrecognised folders reported, never deleted. Prints nothing. Register the schedule with `G:/__ai-projects/_agent-control/bin/register-database-backup.ps1` (three daily triggers, action is pythonw.exe so there is no console to flash); run state in `_backups/backup-state.sqlite`. |
 
+| Freebuff Desktop billboard block | `G:/__ai-projects/Patch-Freebuff-Ads.bat` or `G:/__ai-projects/_agent-control/_tools/freebuff-billboard-block/patch_freebuff_billboards.py` | Local machine patch for Freebuff Desktop full-page / sidebar billboards and spotlight-intermission overlays. Leaves in-stream banners. Not a skill. How, why, and rebuild steps: section below and the sibling README. |
+
+## Freebuff Desktop billboard block
+
+Steve pays for a yearly Freebuff plan. That plan buys extra hours. It does
+**not** turn ads off. Full-page unclosable ads are first-party billboards
+from Freebuff's own API (`Desktop-Billboard-Panel`, `Desktop-Billboard-Sidebar`,
+`Desktop-Spotlight`, `Desktop-Intermission`). Hosts-file blocking
+`freebuff.com` would also kill the agent. `adsEnabled` in
+`%USERPROFILE%\.config\manicode\settings.json` and CLI `/ads:disable` are
+ignored on Freebuff. In-stream black banners (`Desktop-Inline-Chat`) stay
+on purpose.
+
+**When:** Steve says the full-page / full-screen Freebuff ad is back, or
+Freebuff Desktop just updated (often several times a day).
+
+**Do not:** create a second patcher, hosts-file the domain, toggle
+`adsEnabled`, or call `/ads:disable`.
+
+**Run (Steve, after an update):** double-click
+`G:\__ai-projects\Patch-Freebuff-Ads.bat`. Quit Freebuff fully (window and
+tray). The window waits, patches, then reopens the app.
+
+**Run (agent, no window):** pass this to `silent-run.py`:
+
+`py G:\__ai-projects\_agent-control\_tools\freebuff-billboard-block\patch_freebuff_billboards.py --check`
+
+To re-apply while Freebuff is closed:
+`--wait --relaunch` (do not pass `--pause` from an agent). `--restore`
+copies `*.bak-noads` back.
+
+**How it was built:** five unique-string edits in unpacked JS (not
+`app.asar`): `billboardAd()` returns `null`; parsed policy
+`billboardPlacementIds` and `breakPlacementIds` become `[]`; UI
+`refreshSidebar()` and `maybeShowPanel()` return immediately. The hashed
+UI bundle name changes per build; the patcher reads
+`orchestrator/ui/index.html`. Updates overwrite the files.
+
+**Rebuild:** if the patcher exits 1 because the JS no longer matches, update
+`PATCHES` in `patch_freebuff_billboards.py` from the live files, keep the
+same five edits, run `test_patch_freebuff_billboards.py`, then re-apply.
+Full how-to: `_agent-control/_tools/freebuff-billboard-block/README.md`.
+
 ## Scripts — `scripts\`
 
 | Script | Use |
